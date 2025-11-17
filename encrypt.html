@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Encrypt JSON Input</title>
+
+  <!-- ✅ Load jQuery before any script uses $ -->
+  <script src="../edm/jquery/jquery.min.js"></script>
+
+</head>
+<body>
+
+<textarea id="jsonInput" rows="15" style="width:100%;">
+{
+    "action": "fetch",
+    "table": "edm_login_tb",
+    "columns": "user_id, district, name, designation, mobile, email, status, created_by, created_dttm, updated_by, updated_dttm, photo, mime_type, file_name, reporting_id, personal_email, personal_mobile, personal_address, emrgency_contact",
+    "filters": {
+        "mobile": "9876543210",
+        "district": "Chennai"
+    }
+}
+</textarea>
+<br>
+<button id="encryptAndSend">Encrypt & Send</button>
+
+<pre id="output"></pre>
+
+<!-- ✅ Now use your custom script AFTER jQuery is loaded -->
+<script>
+  $('#encryptAndSend').on('click', function () {
+    const rawJson = $('#jsonInput').val();
+
+    let parsedData;
+    try {
+      parsedData = JSON.parse(rawJson);
+    } catch (e) {
+      $('#output').text('Invalid JSON format.');
+      return;
+    }
+
+    $.ajax({
+      url: 'encrypt_decrypt.php',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-APP-TYPE': 'live'
+      },
+      data: JSON.stringify({
+        action: 'encrypt',
+        data: parsedData
+      }),
+      success: function (response) {
+        const payload = {
+          data: response.encrypted
+        };
+
+        $('#output').text(JSON.stringify(payload, null, 2));
+      },
+      error: function (xhr) {
+        $('#output').text('Error: ' + xhr.responseText);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
