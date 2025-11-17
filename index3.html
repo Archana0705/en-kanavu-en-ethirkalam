@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enn Kanavu, Enn Ethirkalam 2030 — Youth Dreams Form</title>
+
+  <!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
+</head>
+  <style>
+    :root{--accent:#0f6cff;--muted:#6b7280;--card:#fff;--bg:#f3f4f6}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);margin:0;color:#111}
+    .container{margin:28px auto;padding:2% 15%}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06);margin-bottom:18px}
+    label{display:block;font-weight:600;margin-bottom:6px}
+    .row{display:flex;gap:12px}
+    .col{flex:1}
+    input[type="text"],input[type="email"],select,textarea,input[type="date"],input[type="number"]{width:100%;padding:10px;border:1px solid #e6e9ef;border-radius:8px}
+    small{color:var(--muted)}
+    .muted{color:var(--muted);font-size:13px}
+    .inline{display:flex;gap:12px;align-items:center}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .section-title{display:flex; flex-direction: column; justify-content:space-between;align-items:center;margin-bottom:8px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:8px 10px;border-radius:999px;border:1px solid #e6e9ef;background:#fff;font-size:14px}
+    .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(15,108,255,0.12)}
+    .controls{display:flex;gap:8px;flex-wrap:wrap}
+    .small-input{width:84px}
+    .note{font-size:13px;color:#374151}
+    footer{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
+    .checkbox-list{display:flex;flex-direction:column;gap:8px}
+    .dream-row{display:grid;grid-template-columns:1fr 120px 220px;gap:8px;align-items:center}
+    /* @media(max-width:720px){.dream-row{grid-template-columns:1fr 96px 1fr}} */
+    .error{color:#b91c1c;font-size:13px}
+      
+.dream-row.disabled label {
+  color: #7a7a7a; /* red tone */
+}
+.dream-row {
+    display: grid;
+    grid-template-columns: 1fr 120px 220px;
+    padding: 5px;
+    gap: 8px;
+    margin-top: 5px;
+    align-items: center;
+    background: #efefef;
+    border-radius: 10px;
+    justify-content: center;
+  }
+.dream-row:has(.dream-checkbox:checked) {
+  background: #0078d4;
+  color: white;
+}
+label{
+  margin-bottom: 0px;
+}
+.support,
+.priority{
+  padding: 5px;
+}
+  @media (max-width:720px) {
+      .container{margin:28px auto;padding:2%} 
+    .dream-row {display: flex; flex-direction: row; flex-wrap: wrap;}
+    .dream-row > label {display: block;width: 100%;}
+    /* .dream-row > div {display: inline-block; width: 49%;} */
+  
+.dream-row > div:first-of-type {
+  margin-right: 2%;
+}
+
+.dream-row select {
+  width: 100%;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}}
+  </style>
+
+<body>
+  <div class="container">
+    <header>
+      <div style="width:56px;height:56px;background:linear-gradient(135deg,#0f6cff,#6dd3ff);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700">EK</div>
+      <div>
+        <h1>Enn Kanavu, Enn Ethirkalam 2030 — Youth Dreams Form</h1>
+        <p class="lead">Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu — Fill this form (age 18–29)</p>
+      </div>
+    </header>
+
+    <form id="dreamForm" class="card" onsubmit="return handleSubmit(event)">
+      <section>
+        <h2 style="margin-top:0">Basic information</h2>
+        <div class="grid">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div>
+            <label>Gender</label>
+            <select id="gender" name="gender" required>
+              <option value="">Select gender</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Other</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+          <div>
+            <label for="district">District of Residence</label>
+            <select id="district" name="district" required>
+              <option value="">Select district</option>
+              <!-- 38 districts of Tamil Nadu -->
+              <option>Chennai</option>
+              <option>Coimbatore</option>
+              <option>Madurai</option>
+              <option>Trichy (Tiruchirappalli)</option>
+              <option>Salem</option>
+              <option>Tirunelveli</option>
+              <option>Thanjavur</option>
+              <option>Thoothukudi</option>
+              <option>Kancheepuram</option>
+              <option>Vellore</option>
+              <option>Erode</option>
+              <option>Tiruppur</option>
+              <option>Tiruvallur</option>
+              <option>Nagapattinam</option>
+              <option>Sivaganga</option>
+              <option>Ramanathapuram</option>
+              <option>Virudhunagar</option>
+              <option>Karur</option>
+              <option>Nilgiris</option>
+              <option>Perambalur</option>
+              <option>Thiruvannamalai</option>
+              <option>Ranipet</option>
+              <option>Krishnagiri</option>
+              <option>Pudukottai</option>
+              <option>Dharmapuri</option>
+              <option>Mayiladuthurai</option>
+              <option>Cuddalore</option>
+              <option>Villupuram</option>
+              <option>Thiruvarur</option>
+              <option>Chengalpattu</option>
+              <option>Kanyakumari</option>
+              <option>Kanniyakumari</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="grid">
+          <div>
+            <label>Proof of Residence (upload Aadhar / Voter ID / Ration Card)</label>
+            <input id="proofResidence" name="proofResidence" type="file" accept="image/*,application/pdf" required />
+            <small class="muted">Accepted: image or PDF</small>
+          </div>
+          <div>
+            <label>Proof of Age (upload Matriculation / Birth Cert / Aadhar)</label>
+            <input id="proofAge" name="proofAge" type="file" accept="image/*,application/pdf" required />
+            <small class="muted">We'll ask for DOB below — uploads are stored for verification only</small>
+          </div>
+          <div>
+            <label for="dob">Date of Birth (for auto-age)</label>
+            <input id="dob" name="dob" type="date" required />
+            <small class="muted">Age will be calculated automatically. Applicants must be between 18 and 29 inclusive.</small>
+          </div>
+          <div>
+            <label for="age">Age</label>
+            <input id="age" name="age" type="number" readonly />
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="grid">
+          <div>
+            <label for="education">Level of Education</label>
+            <select id="education" name="education" required>
+              <option value="">Select</option>
+              <option>Illiterate</option>
+              <option>8th pass</option>
+              <option>Matriculation</option>
+              <option>Higher Secondary</option>
+              <option>Graduate</option>
+              <option>Post-graduate</option>
+              <option>Doctorate</option>
+              <option>Diploma holder</option>
+            </select>
+          </div>
+          <div>
+            <label for="employmentStatus">Employment Status</label>
+            <select id="employmentStatus" name="employmentStatus" required>
+              <option value="">Select</option>
+              <option>Employed</option>
+              <option>Unemployed</option>
+              <option>Student</option>
+            </select>
+          </div>
+          <div id="employmentTypeWrap" style="display:none">
+            <label for="employmentType">Type of Employment</label>
+            <select id="employmentType" name="employmentType">
+              <option value="">Select</option>
+              <option>Cultivator / Farmer</option>
+              <option>Agricultural Labour</option>
+              <option>Non-Agricultural Casual Labour</option>
+              <option>Self-Employed</option>
+              <option>Regular Salaried Worker (Private Sector)</option>
+              <option>Government or Public Sector Employee</option>
+              <option>Domestic or Household Worker</option>
+              <option>Transport Worker or Driver</option>
+              <option>Skilled or Technical Worker</option>
+              <option>Professionals</option>
+              <option>Homemaker</option>
+              <option>Gig Worker or Delivery Partner</option>
+              <option>Other (Specify)</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <hr style="margin:18px 0;border:none;border-top:1px solid #eef2ff" />
+
+      <section>
+        <div class="section-title">
+          <h4>My Dream Dashboard</h4>
+          <h2>Dreams to be fulfilled in immediate future</h2>
+          <div class="note">For each dream selected, assign a priority (1 = highest). Choose one support option per dream.</div>
+        </div>
+
+        <div id="immediateDreams" class="card" style="background:#fcfeff">
+          <!-- We'll render dreams via JS -->
+        </div>
+      </section>
+
+      <hr style="margin:18px 0;border:none;border-top:1px solid #eef2ff" />
+
+      <section>
+        <div class="section-title">
+          <h2>Dreams to be fulfilled in next 5 years (choose up to 3)</h2>
+          <div class="note">For each dream selected, assign a priority (1 = highest). Choose one support option per dream.</div>
+        </div>
+
+        <div id="fiveYearDreams" class="card" style="background:#fcfeff">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+
+      <hr style="margin:18px 0;border:none;border-top:1px solid #eef2ff" />
+
+      <section>
+        <label for="otherAspirations">Any other aspirations to be fulfilled by 2030? (short)</label>
+        <textarea id="otherAspirations" name="otherAspirations" maxlength="300" rows="3" placeholder="Type up to 300 characters"></textarea>
+      </section>
+
+      <div style="margin-top:14px;display:flex;gap:12px;align-items:center">
+        <button class="btn" type="submit">Submit</button>
+        <button type="button" class="btn ghost" onclick="saveDraft()">Save draft (download JSON)</button>
+        <button type="button"  class="btn ghost" onclick="saveDraftPDF()">Download PDF</button>
+        <div id="formMessage" style="margin-left:8px"></div>
+      </div>
+
+    </form>
+
+    <footer class="muted">Questions or changes? I can convert this to React + backend or provide printable PDF.</footer>
+  </div>
+
+
+
+<script src="/assets/js/pds.js"></script>
+<script>
+// Dream configuration data (labels + support options)
+const immediateDreamConfig = [
+  {key:'meetIcon',label:'Meet an Icon - Get inspired by achievers', supports:['Open (Keep option)']},
+  {key:'techTools',label:'Technology & tools to connect online', supports:['Laptop for final-year students','Data pack','Free AI subscription','Online certification courses support']},
+  {key:'exploreLearn',label:'Explore & learn', supports:['ISRO visit','Industry visit (e.g., Hyundai)','Cultural heritage trip','Adventure trip','Factory and technology hub tour']},
+  {key:'finance',label:'Financial Literacy & Opportunities', supports:['Personal Finance Workshops','Budgeting & Saving Toolkit','Investment Awareness Sessions','Access to Youth Credit Schemes','Entrepreneurship Finance Training']},
+  {key:'trainingJobs',label:'Get training for real jobs', supports:['Career Counselling','Vocational Training','Factory Apprenticeship','Internship Opportunities','Entrepreneurship Bootcamp']},
+  {key:'express',label:'Express yourself, showcase creativity', supports:['Content creation starter kit - microphone','Tripod stand for video','LED ring light','Video editing software access']},
+  {key:'sports',label:'Get fit, compete and play sports', supports:['Sports Kit - Cricket','Sports Kit - Football','Sports Kit - Volleyball','Access to Coaching Camps','Access to training grounds','Access to tournaments']},
+  {key:'mentorship',label:'Mentorship — Learn from success stories', supports:['Motivational event passes','Career advice','Leadership talk series','Industry mentorship','Shadowing opportunities']},
+  {key:'community',label:'Community Engagement', supports:['District Youth Corps volunteering','TN Youth Media Lab participation','Youth Leadership Internship with Government']},
+  {key:'global',label:'Global & Cultural Exchange', supports:['Learning foreign languages','International Internship Opportunities','Cultural Immersion Programs','Exchange Readiness Workshops','Soft-skill enhancement for global careers']}
+];
+const fiveYearConfig = [
+  {key:'higherEdu',label:'Pursue Higher Education', supports:['Access to counselling and preparatory support','Financial & Institutional Support','Government Scholarship Support','Hostel / Accommodation Support','Bridge Courses & Foundation Programs','Global learning exposure']},
+  {key:'upskill',label:'Upskilling & Market-Ready Skills', supports:['AI/Data Analytics certification','Coding / software bootcamp','Digital marketing course','Vocational skill training (ITI / Trade)','Communication & soft-skills program']},
+  {key:'employment',label:'Meaningful Employment', supports:['Conduction of Job Melas','Apprenticeship / on-the-job training','Startup company employment','Remote or gig-work opportunity']},
+  {key:'selfEmployment',label:'Self-Employment & Business Growth', supports:['Startup seed grant','Business mentorship','Incubation centre support','Market linkage & branding support','Women-led business funding']},
+  {key:'agro',label:'Promoting Agro-based Industries', supports:['Solar-powered farming setup','Organic farming initiatives','Agro-processing & value addition units','Floriculture & nursery development']},
+  {key:'transport',label:'Smooth & Safe Transport', supports:['Subsidized transport from college to Home District (on special occasions)','Increased bus frequency','Provision of Bus Marshalls']},
+  {key:'sportsEx',label:'Sports Excellence', supports:['Access to training grounds','Access to coaching centres','Upgrade sports hostels']},
+  {key:'health',label:'Health, Fitness & Well-being', supports:['Fitness & sports training','Annual health check-up support','Mental health counselling','Nutrition & lifestyle guidance']},
+  {key:'social',label:'Social Service & Youth Leadership', supports:['Volunteer network participation','Climate/environment action program','Anti-drugs action program','Youth leadership council membership']},
+  {key:'globalExp',label:'Global Exposure', supports:['Student exchange program','Teaching a foreign language','Foreign fellowship','International internship']}
+];
+
+// ---------- Render Dreams ----------
+function renderDreams(containerId, config, prefix){
+  const wrap = document.getElementById(containerId);
+  wrap.innerHTML = '';
+  config.forEach((d) => {
+    const id = prefix + '_' + d.key;
+    const row = document.createElement('div');
+    row.className = 'dream-row';
+
+    const left = document.createElement('label');
+    left.style.fontWeight = 600;
+    left.innerHTML = `<input type=checkbox data-key='${d.key}' class='dream-checkbox' id='chk_${id}' /> <span style='margin-left:8px'>${d.label}</span>`;
+
+    const priority = document.createElement('div');
+    priority.innerHTML = `<select class='priority small-input' data-section='${containerId}' id='prio_${id}'>
+      <option value=''>Priority</option>
+      <option value='1'>1</option>
+      <option value='2'>2</option>
+      <option value='3'>3</option>
+    </select>`;
+
+    const support = document.createElement('div');
+    const supportOptions = d.supports.map(s => `<option>${s}</option>`).join('');
+    support.innerHTML = `<select class='support' id='sup_${id}'>
+      <option value=''>Choose support</option>
+      ${supportOptions}
+    </select>`;
+
+    row.appendChild(left);
+    row.appendChild(priority);
+    row.appendChild(support);
+    wrap.appendChild(row);
+  });
+}
+
+// render both sets
+renderDreams('immediateDreams', immediateDreamConfig, 'imm');
+renderDreams('fiveYearDreams', fiveYearConfig, 'fiv');
+
+// ---------- Priority Control Logic ----------
+const usedPriorities = {
+  immediateDreams: new Set(),
+  fiveYearDreams: new Set()
+};
+
+function updateUsedPriorities(sectionId) {
+  usedPriorities[sectionId].clear();
+  document.querySelectorAll(`#${sectionId} .priority`).forEach(sel => {
+    if (sel.value) usedPriorities[sectionId].add(sel.value);
+  });
+}
+
+function updatePriorityOptions(sectionId) {
+  document.querySelectorAll(`#${sectionId} .priority`).forEach(sel => {
+    const currentVal = sel.value;
+
+    Array.from(sel.options).forEach(opt => {
+      if (!opt.value) return; // skip "Priority" placeholder
+
+      // Used in this section and not the current selected value
+      if (usedPriorities[sectionId].has(opt.value) && opt.value !== currentVal) {
+        opt.disabled = true;
+        opt.style.display = 'none';      // HIDE the option
+      } else {
+        opt.disabled = false;
+        opt.style.display = 'block';     // SHOW the option
+      }
+    });
+  });
+}
+
+// ---------- Main Interaction Logic ----------
+document.addEventListener('change', (e) => {
+  // Checkbox toggle (limit only)
+  if(e.target.classList.contains('dream-checkbox')){
+    const sectionId = e.target.closest('#immediateDreams') ? 'immediateDreams' : 'fiveYearDreams';
+    enforceMaxSelections(sectionId);
+  }
+
+  // Priority dropdown change
+  if(e.target.classList.contains('priority')){
+    const sectionId = e.target.dataset.section;
+    updateUsedPriorities(sectionId);
+    updatePriorityOptions(sectionId);
+  }
+
+  // Auto-check when dropdown selected
+  if (e.target.classList.contains('priority') || e.target.classList.contains('support')) {
+    const id = e.target.id.replace(/^(prio|sup)_/, '');
+    const chk = document.getElementById('chk_' + id);
+    if (e.target.value !== '') chk.checked = true;
+    const sectionId = e.target.closest('#immediateDreams') ? 'immediateDreams' : 'fiveYearDreams';
+    enforceMaxSelections(sectionId);
+  }
+
+  // Employment toggle
+  if(e.target.id === 'employmentStatus'){
+    const wrap = document.getElementById('employmentTypeWrap');
+    wrap.style.display = (e.target.value === 'Employed')? 'block':'none';
+  }
+
+  // Age autofill
+  if(e.target.id === 'dob'){
+    updateAgeFromDOB();
+  }
+});
+
+// ---------- Helper Functions ----------
+function enforceMaxSelections(sectionId){
+  const container = document.getElementById(sectionId);
+  const rows = container.querySelectorAll('.dream-row');
+  const checkedCount = Array.from(container.querySelectorAll('.dream-checkbox')).filter(c => c.checked).length;
+  const maxReached = checkedCount >= 3;
+
+  rows.forEach(row => {
+    const chk = row.querySelector('.dream-checkbox');
+    const pri = row.querySelector('.priority');
+    const sup = row.querySelector('.support');
+
+    if (chk.checked) {
+      // Selected rows remain fully enabled
+      chk.disabled = false;
+      pri.disabled = false;
+      sup.disabled = false;
+      row.classList.remove('disabled');
+    } else {
+      if (maxReached) {
+        // When limit reached, unselected rows are disabled AND reset
+        chk.disabled = true;
+        pri.value = '';
+        sup.value = '';
+        pri.disabled = true;
+        sup.disabled = true;
+        row.classList.add('disabled');
+      } else {
+        // Not selected and limit not reached -> keep dropdowns cleared & disabled
+        chk.disabled = false;
+        pri.value = '';
+        sup.value = '';
+        pri.disabled = true;
+        sup.disabled = true;
+        row.classList.remove('disabled');
+      }
+    }
+  });
+}
+
+// ---------- Initialize state after render ----------
+enforceMaxSelections('immediateDreams');
+enforceMaxSelections('fiveYearDreams');
+updateUsedPriorities('immediateDreams');
+updateUsedPriorities('fiveYearDreams');
+updatePriorityOptions('immediateDreams');
+updatePriorityOptions('fiveYearDreams');
+
+function updateAgeFromDOB(){
+  const dob = document.getElementById('dob').value;
+  const ageField = document.getElementById('age');
+  if(!dob){ ageField.value=''; return }
+  const birth = new Date(dob);
+  const today = new Date();
+  let age = today.getFullYear() - birth.getFullYear();
+  const m = today.getMonth() - birth.getMonth();
+  if(m<0 || (m===0 && today.getDate()<birth.getDate())) age--;
+  ageField.value = age;
+}
+
+function collectDreamResponses(containerId, prefix){
+  const container = document.getElementById(containerId);
+  const rows = container.querySelectorAll('.dream-row');
+  const responses = [];
+  rows.forEach(row => {
+    const chk = row.querySelector('.dream-checkbox');
+    if(chk && chk.checked){
+      const id = chk.id.replace('chk_','');
+      const pr = row.querySelector('.priority').value;
+      const sp = row.querySelector('.support').value;
+      responses.push({key:chk.dataset.key, priority:pr||null, support:sp||null, label: row.querySelector('span')?.innerText?.trim()});
+    }
+  });
+  return responses;
+}
+
+function validatePriorities(arr){
+  const prios = arr.map(a=>a.priority).filter(Boolean);
+  return prios.length === new Set(prios).size;
+}
+
+// ---------- Submit / Draft ----------
+function handleSubmit(e){
+  e.preventDefault();
+  const form = document.getElementById('dreamForm');
+  const age = Number(document.getElementById('age').value);
+  if(isNaN(age) || age<18 || age>29){
+    showMessage('Applicants must be between 18 and 29 years old.','error');
+    return false;
+  }
+
+  const immediate = collectDreamResponses('immediateDreams','imm');
+  const fiveYr = collectDreamResponses('fiveYearDreams','fiv');
+  if(immediate.length === 0 && fiveYr.length === 0){
+    showMessage('Please choose at least one dream in immediate or next-5-years sections.','error');
+    return false;
+  }
+  if(!validatePriorities(immediate) || !validatePriorities(fiveYr)){
+    showMessage('Duplicate priorities found in a section. Please ensure priorities are unique (1-3) within each section.','error');
+    return false;
+  }
+
+  const payload = {
+    name: form.name.value,
+    gender: form.gender.value,
+    email: form.email.value,
+    district: form.district.value,
+    age: age,
+    dob: form.dob.value,
+    education: form.education.value,
+    employmentStatus: form.employmentStatus.value,
+    employmentType: form.employmentType.value || null,
+    immediateDreams: immediate,
+    fiveYearDreams: fiveYr,
+    otherAspirations: form.otherAspirations.value || null,
+    timestamps: {submittedAt: new Date().toISOString()}
+  };
+
+  const blob = new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); 
+  a.href = url; 
+  a.download = 'enn_kanavu_response.json'; 
+  document.body.appendChild(a); 
+  a.click(); 
+  a.remove();
+  showMessage('Form submitted — downloaded JSON (for demo).','success');
+  return false;
+}
+
+
+
+// save as json
+function saveDraft(){
+  const form = document.getElementById('dreamForm');
+  const payload = {
+    name: form.name.value,
+    email: form.email.value,
+    district: form.district.value,
+    age: document.getElementById('age').value,
+    dob: form.dob.value,
+    immediateDreams: collectDreamResponses('immediateDreams'),
+    fiveYearDreams: collectDreamResponses('fiveYearDreams'),
+    otherAspirations: form.otherAspirations.value
+  };
+  const blob = new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); 
+  a.href = url; 
+  a.download = 'enn_kanavu_draft.json'; 
+  document.body.appendChild(a); 
+  a.click(); 
+  a.remove();
+  showMessage('Draft downloaded locally.','success');
+}
+
+// save as pdf
+function saveDraftPDF() {
+  const form = document.getElementById('dreamForm');
+
+  const payload = {
+    name: form.name.value,
+    email: form.email.value,
+    district: form.district.value,
+    age: document.getElementById('age').value,
+    dob: form.dob.value,
+    immediateDreams: collectDreamResponses('immediateDreams'),
+    fiveYearDreams: collectDreamResponses('fiveYearDreams'),
+    otherAspirations: form.otherAspirations.value
+  };
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  let y = 10;
+  doc.setFontSize(14);
+  doc.text("Enn Kanavu - Draft PDF", 10, y);
+  y += 10;
+
+  doc.setFontSize(11);
+
+  function addLine(text){
+    doc.text(text, 10, y);
+    y += 7;
+    if (y > 280) { doc.addPage(); y = 10; }
+  }
+
+  addLine(`Name: ${payload.name || ''}`);
+  addLine(`Email: ${payload.email || ''}`);
+  addLine(`District: ${payload.district || ''}`);
+  addLine(`Age: ${payload.age || ''}`);
+  addLine(`DOB: ${payload.dob || ''}`);
+  addLine("");
+
+  addLine("Immediate Dreams:");
+  payload.immediateDreams.forEach(d => {
+    addLine(`- ${d.label} (Priority: ${d.priority}, Support: ${d.support})`);
+  });
+  addLine("");
+
+  addLine("Five-Year Dreams:");
+  payload.fiveYearDreams.forEach(d => {
+    addLine(`- ${d.label} (Priority: ${d.priority}, Support: ${d.support})`);
+  });
+  addLine("");
+
+  addLine(`Other Aspirations: ${payload.otherAspirations || ''}`);
+
+  doc.save("enn_kanavu_draft.pdf");
+
+  showMessage('Draft PDF downloaded.','success');
+}
+
+
+function showMessage(msg,type='info'){
+  const el = document.getElementById('formMessage');
+  el.innerText = msg; 
+  el.style.color = (type==='error')? '#b91c1c':'#064e3b';
+  setTimeout(()=>{ el.innerText = ''; },6000);
+}
+</script>
+
+
+</body>
+
+</html>
