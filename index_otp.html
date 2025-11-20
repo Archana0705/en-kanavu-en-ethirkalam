@@ -1,0 +1,1850 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enn Kanavu, Enn Ethirkalam 2030 — Youth Dreams Form</title>
+
+  <style>
+    :root {
+      --accent: #0f6cff;
+      --muted: #6b7280;
+      --card: #fff;
+      --bg: white
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      color: #111
+    }
+
+    .container {
+      margin: 28px auto;
+      padding: 2% 15%
+    }
+
+    header {
+      background-color: white;
+      box-shadow: 2px 2px 4px rgba(97, 97, 97, 0.486);
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin: 0
+    }
+
+    p.lead {
+      margin: 0;
+      color: var(--muted)
+    }
+
+    .card {
+      background: var(--card);
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+      margin-bottom: 18px
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px
+    }
+
+    .row {
+      display: flex;
+      gap: 12px
+    }
+
+    .col {
+      flex: 1
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea,
+    input[type="date"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e6e9ef;
+      border-radius: 8px
+    }
+
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e6e9ef;
+      border-radius: 8px
+    }
+
+    small {
+      color: var(--muted)
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .inline {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px
+    }
+
+    .section-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid #e6e9ef;
+      background: #fff;
+      font-size: 14px
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 0;
+      cursor: pointer
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid rgba(15, 108, 255, 0.12)
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .small-input {
+      width: 84px
+    }
+
+    .note {
+      font-size: 13px;
+      color: #374151
+    }
+
+    footer {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 8px
+    }
+
+    .checkbox-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .dream-row {
+      display: flex;
+      flex-direction: column;
+      grid-template-columns: 1fr 120px 220px;
+      align-items: center;
+      margin-bottom: 8px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px #9e9e9ea1;
+      padding: 10px 15px;
+    }
+
+    .error {
+      color: #b91c1c;
+      font-size: 13px
+    }
+
+    .dream-row.disabled label {
+      color: #9b9b9b4a;
+    }
+
+    .dream-row:has(.dream-checkbox:checked) {
+      background: #4ac13d;
+      color: white;
+    }
+
+    .support-radio-group:has(input:disabled) {
+      color: rgb(184, 184, 184);
+    }
+
+    .dream-row:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    .dream-row:nth-child(even) {
+      background-color: #f1f9ff;
+    }
+
+    .support-radio-group,
+    .priority {
+      padding: 5px;
+    }
+
+    @media (max-width:720px) {
+      .p.lead {
+        font-size: 12px;
+      }
+
+      .container {
+        margin: 28px auto;
+        padding: 2%
+      }
+
+      .dream-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .dream-row>label {
+        display: block;
+        width: 100%;
+      }
+
+      .dream-row>div:first-of-type {
+        margin-right: 2%;
+      }
+
+      .dream-row select {
+        width: min-content;
+        padding: 4px 6px;
+      }
+    }
+
+    .dream-line1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .dream-line2 {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      width: 100%;
+      justify-content: start;
+    }
+
+    #tn-logo {
+      width: 80px;
+      padding: 10px;
+    }
+
+    .section-line {
+      border: 0.5px solid #8080801f;
+      margin: 20px;
+    }
+
+    section.basic-info label {
+      color: #47a9ff;
+    }
+
+    /* Popup Overlay */
+    #successPopup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    /* Show class */
+    #successPopup.show {
+      display: flex;
+    }
+
+    /* Popup Box */
+    .popup-box {
+      background: #ffffff;
+      padding: 30px 35px;
+      border-radius: 14px;
+      text-align: center;
+      width: 300px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      animation: popIn 0.25s ease;
+    }
+
+    .popup-content {
+      background: linear-gradient(135deg, #0f6cff, #6dd3ff);
+      width: 500px;
+      display: block !important;
+      height: 200px;
+      border-radius: 20px;
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 7px 7px 31px #00000038;
+    }
+
+    .popup-icon {
+      font-size: 42px;
+      color: #16a34a;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .popup-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    #closePopup {
+      background-color: white;
+    }
+
+    #popupCloseBtn:hover {
+      background: #15803d;
+    }
+
+    /* Animation */
+    @keyframes popIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Auto-save indicator */
+    .auto-save-indicator {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #4CAF50;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+
+    .auto-save-indicator.show {
+      opacity: 1;
+    }
+
+    /* OTP Modal Styles */
+    #otpModal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+
+    .otp-modal-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 450px;
+      text-align: center;
+    }
+
+    .otp-modal-content h2 {
+      margin-top: 0;
+      color: #0f6cff;
+    }
+
+    .otp-input-group {
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .otp-input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .otp-input-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e6e9ef;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .otp-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .otp-actions button {
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background-color: #0f6cff;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .otp-timer {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .otp-error {
+      color: #b91c1c;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .otp-success {
+      color: #16a34a;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .form-disabled {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- OTP Verification Modal -->
+  <div id="otpModal">
+    <div class="otp-modal-content">
+      <h2>OTP Verification</h2>
+      <p>Please enter your 10-digit mobile number to receive an OTP</p>
+      <div class="otp-input-group">
+        <label for="nameInput">Enter Name</label>
+        <input type="text" id="textInput" placeholder="Enter your name">
+        <!-- <div id="phoneError" class="otp-error"></div> -->
+      </div>
+      <div>
+            <label>Gender</label>
+            <select id="gender_input" name="gender" required >
+              <option value="">Select gender</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Transgender</option>
+              
+            </select>
+          </div>
+          <div>
+            <label for="email_input">Email</label>
+            <input id="email_input" name="email" type="email" placeholder="you@example.com" required  />
+          </div>
+      
+      <div class="otp-input-group">
+        <label for="phoneInput">Mobile Number</label>
+        <input type="tel" id="phoneInput" placeholder="Enter 10-digit mobile number" maxlength="10" pattern="[6-9][0-9]{9}">
+        <div id="phoneError" class="otp-error"></div>
+      </div>
+      
+      <div class="otp-input-group" id="otpInputGroup" style="display: none;">
+        <label for="otpInput">Enter OTP</label>
+        <input type="text" id="otpInput" placeholder="Enter OTP" maxlength="6">
+        <div id="otpError" class="otp-error"></div>
+        <div id="otpSuccess" class="otp-success"></div>
+        <div id="otpTimer" class="otp-timer"></div>
+      </div>
+      
+      <div class="otp-actions">
+        <button id="sendOtpBtn" class="btn-primary">Send OTP</button>
+        <button id="verifyOtpBtn" class="btn-primary" style="display: none;">Verify OTP</button>
+        <button id="resendOtpBtn" class="btn-secondary" style="display: none;">Resend OTP</button>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div
+        style="margin:5px 10px;background:linear-gradient(135deg,#0f6cff,#6dd3ff);border-radius:30px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700">
+        <img src="assets/img/tn_logo.png" id="tn-logo" alt="">
+      </div>
+      <div>
+        <h1>Enn Kanavu, Enn Ethirkalam 2030 — Youth Dreams Form</h1>
+        <p class="lead">Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu — Fill this form (age
+          18–29)</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <form id="dreamForm" class="card form-disabled" onsubmit="return handleSubmit(event)">
+      <section class="basic-info">
+        <h2 style="margin-top:0">Basic information</h2>
+        <div class="grid">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required disabled />
+          </div>
+          <div>
+            <label>Gender</label>
+            <select id="gender" name="gender" required disabled>
+              <option value="">Select gender</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Other</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required disabled />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="Enter your 10-digit mobile number"
+              pattern="[6-9][0-9]{9}" maxlength="10" required disabled />
+          </div>
+        </div>
+        <hr class="section-line">
+
+        <div style="margin-top:12px" class="grid">
+          <div>
+            <label for="district">District of Residence</label>
+            <select id="district" name="district" required disabled>
+              <option value="">Select district</option>
+            </select>
+          </div>
+          <div>
+            <label for="taluk">Taluk of Residence</label>
+            <select id="taluk" name="taluk" required disabled>
+              <option value="">Select Taluk</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-top:12px" class="grid">
+          <div>
+            <label>Proof of Residence <span class="note-span">(Voter ID / Ration Card)</span></label>
+            <input id="proofResidence" name="proofResidence" type="file" accept="image/*,application/pdf" required disabled />
+            <small class="muted"><br>Accepted: image or PDF</small>
+          </div>
+        </div>
+        <hr class="section-line">
+
+        <div style="margin-top:12px" class="grid">
+          <div>
+            <label for="dob">Date of Birth (for auto-age)</label>
+            <input id="dob" name="dob" type="date" required disabled />
+            <small class="muted">Age will be calculated automatically. Applicants must be between 18 and 29
+              inclusive.</small>
+          </div>
+          <div>
+            <label for="age">Age</label>
+            <input id="age" name="age" type="number" readonly disabled />
+          </div>
+        </div>
+        <div style="margin-top:12px" class="grid">
+          <div>
+            <label>Proof of Age (upload Matriculation / Birth Certificate)</label>
+            <input id="proofAge" name="proofAge" type="file" accept="image/*,application/pdf" required disabled />
+            <small class="muted"><br>Accepted: image or PDF</small>
+          </div>
+        </div>
+        <hr class="section-line">
+        <div style="margin-top:12px" class="grid">
+          <div>
+            <label for="education">Level of Education</label>
+            <select id="education" name="education" required disabled>
+              <option value="">Select</option>
+              <option>Illiterate</option>
+              <option>8th pass</option>
+              <option>Matriculation</option>
+              <option>Higher Secondary</option>
+              <option>Graduate</option>
+              <option>Post-graduate</option>
+              <option>Doctorate</option>
+              <option>ITI / Diploma holder</option>
+            </select>
+          </div>
+          <div>
+            <label for="employmentStatus">Employment Status</label>
+            <select id="employmentStatus" name="employmentStatus" required disabled>
+              <option value="">Select</option>
+              <option>Employed</option>
+              <option>Unemployed</option>
+              <option>Student</option>
+            </select>
+          </div>
+          <div id="employmentTypeWrap" style="display:none">
+            <label for="employmentType">Type of Employment</label>
+            <select id="employmentType" name="employmentType" disabled>
+              <option value="">Select</option>
+              <option>Cultivator / Farmer</option>
+              <option>Agricultural Labour</option>
+              <option>Non-Agricultural Casual Labour</option>
+              <option>Self-Employed</option>
+              <option>Regular Salaried Worker (Private Sector)</option>
+              <option>Government or Public Sector Employee</option>
+              <option>Domestic or Household Worker</option>
+              <option>Transport Worker or Driver</option>
+              <option>Skilled or Technical Worker</option>
+              <option>Professionals</option>
+              <option>Homemaker</option>
+              <option>Gig Worker or Delivery Partner</option>
+              <option>Other (Specify)</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <hr style="margin:18px 0;border:none;border-top:1px solid #eef2ff" />
+
+      <section>
+        <div class="section-title">
+          <h4 style="color: #47a9ff; margin-bottom: 0;">My Dream Dashboard</h4>
+          <h2>1. Dreams to be fulfilled in immediate future (choose up to 3)</h2>
+          <div class="note">For each dream selected, assign a priority (1 = highest). Choose one support option per
+            dream.</div>
+        </div>
+
+        <div id="immediateDreams" class="card" style="background:#fcfeff">
+          <!-- We'll render dreams via JS -->
+        </div>
+      </section>
+
+      <hr style="margin:18px 0;border:none;border-top:1px solid #eef2ff" />
+
+      <section>
+        <div class="section-title">
+          <h2>2. Dreams to be fulfilled in next 5 years (choose up to 3)</h2>
+          <div class="note">For each dream selected, assign a priority (1 = highest). Choose one support option per
+            dream.</div>
+        </div>
+
+        <div id="fiveYearDreams" class="card" style="background:#fcfeff">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+
+      <hr style="margin:18px 0;border:none;border-top:1px solid #eef2ff" />
+
+      <section>
+        <label for="otherAspirations">Any other aspirations to be fulfilled by 2030? (short)</label>
+        <textarea id="otherAspirations" name="otherAspirations" maxlength="300" rows="3"
+          placeholder="Type up to 300 characters" disabled></textarea>
+      </section>
+
+      <div style="margin-top:14px;display:flex;gap:12px;align-items:center">
+        <button class="btn" type="submit" disabled>Submit</button>
+        <button type="button" class="btn ghost" onclick="saveDraft()" disabled>Save JSON (Download)</button>
+        <button type="button" class="btn ghost" onclick="saveDraftPDF()" disabled>Download PDF</button>
+        <div id="formMessage" style="margin-left:8px"></div>
+      </div>
+    </form>
+
+    <footer class="muted">Contents owned by Department name (©) | Designed and Developed by Tamil Nadu eGovernance
+      Agency.</footer>
+  </div>
+
+  <div id="successPopup" class="popup">
+    <div class="popup-content">
+      <h3>Successfully Submitted!</h3>
+      <button id="closePopup">OK</button>
+    </div>
+  </div>
+
+  <!-- Auto-save indicator -->
+  <div id="autoSaveIndicator" class="auto-save-indicator">Auto-saved</div>
+
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/pds.js"></script>
+  <script src="assets/js/encrypt_decrypt.js"></script>
+  <script src="assets/js/crypto-js.min.js"></script>
+  <script src="assets/js/global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    // OTP Verification Logic
+    const HARDCODED_OTP = "987654";
+   // OTP Verification Logic
+let otpTimer;
+let otpResendTime = 60; // seconds
+
+document.addEventListener('DOMContentLoaded', function() {
+  initOtpModal();
+});
+
+function initOtpModal() {
+  const sendOtpBtn = document.getElementById('sendOtpBtn');
+  const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+  const resendOtpBtn = document.getElementById('resendOtpBtn');
+  const phoneInput = document.getElementById('phoneInput');
+  const textInput = document.getElementById('textInput');
+  const genderInput = document.getElementById('gender_input');
+  const emailInput = document.getElementById('email_input');
+  const otpInput = document.getElementById('otpInput');
+  
+  // Send OTP button click
+  sendOtpBtn.addEventListener('click', function() {
+    const phoneNumber = phoneInput.value.trim();
+    const name = textInput.value.trim();
+    const gender = genderInput.value;
+    const email = emailInput.value.trim();
+    
+    // Validate inputs
+    if (!validateBasicInfo(name, gender, email, phoneNumber)) {
+      return;
+    }
+    
+    // Send OTP request
+    sendOTPRequest(phoneNumber);
+  });
+  
+  // Verify OTP button click
+  verifyOtpBtn.addEventListener('click', function() {
+    const phoneNumber = phoneInput.value.trim();
+    const enteredOtp = otpInput.value.trim();
+    
+    if (!enteredOtp || !/^\d{6}$/.test(enteredOtp)) {
+      document.getElementById('otpError').textContent = 'Please enter a valid 6-digit OTP';
+      return;
+    }
+    
+    verifyOTPRequest(phoneNumber, enteredOtp);
+  });
+  
+  // Resend OTP button click
+  resendOtpBtn.addEventListener('click', function() {
+    const phoneNumber = phoneInput.value.trim();
+    sendOTPRequest(phoneNumber, true);
+  });
+  
+  // Phone number input validation
+  phoneInput.addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9]/g, "").slice(0, 10);
+    document.getElementById('phoneError').textContent = '';
+  });
+}
+
+function validateBasicInfo(name, gender, email, phoneNumber) {
+  let isValid = true;
+  
+  // Clear previous errors
+  document.getElementById('phoneError').textContent = '';
+  
+  // Validate name
+  if (!name || name.length < 2) {
+    showOTPError('Please enter a valid name');
+    isValid = false;
+  }
+  
+  // Validate gender
+  if (!gender) {
+    showOTPError('Please select gender');
+    isValid = false;
+  }
+  
+  // Validate email
+  if (!email || !validateEmail(email)) {
+    showOTPError('Please enter a valid email address');
+    isValid = false;
+  }
+  
+  // Validate phone number
+  if (!validatePhoneNumber(phoneNumber)) {
+    document.getElementById('phoneError').textContent = 'Please enter a valid 10-digit mobile number';
+    isValid = false;
+  }
+  
+  return isValid;
+}
+
+function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function validatePhoneNumber(phone) {
+  const phoneRegex = /^[6-9]\d{9}$/;
+  return phoneRegex.test(phone);
+}
+
+function showOTPError(message) {
+  // You can implement a better error display here
+  alert(message);
+}
+
+function sendOTPRequest(phoneNumber, isResend = false) {
+  const payload = {
+    action: "otp_operation",
+    operation: "send_otp",
+    mobile_no: phoneNumber
+  };
+
+  $.ajax({
+    url: `${api_base_url}/v1/fn_otp_operation`,
+    type: "POST",
+    headers: {
+      "X-App-Key": "TN_EKEE",
+      "X-App-Name": "TN_EKEE"
+    },
+    data: {
+      data: encryptData(payload)
+    },
+    dataType: "json",
+    success: function(response) {
+      if (response.success === 1) {
+        // Show OTP input section
+        document.getElementById('otpInputGroup').style.display = 'block';
+        document.getElementById('verifyOtpBtn').style.display = 'inline-block';
+        document.getElementById('resendOtpBtn').style.display = 'inline-block';
+        document.getElementById('sendOtpBtn').style.display = 'none';
+        
+        // Start OTP timer
+        startOtpTimer();
+        
+        // Show success message
+        document.getElementById('otpSuccess').textContent = 
+          isResend ? 'OTP resent successfully!' : 'OTP sent successfully!';
+        document.getElementById('otpError').textContent = '';
+        
+        // If in development mode, show the OTP
+        if (response.debug_otp) {
+          document.getElementById('otpSuccess').textContent += ` Development OTP: ${response.debug_otp}`;
+        }
+      } else {
+        document.getElementById('otpError').textContent = response.message || 'Failed to send OTP';
+        document.getElementById('otpSuccess').textContent = '';
+      }
+    },
+    error: function(xhr, status, error) {
+      document.getElementById('otpError').textContent = 'Network error. Please try again.';
+      document.getElementById('otpSuccess').textContent = '';
+    }
+  });
+}
+
+function verifyOTPRequest(phoneNumber, otp) {
+  const payload = {
+    action: "otp_operation",
+    operation: "verify_otp",
+    mobile_no: phoneNumber,
+    otp: otp
+  };
+
+  $.ajax({
+    url: `${api_base_url}/v1/fn_otp_operation`,
+    type: "POST",
+    headers: {
+      "X-App-Key": "TN_EKEE",
+      "X-App-Name": "TN_EKEE"
+    },
+    data: {
+      data: encryptData(payload)
+    },
+    dataType: "json",
+    success: function(response) {
+      if (response.success === 1 && response.verified) {
+        document.getElementById('otpError').textContent = '';
+        document.getElementById('otpSuccess').textContent = 'OTP verified successfully!';
+        
+        // Enable form and auto-fill basic info
+        enableForm();
+        document.getElementById('phone').value = phoneNumber;
+        document.getElementById('name').value = document.getElementById('textInput').value;
+        document.getElementById('gender').value = document.getElementById('gender_input').value;
+        document.getElementById('email').value = document.getElementById('email_input').value;
+        
+        // Store verification in session/localStorage
+        localStorage.setItem('otp_verified', 'true');
+        localStorage.setItem('verified_mobile', phoneNumber);
+        
+        // Close OTP modal after a short delay
+        setTimeout(function() {
+          document.getElementById('otpModal').style.display = 'none';
+        }, 1500);
+      } else {
+        document.getElementById('otpError').textContent = response.message || 'OTP verification failed';
+        document.getElementById('otpSuccess').textContent = '';
+      }
+    },
+    error: function(xhr, status, error) {
+      document.getElementById('otpError').textContent = 'Network error. Please try again.';
+      document.getElementById('otpSuccess').textContent = '';
+    }
+  });
+}
+
+function startOtpTimer() {
+  const timerElement = document.getElementById('otpTimer');
+  const resendBtn = document.getElementById('resendOtpBtn');
+  
+  clearInterval(otpTimer);
+  otpResendTime = 60;
+  resendBtn.disabled = true;
+  
+  otpTimer = setInterval(function() {
+    otpResendTime--;
+    timerElement.textContent = `Resend OTP in ${otpResendTime} seconds`;
+    
+    if (otpResendTime <= 0) {
+      clearInterval(otpTimer);
+      timerElement.textContent = '';
+      resendBtn.disabled = false;
+    }
+  }, 1000);
+}
+
+function enableForm() {
+  const form = document.getElementById('dreamForm');
+  form.classList.remove('form-disabled');
+  
+  // Enable all form inputs
+  const inputs = form.querySelectorAll('input, select, textarea, button');
+  inputs.forEach(input => {
+    input.disabled = false;
+  });
+}
+
+// Check if already verified on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const isVerified = localStorage.getItem('otp_verified');
+  const verifiedMobile = localStorage.getItem('verified_mobile');
+  
+  if (isVerified === 'true' && verifiedMobile) {
+    document.getElementById('otpModal').style.display = 'none';
+    enableForm();
+    document.getElementById('phone').value = verifiedMobile;
+  }
+});
+
+    // IndexedDB setup
+    const DB_NAME = 'EnnKanavuDB';
+    const DB_VERSION = 1;
+    const STORE_NAME = 'formData';
+    let db;
+
+    // Initialize IndexedDB
+    function initDB() {
+      return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        
+        request.onerror = () => reject(request.error);
+        request.onsuccess = () => {
+          db = request.result;
+          resolve(db);
+        };
+        
+        request.onupgradeneeded = (event) => {
+          const db = event.target.result;
+          if (!db.objectStoreNames.contains(STORE_NAME)) {
+            const store = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+            store.createIndex('timestamp', 'timestamp', { unique: false });
+          }
+        };
+      });
+    }
+
+    // Save form data to IndexedDB
+    async function saveFormData() {
+      if (!db) return;
+      
+      const formData = collectFormData();
+      const timestamp = new Date().toISOString();
+      
+      const transaction = db.transaction([STORE_NAME], 'readwrite');
+      const store = transaction.objectStore(STORE_NAME);
+      
+      // Store with a fixed ID so we only keep one version
+      const data = {
+        id: 'currentForm',
+        data: formData,
+        timestamp: timestamp
+      };
+      
+      store.put(data);
+      
+      // Show auto-save indicator
+      const indicator = document.getElementById('autoSaveIndicator');
+      indicator.classList.add('show');
+      setTimeout(() => indicator.classList.remove('show'), 2000);
+    }
+
+    // Load form data from IndexedDB
+    async function loadFormData() {
+      if (!db) return null;
+      
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction([STORE_NAME], 'readonly');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.get('currentForm');
+        
+        request.onerror = () => reject(request.error);
+        request.onsuccess = () => resolve(request.result ? request.result.data : null);
+      });
+    }
+
+    // Collect all form data
+    function collectFormData() {
+      const form = document.getElementById('dreamForm');
+      const formData = {
+        basicInfo: {
+          name: form.name.value,
+          gender: form.gender.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          district: form.district.value,
+          taluk: form.taluk.value,
+          dob: form.dob.value,
+          age: document.getElementById('age').value,
+          education: form.education.value,
+          employmentStatus: form.employmentStatus.value,
+          employmentType: form.employmentType.value || null
+        },
+        immediateDreams: collectDreamResponses('immediateDreams', 'imm'),
+        fiveYearDreams: collectDreamResponses('fiveYearDreams', 'fiv'),
+        otherAspirations: form.otherAspirations.value
+      };
+      
+      return formData;
+    }
+
+    // Populate form with saved data
+    function populateForm(data) {
+      if (!data) return;
+      
+      const form = document.getElementById('dreamForm');
+      
+      // Basic info
+      if (data.basicInfo) {
+        form.name.value = data.basicInfo.name || '';
+        form.gender.value = data.basicInfo.gender || '';
+        form.email.value = data.basicInfo.email || '';
+        form.phone.value = data.basicInfo.phone || '';
+        form.district.value = data.basicInfo.district || '';
+        form.taluk.value = data.basicInfo.taluk || '';
+        form.dob.value = data.basicInfo.dob || '';
+        document.getElementById('age').value = data.basicInfo.age || '';
+        form.education.value = data.basicInfo.education || '';
+        form.employmentStatus.value = data.basicInfo.employmentStatus || '';
+        
+        // Show/hide employment type based on status
+        const employmentTypeWrap = document.getElementById('employmentTypeWrap');
+        employmentTypeWrap.style.display = (form.employmentStatus.value === 'Employed') ? 'block' : 'none';
+        form.employmentType.value = data.basicInfo.employmentType || '';
+      }
+      
+      // Other aspirations
+      form.otherAspirations.value = data.otherAspirations || '';
+      
+      // Dreams - we need to wait for dreams to be rendered
+      setTimeout(() => {
+        if (data.immediateDreams) {
+          populateDreams('immediateDreams', data.immediateDreams);
+        }
+        if (data.fiveYearDreams) {
+          populateDreams('fiveYearDreams', data.fiveYearDreams);
+        }
+        
+        // Update UI state after populating dreams
+        enforceMaxSelections('immediateDreams');
+        enforceMaxSelections('fiveYearDreams');
+        updateUsedPriorities('immediateDreams');
+        updateUsedPriorities('fiveYearDreams');
+        updatePriorityOptions('immediateDreams');
+        updatePriorityOptions('fiveYearDreams');
+      }, 500);
+    }
+
+    // Populate dream selections
+    function populateDreams(containerId, dreamData) {
+      const container = document.getElementById(containerId);
+      const rows = container.querySelectorAll('.dream-row');
+      
+      rows.forEach(row => {
+        const chk = row.querySelector('.dream-checkbox');
+        const key = chk.dataset.key;
+        
+        // Find matching dream in saved data
+        const savedDream = dreamData.find(d => d.key === key);
+        
+        if (savedDream) {
+          // Check the checkbox
+          chk.checked = true;
+          
+          // Set priority
+          const prioritySelect = row.querySelector('.priority');
+          if (prioritySelect && savedDream.priority) {
+            prioritySelect.value = savedDream.priority;
+          }
+          
+          // Set support option
+          const radioInputs = row.querySelectorAll('input[type="radio"]');
+          radioInputs.forEach(radio => {
+            if (radio.value === savedDream.support) {
+              radio.checked = true;
+            }
+          });
+        }
+      });
+    }
+
+    // Set up auto-save with debouncing
+    let saveTimeout;
+    function setupAutoSave() {
+      // Listen to all form inputs
+      const form = document.getElementById('dreamForm');
+      const inputs = form.querySelectorAll('input, select, textarea');
+      
+      inputs.forEach(input => {
+        input.addEventListener('input', () => {
+          clearTimeout(saveTimeout);
+          saveTimeout = setTimeout(saveFormData, 1000);
+        });
+        
+        // For select elements, also listen to change events
+        if (input.tagName === 'SELECT') {
+          input.addEventListener('change', () => {
+            clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(saveFormData, 1000);
+          });
+        }
+      });
+      
+      // Special handling for dream selections
+      document.addEventListener('change', (e) => {
+        if (e.target.classList.contains('dream-checkbox') || 
+            e.target.classList.contains('priority') || 
+            e.target.classList.contains('support')) {
+          clearTimeout(saveTimeout);
+          saveTimeout = setTimeout(saveFormData, 1000);
+        }
+      });
+    }
+
+    // Initialize everything when the page loads
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Initialize IndexedDB
+      try {
+        await initDB();
+        console.log('IndexedDB initialized');
+        
+        // Load saved form data
+        const savedData = await loadFormData();
+        if (savedData) {
+          console.log('Loaded saved form data');
+          populateForm(savedData);
+        }
+        
+        // Set up auto-save
+        setupAutoSave();
+      } catch (error) {
+        console.error('Error initializing IndexedDB:', error);
+      }
+      
+      // Continue with existing initialization
+      fetchImmediateDreams();
+      fetchFiveYearDreams();
+      getDistrictDropDown();
+      
+      // Set up DOB restrictions
+      const dob = document.getElementById('dob');
+      let today = new Date();
+      let max = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+      let min = new Date(today.getFullYear() - 29, today.getMonth(), today.getDate());
+      dob.max = max.toISOString().split("T")[0];
+      dob.min = min.toISOString().split("T")[0];
+    });
+
+    // Existing code continues below...
+    // Dream configuration data - will be populated from API
+    let immediateDreamConfig = [];
+    let fiveYearConfig = [];
+
+    // ---------- Render Dreams ----------
+    function renderDreams(containerId, config, prefix) {
+      const wrap = document.getElementById(containerId);
+      wrap.innerHTML = '';
+
+      config.forEach((d) => {
+        const id = prefix + '_' + d.key;
+        const row = document.createElement('div');
+        row.className = 'dream-row';
+
+        // -------------------------
+        // LINE 1: Dream + Priority
+        // -------------------------
+        const line1 = document.createElement('div');
+        line1.className = "dream-line1";
+
+        // Checkbox + Label
+        const dreamBox = document.createElement('label');
+        dreamBox.style.fontWeight = 600;
+        dreamBox.innerHTML = `
+      <input type="checkbox" data-key="${d.category_id}" class="dream-checkbox" id="chk_${id}" />
+      <span style="margin-left:8px">${d.label}</span>
+    `;
+
+        // Priority Dropdown
+        const priority = document.createElement('div');
+        priority.innerHTML = `
+      <select class="priority small-input" data-section="${containerId}" id="prio_${id}">
+        <option value="">Priority</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    `;
+
+        line1.appendChild(dreamBox);
+        line1.appendChild(priority);
+
+        // -------------------------
+        // LINE 2: Radio buttons
+        // -------------------------
+        const line2 = document.createElement('div');
+        line2.className = "dream-line2 support-radio-group";
+
+        let radios = "";
+        d.supports.forEach((s) => {
+          const supportText = typeof s === 'string' ? s : s.support_item;
+          const support_id = typeof s === 'string' ? s : s.support_id;
+          radios += `
+        <label class="support-radio-label">
+          <input type="radio" name="sup_${id}" value="${support_id}">
+          ${supportText}
+        </label>
+      `;
+        });
+
+        line2.innerHTML = radios;
+
+        // Add both lines into main row
+        row.appendChild(line1);
+        row.appendChild(line2);
+
+        wrap.appendChild(row);
+      });
+    }
+
+    // Fetch immediate dreams from API
+    function fetchImmediateDreams() {
+      const payload = {
+        action: "function_call",
+        function_name: "get_support_config_group",
+        params: { group: 'immediate' }
+      };
+
+      $.ajax({
+        url: `${api_base_url}/v1/commonfunction`,
+        type: "POST",
+        headers: {
+          "X-App-Key": "TN_EKEE",
+          "X-App-Name": "TN_EKEE"
+        },
+        data: {
+          data: encryptData(payload)
+        },
+        dataType: "json",
+        success: function (response) {
+          try {
+            const decrypted = decryptData(response.data);
+            const parsed = JSON.parse(decrypted[0]['get_support_config_group']);
+            immediateDreamConfig = parsed;
+            renderDreams('immediateDreams', immediateDreamConfig, 'imm');
+            enforceMaxSelections('immediateDreams');
+            updateUsedPriorities('immediateDreams');
+            updatePriorityOptions('immediateDreams');
+          } catch (e) {
+            console.error("Error parsing immediate dreams:", e);
+          }
+        },
+        error: function (xhr, status, error) {
+          console.error("Error fetching immediate dreams:", error);
+        }
+      });
+    }
+
+    // Fetch five-year dreams from API
+    function fetchFiveYearDreams() {
+      const payload = {
+        action: "function_call",
+        function_name: "get_support_config_group",
+        params: { group: 'five_year' }
+      };
+
+      $.ajax({
+        url: `${api_base_url}/v1/commonfunction`,
+        type: "POST",
+        headers: {
+          "X-App-Key": "TN_EKEE",
+          "X-App-Name": "TN_EKEE"
+        },
+        data: {
+          data: encryptData(payload)
+        },
+        dataType: "json",
+        success: function (response) {
+          try {
+            const decrypted = decryptData(response.data);
+            console.log("Decrypted five-year dreams data:", decrypted);
+            const parsed = JSON.parse(decrypted[0]['get_support_config_group']);
+            console.log("Five-year dreams data:", parsed);
+            fiveYearConfig = parsed;
+            renderDreams('fiveYearDreams', fiveYearConfig, 'fiv');
+            enforceMaxSelections('fiveYearDreams');
+            updateUsedPriorities('fiveYearDreams');
+            updatePriorityOptions('fiveYearDreams');
+          } catch (e) {
+            console.error("Error parsing five-year dreams:", e);
+          }
+        },
+        error: function (xhr, status, error) {
+          console.error("Error fetching five-year dreams:", error);
+        }
+      });
+    }
+
+    // ---------- Priority Control Logic ----------
+    const usedPriorities = {
+      immediateDreams: new Set(),
+      fiveYearDreams: new Set()
+    };
+
+    function updateUsedPriorities(sectionId) {
+      usedPriorities[sectionId].clear();
+      document.querySelectorAll(`#${sectionId} .priority`).forEach(sel => {
+        if (sel.value) usedPriorities[sectionId].add(sel.value);
+      });
+    }
+
+    function updatePriorityOptions(sectionId) {
+      document.querySelectorAll(`#${sectionId} .priority`).forEach(sel => {
+        const currentVal = sel.value;
+
+        Array.from(sel.options).forEach(opt => {
+          if (!opt.value) return;
+
+          if (usedPriorities[sectionId].has(opt.value) && opt.value !== currentVal) {
+            opt.disabled = true;
+            opt.style.display = 'none';
+          } else {
+            opt.disabled = false;
+            opt.style.display = 'block';
+          }
+        });
+      });
+    }
+
+    // ---------- Main Interaction Logic ----------
+    document.addEventListener('change', (e) => {
+      // Checkbox toggle (limit only)
+      if (e.target.classList.contains('dream-checkbox')) {
+        const sectionId = e.target.closest('#immediateDreams') ? 'immediateDreams' : 'fiveYearDreams';
+        enforceMaxSelections(sectionId);
+      }
+
+      // Priority dropdown change
+      if (e.target.classList.contains('priority')) {
+        const sectionId = e.target.dataset.section;
+        updateUsedPriorities(sectionId);
+        updatePriorityOptions(sectionId);
+      }
+
+      // Auto-check when dropdown selected
+      if (e.target.classList.contains('priority') || e.target.classList.contains('support')) {
+        const id = e.target.id.replace(/^(prio|sup)_/, '');
+        const chk = document.getElementById('chk_' + id);
+        if (e.target.value !== '') chk.checked = true;
+        const sectionId = e.target.closest('#immediateDreams') ? 'immediateDreams' : 'fiveYearDreams';
+        enforceMaxSelections(sectionId);
+      }
+
+      // Employment toggle
+      if (e.target.id === 'employmentStatus') {
+        const wrap = document.getElementById('employmentTypeWrap');
+        wrap.style.display = (e.target.value === 'Employed') ? 'block' : 'none';
+      }
+
+      // Age autofill
+      if (e.target.id === 'dob') {
+        updateAgeFromDOB();
+      }
+    });
+
+    // ---------- Helper Functions ----------
+    function enforceMaxSelections(sectionId) {
+      const container = document.getElementById(sectionId);
+      const rows = container.querySelectorAll('.dream-row');
+      const checkedCount = Array.from(container.querySelectorAll('.dream-checkbox')).filter(c => c.checked).length;
+      const maxReached = checkedCount >= 3;
+
+      rows.forEach(row => {
+        const chk = row.querySelector('.dream-checkbox');
+        const pri = row.querySelector('.priority');
+        const supGroup = row.querySelector('.support-radio-group');
+
+        if (chk.checked) {
+          chk.disabled = false;
+          pri.disabled = false;
+          supGroup.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = false);
+          row.classList.remove('disabled');
+        } else {
+          if (maxReached) {
+            chk.disabled = true;
+            pri.value = '';
+            pri.disabled = true;
+            supGroup.querySelectorAll('input[type="radio"]').forEach(r => {
+              r.checked = false;
+              r.disabled = true;
+            });
+            row.classList.add('disabled');
+          } else {
+            chk.disabled = false;
+            pri.value = '';
+            pri.disabled = true;
+            supGroup.querySelectorAll('input[type="radio"]').forEach(r => {
+              r.checked = false;
+              r.disabled = true;
+            });
+            row.classList.remove('disabled');
+          }
+        }
+      });
+    }
+
+    // Initialize state after render
+    enforceMaxSelections('immediateDreams');
+    enforceMaxSelections('fiveYearDreams');
+    updateUsedPriorities('immediateDreams');
+    updateUsedPriorities('fiveYearDreams');
+    updatePriorityOptions('immediateDreams');
+    updatePriorityOptions('fiveYearDreams');
+
+    function updateAgeFromDOB() {
+      const dob = document.getElementById('dob').value;
+      const ageField = document.getElementById('age');
+      if (!dob) { ageField.value = ''; return }
+      const birth = new Date(dob);
+      const today = new Date();
+      let age = today.getFullYear() - birth.getFullYear();
+      const m = today.getMonth() - birth.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+      ageField.value = age;
+    }
+
+    function collectDreamResponses(containerId, prefix) {
+      const container = document.getElementById(containerId);
+      const rows = container.querySelectorAll('.dream-row');
+      const responses = [];
+      rows.forEach(row => {
+        const chk = row.querySelector('.dream-checkbox');
+        if (chk && chk.checked) {
+          const key = chk.dataset.key;
+          const pr = row.querySelector('.priority').value;
+          const checkedRadio = row.querySelector('input[type="radio"]:checked');
+          const sp = checkedRadio ? checkedRadio.value : null;
+          responses.push({ key: key, priority: pr || null, support: sp || null, label: row.querySelector('span')?.innerText?.trim() });
+        }
+      });
+      return responses;
+    }
+
+    function validatePriorities(arr) {
+      const prios = arr.map(a => a.priority).filter(Boolean);
+      return prios.length === new Set(prios).size;
+    }
+
+    // Sanitize input to prevent XSS and SQL injection
+    function sanitizeInput(str) {
+      if (typeof str !== 'string') return str;
+      return str
+        .trim()
+        .replace(/[<>\"']/g, (char) => {
+          const escapeMap = { '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+          return escapeMap[char];
+        });
+    }
+
+    const apiUrl = `${api_base_url}/v1/dynamic_input`;
+    document.getElementById("phone").addEventListener("input", function (e) {
+      this.value = this.value.replace(/[^0-9]/g, "").slice(0, 10);
+    });
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('dreamForm');
+
+      const age = Number(document.getElementById('age').value);
+      if (isNaN(age) || age < 18 || age > 29) {
+        showMessage('Applicants must be between 18 and 29 years old.', 'error');
+        return false;
+      }
+
+      const immediate = collectDreamResponses('immediateDreams', 'imm');
+      const fiveYr = collectDreamResponses('fiveYearDreams', 'fiv');
+
+      if (immediate.length === 0 && fiveYr.length === 0) {
+        showMessage('Please choose at least one dream.', 'error');
+        return false;
+      }
+
+      if (!validatePriorities(immediate) || !validatePriorities(fiveYr)) {
+        showMessage('Duplicate priorities found.', 'error');
+        return false;
+      }
+
+      const proofResidence = document.getElementById('proofResidence').files[0];
+      const proofAge = document.getElementById('proofAge').files[0];
+
+      if (!proofResidence || !proofAge) {
+        showMessage('Please upload all required proofs.', 'error');
+        return false;
+      }
+
+      // Only data (no files)
+      const insertPayload = {
+        name: sanitizeInput(form.name.value),
+        gender: sanitizeInput(form.gender.value),
+        email: sanitizeInput(form.email.value),
+        district: sanitizeInput(form.district.value),
+        taluk: sanitizeInput(form.taluk.value),
+        proof: "proof",
+        age: age,
+        dob: form.dob.value,
+        education: sanitizeInput(form.education.value),
+        employment_status: sanitizeInput(form.employmentStatus.value),
+        employment_type: form.employmentType.value ? sanitizeInput(form.employmentType.value) : null,
+        immediate_dreams: JSON.stringify(immediate),
+        five_year_dreams: JSON.stringify(fiveYr),
+        other_aspirations: form.otherAspirations.value ? sanitizeInput(form.otherAspirations.value) : null,
+        is_active: true,
+        created_by: 1
+      };
+
+      const formData = new FormData();
+
+      // Encrypt ONLY JSON data
+      formData.append("data", encryptData(insertPayload));
+
+      // Append files separately
+      formData.append("proofResidence", proofResidence);
+      formData.append("proofAge", proofAge);
+
+      $.ajax({
+        url: `${api_base_url}/v1/input_record`,
+        type: "POST",
+        data: formData,
+        headers: {
+          "X-App-Key": "TN_EKEE",
+          "X-App-Name": "TN_EKEE"
+        },
+        processData: false,
+        contentType: false,
+        success: function (response) {
+          console.log(response);
+          if (response && response.success === 1) {
+            // Clear saved form data after successful submission
+            if (db) {
+              const transaction = db.transaction([STORE_NAME], 'readwrite');
+              const store = transaction.objectStore(STORE_NAME);
+              store.delete('currentForm');
+            }
+            
+            Swal.fire({
+              title: 'Submitted',
+              text: 'Successfully submitted!',
+              icon: 'success',
+              confirmButtonText: 'OK'
+            }).then(() => {
+              location.reload();
+            });
+          } else {
+            Swal.fire({
+              title: 'Submission Failed',
+              text: (response && response.message) ? response.message : 'Submission failed. Please try again.',
+              icon: 'error',
+              confirmButtonText: 'OK'
+            });
+          }
+        },
+        error: function () {
+          showErrorToast("Submission failed. Try again.");
+        }
+      });
+
+      return false;
+    }
+
+    function getDistrictDropDown() {
+      const districtSelect = document.getElementById('district');
+      const payload = {
+        action: "select",
+        _table_name: "district",
+        selected_columns: ["district_name", "district_id"],
+        filter_conditions: {},
+        sort_columns: { "district_name": "asc" }
+      };
+
+      const formData = new FormData();
+      formData.append("data", encryptData(payload));
+
+      $.ajax({
+        url: apiUrl,
+        type: "POST",
+        data: formData,
+        headers: {
+          "X-App-Key": "TN_EKEE",
+          "X-App-Name": "TN_EKEE"
+        },
+        processData: false,
+        contentType: false,
+        success: function (response) {
+          console.log(response);
+          if (response.success === 1) {
+            const districts = response.data;
+            districts.forEach(district => {
+              const option = document.createElement('option');
+              option.value = district.district_id;
+              option.textContent = district.district_name;
+              districtSelect.appendChild(option);
+            });
+          } else {
+            showErrorToast(response.message || "Failed to load districts.");
+          }
+        },
+        error: function () {
+          showErrorToast("Submission failed. Please try again.");
+        }
+      });
+    }
+
+    function getTalukDropDown(district_id) {
+      const talukSelect = document.getElementById('taluk');
+      const payload = {
+        action: "select",
+        _table_name: "taluk",
+        selected_columns: ["taluk_name", "taluk_id"],
+        filter_conditions: {
+          district_id: district_id
+        },
+        sort_columns: { "taluk_name": "asc" }
+      };
+
+      const formData = new FormData();
+      formData.append("data", encryptData(payload));
+
+      $.ajax({
+        url: apiUrl,
+        type: "POST",
+        data: formData,
+        headers: {
+          "X-App-Key": "TN_EKEE",
+          "X-App-Name": "TN_EKEE"
+        },
+        processData: false,
+        contentType: false,
+        success: function (response) {
+          console.log(response);
+          if (response.success === 1) {
+            const taluks = response.data;
+            taluks.forEach(taluk => {
+              const option = document.createElement('option');
+              option.value = taluk.taluk_id;
+              option.textContent = taluk.taluk_name;
+              talukSelect.appendChild(option);
+            });
+          } else {
+            showErrorToast(response.message || "Failed to load districts.");
+          }
+        },
+        error: function () {
+          showErrorToast("Submission failed. Please try again.");
+        }
+      });
+    }
+
+    $('#district').on('change', function () {
+      const talukSelect = document.getElementById('taluk');
+      const district_id = this.value;
+      talukSelect.innerHTML = '<option value="">Select Taluk</option>';
+      getTalukDropDown(district_id);
+    });
+
+    // save as json
+    function saveDraft() {
+      const form = document.getElementById('dreamForm');
+      const payload = {
+        name: form.name.value,
+        email: form.email.value,
+        district: form.district.value,
+        age: document.getElementById('age').value,
+        dob: form.dob.value,
+        immediateDreams: collectDreamResponses('immediateDreams'),
+        fiveYearDreams: collectDreamResponses('fiveYearDreams'),
+        otherAspirations: form.otherAspirations.value
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'enn_kanavu_draft.json';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      showMessage('Draft downloaded locally.', 'success');
+    }
+
+    // save as pdf
+    function saveDraftPDF() {
+      const form = document.getElementById('dreamForm');
+
+      const payload = {
+        name: form.name.value,
+        email: form.email.value,
+        district: form.district.value,
+        age: document.getElementById('age').value,
+        dob: form.dob.value,
+        immediateDreams: collectDreamResponses('immediateDreams'),
+        fiveYearDreams: collectDreamResponses('fiveYearDreams'),
+        otherAspirations: form.otherAspirations.value
+      };
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      let y = 10;
+      doc.setFontSize(14);
+      doc.text("Enn Kanavu - Draft PDF", 10, y);
+      y += 10;
+
+      doc.setFontSize(11);
+
+      function addLine(text) {
+        doc.text(text, 10, y);
+        y += 7;
+        if (y > 280) { doc.addPage(); y = 10; }
+      }
+
+      addLine(`Name: ${payload.name || ''}`);
+      addLine(`Email: ${payload.email || ''}`);
+      addLine(`District: ${payload.district || ''}`);
+      addLine(`Age: ${payload.age || ''}`);
+      addLine(`DOB: ${payload.dob || ''}`);
+      addLine("");
+
+      addLine("Immediate Dreams:");
+      payload.immediateDreams.forEach(d => {
+        addLine(`- ${d.label} (Priority: ${d.priority}, Support: ${d.support})`);
+      });
+      addLine("");
+
+      addLine("Five-Year Dreams:");
+      payload.fiveYearDreams.forEach(d => {
+        addLine(`- ${d.label} (Priority: ${d.priority}, Support: ${d.support})`);
+      });
+      addLine("");
+
+      addLine(`Other Aspirations: ${payload.otherAspirations || ''}`);
+
+      doc.save("enn_kanavu_draft.pdf");
+
+      showMessage('Draft PDF downloaded.', 'success');
+    }
+
+    function showMessage(msg, type = 'info') {
+      const el = document.getElementById('formMessage');
+      el.innerText = msg;
+      el.style.color = (type === 'error') ? '#b91c1c' : '#064e3b';
+      setTimeout(() => { el.innerText = ''; }, 6000);
+    }
+
+    // popup
+    function showSuccessPopup() {
+      const popup = document.getElementById("successPopup");
+      if (!popup) return;
+
+      popup.classList.add("show");
+
+      const closeBtn = document.getElementById("popupCloseBtn");
+      if (closeBtn) {
+        closeBtn.onclick = () => popup.classList.remove("show");
+      }
+
+      // Close when clicking outside the popup box
+      popup.addEventListener("click", (e) => {
+        if (e.target.id === "successPopup") {
+          popup.classList.remove("show");
+        }
+      });
+    }
+
+    function showErrorToast(message) {
+      // Simple error display - you can replace with a toast library if needed
+      alert(message);
+    }
+  </script>
+</body>
+</html>
