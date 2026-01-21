@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-icons.min.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-icons.min.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
-    
+
     <style>
-        :root{
-            --bs-nav-pills-link-active-bg:rgb(13, 4, 97);
+        :root {
+            --bs-nav-pills-link-active-bg: rgb(13, 4, 97);
         }
+
         body {
-	/* background: linear-gradient(-45deg, #fff3f0, #ffeaf2, #eaf9ff, #e9fffa); */
-	background-size: 400% 400%;
-	/* animation: gradient 20s ease infinite; */
-	height: 100vh;
-}
+            /* background: linear-gradient(-45deg, #fff3f0, #ffeaf2, #eaf9ff, #e9fffa); */
+            background-size: 400% 400%;
+            /* animation: gradient 20s ease infinite; */
+            height: 100vh;
+        }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
 
-        body{
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        body {
             padding: 0;
             margin: 0;
             overflow-x: hidden;
             position: relative;
         }
-        .title{
+
+        .title {
             width: 100%;
             margin: 4rem 0rem;
             position: relative;
             padding: 0;
             text-align: center;
         }
-         .title h3{
+
+        .title h3 {
             font-size: 8rem;
             font-weight: 600;
             text-align: start;
@@ -58,421 +65,474 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.329);
             top: 0;
             left: 50%;
-         }
-         #students-img{
+        }
+
+        #students-img {
             width: 80%;
             z-index: 2;
-         }
-        #cm-img{
+        }
+
+        #cm-img {
             width: 300px;
             /* position: absolute; */
             bottom: 0;
             left: 0;
-         }
+        }
 
-.fade-sides {
-  width: 100%;
-  height: auto;
-  display: block;
-  mask-image:linear-gradient(to bottom, #000000 45%, black 93%, #000000 93%, transparent 100%),
-  linear-gradient(to right, transparent 4%, black 12%, black 90%, transparent 100%);
-  -webkit-mask-image:linear-gradient(to bottom, #000000 45%, black 93%, #000000 93%, transparent 100%),
-  linear-gradient(to right, transparent 4%, black 12%, black 90%, transparent 100%);
-  mask-composite: intersect;
-  -webkit-mask-composite: source-in;
-  mask-size: 100% 100%;
-  -webkit-mask-size: 100% 100%;
-}
+        .fade-sides {
+            width: 100%;
+            height: auto;
+            display: block;
+            mask-image: linear-gradient(to bottom, #000000 45%, black 93%, #000000 93%, transparent 100%),
+                linear-gradient(to right, transparent 4%, black 12%, black 90%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, #000000 45%, black 93%, #000000 93%, transparent 100%),
+                linear-gradient(to right, transparent 4%, black 12%, black 90%, transparent 100%);
+            mask-composite: intersect;
+            -webkit-mask-composite: source-in;
+            mask-size: 100% 100%;
+            -webkit-mask-size: 100% 100%;
+        }
 
-#tn-logo{
-    width: 100px;
-    margin-top: 2rem;
-}
-.sec-2{
-    background-color: rgb(114, 157, 197);
-}
-.about{
-    /* background-color: rgba(255, 255, 255, 0.459); */
-    background-color: rgb(13, 4, 97);
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.555);
-    color: white;
-    padding: 20px;
-    border-radius: 20px;
-}
-.active,
-.btn-primary{
-    background-color: rgb(13, 4, 97)!important;
-}
-.nav-link.active{
-    background-color: rgb(13, 4, 97)!important;
-    color: white!important;
-    }
-.nav-link{
-    color: rgb(13, 4, 97);
-    padding: 4px 8px;
-    border-radius: 5px;
-}
-.otp-box:focus {
-  border-color: #0d6efd;
-  box-shadow: 0 0 4px rgba(13, 110, 253, 0.4);
-}
-.mobile-box {
-  /* width: 33px   !important; */
-  font-size: 1.3rem;
-  border-radius: 8px;
-}
-.otp-box {
-  width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
-  border-radius: 8px;
-}
-header{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    background-color: rgba(255, 255, 255, 0.884);
-    display: flex;
-}
-.bg-sec{
-    position: absolute;
-    top: 20%;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    z-index: 0;  
-}
+        #tn-logo {
+            width: 100px;
+            margin-top: 2rem;
+        }
+
+        .sec-2 {
+            background-color: rgb(114, 157, 197);
+        }
+
+        .about {
+            /* background-color: rgba(255, 255, 255, 0.459); */
+            background-color: rgb(13, 4, 97);
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.555);
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .active,
+        .btn-primary {
+            background-color: rgb(13, 4, 97) !important;
+        }
+
+        .nav-link.active {
+            background-color: rgb(13, 4, 97) !important;
+            color: white !important;
+        }
+
+        .nav-link {
+            color: rgb(13, 4, 97);
+            padding: 4px 8px;
+            border-radius: 5px;
+        }
+
+        .otp-box:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 4px rgba(13, 110, 253, 0.4);
+        }
+
+        .mobile-box {
+            /* width: 33px   !important; */
+            font-size: 1.3rem;
+            border-radius: 8px;
+        }
+
+        .otp-box {
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            border-radius: 8px;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            background-color: rgba(255, 255, 255, 0.884);
+            display: flex;
+        }
+
+        .bg-sec {
+            position: absolute;
+            top: 20%;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
 
 
 
-.bg-img {
-    left: 0;
-    top: -10px;
-    height: 200px;
-    z-index: -1;
-    overflow: visible;
-    opacity: 100%;
-    /* height: 158px; */
-    position: absolute;
-    background-size: cover;
-    background-repeat: repeat-x;
-    animation: movin 40s linear 0s infinite;
+        .bg-img {
+            left: 0;
+            top: -10px;
+            height: 200px;
+            z-index: -1;
+            overflow: visible;
+            opacity: 100%;
+            /* height: 158px; */
+            position: absolute;
+            background-size: cover;
+            background-repeat: repeat-x;
+            animation: movin 40s linear 0s infinite;
 
-}
-@keyframes movin {
-0% {
-    transform: translateX(-25%);
-  }
+        }
 
-  100% {
-    transform: translateX(-10%);
-  }
-}
-.foot-logo{
-    width: 50px;
-}
-#icon-grid .bi{
-    color: rgb(36, 111, 146);
-    font-weight: 700;
-    font-size: 34px;
+        @keyframes movin {
+            0% {
+                transform: translateX(-25%);
+            }
 
-}
-a{
-    text-decoration: none;
-}
+            100% {
+                transform: translateX(-10%);
+            }
+        }
 
-#head-title{
-   display: none;
-    opacity: 0; transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1); transform: translateY(20px);}
-#head-title img{
-     margin:5px 10px;
-     background:linear-gradient(135deg,#0f6cff,#6dd3ff);
-     border-radius:10px;display:flex;align-items:center;justify-content:center;
-     color:white;font-weight:700;
+        .foot-logo {
+            width: 50px;
+        }
 
-}
-#head-title.scrolled{
-    opacity: 1;
-    transform: translateY(0px);
-    display: block;
-}
-#head-title h4 {
-    font-size: 1rem;
-}
+        #icon-grid .bi {
+            color: rgb(36, 111, 146);
+            font-weight: 700;
+            font-size: 34px;
 
-@media (max-width: 768px) {
-    #head-title {
-        flex-direction: row;
-        align-items: center;
-    }
+        }
 
-    #head-title h4 {
-        font-size: 0.9rem;
-        line-height: 1.1;
-    }
-}
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
+        a {
+            text-decoration: none;
+        }
 
-.ai-label{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #ffffff;
-    border-radius: 7px;
-    font-weight: 700;
-    font-size: 12px;
-    z-index: 80;
-    text-shadow: 0px 0px 5px black;
-    padding: 0px 10px;
-}
+        #head-title {
+            display: none;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+            transform: translateY(20px);
+        }
 
+        #head-title img {
+            margin: 5px 10px;
+            background: linear-gradient(135deg, #0f6cff, #6dd3ff);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+
+        }
+
+        #head-title.scrolled {
+            opacity: 1;
+            transform: translateY(0px);
+            display: block;
+        }
+
+        #head-title h4 {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            #head-title {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            #head-title h4 {
+                font-size: 0.9rem;
+                line-height: 1.1;
+            }
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .ai-label {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+            border-radius: 7px;
+            font-weight: 700;
+            font-size: 12px;
+            z-index: 80;
+            text-shadow: 0px 0px 5px black;
+            padding: 0px 10px;
+        }
     </style>
 
-<div class="container-fluid header-bar">
-<header class="py-0 shadow-sm bg-white">
-  <nav class="navbar navbar-expand-lg bg-white w-100">
-    <div class="container-fluid">
+    <div class="container-fluid header-bar">
+        <header class="py-0 shadow-sm bg-white">
+            <nav class="navbar navbar-expand-lg bg-white w-100">
+                <div class="container-fluid">
 
-      <!-- Logo + Title -->
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="/assets/img/tn_logo.png" width="50" class="me-2" alt="">
-        <h4 class="m-0 fs-6">Enn Kanavu, Enn Ethirkalam 2030 — Youth Dreams Form</h4>
-      </a>
+                    <!-- Logo + Title -->
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <img src="assets/img/tn_logo.png" width="50" class="me-2" alt="">
+                        <h4 class="m-0 fs-6">Enn Kanavu, Enn Ethirkalam 2030 — Youth Dreams Form</h4>
+                    </a>
 
-      <!-- Hamburger Button -->
-  <button class="navbar-toggler" id="menuToggleBtn">
-  <span class="navbar-toggler-icon"></span>
-</button>
-
-
-      <!-- Menu -->
-      <div class="collapse navbar-collapse justify-content-end" id="mainMenu">
-        <ul class="navbar-nav mb-2 mb-lg-0">
-
-         <li class="nav-item"><a data-home href="#" class="nav-link active">Home</a></li>
-<li class="nav-item"><a data-about href="#" class="nav-link">About</a></li>
-<li class="nav-item"><a data-vision href="#" class="nav-link">Vision</a></li>
-<li class="nav-item"><a data-faq href="#" class="nav-link">FAQs</a></li>
-<li class="nav-item"><a data-contact href="#" class="nav-link">Contact Us</a></li>
-
-          <li class="nav-item"><a id="langToggle" href="#" class="nav-link">
-        <i class="bi bi-translate"></i> <span id="langText">தமிழ்</span>
-    </a>
-</li>
+                    <!-- Hamburger Button -->
+                    <button class="navbar-toggler" id="menuToggleBtn">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
 
-        </ul>
-      </div>
+                    <!-- Menu -->
+                    <div class="collapse navbar-collapse justify-content-end" id="mainMenu">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
 
-    </div>
-  </nav>
-</header>
+                            <li class="nav-item"><a data-home href="#" class="nav-link active">Home</a></li>
+                            <li class="nav-item"><a data-about href="#" class="nav-link">About</a></li>
+                            <li class="nav-item"><a data-vision href="#" class="nav-link">Vision</a></li>
+                            <li class="nav-item"><a data-faq href="#" class="nav-link">FAQs</a></li>
+                            <li class="nav-item"><a data-contact href="#" class="nav-link">Contact Us</a></li>
 
-<script>
-  const toggleBtn = document.getElementById("menuToggleBtn");
-  const menu = document.getElementById("mainMenu");
-
-  toggleBtn.addEventListener("click", () => {
-    menu.classList.toggle("show");   // Bootstrap uses 'show' class for visibility
-  });
-</script>
+                            <li class="nav-item"><a id="langToggle" href="#" class="nav-link">
+                                    <i class="bi bi-translate"></i> <span id="langText">தமிழ்</span>
+                                </a>
+                            </li>
 
 
-  <script>
-                window.addEventListener("scroll", function () {
-                    const header = document.getElementById("head-title");
-                    if (window.scrollY > 100) {
-                        header.classList.add("scrolled");
-                    } else {
-                        header.classList.remove("scrolled");
-                    }
-                });
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+        <script>
+            const toggleBtn = document.getElementById("menuToggleBtn");
+            const menu = document.getElementById("mainMenu");
+
+            toggleBtn.addEventListener("click", () => {
+                menu.classList.toggle("show");   // Bootstrap uses 'show' class for visibility
+            });
+        </script>
+
+
+        <script>
+            window.addEventListener("scroll", function () {
+                const header = document.getElementById("head-title");
+                if (window.scrollY > 100) {
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                }
+            });
 
         </script>
-</div>
-       
-<div class="container col-xxl-8 px-4 text-center"> 
-    
-        <img src="/assets/img/tn_logo.png" id="tn-logo" alt="">
-    <img src="/assets/img/msg-bg.png" class="bg-sec" alt="">  
-    <div class="row flex-lg-row-reverse align-items-center g-5 text-start" style="position: relative; z-index: 2;">
-    <div class="col-lg-6">
-        <h1 class="display-4 fw-bold text-body-emphasis lh-1 mb-3">என் கனவு<br>என் எதிர்காலம் 2030</h1>
-        <h5 class="display-8 fw-bold text-body-emphasis lh-1 mb-3">En Kanavu En Ethirkaalam 2030</h5>
-        <p class="lead">Articulating ambitions, fulfilling dreams, Building a stronger Tamil Nadu</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4"> <a type="button"
-                class="btn btn-primary btn-lg px-4 me-md-2"    href="#register">Apply now</a> <a type="button"
-                class="btn btn-outline-secondary btn-lg px-4">know more..</a> </div>
     </div>
-    <div class="col-10 col-sm-8 col-lg-6" style="position: relative;"> <p class="ai-label"><i class="bi bi-cpu"></i> AI Generated</p><img src="/assets/img/students.png"
-            class="fade-sides d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
-    </div>
-    </div>
-</div>
-<div class="container-fluid" style="position: relative; overflow-x: hidden; overflow-y: visible;">
-<div class="container">
-    
-    <img src="/assets/img/bg-svg.svg" class="bg-img" alt="">
-    <div class="row about">
-        <div class="col-sm-8 d-flex flex-column justify-content-center ">
-            <h2 data-aos="fade-left" data-aos-duration="500">What is En Kanavu En Ethirkaalam?</h2>
-            <p data-aos="fade-right" data-aos-duration="800">“En Kanavu, En Ethirkaalam” is a visionary initiative focused on understanding how the Government of Tamil Nadu can
-            meaningfully support the youth in achieving their dreams. This statewide survey collects insights from young people
-            across every district and town, helping the government identify their real needs, challenges, and aspirations. Whether
-            it is access to essential tools, modern gadgets, skill-development programs, professional training, apprenticeships, job
-            opportunities, online courses, AI subscriptions, musical instruments, or the chance to meet and learn from industry
-            experts — every dream matters. Through this platform, the Government aims to empower youth by mapping both their
-            immediate and long-term goals up to the year 2030. By listening to their voices and understanding the obstacles they
-            face, the initiative strives to create a supportive ecosystem where every young person in Tamil Nadu can rise, progress,
-            and fulfil their true potential.”</p>
-</p>
-        </div>
-        
-        <div class="col-sm-4">
-    <img src="/assets/img/cm2.png" id="cm-img" class="fade-sides" alt="" srcset="">
-<h4>M.K Stalin</h4>
-                <p>Hon'ble Chief Minister of Tamil Nadu</p></div>
-    </div>
-    <div class="row">
-        <div class="container px-4 pt-5 pb-2" id="icon-grid">
-        <h2 class="pb-2 border-bottom">Your request becomes our responsibility.</h2>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 pt-5">
-    <div class="col d-flex align-items-start">
-        <div>
-            <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-calendar-event"></i> Meet an icon</h3>
-            <p>Get an exclusive opportunity to interact with leaders and legends who inspire, guide, and spark ambition in young minds.</p>
+
+    <div class="container col-xxl-8 px-4 text-center">
+
+        <img src="assets/img/tn_logo.png" id="tn-logo" alt="">
+        <img src="assets/img/msg-bg.png" class="bg-sec" alt="">
+        <div class="row flex-lg-row-reverse align-items-center g-5 text-start" style="position: relative; z-index: 2;">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold text-body-emphasis lh-1 mb-3">என் கனவு<br>என் எதிர்காலம் 2030</h1>
+                <h5 class="display-8 fw-bold text-body-emphasis lh-1 mb-3">En Kanavu En Ethirkaalam 2030</h5>
+                <p class="lead">Articulating ambitions, fulfilling dreams, Building a stronger Tamil Nadu</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4"> <a type="button"
+                        class="btn btn-primary btn-lg px-4 me-md-2" href="ekee_form.html">Apply now</a> <a type="button"
+                        class="btn btn-outline-secondary btn-lg px-4">know more..</a> </div>
+            </div>
+            <div class="col-10 col-sm-8 col-lg-6" style="position: relative;">
+                <p class="ai-label"><i class="bi bi-cpu"></i> AI Generated</p><img src="assets/img/students.png"
+                    class="fade-sides d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500"
+                    loading="lazy">
+            </div>
         </div>
     </div>
+    <div class="container-fluid" style="position: relative; overflow-x: hidden; overflow-y: visible;">
+        <div class="container">
 
-    <div class="col d-flex align-items-start">
-        <div>
-            <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-music-note-list"></i> Become a Musician</h3>
-            <p>Explore your musical talent with expert guidance, hands-on training, and the tools you need to begin your journey in music.</p>
+            <img src="assets/img/bg-svg.svg" class="bg-img" alt="">
+            <div class="row about">
+                <div class="col-sm-8 d-flex flex-column justify-content-center ">
+                    <h2 data-aos="fade-left" data-aos-duration="500">What is En Kanavu En Ethirkaalam?</h2>
+                    <p data-aos="fade-right" data-aos-duration="800">“En Kanavu, En Ethirkaalam” is a visionary
+                        initiative focused on understanding how the Government of Tamil Nadu can
+                        meaningfully support the youth in achieving their dreams. This statewide survey collects
+                        insights from young people
+                        across every district and town, helping the government identify their real needs, challenges,
+                        and aspirations. Whether
+                        it is access to essential tools, modern gadgets, skill-development programs, professional
+                        training, apprenticeships, job
+                        opportunities, online courses, AI subscriptions, musical instruments, or the chance to meet and
+                        learn from industry
+                        experts — every dream matters. Through this platform, the Government aims to empower youth by
+                        mapping both their
+                        immediate and long-term goals up to the year 2030. By listening to their voices and
+                        understanding the obstacles they
+                        face, the initiative strives to create a supportive ecosystem where every young person in Tamil
+                        Nadu can rise, progress,
+                        and fulfil their true potential.”</p>
+                    </p>
+                </div>
+
+                <div class="col-sm-4">
+                    <img src="assets/img/cm2.png" id="cm-img" class="fade-sides" alt="" srcset="">
+                    <h4>M.K Stalin</h4>
+                    <p>Hon'ble Chief Minister of Tamil Nadu</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container px-4 pt-5 pb-2" id="icon-grid">
+                    <h2 class="pb-2 border-bottom">Your request becomes our responsibility.</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 pt-5">
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-calendar-event"></i>
+                                    Meet an icon</h3>
+                                <p>Get an exclusive opportunity to interact with leaders and legends who inspire, guide,
+                                    and spark ambition in young minds.</p>
+                            </div>
+                        </div>
+
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-music-note-list"></i>
+                                    Become a Musician</h3>
+                                <p>Explore your musical talent with expert guidance, hands-on training, and the tools
+                                    you need to begin your journey in music.</p>
+                            </div>
+                        </div>
+
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-book"></i> Free Course
+                                </h3>
+                                <p>Access high-quality courses at no cost, helping you learn new skills, upgrade your
+                                    knowledge, and build your future.</p>
+                            </div>
+                        </div>
+
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-bicycle"></i> Get a
+                                    Sports kit</h3>
+                                <p>Receive a complete sports kit to support your passion, encourage fitness, and help
+                                    you excel in the game you love.</p>
+                            </div>
+                        </div>
+
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-bus-front-fill"></i> Do
+                                    Industrial visit</h3>
+                                <p>Experience real-world industries, understand how things work that bridges classroom
+                                    learning and practice.</p>
+                            </div>
+                        </div>
+
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-laptop"></i> Laptop &
+                                    Gadgets</h3>
+                                <p>Unlock your potential in technology with hands-on tools and resources that elevate
+                                    your creativity and technical abilities.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <div class="col d-flex align-items-start"> 
-        <div>
-            <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-book"></i> Free Course</h3>
-            <p>Access high-quality courses at no cost, helping you learn new skills, upgrade your knowledge, and build your future.</p>
-        </div>
-    </div>
-
-    <div class="col d-flex align-items-start"> 
-        <div>
-            <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-bicycle"></i> Get a Sports kit</h3>
-            <p>Receive a complete sports kit to support your passion, encourage fitness, and help you excel in the game you love.</p>
-        </div>
-    </div>
-
-    <div class="col d-flex align-items-start"> 
-        <div>
-            <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-bus-front-fill"></i> Do Industrial visit</h3>
-            <p>Experience real-world industries, understand how things work that bridges classroom learning and practice.</p>
-        </div>
-    </div>
-
-    <div class="col d-flex align-items-start"> 
-        <div>
-            <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-laptop"></i> Laptop & Gadgets</h3>
-            <p>Unlock your potential in technology with hands-on tools and resources that elevate your creativity and technical abilities.</p>
-        </div>
-    </div>
-</div>
-
-    </div>
-    </div>
-
-</div></div>
-
-<div class="container-fluid">
-    <div class="container my-5">
-        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-                <h1 class="display-4 fw-bold lh-1 text-body-emphasis">How to apply ?</h1>
-                <br>
-                <ol>
-                    <li>Go to form registeration page</li>
-                    <li>Fill Your Basic Details</li>
-                    <li>Choose your dreams to be fulfilled in immediate future</li>
-                    <li>Choose your dreams to be fulfilled in next 5 years</li>
-                    <li>Write a brief on other aspirations to be fulfilled by 2030?</li>
+    <div class="container-fluid">
+        <div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+                <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis">How to apply ?</h1>
+                    <br>
+                    <ol>
+                        <li>Go to form registeration page</li>
+                        <li>Fill Your Basic Details</li>
+                        <li>Choose your dreams to be fulfilled in immediate future</li>
+                        <li>Choose your dreams to be fulfilled in next 5 years</li>
+                        <li>Write a brief on other aspirations to be fulfilled by 2030?</li>
                     </ol>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mt-4 mb-lg-3"> <button type="button"
-                        class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"><i class="bi bi-play-circle"></i> Watch Video</button> <button type="button"
-                        class="btn btn-outline-secondary btn-lg px-4"><i class="bi bi-info-circle"></i> Details</button> </div>
-            </div>
-            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"> <img class="rounded-lg-3" src="/assets/img/form-ss.png"
-                    alt="" width="720">
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container px-4 py-5" id="custom-cards">
-    <h2 class="pb-2 border-bottom">Your Dreams come true</h2>
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-        <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                style="background-image: url('/assets/img/card (1).jpg'); background-size: cover;">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Play</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                        <li class="me-auto"> <img src="/assets/img/tn_logo.png" alt="Bootstrap" width="32"
-                                height="32" class="rounded-circle border border-white"> </li>
-                    
-                    </ul>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mt-4 mb-lg-3"> <button
+                            type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"><i
+                                class="bi bi-play-circle"></i> Watch Video</button> <button type="button"
+                            class="btn btn-outline-secondary btn-lg px-4"><i class="bi bi-info-circle"></i>
+                            Details</button> </div>
                 </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                style="background-image: url('/assets/img/card (2).jpg'); background-size: cover">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Learn
-                    </h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                        <li class="me-auto"> <img src="/assets/img/tn_logo.png" alt="Bootstrap" width="32"
-                                height="32" class="rounded-circle border border-white"> </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                style="background-image: url('/assets/img/card (3).png'); background-size: cover">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Achieve</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                        <li class="me-auto"> <img src="/assets/img/tn_logo.png" alt="Bootstrap" width="32"
-                                height="32" class="rounded-circle border border-white"> </li>                    </ul>
+                <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"> <img class="rounded-lg-3"
+                        src="assets/img/form-ss.png" alt="" width="720">
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom">Your Dreams come true</h2>
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                    style="background-image: url('assets/img/card (1).jpg'); background-size: cover;">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Play</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto"> <img src="assets/img/tn_logo.png" alt="Bootstrap" width="32"
+                                    height="32" class="rounded-circle border border-white"> </li>
 
-<div class="container-fluid sec-2 mb-0" id="register">
-  <div class="container">
-    <div class="row align-items-center g-lg-5 py-5">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                    style="background-image: url('assets/img/card (2).jpg'); background-size: cover">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Learn
+                        </h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto"> <img src="assets/img/tn_logo.png" alt="Bootstrap" width="32"
+                                    height="32" class="rounded-circle border border-white"> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                    style="background-image: url('assets/img/card (3).png'); background-size: cover">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Achieve</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto"> <img src="assets/img/tn_logo.png" alt="Bootstrap" width="32"
+                                    height="32" class="rounded-circle border border-white"> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-      <!-- Left text -->
-      <div class="col-lg-7 text-center text-lg-start text-white">
-        <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">
-          Register / Login using your mobile number
-        </h1>
-        <p class="col-lg-10 fs-4">
-          This form allows only one submission per mobile number.
-        </p>
-      </div>
+    <div class="container-fluid sec-2 mb-0" id="register">
+        <div class="container">
+            <div class="row align-items-center g-lg-5 py-5">
 
-      <!-- Right Form -->
-      <div class="col-md-10 mx-auto col-lg-5">
- <!-- <form class="p-2 p-md-4 border rounded-3 bg-body-tertiary">
+                <!-- Left text -->
+                <div class="col-lg-7 text-center text-lg-start text-white">
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">
+                        Register / Login using your mobile number
+                    </h1>
+                    <p class="col-lg-10 fs-4">
+                        This form allows only one submission per mobile number.
+                    </p>
+                </div>
+
+                <!-- Right Form -->
+                <div class="col-md-10 mx-auto col-lg-5">
+                    <!-- <form class="p-2 p-md-4 border rounded-3 bg-body-tertiary">
 
 
   <div class="mb-3">
@@ -516,165 +576,169 @@ Log in
 
 </form> -->
 
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<footer class="bd-footer py-4 py-md-5 bg-body-tertiary">
-    <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
-        <div class="row">
-            <div class="col-lg-3 mb-3"> <a
-                    class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="/"
-                    aria-label="Bootstrap"><img src="/assets/img/tn_logo.png" class="foot-logo" alt="">
-                        <!-- <title>Government of Tamil Nadu</title> -->
-                         <span class="fs-5 mx-2">Government of Tamil Nadu</span> </a>
-                <ul class="list-unstyled small">
-                    <li class="mb-2">
-                        Designed and built <a
-                            href="/docs/5.3/about/team">TNeGA team</a> | Contents owned by <a
-                            href="https://github.com/twbs/bootstrap/graphs/contributors">Department name</a>.
-                    </li>
-                    <li class="mb-2">V 1.0</li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-2 offset-lg-1 mb-3">
-                <h5>Links</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="/">Home</a></li>
-                    <li class="mb-2"><a href="/docs/5.3/">Docs</a></li>
-                    <li class="mb-2"><a href="/docs/5.3/examples">Examples</a></li>
-                    <li class="mb-2"><a href="https://icons.getbootstrap.com/">Icons</a></li>
-                    <li class="mb-2"><a href="https://blog.getbootstrap.com/">Blog</a></li>
-                    <li class="mb-2"><a href="https://cottonbureau.com/people/bootstrap" target="_blank"
-                            rel="noopener">Swag Store</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-2 mb-3">
-                <h5>Guides</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="/docs/5.3/getting-started">Getting started</a></li>
-                    <li class="mb-2"><a href="/docs/5.3/examples/starter-template">Starter template</a></li>
-                    <li class="mb-2"><a href="/docs/5.3/getting-started/webpack">Webpack</a></li>
-                    <li class="mb-2"><a href="/docs/5.3/getting-started/parcel">Parcel</a></li>
-                    <li class="mb-2"><a href="/docs/5.3/getting-started/vite">Vite</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-2 mb-3">
-                <h5>Projects</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"> <a href="https://github.com/twbs/bootstrap" target="_blank"
-                            rel="noopener">Bootstrap 5</a> </li>
-                    <li class="mb-2"> <a href="https://github.com/twbs/bootstrap/tree/v4-dev" target="_blank"
-                            rel="noopener">Bootstrap 4</a> </li>
-                    <li class="mb-2"><a href="https://github.com/twbs/icons" target="_blank" rel="noopener">Icons</a>
-                    </li>
-                    <li class="mb-2"><a href="https://github.com/twbs/rfs" target="_blank" rel="noopener">RFS</a></li>
-                    <li class="mb-2"> <a href="https://github.com/twbs/examples" target="_blank" rel="noopener">Examples
-                            repo</a> </li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-2 mb-3">
-                <h5>Community</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"> <a href="https://github.com/twbs/bootstrap/issues" target="_blank"
-                            rel="noopener">Issues</a> </li>
-                    <li class="mb-2"> <a href="https://github.com/twbs/bootstrap/discussions" target="_blank"
-                            rel="noopener">Discussions</a> </li>
-                    <li class="mb-2"> <a href="https://github.com/sponsors/twbs" target="_blank"
-                            rel="noopener">Corporate sponsors</a> </li>
-                    <li class="mb-2"><a href="https://opencollective.com/bootstrap" target="_blank" rel="noopener">Open
-                            Collective</a></li>
-                    <li class="mb-2"> <a href="https://stackoverflow.com/questions/tagged/bootstrap-5" target="_blank"
-                            rel="noopener">Stack Overflow</a> </li>
-                </ul>
+                </div>
             </div>
         </div>
     </div>
-</footer>
-
-    
 
 
-<script>
-// MOBILE NUMBER (10 boxes)
-const mobileBoxes = document.querySelectorAll(".mobile-box");
 
-mobileBoxes.forEach((box, index) => {
-  box.addEventListener("input", () => {
-    box.value = box.value.replace(/[^0-9]/g, "");
-    if (box.value && index < mobileBoxes.length - 1) {
-      mobileBoxes[index + 1].focus();
-    }
-  });
+    <footer class="bd-footer py-4 py-md-5 bg-body-tertiary">
+        <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+            <div class="row">
+                <div class="col-lg-3 mb-3"> <a
+                        class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="/"
+                        aria-label="Bootstrap"><img src="assets/img/tn_logo.png" class="foot-logo" alt="">
+                        <!-- <title>Government of Tamil Nadu</title> -->
+                        <span class="fs-5 mx-2">Government of Tamil Nadu</span> </a>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2">
+                            Designed and built <a href="/docs/5.3/about/team">TNeGA team</a> | Contents owned by <a
+                                href="https://github.com/twbs/bootstrap/graphs/contributors">Department name</a>.
+                        </li>
+                        <li class="mb-2">V 1.0</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/">Home</a></li>
+                        <li class="mb-2"><a href="/docs/5.3/">Docs</a></li>
+                        <li class="mb-2"><a href="/docs/5.3/examples">Examples</a></li>
+                        <li class="mb-2"><a href="https://icons.getbootstrap.com/">Icons</a></li>
+                        <li class="mb-2"><a href="https://blog.getbootstrap.com/">Blog</a></li>
+                        <li class="mb-2"><a href="https://cottonbureau.com/people/bootstrap" target="_blank"
+                                rel="noopener">Swag Store</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5>Guides</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/docs/5.3/getting-started">Getting started</a></li>
+                        <li class="mb-2"><a href="/docs/5.3/examples/starter-template">Starter template</a></li>
+                        <li class="mb-2"><a href="/docs/5.3/getting-started/webpack">Webpack</a></li>
+                        <li class="mb-2"><a href="/docs/5.3/getting-started/parcel">Parcel</a></li>
+                        <li class="mb-2"><a href="/docs/5.3/getting-started/vite">Vite</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5>Projects</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"> <a href="https://github.com/twbs/bootstrap" target="_blank"
+                                rel="noopener">Bootstrap 5</a> </li>
+                        <li class="mb-2"> <a href="https://github.com/twbs/bootstrap/tree/v4-dev" target="_blank"
+                                rel="noopener">Bootstrap 4</a> </li>
+                        <li class="mb-2"><a href="https://github.com/twbs/icons" target="_blank"
+                                rel="noopener">Icons</a>
+                        </li>
+                        <li class="mb-2"><a href="https://github.com/twbs/rfs" target="_blank" rel="noopener">RFS</a>
+                        </li>
+                        <li class="mb-2"> <a href="https://github.com/twbs/examples" target="_blank"
+                                rel="noopener">Examples
+                                repo</a> </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5>Community</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"> <a href="https://github.com/twbs/bootstrap/issues" target="_blank"
+                                rel="noopener">Issues</a> </li>
+                        <li class="mb-2"> <a href="https://github.com/twbs/bootstrap/discussions" target="_blank"
+                                rel="noopener">Discussions</a> </li>
+                        <li class="mb-2"> <a href="https://github.com/sponsors/twbs" target="_blank"
+                                rel="noopener">Corporate sponsors</a> </li>
+                        <li class="mb-2"><a href="https://opencollective.com/bootstrap" target="_blank"
+                                rel="noopener">Open
+                                Collective</a></li>
+                        <li class="mb-2"> <a href="https://stackoverflow.com/questions/tagged/bootstrap-5"
+                                target="_blank" rel="noopener">Stack Overflow</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-  box.addEventListener("keydown", (e) => {
-    if (e.key === "Backspace" && !box.value && index > 0) {
-      mobileBoxes[index - 1].focus();
-    }
-  });
-});
 
 
-// OTP (4 boxes)
-const otpBoxes = document.querySelectorAll(".otp-box");
 
-otpBoxes.forEach((box, index) => {
-  box.addEventListener("input", () => {
-    box.value = box.value.replace(/[^0-9]/g, "");
-    if (box.value && index < otpBoxes.length - 1) {
-      otpBoxes[index + 1].focus();
-    }
-  });
+    <script>
+        // MOBILE NUMBER (10 boxes)
+        const mobileBoxes = document.querySelectorAll(".mobile-box");
 
-  box.addEventListener("keydown", (e) => {
-    if (e.key === "Backspace" && !box.value && index > 0) {
-      otpBoxes[index - 1].focus();
-    }
-  });
-});
+        mobileBoxes.forEach((box, index) => {
+            box.addEventListener("input", () => {
+                box.value = box.value.replace(/[^0-9]/g, "");
+                if (box.value && index < mobileBoxes.length - 1) {
+                    mobileBoxes[index + 1].focus();
+                }
+            });
 
-</script>
+            box.addEventListener("keydown", (e) => {
+                if (e.key === "Backspace" && !box.value && index > 0) {
+                    mobileBoxes[index - 1].focus();
+                }
+            });
+        });
 
-<script>
-document.getElementById("langToggle").addEventListener("click", function (e) {
-    e.preventDefault();
 
-    const langText = document.getElementById("langText");
+        // OTP (4 boxes)
+        const otpBoxes = document.querySelectorAll(".otp-box");
 
-    if (langText.textContent.trim() === "தமிழ்") {
-        // Switch to Tamil mode
-        langText.textContent = "English";
+        otpBoxes.forEach((box, index) => {
+            box.addEventListener("input", () => {
+                box.value = box.value.replace(/[^0-9]/g, "");
+                if (box.value && index < otpBoxes.length - 1) {
+                    otpBoxes[index + 1].focus();
+                }
+            });
 
-        // Example translation (replace with your actual ones)
-        document.querySelector("[data-home]").textContent = "முகப்பு";
-        document.querySelector("[data-about]").textContent = "எங்களை பற்றி";
-        document.querySelector("[data-vision]").textContent = "தொழில் நோக்கம்";
-        document.querySelector("[data-faq]").textContent = "அடிக்கடி கேட்கப்படும் கேள்விகள்";
-        document.querySelector("[data-contact]").textContent = "தொடர்பு கொள்ள";
+            box.addEventListener("keydown", (e) => {
+                if (e.key === "Backspace" && !box.value && index > 0) {
+                    otpBoxes[index - 1].focus();
+                }
+            });
+        });
 
-    } else {
-        // Switch back to English
-        langText.textContent = "தமிழ்";
+    </script>
 
-        document.querySelector("[data-home]").textContent = "Home";
-        document.querySelector("[data-about]").textContent = "About";
-        document.querySelector("[data-vision]").textContent = "Vision";
-        document.querySelector("[data-faq]").textContent = "FAQs";
-        document.querySelector("[data-contact]").textContent = "Contact Us";
-    }
-});
-</script>
+    <script>
+        document.getElementById("langToggle").addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const langText = document.getElementById("langText");
+
+            if (langText.textContent.trim() === "தமிழ்") {
+                // Switch to Tamil mode
+                langText.textContent = "English";
+
+                // Example translation (replace with your actual ones)
+                document.querySelector("[data-home]").textContent = "முகப்பு";
+                document.querySelector("[data-about]").textContent = "எங்களை பற்றி";
+                document.querySelector("[data-vision]").textContent = "தொழில் நோக்கம்";
+                document.querySelector("[data-faq]").textContent = "அடிக்கடி கேட்கப்படும் கேள்விகள்";
+                document.querySelector("[data-contact]").textContent = "தொடர்பு கொள்ள";
+
+            } else {
+                // Switch back to English
+                langText.textContent = "தமிழ்";
+
+                document.querySelector("[data-home]").textContent = "Home";
+                document.querySelector("[data-about]").textContent = "About";
+                document.querySelector("[data-vision]").textContent = "Vision";
+                document.querySelector("[data-faq]").textContent = "FAQs";
+                document.querySelector("[data-contact]").textContent = "Contact Us";
+            }
+        });
+    </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/bootstrap/js/bundle.min.js"></script>
-    <script src="/assets/bootstrap/js/popper.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bundle.min.js"></script>
+    <script src="assets/bootstrap/js/popper.min.js"></script>
     <script>
-  AOS.init();
-</script>
+        AOS.init();
+    </script>
 </body>
+
 </html>

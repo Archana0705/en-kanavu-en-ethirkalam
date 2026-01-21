@@ -1,0 +1,2473 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enn Kanavu, Enn Ethirkalam 2030 — Youth Dreams Form</title>
+
+  <style>
+    :root {
+      --accent: #0f6cff;
+      --muted: #6b7280;
+      --card: #fff;
+      --bg: white;
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      --info-gradient: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      --warning-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      min-height: 100vh;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    header {
+      background: var(--primary-gradient);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 15px 0;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      width: 70px;
+      height: 70px;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      flex-shrink: 0;
+    }
+
+    #tn-logo {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .header-content h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: white;
+      margin: 0;
+      letter-spacing: -0.5px;
+      line-height: 1.3;
+    }
+
+    .header-content .lead {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      margin-top: 5px;
+      max-width: 600px;
+    }
+
+    /* Form Container */
+    .form-container {
+      padding: 30px 0;
+    }
+
+    .form-card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--primary-gradient);
+    }
+
+    /* Section Titles */
+    .section-title {
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-icon {
+      font-size: 32px;
+      width: 60px;
+      height: 60px;
+      background: var(--primary-gradient);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+      flex: 1;
+    }
+
+    .section-subtitle {
+      background: #f8fafc;
+      padding: 16px 24px;
+      border-radius: 16px;
+      border-left: 4px solid var(--accent);
+      font-size: 15px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    /* Form Elements */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .form-group label.required::after {
+      content: " *";
+      color: #ef4444;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      background: white;
+      font-family: inherit;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(15, 108, 255, 0.1);
+    }
+
+    .form-control::placeholder {
+      color: #94a3b8;
+    }
+
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 16px;
+      padding-right: 45px;
+    }
+
+    .form-help {
+      display: block;
+      margin-top: 6px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+      margin: 40px 0;
+      border: none;
+    }
+
+    /* File Upload */
+    .file-upload {
+      position: relative;
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      background: #f8fafc;
+      cursor: pointer;
+    }
+
+    .file-upload:hover {
+      border-color: var(--accent);
+      background: rgba(15, 108, 255, 0.02);
+    }
+
+    .file-upload input[type="file"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .file-upload-icon {
+      font-size: 40px;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+
+    .file-upload-text {
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+
+    .file-upload-hint {
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* Dream Groups */
+    .dreams-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .dream-group {
+      background: white;
+      border-radius: 20px;
+      border: 2px solid #e2e8f0;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .dream-group:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-color: #c7d2fe;
+    }
+
+    .dream-group.selected {
+      border-color: #10b981;
+      box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+    }
+
+    .dream-group.disabled {
+      opacity: 0.5;
+      filter: grayscale(0.3);
+      pointer-events: none;
+    }
+
+    /* Dream Header */
+    .dream-header {
+      background: var(--primary-gradient);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dream-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .dream-checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .dream-checkbox-custom {
+      width: 28px;
+      height: 28px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .dream-checkbox-custom:hover {
+      border-color: white;
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.05);
+    }
+
+    .dream-checkbox-custom.checked {
+      background: #10b981;
+      border-color: #10b981;
+    }
+
+    .dream-checkbox-custom.checked::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .dream-title {
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+      flex: 1;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Priority Selector */
+    .priority-selector {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .priority-label {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .priority-dropdown {
+      position: relative;
+      min-width: 160px;
+    }
+
+    .priority-dropdown select {
+      width: 100%;
+      padding: 10px 40px 10px 16px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      appearance: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .priority-dropdown select:focus {
+      outline: none;
+      border-color: white;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .priority-dropdown::after {
+      content: '🎯';
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      font-size: 16px;
+    }
+
+    .priority-dropdown select option {
+      background: #4c51bf;
+      color: white;
+      padding: 10px;
+    }
+
+    /* Dream Content */
+    .dream-content {
+      padding: 30px;
+      background: white;
+    }
+
+    /* Sub-sections */
+    .subsection {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      border-left: 6px solid #6366f1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subsection::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    }
+
+    .subsection-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid rgba(99, 102, 241, 0.15);
+    }
+
+    .subsection-letter {
+      width: 36px;
+      height: 36px;
+      background: var(--primary-gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+
+    .subsection-icon {
+      font-size: 24px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .subsection-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+      flex: 1;
+    }
+
+    /* Support Options Grid */
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .support-option {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .support-option:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      border-color: #6366f1;
+    }
+
+    .support-option.selected {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-color: #0ea5e9;
+      box-shadow: 0 8px 20px rgba(14, 165, 233, 0.15);
+    }
+
+    .support-option::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--primary-gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .support-option:hover::before,
+    .support-option.selected::before {
+      opacity: 1;
+    }
+
+    .support-radio {
+      display: none;
+    }
+
+    .support-content {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .support-radio-custom {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #cbd5e1;
+      border-radius: 50%;
+      position: relative;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .support-option:hover .support-radio-custom {
+      border-color: #6366f1;
+      transform: scale(1.1);
+    }
+
+    .support-option.selected .support-radio-custom {
+      background: #0ea5e9;
+      border-color: #0ea5e9;
+    }
+
+    .support-option.selected .support-radio-custom::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .support-text {
+      flex: 1;
+      font-size: 15px;
+      color: #334155;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .support-checkmark {
+      color: #0ea5e9;
+      font-size: 24px;
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.3s ease;
+    }
+
+    .support-option.selected .support-checkmark {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Single Section (no subcategories) */
+    .single-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-radius: 16px;
+      padding: 24px;
+      border-left: 6px solid #10b981;
+    }
+
+    /* Selection Counter */
+    .selection-counter {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary-gradient);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 20px;
+      font-weight: 600;
+      box-shadow: 0 16px 40px rgba(99, 102, 241, 0.4);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: slideIn 0.5s ease;
+      transition: all 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .counter-number {
+      background: white;
+      color: #6366f1;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .counter-max .counter-number {
+      background: #ef4444;
+      color: white;
+      animation: pulse 0.5s ease;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* Form Actions */
+    .form-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 2px solid #f1f5f9;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      border-radius: 14px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--success-gradient);
+      color: white;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(16, 185, 129, 0.4);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(15, 108, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .btn-icon {
+      font-size: 20px;
+    }
+
+    .form-message {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-left: 16px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-message.success {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #86efac;
+    }
+
+    .form-message.error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: #64748b;
+      font-size: 14px;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 40px;
+    }
+
+    /* Loading States */
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid #e2e8f0;
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      color: #64748b;
+      font-size: 16px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+      
+      .form-card {
+        padding: 24px;
+        border-radius: 20px;
+      }
+      
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+      }
+      
+      .header-content h1 {
+        font-size: 20px;
+      }
+      
+      .dream-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+      }
+      
+      .priority-selector {
+        width: 100%;
+        justify-content: space-between;
+      }
+      
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .subsection-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      
+      .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .form-message {
+        margin: 16px 0 0 0;
+      }
+      
+      .selection-counter {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .section-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+      }
+      
+      .section-header h2 {
+        font-size: 24px;
+      }
+      
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Textarea Styling */
+    .textarea-container {
+      position: relative;
+    }
+
+    .char-counter {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      font-size: 13px;
+      color: #94a3b8;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 4px 8px;
+      border-radius: 6px;
+      pointer-events: none;
+    }
+
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+      padding-bottom: 40px;
+    }
+
+    /* Info Box */
+    .info-box {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 2px solid #bae6fd;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 30px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .info-box-icon {
+      color: #0ea5e9;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .info-box-content {
+      flex: 1;
+    }
+
+    .info-box-title {
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .info-box-text {
+      color: #475569;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Auto-save Indicator */
+    .auto-save-indicator {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: var(--success-gradient);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+    }
+
+    .auto-save-indicator.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      margin: 30px 0;
+      background: #f1f5f9;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 10px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--primary-gradient);
+      border-radius: 10px;
+      transition: width 0.5s ease;
+      width: 0%;
+    }
+
+    /* Status Badge */
+    .status-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--success-gradient);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      z-index: 1;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo-container">
+        <img src="assets/img/tn_logo.png" id="tn-logo" alt="Tamil Nadu Logo">
+      </div>
+      <div class="header-content">
+        <h1>Enn Kanavu, Enn Ethirkalam 2030 — Youth Dreams Form</h1>
+        <p class="lead">Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu — Fill this form (age 18–29)</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="form-container">
+      <!-- Info Box -->
+      <div class="info-box">
+        <div class="info-box-icon">💭</div>
+        <div class="info-box-content">
+          <div class="info-box-title">Welcome to Your Dream Dashboard</div>
+          <div class="info-box-text">Share your aspirations and help shape Tamil Nadu's future. Your dreams matter! Fill out each section carefully and select up to 3 dreams in each category with your preferred support options.</div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form id="dreamForm" class="form-card" onsubmit="return handleSubmit(event)">
+        
+        <!-- Basic Information Section -->
+        <section class="basic-info">
+          <div class="section-title">
+            <div class="section-header">
+              <div class="section-icon">📋</div>
+              <h2>Basic Information</h2>
+            </div>
+            <div class="section-subtitle">
+              Please provide accurate personal information. All fields marked with * are required.
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name" class="required">Full Name</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="gender" class="required">Gender</label>
+              <select id="gender" name="gender" class="form-control" required>
+                <option value="">Select gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="required">Email Address</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required>
+              <span class="form-help">We'll send updates about your application</span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="required">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter 10-digit mobile number" pattern="[6-9][0-9]{9}" maxlength="10" required>
+              <span class="form-help">10-digit Indian mobile number</span>
+            </div>
+          </div>
+
+          <hr class="divider">
+
+          <!-- Residence Information -->
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="district" class="required">District of Residence</label>
+              <select id="district" name="district" class="form-control" required>
+                <option value="">Select district</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="taluk" class="required">Taluk of Residence</label>
+              <select id="taluk" name="taluk" class="form-control" required>
+                <option value="">Select Taluk</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Proof of Residence -->
+          <div class="form-group">
+            <label for="proofResidence" class="required">Proof of Residence</label>
+            <div class="file-upload">
+              <input type="file" id="proofResidence" name="proofResidence" accept="image/*,.pdf" required>
+              <div class="file-upload-icon">📄</div>
+              <div class="file-upload-text">Upload Voter ID / Ration Card</div>
+              <div class="file-upload-hint">Accepted: JPG, PNG, PDF (Max 5MB)</div>
+            </div>
+          </div>
+
+          <hr class="divider">
+
+          <!-- Age Information -->
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="dob" class="required">Date of Birth</label>
+              <input type="date" id="dob" name="dob" class="form-control" required>
+              <span class="form-help">Age must be between 18-29 years</span>
+            </div>
+
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="number" id="age" name="age" class="form-control" readonly style="background: #f8fafc; font-weight: 600;">
+              <span class="form-help">Auto-calculated from your date of birth</span>
+            </div>
+          </div>
+
+          <!-- Proof of Age -->
+          <div class="form-group">
+            <label for="proofAge" class="required">Proof of Age</label>
+            <div class="file-upload">
+              <input type="file" id="proofAge" name="proofAge" accept="image/*,.pdf" required>
+              <div class="file-upload-icon">🎂</div>
+              <div class="file-upload-text">Upload Matriculation / Birth Certificate</div>
+              <div class="file-upload-hint">Accepted: JPG, PNG, PDF (Max 5MB)</div>
+            </div>
+          </div>
+
+          <hr class="divider">
+
+          <!-- Education & Employment -->
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="education" class="required">Level of Education</label>
+              <select id="education" name="education" class="form-control" required>
+                <option value="">Select your education level</option>
+                <option value="Illiterate">Illiterate</option>
+                <option value="8th pass">8th pass</option>
+                <option value="Matriculation">Matriculation</option>
+                <option value="Higher Secondary">Higher Secondary</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Post-graduate">Post-graduate</option>
+                <option value="Doctorate">Doctorate</option>
+                <option value="ITI / Diploma holder">ITI / Diploma holder</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="employmentStatus" class="required">Employment Status</label>
+              <select id="employmentStatus" name="employmentStatus" class="form-control" required>
+                <option value="">Select your employment status</option>
+                <option value="Employed">Employed</option>
+                <option value="Unemployed">Unemployed</option>
+                <option value="Student">Student</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="employmentTypeWrap" style="display: none;">
+              <label for="employmentType">Type of Employment</label>
+              <select id="employmentType" name="employmentType" class="form-control">
+                <option value="">Select employment type</option>
+                <option value="Cultivator / Farmer">Cultivator / Farmer</option>
+                <option value="Agricultural Labour">Agricultural Labour</option>
+                <option value="Non-Agricultural Casual Labour">Non-Agricultural Casual Labour</option>
+                <option value="Self-Employed">Self-Employed</option>
+                <option value="Regular Salaried Worker (Private Sector)">Regular Salaried Worker (Private Sector)</option>
+                <option value="Government or Public Sector Employee">Government or Public Sector Employee</option>
+                <option value="Domestic or Household Worker">Domestic or Household Worker</option>
+                <option value="Transport Worker or Driver">Transport Worker or Driver</option>
+                <option value="Skilled or Technical Worker">Skilled or Technical Worker</option>
+                <option value="Professionals">Professionals</option>
+                <option value="Homemaker">Homemaker</option>
+                <option value="Gig Worker or Delivery Partner">Gig Worker or Delivery Partner</option>
+                <option value="Other (Specify)">Other (Specify)</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Immediate Dreams Section -->
+        <section>
+          <div class="section-title">
+            <div class="section-header">
+              <div class="section-icon">🚀</div>
+              <h2>1. Dreams to be fulfilled in immediate future</h2>
+            </div>
+            <div class="section-subtitle">
+              Choose up to 3 dreams. For each dream selected, assign a priority (1 = highest) and choose one support option per dream.
+            </div>
+          </div>
+
+          <div id="immediateDreams" class="dreams-container">
+            <div class="loading" id="immediateLoading">
+              <div class="loading-spinner"></div>
+              <div class="loading-text">Loading immediate dreams...</div>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Five Year Dreams Section -->
+        <section>
+          <div class="section-title">
+            <div class="section-header">
+              <div class="section-icon">🌟</div>
+              <h2>2. Dreams to be fulfilled in next 5 years</h2>
+            </div>
+            <div class="section-subtitle">
+              Choose up to 3 dreams. For each dream selected, assign a priority (1 = highest) and choose one support option per dream.
+            </div>
+          </div>
+
+          <div id="fiveYearDreams" class="dreams-container">
+            <div class="loading" id="fiveYearLoading">
+              <div class="loading-spinner"></div>
+              <div class="loading-text">Loading 5-year dreams...</div>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Other Aspirations -->
+        <section>
+          <div class="section-title">
+            <div class="section-header">
+              <div class="section-icon">💭</div>
+              <h2>Additional Aspirations</h2>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="textarea-container">
+              <textarea id="otherAspirations" name="otherAspirations" class="form-control" 
+                        maxlength="300" rows="5" 
+                        placeholder="Share any other dreams or aspirations you have for 2030..."></textarea>
+              <div class="char-counter" id="charCounter">0/300</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Form Actions -->
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">
+            <span class="btn-icon">✅</span>
+            Submit Application
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="saveDraft()">
+            <span class="btn-icon">💾</span>
+            Save as JSON
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="saveDraftPDF()">
+            <span class="btn-icon">📄</span>
+            Download PDF
+          </button>
+          <div id="formMessage" class="form-message"></div>
+        </div>
+      </form>
+
+      <footer>
+        Contents owned by Department name (©) | Designed and Developed by Tamil Nadu eGovernance Agency.
+      </footer>
+    </div>
+  </main>
+
+  <!-- Selection Counter -->
+  <div id="selectionCounter" class="selection-counter">
+    <span>Selected Dreams:</span>
+    <span class="counter-number">0</span>
+    <span>/3</span>
+  </div>
+
+  <!-- Auto-save Indicator -->
+  <div id="autoSaveIndicator" class="auto-save-indicator">Auto-saved</div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/encrypt_decrypt.js"></script>
+  <script src="assets/js/crypto-js.min.js"></script>
+  <script src="assets/js/global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script>
+    // ========== GLOBAL VARIABLES ==========
+    let db = null;
+    const DB_NAME = 'EnnKanavuDB';
+    const DB_VERSION = 1;
+    const STORE_NAME = 'formData';
+    
+    let immediateDreamConfig = [];
+    let fiveYearConfig = [];
+    
+    const usedPriorities = {
+      immediateDreams: new Set(),
+      fiveYearDreams: new Set()
+    };
+
+    // ========== INDEXEDDB FUNCTIONS ==========
+    function initDB() {
+      return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        
+        request.onerror = () => {
+          console.error('Database error:', request.error);
+          reject(request.error);
+        };
+        
+        request.onsuccess = () => {
+          db = request.result;
+          console.log('Database opened successfully');
+          resolve(db);
+        };
+        
+        request.onupgradeneeded = (event) => {
+          const db = event.target.result;
+          if (!db.objectStoreNames.contains(STORE_NAME)) {
+            const store = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+            store.createIndex('timestamp', 'timestamp', { unique: false });
+          }
+        };
+      });
+    }
+
+    async function saveFormData() {
+      if (!db) return;
+      
+      try {
+        const formData = collectFormData();
+        const timestamp = new Date().toISOString();
+        
+        const transaction = db.transaction([STORE_NAME], 'readwrite');
+        const store = transaction.objectStore(STORE_NAME);
+        
+        const data = {
+          id: 'currentForm',
+          data: formData,
+          timestamp: timestamp
+        };
+        
+        const request = store.put(data);
+        
+        await new Promise((resolve, reject) => {
+          request.onsuccess = resolve;
+          request.onerror = () => reject(request.error);
+        });
+        
+        showAutoSaveIndicator();
+      } catch (error) {
+        console.error('Error saving form data:', error);
+      }
+    }
+
+    async function loadFormData() {
+      if (!db) return null;
+      
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction([STORE_NAME], 'readonly');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.get('currentForm');
+        
+        request.onerror = () => reject(request.error);
+        request.onsuccess = () => {
+          resolve(request.result ? request.result.data : null);
+        };
+      });
+    }
+
+    function showAutoSaveIndicator() {
+      const indicator = document.getElementById('autoSaveIndicator');
+      indicator.classList.add('show');
+      setTimeout(() => indicator.classList.remove('show'), 2000);
+    }
+
+    // ========== DREAM RENDERING ==========
+    function renderDreams(containerId, config, prefix) {
+      const container = document.getElementById(containerId);
+      const loadingElement = document.getElementById(containerId === 'immediateDreams' ? 'immediateLoading' : 'fiveYearLoading');
+      
+      if (!config || !Array.isArray(config) || config.length === 0) {
+        loadingElement.innerHTML = '<div class="loading-text">No dreams available</div>';
+        return;
+      }
+      
+      // Hide loading indicator
+      if (loadingElement) {
+        loadingElement.style.display = 'none';
+      }
+      
+      container.innerHTML = '';
+      
+      // Group dreams by key
+      const groupedDreams = {};
+      
+      config.forEach((dream) => {
+        if (!groupedDreams[dream.key]) {
+          groupedDreams[dream.key] = {
+            label: dream.label,
+            mainCategories: {}
+          };
+        }
+        
+        const mainCatKey = dream.main_category || 'general';
+        if (!groupedDreams[dream.key].mainCategories[mainCatKey]) {
+          groupedDreams[dream.key].mainCategories[mainCatKey] = [];
+        }
+        
+        groupedDreams[dream.key].mainCategories[mainCatKey].push({
+          category_id: dream.category_id,
+          supports: dream.supports || []
+        });
+      });
+      console.log('Grouped Dreams:', groupedDreams);
+      // Render each dream group
+      Object.keys(groupedDreams).forEach((dreamKey, dreamIndex) => {
+        const dreamGroup = groupedDreams[dreamKey];
+        const dreamId = `${prefix}_${dreamKey}`;
+        
+        // Create dream group container
+        const dreamGroupElement = document.createElement('div');
+        dreamGroupElement.className = 'dream-group';
+        dreamGroupElement.dataset.dreamKey = dreamKey;
+        
+        // Create dream header
+        const dreamHeader = document.createElement('div');
+        dreamHeader.className = 'dream-header';
+        
+        // Checkbox container
+        const checkboxContainer = document.createElement('div');
+        checkboxContainer.className = 'dream-checkbox-container';
+        
+        const checkbox = document.createElement('div');
+        checkbox.className = 'dream-checkbox-custom';
+        checkbox.dataset.dreamId = dreamId;
+        checkbox.addEventListener('click', (e) => {
+          handleDreamCheckboxClick(e, dreamId, containerId);
+        });
+        
+        const dreamTitle = document.createElement('h3');
+        dreamTitle.className = 'dream-title';
+        dreamTitle.textContent = dreamGroup.label;
+        
+        checkboxContainer.appendChild(checkbox);
+        checkboxContainer.appendChild(dreamTitle);
+        
+        // Priority selector
+        const prioritySelector = document.createElement('div');
+        prioritySelector.className = 'priority-selector';
+        
+        const priorityLabel = document.createElement('span');
+        priorityLabel.className = 'priority-label';
+        priorityLabel.textContent = 'Priority:';
+        
+        const priorityDropdown = document.createElement('div');
+        priorityDropdown.className = 'priority-dropdown';
+        
+        const select = document.createElement('select');
+        select.id = `prio_${dreamId}`;
+        select.dataset.section = containerId;
+        select.dataset.dreamKey = dreamKey;
+        select.addEventListener('change', handlePriorityChange);
+        
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = 'Select Priority';
+        select.appendChild(defaultOption);
+        
+        for (let i = 1; i <= 3; i++) {
+          const option = document.createElement('option');
+          option.value = i;
+          option.textContent = `${i} - ${i === 1 ? 'Highest' : i === 2 ? 'Medium' : 'Low'}`;
+          select.appendChild(option);
+        }
+        
+        priorityDropdown.appendChild(select);
+        
+        prioritySelector.appendChild(priorityLabel);
+        prioritySelector.appendChild(priorityDropdown);
+        
+        dreamHeader.appendChild(checkboxContainer);
+        dreamHeader.appendChild(prioritySelector);
+        
+        // Create dream content
+        const dreamContent = document.createElement('div');
+        dreamContent.className = 'dream-content';
+        
+        // Get main categories
+        const mainCategories = Object.keys(dreamGroup.mainCategories);
+        
+        if (mainCategories.length > 0 && !(mainCategories.length === 1 && mainCategories[0] === 'general')) {
+          // Render with subcategories
+          mainCategories.forEach((mainCat, catIndex) => {
+            if (mainCat && mainCat !== 'general') {
+              const subSections = dreamGroup.mainCategories[mainCat];
+              
+              const subsection = document.createElement('div');
+              subsection.className = 'subsection';
+              
+              // Subsection header
+              const subsectionHeader = document.createElement('div');
+              subsectionHeader.className = 'subsection-header';
+              
+              const subsectionLetter = document.createElement('div');
+              subsectionLetter.className = 'subsection-letter';
+              subsectionLetter.textContent = String.fromCharCode(97 + catIndex);
+              
+              const subsectionIcon = document.createElement('div');
+              subsectionIcon.className = 'subsection-icon';
+              subsectionIcon.innerHTML = getCategoryIcon(catIndex);
+              
+              const subsectionTitle = document.createElement('h4');
+              subsectionTitle.className = 'subsection-title';
+              subsectionTitle.textContent = mainCat;
+              
+              subsectionHeader.appendChild(subsectionLetter);
+              subsectionHeader.appendChild(subsectionIcon);
+              subsectionHeader.appendChild(subsectionTitle);
+              
+              // Support options grid
+              const supportGrid = document.createElement('div');
+              supportGrid.className = 'support-grid';
+              
+              subSections.forEach((subSectionData, subIndex) => {
+                if (subSectionData.supports && Array.isArray(subSectionData.supports)) {
+                  subSectionData.supports.forEach((support, supportIndex) => {
+                    const supportOption = createSupportOption(
+                      support,
+                      dreamKey,
+                      subSectionData.category_id,
+                      dreamId,
+                      containerId
+                    );
+                    supportGrid.appendChild(supportOption);
+                  });
+                }
+              });
+              
+              subsection.appendChild(subsectionHeader);
+              subsection.appendChild(supportGrid);
+              dreamContent.appendChild(subsection);
+            }
+          });
+        } else {
+          // Render without subcategories
+          const singleSection = document.createElement('div');
+          singleSection.className = 'single-section';
+          
+          const supportGrid = document.createElement('div');
+          supportGrid.className = 'support-grid';
+          
+          const allCategories = [];
+          Object.values(dreamGroup.mainCategories).forEach(catArray => {
+            allCategories.push(...catArray);
+          });
+          
+          allCategories.forEach((categoryData) => {
+            if (categoryData.supports && Array.isArray(categoryData.supports)) {
+              categoryData.supports.forEach((support) => {
+                const supportOption = createSupportOption(
+                  support,
+                  dreamKey,
+                  categoryData.category_id,
+                  dreamId,
+                  containerId
+                );
+                supportGrid.appendChild(supportOption);
+              });
+            }
+          });
+          
+          singleSection.appendChild(supportGrid);
+          dreamContent.appendChild(singleSection);
+        }
+        
+        dreamGroupElement.appendChild(dreamHeader);
+        dreamGroupElement.appendChild(dreamContent);
+        container.appendChild(dreamGroupElement);
+      });
+      
+      // Update UI state
+      enforceMaxSelections(containerId);
+      updateUsedPriorities(containerId);
+      updatePriorityOptions(containerId);
+    }
+
+    function createSupportOption(support, dreamKey, categoryId, dreamId, containerId) {
+      const supportText = typeof support === 'string' ? support : support.support_item;
+      const supportId = typeof support === 'string' ? support : support.support_id;
+      
+      const supportOption = document.createElement('div');
+      supportOption.className = 'support-option';
+      supportOption.dataset.dreamId = dreamId;
+      
+      const radioId = `sup_${dreamKey}_${categoryId}_${supportId}`;
+      
+      const radio = document.createElement('input');
+      radio.type = 'radio';
+      radio.name = `support_${dreamId}`;
+      radio.value = supportId;
+      radio.id = radioId;
+      radio.className = 'support-radio';
+      radio.dataset.dreamKey = dreamKey;
+      radio.dataset.categoryId = categoryId;
+      radio.dataset.section = containerId;
+      radio.addEventListener('change', handleSupportChange);
+      
+      const supportContent = document.createElement('div');
+      supportContent.className = 'support-content';
+      
+      const radioCustom = document.createElement('div');
+      radioCustom.className = 'support-radio-custom';
+      
+      const textSpan = document.createElement('span');
+      textSpan.className = 'support-text';
+      textSpan.textContent = supportText;
+      
+      const checkmark = document.createElement('span');
+      checkmark.className = 'support-checkmark';
+      checkmark.innerHTML = '✓';
+      
+      supportContent.appendChild(radio);
+      supportContent.appendChild(radioCustom);
+      supportContent.appendChild(textSpan);
+      supportContent.appendChild(checkmark);
+      
+      supportOption.appendChild(supportContent);
+      
+      // Add click handler to the entire card
+      supportOption.addEventListener('click', (e) => {
+        if (e.target !== radio) {
+          radio.checked = !radio.checked;
+          radio.dispatchEvent(new Event('change'));
+        }
+      });
+      
+      return supportOption;
+    }
+
+    function getCategoryIcon(index) {
+      const icons = ['💼', '🚀', '❤️', '🎓', '🌍', '⚡', '🏠', '💰', '👥', '📚'];
+      return icons[index] || '📋';
+    }
+
+    // ========== EVENT HANDLERS ==========
+    function handleDreamCheckboxClick(e, dreamId, containerId) {
+      const checkbox = e.currentTarget;
+      const dreamGroup = checkbox.closest('.dream-group');
+      const radio = dreamGroup.querySelector('.support-radio');
+      
+      if (checkbox.classList.contains('checked')) {
+        // Uncheck
+        checkbox.classList.remove('checked');
+        if (radio) radio.checked = false;
+        // Clear priority
+        const prioritySelect = dreamGroup.querySelector('select');
+        if (prioritySelect) prioritySelect.value = '';
+      } else {
+        // Check
+        checkbox.classList.add('checked');
+      }
+      
+      enforceMaxSelections(containerId);
+      updateSelectionCounter();
+      saveFormData();
+    }
+
+    function handlePriorityChange(e) {
+      const select = e.target;
+      const value = select.value;
+      const containerId = select.dataset.section;
+      const dreamKey = select.dataset.categoryId;
+      
+      const dreamGroup = select.closest('.dream-group');
+      const checkbox = dreamGroup.querySelector('.dream-checkbox-custom');
+      
+      if (value && !checkbox.classList.contains('checked')) {
+        checkbox.classList.add('checked');
+      }
+      
+      updateUsedPriorities(containerId);
+      updatePriorityOptions(containerId);
+      enforceMaxSelections(containerId);
+      updateSelectionCounter();
+      saveFormData();
+    }
+
+    function handleSupportChange(e) {
+      const radio = e.target;
+      const dreamKey = radio.dataset.dreamKey;
+      const containerId = radio.dataset.section;
+      
+      const dreamGroup = radio.closest('.dream-group');
+      const checkbox = dreamGroup.querySelector('.dream-checkbox-custom');
+      const supportOption = radio.closest('.support-option');
+      
+      // Update UI for all support options in this dream
+      const allOptions = dreamGroup.querySelectorAll('.support-option');
+      allOptions.forEach(option => {
+        option.classList.remove('selected');
+      });
+      
+      if (radio.checked) {
+        supportOption.classList.add('selected');
+        if (!checkbox.classList.contains('checked')) {
+          checkbox.classList.add('checked');
+        }
+      }
+      
+      enforceMaxSelections(containerId);
+      updateSelectionCounter();
+      saveFormData();
+    }
+
+    // ========== VALIDATION & UI UPDATES ==========
+    function enforceMaxSelections(sectionId) {
+      const container = document.getElementById(sectionId);
+      const dreamGroups = container.querySelectorAll('.dream-group');
+      const checkedDreams = container.querySelectorAll('.dream-checkbox-custom.checked');
+      const maxReached = checkedDreams.length >= 3;
+      
+      dreamGroups.forEach(dreamGroup => {
+        const checkbox = dreamGroup.querySelector('.dream-checkbox-custom');
+        const prioritySelect = dreamGroup.querySelector('select');
+        const supportOptions = dreamGroup.querySelectorAll('.support-option');
+        const isChecked = checkbox.classList.contains('checked');
+        
+        if (isChecked) {
+          dreamGroup.classList.remove('disabled');
+          if (prioritySelect) prioritySelect.disabled = false;
+          supportOptions.forEach(option => {
+            option.style.pointerEvents = 'auto';
+            option.style.opacity = '1';
+          });
+        } else {
+          if (maxReached) {
+            dreamGroup.classList.add('disabled');
+            if (prioritySelect) {
+              prioritySelect.value = '';
+              prioritySelect.disabled = true;
+            }
+            supportOptions.forEach(option => {
+              option.style.pointerEvents = 'none';
+              option.style.opacity = '0.5';
+              const radio = option.querySelector('.support-radio');
+              if (radio) radio.checked = false;
+              option.classList.remove('selected');
+            });
+          } else {
+            dreamGroup.classList.remove('disabled');
+            if (prioritySelect) {
+              prioritySelect.value = '';
+              prioritySelect.disabled = true;
+            }
+            supportOptions.forEach(option => {
+              option.style.pointerEvents = 'auto';
+              option.style.opacity = '1';
+              const radio = option.querySelector('.support-radio');
+              if (radio) radio.checked = false;
+              option.classList.remove('selected');
+            });
+          }
+        }
+      });
+    }
+
+    function updateUsedPriorities(sectionId) {
+      usedPriorities[sectionId].clear();
+      const container = document.getElementById(sectionId);
+      const prioritySelects = container.querySelectorAll('select[data-section]');
+      
+      prioritySelects.forEach(select => {
+        if (select.value) {
+          usedPriorities[sectionId].add(select.value);
+        }
+      });
+    }
+
+    function updatePriorityOptions(sectionId) {
+      const container = document.getElementById(sectionId);
+      const prioritySelects = container.querySelectorAll('select[data-section]');
+      
+      prioritySelects.forEach(select => {
+        const currentValue = select.value;
+        const options = select.querySelectorAll('option');
+        
+        options.forEach(option => {
+          if (option.value && option.value !== currentValue) {
+            option.disabled = usedPriorities[sectionId].has(option.value);
+          }
+        });
+      });
+    }
+
+    function updateSelectionCounter() {
+      const immediateChecked = document.querySelectorAll('#immediateDreams .dream-checkbox-custom.checked').length;
+      const fiveYearChecked = document.querySelectorAll('#fiveYearDreams .dream-checkbox-custom.checked').length;
+      const total = immediateChecked + fiveYearChecked;
+      
+      const counterNumber = document.querySelector('.counter-number');
+      const selectionCounter = document.getElementById('selectionCounter');
+      
+      if (counterNumber) {
+        counterNumber.textContent = total;
+        
+        if (total >= 3) {
+          selectionCounter.classList.add('counter-max');
+          counterNumber.style.background = '#ef4444';
+          counterNumber.style.color = 'white';
+        } else {
+          selectionCounter.classList.remove('counter-max');
+          counterNumber.style.background = 'white';
+          counterNumber.style.color = '#6366f1';
+        }
+      }
+    }
+
+    // ========== FORM DATA COLLECTION ==========
+    function collectFormData() {
+      const form = document.getElementById('dreamForm');
+      
+      return {
+        basicInfo: {
+          name: form.name.value,
+          gender: form.gender.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          district: form.district.value,
+          taluk: form.taluk.value,
+          dob: form.dob.value,
+          age: document.getElementById('age').value,
+          education: form.education.value,
+          employmentStatus: form.employmentStatus.value,
+          employmentType: form.employmentType ? form.employmentType.value : null
+        },
+        immediateDreams: collectDreamResponses('immediateDreams'),
+        fiveYearDreams: collectDreamResponses('fiveYearDreams'),
+        otherAspirations: form.otherAspirations.value
+      };
+    }
+
+    function collectDreamResponses(containerId) {
+      const container = document.getElementById(containerId);
+      const responses = [];
+      
+      const checkedDreams = container.querySelectorAll('.dream-checkbox-custom.checked');
+      console.log('Checked dreams in', containerId, ':', checkedDreams.length);
+      console.log('Checked dreams in', containerId, ':', checkedDreams);
+      
+      checkedDreams.forEach(checkbox => {
+        const dreamGroup = checkbox.closest('.dream-group');
+        console.log('Processing dream group:', dreamGroup);
+        const dreamKey = dreamGroup.dataset.dreamKey;
+        const dreamTitle = dreamGroup.querySelector('.dream-title').textContent;
+        const prioritySelect = dreamGroup.querySelector('select');
+        const selectedRadio = dreamGroup.querySelector('.support-radio:checked');
+        
+        responses.push({
+          key: dreamKey,
+          label: dreamTitle,
+          priority: prioritySelect ? prioritySelect.value : null,
+          support: selectedRadio ? selectedRadio.value : null,
+          support_text: selectedRadio ? selectedRadio.closest('.support-option').querySelector('.support-text').textContent : null,
+          category_id: selectedRadio ? selectedRadio.dataset.categoryId : null
+        });
+      });
+      
+      return responses;
+    }
+    
+
+    // ========== FORM SUBMISSION ==========
+    async function handleSubmit(e) {
+      e.preventDefault();
+      
+      // Basic validation
+      const age = parseInt(document.getElementById('age').value);
+      if (isNaN(age) || age < 18 || age > 29) {
+        showMessage('Applicants must be between 18 and 29 years old.', 'error');
+        return false;
+      }
+      
+      const immediateDreams = collectDreamResponses('immediateDreams');
+      const fiveYearDreams = collectDreamResponses('fiveYearDreams');
+      
+      if (immediateDreams.length === 0 && fiveYearDreams.length === 0) {
+        showMessage('Please select at least one dream from either section.', 'error');
+        return false;
+      }
+      
+      // Validate priorities
+      const immediatePriorities = immediateDreams.map(d => d.priority).filter(Boolean);
+      const fiveYearPriorities = fiveYearDreams.map(d => d.priority).filter(Boolean);
+      
+      if (new Set(immediatePriorities).size !== immediatePriorities.length ||
+          new Set(fiveYearPriorities).size !== fiveYearPriorities.length) {
+        showMessage('Each selected dream must have a unique priority number.', 'error');
+        return false;
+      }
+      
+      // File validation
+      const proofResidence = document.getElementById('proofResidence').files[0];
+      const proofAge = document.getElementById('proofAge').files[0];
+      
+      if (!proofResidence || !proofAge) {
+        showMessage('Please upload all required documents.', 'error');
+        return false;
+      }
+      
+      // File size validation (5MB)
+      const maxSize = 5 * 1024 * 1024;
+      if (proofResidence.size > maxSize || proofAge.size > maxSize) {
+        showMessage('File size must be less than 5MB.', 'error');
+        return false;
+      }
+      
+      // Prepare form data
+      const formData = new FormData();
+      const jsonData = {
+        name: sanitizeInput(document.getElementById('name').value),
+        gender: sanitizeInput(document.getElementById('gender').value),
+        email: sanitizeInput(document.getElementById('email').value),
+        phone: sanitizeInput(document.getElementById('phone').value),
+        district: sanitizeInput(document.getElementById('district').value),
+        taluk: sanitizeInput(document.getElementById('taluk').value),
+        dob: document.getElementById('dob').value,
+        age: age,
+        education: sanitizeInput(document.getElementById('education').value),
+        employment_status: sanitizeInput(document.getElementById('employmentStatus').value),
+        employment_type: document.getElementById('employmentType') ? sanitizeInput(document.getElementById('employmentType').value) : null,
+        immediate_dreams: JSON.stringify(immediateDreams),
+        five_year_dreams: JSON.stringify(fiveYearDreams),
+        other_aspirations: sanitizeInput(document.getElementById('otherAspirations').value),
+        is_active: true,
+        created_by: 1
+      };
+      
+      // Encrypt and append JSON data
+      formData.append('data', encryptData(jsonData));
+      formData.append('proofResidence', proofResidence);
+      formData.append('proofAge', proofAge);
+      
+      // Show loading
+      showMessage('Submitting your dreams...', 'success');
+      
+      try {
+        const response = await fetch(`${api_base_url}/v1/input_record`, {
+          method: 'POST',
+          headers: {
+            'X-App-Key': 'TN_EKEE',
+            'X-App-Name': 'TN_EKEE'
+          },
+          body: formData
+        });
+        
+        const result = await response.json();
+        
+        if (result.success === 1) {
+          // Clear saved data
+          if (db) {
+            const transaction = db.transaction([STORE_NAME], 'readwrite');
+            const store = transaction.objectStore(STORE_NAME);
+            store.delete('currentForm');
+          }
+          
+          await Swal.fire({
+            title: 'Success!',
+            text: 'Your dreams have been submitted successfully.',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            background: '#ffffff',
+            confirmButtonColor: '#10b981'
+          });
+          
+          // Reset form
+          document.getElementById('dreamForm').reset();
+          document.getElementById('age').value = '';
+          document.getElementById('immediateDreams').innerHTML = '';
+          document.getElementById('fiveYearDreams').innerHTML = '';
+          
+          // Reload dreams
+          fetchImmediateDreams();
+          fetchFiveYearDreams();
+          
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (error) {
+        console.error('Submission error:', error);
+        showMessage('Submission failed. Please try again.', 'error');
+      }
+      
+      return false;
+    }
+
+    // ========== HELPER FUNCTIONS ==========
+    function sanitizeInput(str) {
+      if (typeof str !== 'string') return str;
+      return str.trim()
+        .replace(/[<>"']/g, char => ({
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        }[char]));
+    }
+
+    function showMessage(message, type = 'info') {
+      const messageElement = document.getElementById('formMessage');
+      messageElement.textContent = message;
+      messageElement.className = `form-message ${type}`;
+      
+      setTimeout(() => {
+        messageElement.textContent = '';
+        messageElement.className = 'form-message';
+      }, 5000);
+    }
+
+    function updateAgeFromDOB() {
+      const dob = document.getElementById('dob').value;
+      const ageField = document.getElementById('age');
+      
+      if (!dob) {
+        ageField.value = '';
+        return;
+      }
+      
+      const birthDate = new Date(dob);
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDiff = today.getMonth() - birthDate.getMonth();
+      
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      
+      ageField.value = age;
+    }
+
+    // ========== DREAM FETCHING ==========
+    function fetchImmediateDreams() {
+      const payload = {
+        action: "function_call",
+        function_name: "get_support_config_group",
+        params: { group: 'immediate' }
+      };
+      
+      $.ajax({
+        url: `${api_base_url}/v1/commonfunction`,
+        type: "POST",
+        headers: {
+          "X-App-Key": "TN_EKEE",
+          "X-App-Name": "TN_EKEE"
+        },
+        data: {
+          data: encryptData(payload)
+        },
+        dataType: "json",
+        success: function (response) {
+          try {
+            const decrypted = decryptData(response.data);
+            const parsed = JSON.parse(decrypted[0]['get_support_config_group']);
+            immediateDreamConfig = parsed;
+            renderDreams('immediateDreams', immediateDreamConfig, 'imm');
+          } catch (e) {
+            console.error("Error parsing immediate dreams:", e);
+            document.getElementById('immediateLoading').innerHTML = 
+              '<div class="loading-text">Error loading dreams. Please refresh.</div>';
+          }
+        },
+        error: function (xhr, status, error) {
+          console.error("Error fetching immediate dreams:", error);
+          document.getElementById('immediateLoading').innerHTML = 
+            '<div class="loading-text">Error loading dreams. Please refresh.</div>';
+        }
+      });
+    }
+
+    function fetchFiveYearDreams() {
+      const payload = {
+        action: "function_call",
+        function_name: "get_support_config_group",
+        params: { group: 'five_year' }
+      };
+      
+      $.ajax({
+        url: `${api_base_url}/v1/commonfunction`,
+        type: "POST",
+        headers: {
+          "X-App-Key": "TN_EKEE",
+          "X-App-Name": "TN_EKEE"
+        },
+        data: {
+          data: encryptData(payload)
+        },
+        dataType: "json",
+        success: function (response) {
+          try {
+            const decrypted = decryptData(response.data);
+            const parsed = JSON.parse(decrypted[0]['get_support_config_group']);
+            fiveYearConfig = parsed;
+            renderDreams('fiveYearDreams', fiveYearConfig, 'fiv');
+          } catch (e) {
+            console.error("Error parsing five-year dreams:", e);
+            document.getElementById('fiveYearLoading').innerHTML = 
+              '<div class="loading-text">Error loading dreams. Please refresh.</div>';
+          }
+        },
+        error: function (xhr, status, error) {
+          console.error("Error fetching five-year dreams:", error);
+          document.getElementById('fiveYearLoading').innerHTML = 
+            '<div class="loading-text">Error loading dreams. Please refresh.</div>';
+        }
+      });
+    }
+
+    // ========== DISTRICT & TALUK FUNCTIONS ==========
+    function getDistrictDropDown() {
+      const payload = {
+        action: "select",
+        _table_name: "district",
+        selected_columns: ["district_name", "district_id"],
+        filter_conditions: {},
+        sort_columns: { "district_name": "asc" }
+      };
+      
+      $.ajax({
+        url: `${api_base_url}/v1/dynamic_input`,
+        type: "POST",
+        headers: {
+          "X-App-Key": "TN_EKEE",
+          "X-App-Name": "TN_EKEE"
+        },
+        data: {
+          data: encryptData(payload)
+        },
+        dataType: "json",
+        success: function (response) {
+          if (response.success === 1) {
+            const districtSelect = document.getElementById('district');
+            response.data.forEach(district => {
+              const option = document.createElement('option');
+              option.value = district.district_id;
+              option.textContent = district.district_name;
+              districtSelect.appendChild(option);
+            });
+          }
+        },
+        error: function () {
+          console.error('Error loading districts');
+        }
+      });
+    }
+
+    function getTalukDropDown(district_id) {
+      const payload = {
+        action: "select",
+        _table_name: "taluk",
+        selected_columns: ["taluk_name", "taluk_id"],
+        filter_conditions: { district_id: district_id },
+        sort_columns: { "taluk_name": "asc" }
+      };
+      
+      $.ajax({
+        url: `${api_base_url}/v1/dynamic_input`,
+        type: "POST",
+        headers: {
+          "X-App-Key": "TN_EKEE",
+          "X-App-Name": "TN_EKEE"
+        },
+        data: {
+          data: encryptData(payload)
+        },
+        dataType: "json",
+        success: function (response) {
+          if (response.success === 1) {
+            const talukSelect = document.getElementById('taluk');
+            talukSelect.innerHTML = '<option value="">Select Taluk</option>';
+            response.data.forEach(taluk => {
+              const option = document.createElement('option');
+              option.value = taluk.taluk_id;
+              option.textContent = taluk.taluk_name;
+              talukSelect.appendChild(option);
+            });
+          }
+        },
+        error: function () {
+          console.error('Error loading taluks');
+        }
+      });
+    }
+
+    // ========== SAVE & EXPORT FUNCTIONS ==========
+    function saveDraft() {
+      const formData = collectFormData();
+      const blob = new Blob([JSON.stringify(formData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `enn_kanavu_draft_${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      
+      showMessage('Draft saved as JSON file.', 'success');
+    }
+
+    function saveDraftPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const formData = collectFormData();
+      
+      // Add title
+      doc.setFontSize(20);
+      doc.setTextColor(41, 98, 255);
+      doc.text('Enn Kanavu - Dream Application Draft', 20, 20);
+      
+      doc.setFontSize(12);
+      doc.setTextColor(100, 116, 139);
+      doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 20, 30);
+      
+      let y = 40;
+      
+      // Basic Information
+      doc.setFontSize(16);
+      doc.setTextColor(30, 41, 59);
+      doc.text('Basic Information', 20, y);
+      y += 10;
+      
+      doc.setFontSize(11);
+      doc.setTextColor(51, 65, 85);
+      
+      const basicInfo = formData.basicInfo;
+      doc.text(`Name: ${basicInfo.name || 'Not provided'}`, 20, y); y += 7;
+      doc.text(`Email: ${basicInfo.email || 'Not provided'}`, 20, y); y += 7;
+      doc.text(`Phone: ${basicInfo.phone || 'Not provided'}`, 20, y); y += 7;
+      doc.text(`District: ${basicInfo.district || 'Not provided'}`, 20, y); y += 7;
+      doc.text(`Age: ${basicInfo.age || 'Not provided'}`, 20, y); y += 10;
+      
+      // Immediate Dreams
+      if (formData.immediateDreams.length > 0) {
+        doc.setFontSize(16);
+        doc.text('Immediate Dreams', 20, y); y += 10;
+        
+        doc.setFontSize(11);
+        formData.immediateDreams.forEach((dream, i) => {
+          doc.text(`${i + 1}. ${dream.label}`, 25, y); y += 7;
+          doc.text(`   Priority: ${dream.priority || 'Not set'}`, 30, y); y += 7;
+          doc.text(`   Support: ${dream.support_text || 'Not selected'}`, 30, y); y += 10;
+        });
+      }
+      
+      // Five Year Dreams
+      if (formData.fiveYearDreams.length > 0) {
+        doc.setFontSize(16);
+        doc.text('Five Year Dreams', 20, y); y += 10;
+        
+        doc.setFontSize(11);
+        formData.fiveYearDreams.forEach((dream, i) => {
+          doc.text(`${i + 1}. ${dream.label}`, 25, y); y += 7;
+          doc.text(`   Priority: ${dream.priority || 'Not set'}`, 30, y); y += 7;
+          doc.text(`   Support: ${dream.support_text || 'Not selected'}`, 30, y); y += 10;
+        });
+      }
+      
+      // Other Aspirations
+      if (formData.otherAspirations) {
+        doc.setFontSize(16);
+        doc.text('Other Aspirations', 20, y); y += 10;
+        
+        doc.setFontSize(11);
+        const aspirations = doc.splitTextToSize(formData.otherAspirations, 170);
+        doc.text(aspirations, 25, y);
+      }
+      
+      // Save PDF
+      doc.save(`enn_kanavu_draft_${new Date().toISOString().split('T')[0]}.pdf`);
+      
+      showMessage('PDF downloaded successfully.', 'success');
+    }
+
+    // ========== INITIALIZATION ==========
+    document.addEventListener('DOMContentLoaded', async function() {
+      // Initialize IndexedDB
+      try {
+        await initDB();
+        console.log('IndexedDB initialized');
+        
+        // Load saved data
+        const savedData = await loadFormData();
+        if (savedData) {
+          console.log('Loaded saved data');
+          // Populate form with saved data
+          populateForm(savedData);
+        }
+        
+        // Setup auto-save
+        setupAutoSave();
+        
+      } catch (error) {
+        console.error('Error initializing IndexedDB:', error);
+      }
+      
+      // Set up event listeners
+      setupEventListeners();
+      
+      // Fetch initial data
+      fetchImmediateDreams();
+      fetchFiveYearDreams();
+      getDistrictDropDown();
+      
+      // Set date restrictions for DOB
+      const today = new Date();
+      const maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+      const minDate = new Date(today.getFullYear() - 29, today.getMonth(), today.getDate());
+      
+      document.getElementById('dob').max = maxDate.toISOString().split('T')[0];
+      document.getElementById('dob').min = minDate.toISOString().split('T')[0];
+      
+      // Update selection counter
+      updateSelectionCounter();
+    });
+
+    function setupEventListeners() {
+      // DOB change event
+      document.getElementById('dob').addEventListener('change', updateAgeFromDOB);
+      
+      // Employment status change
+      document.getElementById('employmentStatus').addEventListener('change', function(e) {
+        const employmentTypeWrap = document.getElementById('employmentTypeWrap');
+        employmentTypeWrap.style.display = e.target.value === 'Employed' ? 'block' : 'none';
+      });
+      
+      // District change event
+      document.getElementById('district').addEventListener('change', function(e) {
+        if (e.target.value) {
+          getTalukDropDown(e.target.value);
+        } else {
+          document.getElementById('taluk').innerHTML = '<option value="">Select Taluk</option>';
+        }
+      });
+      
+      // Phone number formatting
+      document.getElementById('phone').addEventListener('input', function(e) {
+        this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
+      });
+      
+      // Character counter for aspirations
+      document.getElementById('otherAspirations').addEventListener('input', function(e) {
+        const counter = document.getElementById('charCounter');
+        const length = e.target.value.length;
+        counter.textContent = `${length}/300`;
+        counter.style.color = length >= 300 ? '#ef4444' : '#64748b';
+      });
+    }
+
+    function setupAutoSave() {
+      const form = document.getElementById('dreamForm');
+      const inputs = form.querySelectorAll('input, select, textarea');
+      let saveTimeout;
+      
+      inputs.forEach(input => {
+        input.addEventListener('input', () => {
+          clearTimeout(saveTimeout);
+          saveTimeout = setTimeout(saveFormData, 1500);
+        });
+        
+        if (input.tagName === 'SELECT') {
+          input.addEventListener('change', () => {
+            clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(saveFormData, 1500);
+          });
+        }
+      });
+    }
+
+    function populateForm(data) {
+      if (!data) return;
+      
+      const form = document.getElementById('dreamForm');
+      
+      // Basic info
+      if (data.basicInfo) {
+        form.name.value = data.basicInfo.name || '';
+        form.gender.value = data.basicInfo.gender || '';
+        form.email.value = data.basicInfo.email || '';
+        form.phone.value = data.basicInfo.phone || '';
+        form.district.value = data.basicInfo.district || '';
+        form.taluk.value = data.basicInfo.taluk || '';
+        form.dob.value = data.basicInfo.dob || '';
+        document.getElementById('age').value = data.basicInfo.age || '';
+        form.education.value = data.basicInfo.education || '';
+        form.employmentStatus.value = data.basicInfo.employmentStatus || '';
+        
+        if (form.employmentStatus.value === 'Employed') {
+          document.getElementById('employmentTypeWrap').style.display = 'block';
+          form.employmentType.value = data.basicInfo.employmentType || '';
+        }
+      }
+      
+      // Other aspirations
+      form.otherAspirations.value = data.otherAspirations || '';
+      
+      // Trigger character counter update
+      const event = new Event('input');
+      form.otherAspirations.dispatchEvent(event);
+      
+      // Dreams will be populated after they're loaded
+      setTimeout(() => {
+        if (data.immediateDreams) {
+          populateDreamSelections('immediateDreams', data.immediateDreams);
+        }
+        if (data.fiveYearDreams) {
+          populateDreamSelections('fiveYearDreams', data.fiveYearDreams);
+        }
+      }, 1000);
+    }
+
+    function populateDreamSelections(containerId, dreamData) {
+      const container = document.getElementById(containerId);
+      const dreamGroups = container.querySelectorAll('.dream-group');
+      
+      dreamGroups.forEach(dreamGroup => {
+        const dreamKey = dreamGroup.dataset.dreamKey;
+        const savedDream = dreamData.find(d => d.key === dreamKey);
+        
+        if (savedDream) {
+          // Check the checkbox
+          const checkbox = dreamGroup.querySelector('.dream-checkbox-custom');
+          checkbox.classList.add('checked');
+          
+          // Set priority
+          const prioritySelect = dreamGroup.querySelector('select');
+          if (prioritySelect && savedDream.priority) {
+            prioritySelect.value = savedDream.priority;
+          }
+          
+          // Set support option
+          if (savedDream.support) {
+            const supportRadio = dreamGroup.querySelector(`.support-radio[value="${savedDream.support}"]`);
+            if (supportRadio) {
+              supportRadio.checked = true;
+              supportRadio.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+      });
+      
+      // Update UI state
+      enforceMaxSelections(containerId);
+      updateUsedPriorities(containerId);
+      updatePriorityOptions(containerId);
+      updateSelectionCounter();
+    }
+  </script>
+</body>
+</html>

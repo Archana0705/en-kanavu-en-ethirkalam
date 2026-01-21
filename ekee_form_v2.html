@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow">
+
+  <title>Enn Kanavu, Enn Ethirkalam 2030</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
+  <link rel="stylesheet" href="assets/css/form_style.css">
+
+</head>
+
+<body>
+  <div id="Clouds">
+    <div class="Cloud"></div>
+    <div class="Cloud"></div>
+    <div class="Cloud"></div>
+    <div class="Cloud"></div>
+    <div class="Cloud"></div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="logo-title-wrapper">
+        <img src="assets/img/tn_logo.png" id="tn-logo" alt="TN Gov Logo">
+        <div class="title-wrapper">
+          <h1>Enn Kanavu, Enn Ethirkalam 2030</h1>
+          <div class="mobile-title">Enn Kanavu, Enn Ethirkalam 2030</div>
+          <p class="lead">Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu</p>
+          <div class="mobile-subtitle">
+            <marquee>Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu</marquee>
+          </div>
+        </div>
+      </div>
+      <div class="language-toggle">
+        <button id="langToggle" class="btn-lang">
+          <span class="lang-text">தமிழ்</span>
+          <i class="fas fa-language"></i>
+        </button>
+      </div>
+      <div id="userBadge">
+        <div class="user-info">
+          <i class="fas fa-user-check user-icon"></i>
+          <span class="user-text">Logged in: <span id="loggedInPhone"></span></span>
+        </div>
+        <button id="logoutBtn">
+          <i class="fas fa-sign-out-alt"></i>
+          Logout
+        </button>
+      </div>
+
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-user-circle"></i>
+      </button>
+
+      <div class="mobile-user-dropdown" id="mobileUserDropdown">
+        <div class="mobile-user-info">
+          <i class="fas fa-user-check"></i>
+          <span>Logged in as: <span id="mobileLoggedInPhone">9876543210</span></span>
+        </div>
+        <button class="mobile-logout-btn" id="mobileLogoutBtn">
+          <i class="fas fa-sign-out-alt"></i>
+          Logout
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="dropdown-overlay" id="dropdownOverlay"></div>
+  <div class="container">
+    <form id="dreamForm" class="card" onsubmit="return handleSubmit(event)">
+      <section class="basic-info">
+        <h2 style="margin-top:0" data-translate-en="Basic information">Basic information</h2>
+        <div class="grid">
+          <div>
+            <label for="name">Name<span>*</span></label>
+            <input id="name" name="name" placeholder="Enter your name" type="text" required />
+          </div>
+          <div>
+            <label for="mobile">Mobile Number<span>*</span></label>
+            <input id="phone" name="mobile" type="number" placeholder="+91" disabled required />
+          </div>
+
+          <script>
+            const phone = document.getElementById("phone");
+            const msg = document.getElementById("msg");
+
+            phone.addEventListener("input", function () {
+              // keep only digits
+              this.value = this.value.replace(/\D/g, "");
+
+              // hard-limit to 10 digits
+              if (this.value.length > 10) {
+                this.value = this.value.slice(0, 10);
+              }
+
+              // validate
+              if (this.value.length === 10) {
+                msg.textContent = "Valid phone number";
+                msg.style.color = "green";
+              } else if (this.value.length === 0) {
+                msg.textContent = "";
+              } else {
+                msg.textContent = "Enter exactly 10 digits";
+                msg.style.color = "red";
+              }
+            });
+          </script>
+          <div>
+            <label for="email">Email<span>*</span></label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+        </div>
+        <div style="margin-top:12px" class="grid">
+          <div>
+            <label for="poi">Proof of Identity (Ration Card Number, Driver License, School
+              Certificate)<span>*</span></label>
+            <input id="poi" class="file_input" name="poi" type="file" accept="image/*,application/pdf" required />
+            <small class="muted file_input"><br>Accepted: PDF,Image</small>
+          </div>
+        </div>
+
+        <hr class="section-line">
+
+        <div style="margin-top:12px" class="grid3">
+          <div>
+            <label for="dob">Date of Birth (for auto-age)<span>*</span></label>
+            <input id="dob" name="dob" type="date" required />
+            <small class="muted">Age will be calculated automatically. Applicants must be between 16 and 35
+              inclusive.</small>
+
+
+            <script>
+              const dob = document.getElementById("dob");
+
+              let today = new Date();
+
+              // Max = today - 18 years
+              let max = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
+
+              // Min = today - 29 years
+              let min = new Date(today.getFullYear() - 35, today.getMonth(), today.getDate());
+
+              dob.max = max.toISOString().split("T")[0];
+              dob.min = min.toISOString().split("T")[0];
+            </script>
+          </div>
+          <div>
+            <label for="age">Age<span>*</span></label>
+            <input id="age" name="age" type="number" readonly />
+          </div>
+
+          <!-- Find this section in ekee_form_v2.html -->
+          <div>
+            <label id="gender_label">Gender<span>*</span></label>
+            <select id="gender" name="gender" required>
+              <option value="">Select gender</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Other">Other</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+          <div>
+            <label for="respondent_type">Respondent Type<span>*</span></label>
+            <select id="respondent_type" name="respondent_type" required>
+              <option value="" disabled selected>Select Type</option>
+              <option>Student</option>
+              <option>Professional</option>
+              <option>Job Seeker</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="section-line">
+        <div style="margin-top:12px" class="grid">
+          <div>
+            <label for="education">Level of Education<span>*</span></label>
+            <select id="education" name="education" required>
+              <option value="">Select</option>
+              <option>Illiterate</option>
+              <option>8th pass</option>
+              <option>Matriculation</option>
+              <option>Higher Secondary</option>
+              <option>Graduate</option>
+              <option>Post-graduate</option>
+              <option>Doctorate</option>
+              <option>Diploma holder</option>
+            </select>
+          </div>
+          <div>
+            <label for="employmentStatus">Employment Status<span>*</span></label>
+            <select id="employmentStatus" name="employmentStatus" required>
+              <option value="">Select</option>
+              <option>Employed</option>
+              <option>Unemployed</option>
+              <option>Student</option>
+            </select>
+          </div>
+          <div id="employmentTypeWrap" style="display: none;">
+            <label for="employmentType">Type of Employment</label>
+            <select id="employmentType" name="employmentType">
+              <option value="">Select</option>
+              <option>Cultivator / Farmer</option>
+              <option>Agricultural Labour</option>
+              <option>Non-Agricultural Casual Labour</option>
+              <option>Self-Employed</option>
+              <option>Regular Salaried Worker (Private Sector)</option>
+              <option>Government or Public Sector Employee</option>
+              <option>Domestic or Household Worker</option>
+              <option>Transport Worker or Driver</option>
+              <option>Skilled or Technical Worker</option>
+              <option>Professionals</option>
+              <option>Homemaker</option>
+              <option>Unemployed or Seeking Work</option>
+              <option>Gig Worker or Delivery Partner</option>
+              <option>Other (Specify)</option>
+            </select>
+            <div id="employmentTypeOtherSpecifyWrap" style="display: none; margin-top: 8px;">
+              <label for="employmentTypeOtherSpecify">Please specify:</label>
+              <input type="text" id="employmentTypeOtherSpecify" name="employmentTypeOtherSpecify"
+                placeholder="Enter other employment type" style="width: 100%;">
+            </div>
+          </div>
+          <div>
+            <label for="district">District of Residence<span>*</span></label>
+            <select id="district" name="district" required>
+              <option value="" disabled selected>Select district</option>
+              <!-- 38 districts of Tamil Nadu -->
+
+            </select>
+          </div>
+        </div>
+        <div style="margin-top:12px" class="grid">
+
+        </div>
+      </section>
+
+      <!-- <hr style="margin:18px 0;border:none;border-top:1px solid #eef2ff" /> -->
+
+      <section>
+        <div class="section-title">
+          <h4 style="color: #47a9ff; margin-bottom: 0;" data-translate-en="My Dream Dashboard">My Dream Dashboard</h4>
+          <h2 style="margin-bottom: 0;"
+            data-translate-en="1. What is your dream that needs to be fulfilled in the immediate future?">1. What is
+            your dream that needs to be fulfilled in the immediate future?</h2>
+          <div class="note">Select up to 2 dreams. For every dream you select, choose one specific form of support you
+            would like to receive</div>
+        </div>
+
+        <!-- In the immediate dreams section -->
+        <div id="immediateDreams" class="card" style="background:#fcfeff">
+          <div id="immediateLoading" class="loading-text">
+            <i class="fas fa-spinner fa-spin"></i> Loading immediate dreams...
+          </div>
+        </div>
+      </section>
+
+      <hr style="margin:18px 0;border:none;border-top:1px solid #eef2ff" />
+
+      <section>
+        <div class="section-title">
+          <h2 style=" margin-bottom: 0;"
+            data-translate-en="2. To fulfill your dreams by 2030, what new future-focused scheme should be introduced?">
+            2. To fulfill your dreams by 2030, what new future-focused scheme should be introduced?</h2>
+          <div class="note"> (Select up to 2 options. For every option you select, choose one specific form of support
+            you would like to
+            receive) </div>
+        </div>
+
+        <div id="fiveYearDreams" class="card" style="background:#fcfeff">
+          <div id="fiveYearLoading" class="loading-text">
+            <i class="fas fa-spinner fa-spin"></i> Loading five-year dreams...
+          </div>
+        </div>
+
+      </section>
+
+      <hr style="margin:18px 0;border:none;border-top:1px solid #eef2ff" />
+
+      <section>
+        <label for="otherAspirations">
+          Any other dreams to be fulfilled by 2030? (Short)
+        </label>
+
+        <textarea id="otherAspirations" name="otherAspirations" maxlength="300" rows="3"
+          placeholder="Type up to 300 characters"></textarea>
+
+        <small>
+          <span id="charCount">0</span> / 300 characters
+        </small>
+      </section>
+
+      <div style="margin-top:14px;display:flex;gap:12px;align-items:center">
+        <button class="btn" type="submit" id="submit_form">Submit</button>
+        <div id="formMessage" style="margin-left:8px"></div>
+      </div>
+
+    </form>
+
+    <footer class="muted">Contents owned by <a href="https://cmhelpline.tnega.org/portal/en/home" target="_blank">Youth
+        Welfare Department</a> (©) | Designed and Developed by <a href="https://www.tnega.tn.gov.in/"
+        target="_blank">Tamil Nadu eGovernance Agency</a>.</footer>
+  </div>
+  <div id="otpModal" class="otp-modal">
+    <div class="otp-modal-content">
+      <div class="otp-modal-header">
+        <i class="fas fa-shield-alt"></i>
+        <h2>Mobile Verification</h2>
+        <p>Secure your dreams journey with OTP</p>
+      </div>
+
+      <div class="otp-modal-body">
+        <div class="otp-input-group">
+          <label class="otp-input-label">
+            <i class="fas fa-mobile-alt"></i>
+            Enter your mobile number
+          </label>
+          <input type="tel" id="phoneInput" class="otp-input" placeholder="10-digit mobile number" maxlength="10">
+          <div id="phoneError" class="otp-error">Please enter a valid 10-digit mobile number</div>
+        </div>
+
+        <div id="otpSection" style="display: none;">
+          <div class="otp-input-group">
+            <label class="otp-input-label">
+              <i class="fas fa-key"></i>
+              Enter OTP sent to your mobile
+            </label>
+            <div class="otp-digits">
+              <input type="text" maxlength="1" class="otp-digit" data-index="0">
+              <input type="text" maxlength="1" class="otp-digit" data-index="1">
+              <input type="text" maxlength="1" class="otp-digit" data-index="2">
+              <input type="text" maxlength="1" class="otp-digit" data-index="3">
+              <input type="text" maxlength="1" class="otp-digit" data-index="4">
+              <input type="text" maxlength="1" class="otp-digit" data-index="5">
+            </div>
+            <div id="otpError" class="otp-error">Invalid OTP. Please try again.</div>
+            <div id="otpSuccess" class="otp-success">OTP verified successfully!</div>
+          </div>
+          <div class="otp-timer" id="otpTimer">Resend OTP in <span id="timerCount">60</span> seconds</div>
+        </div>
+
+        <div class="otp-actions">
+          <button id="sendOtpBtn" class="btn btn-primary" style="flex: 1;">
+            <i class="fas fa-paper-plane"></i>
+            Send OTP
+          </button>
+          <button id="verifyOtpBtn" class="btn btn-success"
+            style="flex: 1 1 0%;display: none;background-color: rgb(16, 185, 129);padding: 15px 0px;border-radius: 50px;font-weight: 600;/* border: 1px solid #00a900; */box-shadow: 2px 2px 8px #00000061;">
+            <i class="fas fa-check-circle"></i>
+            Verify &amp; Continue
+          </button> <button id="resendOtpBtn" class="btn btn-secondary" style="display: none;">
+            <i class="fas fa-redo"></i>
+            Resend OTP
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openOtpModal() {
+      document.getElementById('otpModal').style.display = 'flex';
+      document.body.classList.add('no-scroll');
+    }
+  </script>
+
+  <!-- Add mobile menu JavaScript BEFORE other scripts -->
+  <script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('DOM loaded - initializing mobile menu');
+
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileUserDropdown = document.getElementById('mobileUserDropdown');
+      const dropdownOverlay = document.getElementById('dropdownOverlay');
+      const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+      const logoutBtn = document.getElementById('logoutBtn');
+      const header = document.querySelector('header');
+
+      // Test if elements exist
+      console.log('Elements found:', {
+        mobileMenuToggle: !!mobileMenuToggle,
+        mobileUserDropdown: !!mobileUserDropdown,
+        dropdownOverlay: !!dropdownOverlay,
+        mobileLogoutBtn: !!mobileLogoutBtn,
+        logoutBtn: !!logoutBtn,
+        header: !!header
+      });
+
+      // Show user badge by default for testing
+      const userBadge = document.getElementById('userBadge');
+      if (userBadge) {
+        userBadge.style.display = 'flex';
+        console.log('User badge displayed');
+      }
+
+      // Toggle mobile user dropdown
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          console.log('Mobile menu toggle clicked');
+          header.classList.toggle('user-dropdown-active');
+        });
+      }
+
+      // Close dropdown when clicking overlay
+      if (dropdownOverlay) {
+        dropdownOverlay.addEventListener('click', function () {
+          console.log('Overlay clicked');
+          header.classList.remove('user-dropdown-active');
+        });
+      }
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function (e) {
+        const isClickInsideDropdown = mobileUserDropdown && mobileUserDropdown.contains(e.target);
+        const isClickOnToggle = mobileMenuToggle && mobileMenuToggle.contains(e.target);
+
+        if (!isClickInsideDropdown && !isClickOnToggle) {
+          header.classList.remove('user-dropdown-active');
+        }
+      });
+
+      // Handle mobile logout
+      if (mobileLogoutBtn) {
+        mobileLogoutBtn.addEventListener('click', function () {
+          logoutBtn.click();
+        });
+      }
+
+
+
+      // Function to update logged in phone number
+      window.updateLoggedInPhone = function (phoneNumber) {
+        const loggedInPhone = document.getElementById('loggedInPhone');
+        const mobileLoggedInPhone = document.getElementById('mobileLoggedInPhone');
+
+        if (loggedInPhone) loggedInPhone.textContent = phoneNumber;
+        if (mobileLoggedInPhone) mobileLoggedInPhone.textContent = phoneNumber;
+
+        // Show user badge on desktop
+        const userBadge = document.getElementById('userBadge');
+        if (userBadge && phoneNumber) {
+          userBadge.style.display = 'flex';
+        }
+
+        // Show mobile menu toggle on small screens
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        if (mobileMenuToggle && phoneNumber) {
+          mobileMenuToggle.style.display = 'block';
+        }
+      }
+
+      // Initialize with a test phone number
+      // setTimeout(function() {
+      //     window.updateLoggedInPhone(phoneNumber);
+      //   }, 100);
+    });
+  </script>
+  <!-- <script src="/assets/js/pds.js"></script> -->
+  <script>
+    const modal = document.getElementById("otpModal");
+
+    function updateScrollLock() {
+      if (modal.classList.contains("show")) {
+        document.body.classList.add("no-scroll");
+      } else {
+        document.body.classList.remove("no-scroll");
+      }
+    }
+
+    // Run once on load
+    updateScrollLock();
+
+    // Re-check whenever classes on the modal change
+    const observer = new MutationObserver(updateScrollLock);
+    observer.observe(modal, { attributes: true, attributeFilter: ["class"] });
+  </script>
+
+
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/encrypt_decrypt.js"></script>
+  <script src="assets/js/crypto-js.min.js"></script>
+  <script src="assets/js/global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="assets/js/script_v2.js"></script>
+
+</body>
+
+</html>

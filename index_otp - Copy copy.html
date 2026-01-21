@@ -671,7 +671,7 @@
         </div>
         <div style="margin-top:12px" class="grid">
           <div>
-            <label>Proof of Identity*<span class="note-span">(Ration Card Number, Driver License, School Certificate)</span></label>
+            <label>Proof of Residence <span class="note-span">(Voter ID / Ration Card)</span></label>
             <input id="proofResidence" name="proofResidence" type="file" accept="image/*,application/pdf" required
               disabled />
             <small class="muted"><br>Accepted: image or PDF</small>
@@ -1377,73 +1377,235 @@
     // Dream configuration data - will be populated from API
     let immediateDreamConfig = [];
     let fiveYearConfig = [];
+ function handlePriorityChange(e) {
+            const select = e.target;
+            const value = select.value;
+            const containerId = select.dataset.section;
+            const dreamKey = select.dataset.categoryId;
 
+            const dreamGroup = select.closest('.dream-group');
+            const checkbox = dreamGroup.querySelector('.dream-checkbox-custom');
+
+            if (value && !checkbox.classList.contains('checked')) {
+                checkbox.classList.add('checked');
+            }
+
+            updateUsedPriorities(containerId);
+            updatePriorityOptions(containerId);
+            enforceMaxSelections(containerId);
+            updateSelectionCounter();
+            saveFormData();
+        }
     // ---------- Render Dreams ----------
-    function renderDreams(containerId, config, prefix) {
-      const wrap = document.getElementById(containerId);
-      wrap.innerHTML = '';
+     function renderDreams(containerId, config, prefix) {
+            const container = document.getElementById(containerId);
+            const loadingElement = document.getElementById(containerId === 'immediateDreams' ? 'immediateLoading' : 'fiveYearLoading');
 
-      config.forEach((d) => {
-        const id = prefix + '_' + d.key;
-        const row = document.createElement('div');
-        row.className = 'dream-row';
+            if (!config || !Array.isArray(config) || config.length === 0) {
+                loadingElement.innerHTML = '<div class="loading-text">No dreams available</div>';
+                return;
+            }
 
-        // -------------------------
-        // LINE 1: Dream + Priority
-        // -------------------------
-        const line1 = document.createElement('div');
-        line1.className = "dream-line1";
+            // Hide loading indicator
+            if (loadingElement) {
+                loadingElement.style.display = 'none';
+            }
 
-        // Checkbox + Label
-        const dreamBox = document.createElement('label');
-        dreamBox.style.fontWeight = 600;
-        dreamBox.innerHTML = `
-      <input type="checkbox" data-key="${d.category_id}" class="dream-checkbox" id="chk_${id}" />
-      <span style="margin-left:8px">${d.label}</span>
-    `;
+            container.innerHTML = '';
 
-        // Priority Dropdown
-        const priority = document.createElement('div');
-        priority.innerHTML = `
-      <select class="priority small-input" data-section="${containerId}" id="prio_${id}">
-        <option value="">Priority</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-    `;
+            // Group dreams by key
+            const groupedDreams = {};
 
-        line1.appendChild(dreamBox);
-        line1.appendChild(priority);
+            config.forEach((dream) => {
+                if (!groupedDreams[dream.key]) {
+                    groupedDreams[dream.key] = {
+                        label: dream.label,
+                        mainCategories: {}
+                    };
+                }
 
-        // -------------------------
-        // LINE 2: Radio buttons
-        // -------------------------
-        const line2 = document.createElement('div');
-        line2.className = "dream-line2 support-radio-group";
+                const mainCatKey = dream.main_category || 'general';
+                if (!groupedDreams[dream.key].mainCategories[mainCatKey]) {
+                    groupedDreams[dream.key].mainCategories[mainCatKey] = [];
+                }
 
-        let radios = "";
-        d.supports.forEach((s) => {
-          const supportText = typeof s === 'string' ? s : s.support_item;
-          const support_id = typeof s === 'string' ? s : s.support_id;
-          radios += `
-        <label class="support-radio-label">
-          <input type="radio" name="sup_${id}" value="${support_id}" class="support-radio">
-          ${supportText}
-        </label>
-      `;
-        });
+                groupedDreams[dream.key].mainCategories[mainCatKey].push({
+                    category_id: dream.category_id,
+                    supports: dream.supports || []
+                });
+            });
+            console.log('Grouped Dreams:', groupedDreams);
+            // Render each dream group
+            Object.keys(groupedDreams).forEach((dreamKey, dreamIndex) => {
+                const dreamGroup = groupedDreams[dreamKey];
+                const dreamId = `${prefix}_${dreamKey}`;
 
-        line2.innerHTML = radios;
+                // Create dream group container
+                const dreamGroupElement = document.createElement('div');
+                dreamGroupElement.className = 'dream-group';
+                dreamGroupElement.dataset.dreamKey = dreamKey;
 
-        // Add both lines into main row
-        row.appendChild(line1);
-        row.appendChild(line2);
+                // Create dream header
+                const dreamHeader = document.createElement('div');
+                dreamHeader.className = 'dream-header';
 
-        wrap.appendChild(row);
-      });
-    }
+                // Checkbox container
+                const checkboxContainer = document.createElement('div');
+                checkboxContainer.className = 'dream-checkbox-container';
 
+                const checkbox = document.createElement('div');
+                checkbox.className = 'dream-checkbox-custom';
+                checkbox.dataset.dreamId = dreamId;
+                checkbox.addEventListener('click', (e) => {
+                    handleDreamCheckboxClick(e, dreamId, containerId);
+                });
+
+                const dreamTitle = document.createElement('h3');
+                dreamTitle.className = 'dream-title';
+                dreamTitle.textContent = dreamGroup.label;
+
+                checkboxContainer.appendChild(checkbox);
+                checkboxContainer.appendChild(dreamTitle);
+
+                // Priority selector
+                const prioritySelector = document.createElement('div');
+                prioritySelector.className = 'priority-selector';
+
+                const priorityLabel = document.createElement('span');
+                priorityLabel.className = 'priority-label';
+                priorityLabel.textContent = 'Priority:';
+
+                const priorityDropdown = document.createElement('div');
+                priorityDropdown.className = 'priority-dropdown';
+
+                const select = document.createElement('select');
+                select.id = `prio_${dreamId}`;
+                select.dataset.section = containerId;
+                select.dataset.dreamKey = dreamKey;
+                select.addEventListener('change', handlePriorityChange);
+
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.textContent = 'Select Priority';
+                select.appendChild(defaultOption);
+
+                for (let i = 1; i <= 3; i++) {
+                    const option = document.createElement('option');
+                    option.value = i;
+                    option.textContent = `${i} - ${i === 1 ? 'Highest' : i === 2 ? 'Medium' : 'Low'}`;
+                    select.appendChild(option);
+                }
+
+                priorityDropdown.appendChild(select);
+
+                prioritySelector.appendChild(priorityLabel);
+                prioritySelector.appendChild(priorityDropdown);
+
+                dreamHeader.appendChild(checkboxContainer);
+                dreamHeader.appendChild(prioritySelector);
+
+                // Create dream content
+                const dreamContent = document.createElement('div');
+                dreamContent.className = 'dream-content';
+
+                // Get main categories
+                const mainCategories = Object.keys(dreamGroup.mainCategories);
+
+                if (mainCategories.length > 0 && !(mainCategories.length === 1 && mainCategories[0] === 'general')) {
+                    // Render with subcategories
+                    mainCategories.forEach((mainCat, catIndex) => {
+                        if (mainCat && mainCat !== 'general') {
+                            const subSections = dreamGroup.mainCategories[mainCat];
+
+                            const subsection = document.createElement('div');
+                            subsection.className = 'subsection';
+
+                            // Subsection header
+                            const subsectionHeader = document.createElement('div');
+                            subsectionHeader.className = 'subsection-header';
+
+                            const subsectionLetter = document.createElement('div');
+                            subsectionLetter.className = 'subsection-letter';
+                            subsectionLetter.textContent = String.fromCharCode(97 + catIndex);
+
+                            const subsectionIcon = document.createElement('div');
+                            subsectionIcon.className = 'subsection-icon';
+                            subsectionIcon.innerHTML = getCategoryIcon(catIndex);
+
+                            const subsectionTitle = document.createElement('h4');
+                            subsectionTitle.className = 'subsection-title';
+                            subsectionTitle.textContent = mainCat;
+
+                            subsectionHeader.appendChild(subsectionLetter);
+                            subsectionHeader.appendChild(subsectionIcon);
+                            subsectionHeader.appendChild(subsectionTitle);
+
+                            // Support options grid
+                            const supportGrid = document.createElement('div');
+                            supportGrid.className = 'support-grid';
+
+                            subSections.forEach((subSectionData, subIndex) => {
+                                if (subSectionData.supports && Array.isArray(subSectionData.supports)) {
+                                    subSectionData.supports.forEach((support, supportIndex) => {
+                                        const supportOption = createSupportOption(
+                                            support,
+                                            dreamKey,
+                                            subSectionData.category_id,
+                                            dreamId,
+                                            containerId
+                                        );
+                                        supportGrid.appendChild(supportOption);
+                                    });
+                                }
+                            });
+
+                            subsection.appendChild(subsectionHeader);
+                            subsection.appendChild(supportGrid);
+                            dreamContent.appendChild(subsection);
+                        }
+                    });
+                } else {
+                    // Render without subcategories
+                    const singleSection = document.createElement('div');
+                    singleSection.className = 'single-section';
+
+                    const supportGrid = document.createElement('div');
+                    supportGrid.className = 'support-grid';
+
+                    const allCategories = [];
+                    Object.values(dreamGroup.mainCategories).forEach(catArray => {
+                        allCategories.push(...catArray);
+                    });
+
+                    allCategories.forEach((categoryData) => {
+                        if (categoryData.supports && Array.isArray(categoryData.supports)) {
+                            categoryData.supports.forEach((support) => {
+                                const supportOption = createSupportOption(
+                                    support,
+                                    dreamKey,
+                                    categoryData.category_id,
+                                    dreamId,
+                                    containerId
+                                );
+                                supportGrid.appendChild(supportOption);
+                            });
+                        }
+                    });
+
+                    singleSection.appendChild(supportGrid);
+                    dreamContent.appendChild(singleSection);
+                }
+
+                dreamGroupElement.appendChild(dreamHeader);
+                dreamGroupElement.appendChild(dreamContent);
+                container.appendChild(dreamGroupElement);
+            });
+
+            // Update UI state
+            enforceMaxSelections(containerId);
+            updateUsedPriorities(containerId);
+            updatePriorityOptions(containerId);
+        }
     // Fetch immediate dreams from API
     function fetchImmediateDreams() {
       const payload = {

@@ -1,0 +1,1 @@
+var api_base_url = "https://tngis.tnega.org/lcap_api/dipr-lcap-api/ekee";

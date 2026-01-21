@@ -148,34 +148,13 @@
       padding: 10px 14px;
       border-radius: 8px;
       border: 0;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 500;
-      transition: background-color 0.2s;
-    }
-
-    .btn:hover {
-      background: #0a5ae0;
+      cursor: pointer
     }
 
     .btn.ghost {
       background: transparent;
       color: var(--accent);
       border: 1px solid rgba(15, 108, 255, 0.12)
-    }
-
-    .btn.ghost:hover {
-      background: rgba(15, 108, 255, 0.08);
-    }
-
-    .btn.logout {
-      background: #ef4444;
-      color: white;
-      margin-left: auto;
-    }
-
-    .btn.logout:hover {
-      background: #dc2626;
     }
 
     .controls {
@@ -276,16 +255,6 @@
       .dream-row select {
         width: min-content;
         padding: 4px 6px;
-      }
-      
-      header .container {
-        flex-wrap: wrap;
-      }
-      
-      .btn.logout {
-        margin-left: 0;
-        width: 100%;
-        order: 3;
       }
     }
 
@@ -505,64 +474,6 @@
       opacity: 0.6;
       pointer-events: none;
     }
-    
-    /* Application Status Banner */
-    .application-status {
-      background: linear-gradient(135deg, #0f6cff, #6dd3ff);
-      color: white;
-      padding: 15px 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    
-    .application-status h3 {
-      margin: 0 0 10px 0;
-      font-size: 18px;
-    }
-    
-    .application-status p {
-      margin: 5px 0;
-      font-size: 14px;
-    }
-    
-    .application-id {
-      font-family: monospace;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 5px 10px;
-      border-radius: 5px;
-      margin: 0 5px;
-    }
-    
-    /* Header Actions */
-    .header-actions {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .user-info {
-      font-size: 14px;
-      color: #6b7280;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    
-    .user-info .phone-icon {
-      font-size: 16px;
-    }
-    
-    @media (max-width: 720px) {
-      .header-actions {
-        margin-left: 0;
-        width: 100%;
-        justify-content: space-between;
-        order: 2;
-        margin-top: 10px;
-      }
-    }
   </style>
 </head>
 
@@ -572,6 +483,26 @@
     <div class="otp-modal-content">
       <h2>OTP Verification</h2>
       <p>Please enter your 10-digit mobile number to receive an OTP</p>
+      <div class="otp-input-group">
+        <label for="nameInput">Enter Name</label>
+        <input type="text" id="textInput" placeholder="Enter your name">
+        <!-- <div id="phoneError" class="otp-error"></div> -->
+      </div>
+      <div>
+        <label>Gender</label>
+        <select id="gender_input" name="gender" required>
+          <option value="">Select gender</option>
+          <option>Female</option>
+          <option>Male</option>
+          <option>Transgender</option>
+
+        </select>
+      </div>
+      <div>
+        <label for="email_input">Email</label>
+        <input id="email_input" name="email" type="email" placeholder="you@example.com" required />
+      </div>
+
       <div class="otp-input-group">
         <label for="phoneInput">Mobile Number</label>
         <input type="tel" id="phoneInput" placeholder="Enter 10-digit mobile number" maxlength="10"
@@ -595,36 +526,41 @@
     </div>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
   <header>
     <div class="container">
       <div
         style="margin:5px 10px;background:linear-gradient(135deg,#0f6cff,#6dd3ff);border-radius:30px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700">
         <img src="assets/img/tn_logo.png" id="tn-logo" alt="">
       </div>
-      <div style="flex: 1;">
+      <div>
         <h1>Enn Kanavu, Enn Ethirkalam 2030 — Youth Dreams Form</h1>
         <p class="lead">Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu — Fill this form (age
           18–29)</p>
-      </div>
-      <div class="header-actions">
-        <div id="userInfo" class="user-info" style="display: none;">
-          <span class="phone-icon">📱</span>
-          <span id="loggedInPhone"></span>
-        </div>
-        <button id="logoutBtn" class="btn logout" style="display: none;">Logout</button>
       </div>
     </div>
   </header>
 
   <div class="container">
-    <!-- Application Status Banner (will be shown for existing applications) -->
-    <div id="applicationStatusBanner" class="application-status" style="display: none;">
-      <h3>✓ Application Already Submitted</h3>
-      <p>Your application was successfully submitted on <span id="submissionDate"></span></p>
-      <p>Application ID: <span id="applicationId" class="application-id"></span></p>
-      <p>You can view your submitted details below.</p>
-    </div>
-
     <form id="dreamForm" class="card form-disabled" onsubmit="return handleSubmit(event)">
       <section class="basic-info">
         <h2 style="margin-top:0">Basic information</h2>
@@ -671,7 +607,7 @@
         </div>
         <div style="margin-top:12px" class="grid">
           <div>
-            <label>Proof of Identity*<span class="note-span">(Ration Card Number, Driver License, School Certificate)</span></label>
+            <label>Proof of Residence <span class="note-span">(Voter ID / Ration Card)</span></label>
             <input id="proofResidence" name="proofResidence" type="file" accept="image/*,application/pdf" required
               disabled />
             <small class="muted"><br>Accepted: image or PDF</small>
@@ -783,10 +719,9 @@
       </section>
 
       <div style="margin-top:14px;display:flex;gap:12px;align-items:center">
-        <button class="btn" type="submit" disabled id="submitBtn">Submit</button>
-        <button type="button" class="btn ghost" onclick="saveDraft()" id="saveDraftBtn" disabled>Save JSON (Download)</button>
-        <button type="button" class="btn ghost" onclick="saveDraftPDF()" id="savePdfBtn" disabled>Download PDF</button>
-        <button type="button" class="btn ghost" onclick="downloadSubmittedApplication()" id="downloadAppBtn" style="display: none;">Download Submitted Application</button>
+        <button class="btn" type="submit" disabled>Submit</button>
+        <button type="button" class="btn ghost" onclick="saveDraft()" disabled>Save JSON (Download)</button>
+        <button type="button" class="btn ghost" onclick="saveDraftPDF()" disabled>Download PDF</button>
         <div id="formMessage" style="margin-left:8px"></div>
       </div>
     </form>
@@ -815,160 +750,37 @@
   <script>
     // OTP Verification Logic
     const HARDCODED_OTP = "987654";
+    // OTP Verification Logic
     let otpTimer;
     let otpResendTime = 60; // seconds
-    let isExistingApplication = false;
-    let currentApplicationData = null;
-    let loggedInPhone = null;
 
     document.addEventListener('DOMContentLoaded', function () {
       initOtpModal();
-      setupLogoutButton();
     });
-
-    function setupLogoutButton() {
-      const logoutBtn = document.getElementById('logoutBtn');
-      logoutBtn.addEventListener('click', function() {
-        logoutUser();
-      });
-    }
-
-    function logoutUser() {
-      Swal.fire({
-        title: 'Logout?',
-        text: 'Are you sure you want to logout?',
-        icon: 'question',
-        showCancelButton: true,
-        confirmButtonColor: '#ef4444',
-        cancelButtonColor: '#6b7280',
-        confirmButtonText: 'Yes, Logout',
-        cancelButtonText: 'Cancel'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          // Clear all localStorage data
-          localStorage.removeItem('otp_verified');
-          localStorage.removeItem('verified_mobile');
-          localStorage.removeItem('otp_verified_timestamp');
-          localStorage.removeItem('application_id');
-          
-          // Hide user info and logout button
-          document.getElementById('userInfo').style.display = 'none';
-          document.getElementById('logoutBtn').style.display = 'none';
-          
-          // Reset form
-          resetForm();
-          
-          // Show OTP modal
-          document.getElementById('otpModal').style.display = 'flex';
-          
-          // Reset OTP input
-          document.getElementById('phoneInput').value = '';
-          document.getElementById('otpInput').value = '';
-          document.getElementById('otpInputGroup').style.display = 'none';
-          document.getElementById('verifyOtpBtn').style.display = 'none';
-          document.getElementById('resendOtpBtn').style.display = 'none';
-          document.getElementById('sendOtpBtn').style.display = 'inline-block';
-          document.getElementById('otpError').textContent = '';
-          document.getElementById('otpSuccess').textContent = '';
-          document.getElementById('phoneError').textContent = '';
-          
-          // Hide application status banner
-          document.getElementById('applicationStatusBanner').style.display = 'none';
-          
-          // Reset variables
-          isExistingApplication = false;
-          currentApplicationData = null;
-          loggedInPhone = null;
-          
-          // Clear any timers
-          if (otpTimer) {
-            clearInterval(otpTimer);
-          }
-          
-          Swal.fire({
-            title: 'Logged Out',
-            text: 'You have been successfully logged out.',
-            icon: 'success',
-            confirmButtonText: 'OK'
-          });
-        }
-      });
-    }
-
-    function resetForm() {
-      // Disable form
-      const form = document.getElementById('dreamForm');
-      form.classList.add('form-disabled');
-      
-      // Reset all form fields
-      form.reset();
-      
-      // Disable all inputs
-      const inputs = form.querySelectorAll('input, select, textarea, button');
-      inputs.forEach(input => {
-        input.disabled = true;
-        if (input.readOnly) input.readOnly = false;
-      });
-      
-      // Reset dream selections
-      document.querySelectorAll('.dream-checkbox').forEach(cb => {
-        cb.checked = false;
-        cb.disabled = false;
-      });
-      
-      document.querySelectorAll('.priority').forEach(select => {
-        select.value = '';
-        select.disabled = true;
-      });
-      
-      document.querySelectorAll('.support-radio').forEach(radio => {
-        radio.checked = false;
-        radio.disabled = true;
-      });
-      
-      // Reset button states
-      document.getElementById('submitBtn').disabled = true;
-      document.getElementById('submitBtn').textContent = 'Submit';
-      document.getElementById('submitBtn').style.backgroundColor = '';
-      document.getElementById('saveDraftBtn').disabled = true;
-      document.getElementById('savePdfBtn').disabled = true;
-      document.getElementById('downloadAppBtn').style.display = 'none';
-      document.getElementById('saveDraftBtn').style.display = 'inline-block';
-      document.getElementById('savePdfBtn').style.display = 'inline-block';
-      
-      // Reset age field
-      document.getElementById('age').value = '';
-      
-      // Reset employment type wrapper
-      document.getElementById('employmentTypeWrap').style.display = 'none';
-      
-      // Reset taluk dropdown
-      const talukSelect = document.getElementById('taluk');
-      talukSelect.innerHTML = '<option value="">Select Taluk</option>';
-      
-      // Update UI state for dreams
-      enforceMaxSelections('immediateDreams');
-      enforceMaxSelections('fiveYearDreams');
-      updateUsedPriorities('immediateDreams');
-      updateUsedPriorities('fiveYearDreams');
-      updatePriorityOptions('immediateDreams');
-      updatePriorityOptions('fiveYearDreams');
-    }
 
     function initOtpModal() {
       const sendOtpBtn = document.getElementById('sendOtpBtn');
       const verifyOtpBtn = document.getElementById('verifyOtpBtn');
       const resendOtpBtn = document.getElementById('resendOtpBtn');
       const phoneInput = document.getElementById('phoneInput');
+      const textInput = document.getElementById('textInput');
+      const genderInput = document.getElementById('gender_input');
+      const emailInput = document.getElementById('email_input');
       const otpInput = document.getElementById('otpInput');
 
       // Send OTP button click
       sendOtpBtn.addEventListener('click', function () {
         const phoneNumber = phoneInput.value.trim();
-        if (!validatePhoneNumber(phoneNumber)) {
-          document.getElementById('phoneError').textContent = 'Please enter a valid 10-digit mobile number';
+        const name = textInput.value.trim();
+        const gender = genderInput.value;
+        const email = emailInput.value.trim();
+
+        // Validate inputs
+        if (!validateBasicInfo(name, gender, email, phoneNumber)) {
           return;
         }
+
+        // Send OTP request
         sendOTPRequest(phoneNumber);
       });
 
@@ -998,9 +810,52 @@
       });
     }
 
+    function validateBasicInfo(name, gender, email, phoneNumber) {
+      let isValid = true;
+
+      // Clear previous errors
+      document.getElementById('phoneError').textContent = '';
+
+      // Validate name
+      if (!name || name.length < 2) {
+        showOTPError('Please enter a valid name');
+        isValid = false;
+      }
+
+      // Validate gender
+      if (!gender) {
+        showOTPError('Please select gender');
+        isValid = false;
+      }
+
+      // Validate email
+      if (!email || !validateEmail(email)) {
+        showOTPError('Please enter a valid email address');
+        isValid = false;
+      }
+
+      // Validate phone number
+      if (!validatePhoneNumber(phoneNumber)) {
+        document.getElementById('phoneError').textContent = 'Please enter a valid 10-digit mobile number';
+        isValid = false;
+      }
+
+      return isValid;
+    }
+
+    function validateEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
     function validatePhoneNumber(phone) {
       const phoneRegex = /^[6-9]\d{9}$/;
       return phoneRegex.test(phone);
+    }
+
+    function showOTPError(message) {
+      // You can implement a better error display here
+      alert(message);
     }
 
     function sendOTPRequest(phoneNumber, isResend = false) {
@@ -1053,6 +908,7 @@
       });
     }
 
+
     function verifyOTPRequest(phoneNumber, otp) {
       const payload = {
         action: "otp_operation",
@@ -1077,27 +933,16 @@
             document.getElementById('otpError').textContent = '';
             document.getElementById('otpSuccess').textContent = 'OTP verified successfully!';
 
-            // Store user phone
-            loggedInPhone = phoneNumber;
-            
+            // Enable form and auto-fill basic info
+            enableForm();
+            document.getElementById('phone').value = phoneNumber;
+            document.getElementById('name').value = document.getElementById('textInput').value;
+            document.getElementById('gender').value = document.getElementById('gender_input').value;
+            document.getElementById('email').value = document.getElementById('email_input').value;
+
             // Store verification in session/localStorage
             localStorage.setItem('otp_verified', 'true');
             localStorage.setItem('verified_mobile', phoneNumber);
-            localStorage.setItem('otp_verified_timestamp', new Date().getTime());
-
-            // Update user info in header
-            document.getElementById('userInfo').style.display = 'flex';
-            document.getElementById('loggedInPhone').textContent = phoneNumber;
-            document.getElementById('logoutBtn').style.display = 'inline-block';
-
-            // Check if user has already submitted an application
-            if (response.user && response.user_count > 0) {
-              // Existing application
-              handleExistingApplication(response);
-            } else {
-              // New user
-              handleNewUser(phoneNumber);
-            }
 
             // Close OTP modal after a short delay
             setTimeout(function () {
@@ -1113,193 +958,6 @@
           document.getElementById('otpSuccess').textContent = '';
         }
       });
-    }
-
-    function handleExistingApplication(response) {
-      isExistingApplication = true;
-      currentApplicationData = response;
-      
-      // Show application status banner
-      const banner = document.getElementById('applicationStatusBanner');
-      banner.style.display = 'block';
-      
-      // Fill banner info
-      const user = response.user;
-      document.getElementById('submissionDate').textContent = 
-        new Date(user.created_ts).toLocaleDateString('en-IN', {
-          day: '2-digit',
-          month: 'short',
-          year: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit'
-        });
-      document.getElementById('applicationId').textContent = user.application_id;
-      
-      // Enable form in read-only mode and populate data
-      enableFormReadOnly();
-      populateExistingApplicationData(response);
-      
-      // Update button states
-      document.getElementById('submitBtn').disabled = true;
-      document.getElementById('submitBtn').textContent = 'Application Already Submitted';
-      document.getElementById('submitBtn').style.backgroundColor = '#6b7280';
-      document.getElementById('downloadAppBtn').style.display = 'inline-block';
-      document.getElementById('saveDraftBtn').style.display = 'none';
-      document.getElementById('savePdfBtn').style.display = 'none';
-      
-      // Show success message
-      Swal.fire({
-        title: 'Application Found',
-        html: `
-          <p>Your application (ID: <strong>${user.application_id}</strong>) was already submitted.</p>
-          <p>You can view your submitted details below.</p>
-        `,
-        icon: 'info',
-        confirmButtonText: 'OK'
-      });
-    }
-
-    function handleNewUser(phoneNumber) {
-      isExistingApplication = false;
-      currentApplicationData = null;
-      
-      // Hide application status banner
-      document.getElementById('applicationStatusBanner').style.display = 'none';
-      
-      // Enable form for new application
-      enableFormForNewUser(phoneNumber);
-      
-      // Update button states
-      document.getElementById('submitBtn').disabled = false;
-      document.getElementById('submitBtn').textContent = 'Submit';
-      document.getElementById('submitBtn').style.backgroundColor = '';
-      document.getElementById('downloadAppBtn').style.display = 'none';
-      document.getElementById('saveDraftBtn').style.display = 'inline-block';
-      document.getElementById('savePdfBtn').style.display = 'inline-block';
-      
-      // Show welcome message
-      Swal.fire({
-        title: 'Welcome!',
-        text: 'Please fill in your application details.',
-        icon: 'success',
-        confirmButtonText: 'Start Application'
-      });
-    }
-
-    function enableFormReadOnly() {
-      const form = document.getElementById('dreamForm');
-      form.classList.remove('form-disabled');
-      
-      // Make all inputs read-only
-      const inputs = form.querySelectorAll('input, select, textarea');
-      inputs.forEach(input => {
-        input.disabled = false;
-        if (input.type !== 'file') {
-          input.readOnly = true;
-        } else {
-          input.disabled = true;
-        }
-      });
-    }
-
-    function enableFormForNewUser(phoneNumber) {
-      const form = document.getElementById('dreamForm');
-      form.classList.remove('form-disabled');
-
-      // Enable all form inputs for new application
-      const inputs = form.querySelectorAll('input, select, textarea, button');
-      inputs.forEach(input => {
-        input.disabled = false;
-        if (input.readOnly) input.readOnly = false;
-      });
-      
-      // Auto-fill phone number
-      document.getElementById('phone').value = phoneNumber;
-    }
-
-    function populateExistingApplicationData(response) {
-      const user = response.user;
-      
-      // Populate basic info
-      document.getElementById('name').value = user.name || '';
-      document.getElementById('gender').value = user.gender || '';
-      document.getElementById('email').value = user.email || '';
-      document.getElementById('phone').value = user.mobile_no || '';
-      document.getElementById('dob').value = user.dob || '';
-      document.getElementById('age').value = user.age || '';
-      document.getElementById('education').value = user.education || '';
-      document.getElementById('employmentStatus').value = user.employment_status || '';
-      document.getElementById('employmentType').value = user.employment_type || '';
-      document.getElementById('otherAspirations').value = user.other_aspirations || '';
-      
-      // Handle employment type visibility
-      const employmentTypeWrap = document.getElementById('employmentTypeWrap');
-      if (user.employment_status === 'Employed') {
-        employmentTypeWrap.style.display = 'block';
-      }
-      
-      // Populate district and taluk (need to wait for dropdowns to be loaded)
-      setTimeout(() => {
-        if (user.district) {
-          document.getElementById('district').value = user.district;
-          // Trigger taluk loading
-          $('#district').trigger('change');
-          
-          // Set taluk after a delay to ensure options are loaded
-          setTimeout(() => {
-            if (user.taluk) {
-              document.getElementById('taluk').value = user.taluk;
-            }
-          }, 1000);
-        }
-        
-        // Populate dreams after they are rendered
-        setTimeout(() => {
-          if (response.user_mapping && response.user_mapping.user) {
-            populateExistingDreams(response.user_mapping.user);
-          }
-        }, 1500);
-      }, 500);
-    }
-
-    function populateExistingDreams(userDreams) {
-      // Populate immediate and five-year dreams
-      userDreams.forEach(dream => {
-        // Find the dream row by category_id
-        const checkbox = document.querySelector(`.dream-checkbox[data-key="${dream.category_id}"]`);
-        if (checkbox) {
-          // Check the checkbox
-          checkbox.checked = true;
-          checkbox.disabled = true;
-          
-          // Find the row
-          const row = checkbox.closest('.dream-row');
-          
-          // Set priority if available
-          const prioritySelect = row.querySelector('.priority');
-          if (prioritySelect && dream.priority) {
-            prioritySelect.value = dream.priority;
-            prioritySelect.disabled = true;
-          }
-          
-          // Set support option
-          const radioInputs = row.querySelectorAll('input[type="radio"]');
-          radioInputs.forEach(radio => {
-            if (radio.value === dream.support_option) {
-              radio.checked = true;
-            }
-            radio.disabled = true;
-          });
-        }
-      });
-      
-      // Update UI state
-      enforceMaxSelections('immediateDreams');
-      enforceMaxSelections('fiveYearDreams');
-      updateUsedPriorities('immediateDreams');
-      updateUsedPriorities('fiveYearDreams');
-      updatePriorityOptions('immediateDreams');
-      updatePriorityOptions('fiveYearDreams');
     }
 
     function startOtpTimer() {
@@ -1322,39 +980,253 @@
       }, 1000);
     }
 
+    function enableForm() {
+      const form = document.getElementById('dreamForm');
+      form.classList.remove('form-disabled');
+
+      // Enable all form inputs
+      const inputs = form.querySelectorAll('input, select, textarea, button');
+      inputs.forEach(input => {
+        input.disabled = false;
+      });
+    }
+
     // Check if already verified on page load
     document.addEventListener('DOMContentLoaded', function () {
       const isVerified = localStorage.getItem('otp_verified');
       const verifiedMobile = localStorage.getItem('verified_mobile');
-      const verifiedTime = localStorage.getItem('otp_verified_timestamp');
-      const currentTime = new Date().getTime();
-      
-      // Check if verification is still valid (24 hours)
-      const isValidVerification = isVerified === 'true' && 
-                                 verifiedMobile && 
-                                 verifiedTime && 
-                                 (currentTime - parseInt(verifiedTime)) < (24 * 60 * 60 * 1000);
 
-      if (isValidVerification) {
-        loggedInPhone = verifiedMobile;
-        
-        // Update user info in header
-        document.getElementById('userInfo').style.display = 'flex';
-        document.getElementById('loggedInPhone').textContent = verifiedMobile;
-        document.getElementById('logoutBtn').style.display = 'inline-block';
-        
-        // Hide OTP modal
+      if (isVerified === 'true' && verifiedMobile) {
         document.getElementById('otpModal').style.display = 'none';
-        
-        // Check if user has existing application
-        checkExistingApplication(verifiedMobile);
-      } else {
-        // Clear expired verification
-        localStorage.removeItem('otp_verified');
-        localStorage.removeItem('verified_mobile');
-        localStorage.removeItem('otp_verified_timestamp');
+        enableForm();
+        document.getElementById('phone').value = verifiedMobile;
       }
-      
+    });
+
+    // IndexedDB setup
+    const DB_NAME = 'EnnKanavuDB';
+    const DB_VERSION = 1;
+    const STORE_NAME = 'formData';
+    let db;
+
+    // Initialize IndexedDB
+    function initDB() {
+      return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+
+        request.onerror = () => reject(request.error);
+        request.onsuccess = () => {
+          db = request.result;
+          resolve(db);
+        };
+
+        request.onupgradeneeded = (event) => {
+          const db = event.target.result;
+          if (!db.objectStoreNames.contains(STORE_NAME)) {
+            const store = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+            store.createIndex('timestamp', 'timestamp', { unique: false });
+          }
+        };
+      });
+    }
+
+    // Save form data to IndexedDB
+    async function saveFormData() {
+      if (!db) return;
+
+      const formData = collectFormData();
+      const timestamp = new Date().toISOString();
+
+      const transaction = db.transaction([STORE_NAME], 'readwrite');
+      const store = transaction.objectStore(STORE_NAME);
+
+      // Store with a fixed ID so we only keep one version
+      const data = {
+        id: 'currentForm',
+        data: formData,
+        timestamp: timestamp
+      };
+
+      store.put(data);
+
+      // Show auto-save indicator
+      const indicator = document.getElementById('autoSaveIndicator');
+      indicator.classList.add('show');
+      setTimeout(() => indicator.classList.remove('show'), 2000);
+    }
+
+    // Load form data from IndexedDB
+    async function loadFormData() {
+      if (!db) return null;
+
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction([STORE_NAME], 'readonly');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.get('currentForm');
+
+        request.onerror = () => reject(request.error);
+        request.onsuccess = () => resolve(request.result ? request.result.data : null);
+      });
+    }
+
+    // Collect all form data
+    function collectFormData() {
+      const form = document.getElementById('dreamForm');
+      const formData = {
+        basicInfo: {
+          name: form.name.value,
+          gender: form.gender.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          district: form.district.value,
+          taluk: form.taluk.value,
+          dob: form.dob.value,
+          age: document.getElementById('age').value,
+          education: form.education.value,
+          employmentStatus: form.employmentStatus.value,
+          employmentType: form.employmentType.value || null
+        },
+        immediateDreams: collectDreamResponses('immediateDreams', 'imm'),
+        fiveYearDreams: collectDreamResponses('fiveYearDreams', 'fiv'),
+        otherAspirations: form.otherAspirations.value
+      };
+
+      return formData;
+    }
+
+    // Populate form with saved data
+    function populateForm(data) {
+      if (!data) return;
+
+      const form = document.getElementById('dreamForm');
+
+      // Basic info
+      if (data.basicInfo) {
+        form.name.value = data.basicInfo.name || '';
+        form.gender.value = data.basicInfo.gender || '';
+        form.email.value = data.basicInfo.email || '';
+        form.phone.value = data.basicInfo.phone || '';
+        form.district.value = data.basicInfo.district || '';
+        form.taluk.value = data.basicInfo.taluk || '';
+        form.dob.value = data.basicInfo.dob || '';
+        document.getElementById('age').value = data.basicInfo.age || '';
+        form.education.value = data.basicInfo.education || '';
+        form.employmentStatus.value = data.basicInfo.employmentStatus || '';
+
+        // Show/hide employment type based on status
+        const employmentTypeWrap = document.getElementById('employmentTypeWrap');
+        employmentTypeWrap.style.display = (form.employmentStatus.value === 'Employed') ? 'block' : 'none';
+        form.employmentType.value = data.basicInfo.employmentType || '';
+      }
+
+      // Other aspirations
+      form.otherAspirations.value = data.otherAspirations || '';
+
+      // Dreams - we need to wait for dreams to be rendered
+      setTimeout(() => {
+        if (data.immediateDreams) {
+          populateDreams('immediateDreams', data.immediateDreams);
+        }
+        if (data.fiveYearDreams) {
+          populateDreams('fiveYearDreams', data.fiveYearDreams);
+        }
+
+        // Update UI state after populating dreams
+        enforceMaxSelections('immediateDreams');
+        enforceMaxSelections('fiveYearDreams');
+        updateUsedPriorities('immediateDreams');
+        updateUsedPriorities('fiveYearDreams');
+        updatePriorityOptions('immediateDreams');
+        updatePriorityOptions('fiveYearDreams');
+      }, 500);
+    }
+
+    // Populate dream selections
+    function populateDreams(containerId, dreamData) {
+      const container = document.getElementById(containerId);
+      const rows = container.querySelectorAll('.dream-row');
+
+      rows.forEach(row => {
+        const chk = row.querySelector('.dream-checkbox');
+        const key = chk.dataset.key;
+
+        // Find matching dream in saved data
+        const savedDream = dreamData.find(d => d.key === key);
+
+        if (savedDream) {
+          // Check the checkbox
+          chk.checked = true;
+
+          // Set priority
+          const prioritySelect = row.querySelector('.priority');
+          if (prioritySelect && savedDream.priority) {
+            prioritySelect.value = savedDream.priority;
+          }
+
+          // Set support option
+          const radioInputs = row.querySelectorAll('input[type="radio"]');
+          radioInputs.forEach(radio => {
+            if (radio.value === savedDream.support) {
+              radio.checked = true;
+            }
+          });
+        }
+      });
+    }
+
+    // Set up auto-save with debouncing
+    let saveTimeout;
+    function setupAutoSave() {
+      // Listen to all form inputs
+      const form = document.getElementById('dreamForm');
+      const inputs = form.querySelectorAll('input, select, textarea');
+
+      inputs.forEach(input => {
+        input.addEventListener('input', () => {
+          clearTimeout(saveTimeout);
+          saveTimeout = setTimeout(saveFormData, 1000);
+        });
+
+        // For select elements, also listen to change events
+        if (input.tagName === 'SELECT') {
+          input.addEventListener('change', () => {
+            clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(saveFormData, 1000);
+          });
+        }
+      });
+
+      // Special handling for dream selections
+      document.addEventListener('change', (e) => {
+        if (e.target.classList.contains('dream-checkbox') ||
+          e.target.classList.contains('priority') ||
+          e.target.classList.contains('support')) {
+          clearTimeout(saveTimeout);
+          saveTimeout = setTimeout(saveFormData, 1000);
+        }
+      });
+    }
+
+    // Initialize everything when the page loads
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Initialize IndexedDB
+      try {
+        await initDB();
+        console.log('IndexedDB initialized');
+
+        // Load saved form data
+        const savedData = await loadFormData();
+        if (savedData) {
+          console.log('Loaded saved form data');
+          populateForm(savedData);
+        }
+
+        // Set up auto-save
+        setupAutoSave();
+      } catch (error) {
+        console.error('Error initializing IndexedDB:', error);
+      }
+
       // Continue with existing initialization
       fetchImmediateDreams();
       fetchFiveYearDreams();
@@ -1369,11 +1241,7 @@
       dob.min = min.toISOString().split("T")[0];
     });
 
-    function checkExistingApplication(phoneNumber) {
-      // For now, we'll enable the form and let the OTP verification handle the check
-      enableFormForNewUser(phoneNumber);
-    }
-
+    // Existing code continues below...
     // Dream configuration data - will be populated from API
     let immediateDreamConfig = [];
     let fiveYearConfig = [];
@@ -1428,7 +1296,7 @@
           const support_id = typeof s === 'string' ? s : s.support_id;
           radios += `
         <label class="support-radio-label">
-          <input type="radio" name="sup_${id}" value="${support_id}" class="support-radio">
+          <input type="radio" name="sup_${id}" value="${support_id}">
           ${supportText}
         </label>
       `;
@@ -1504,7 +1372,9 @@
         success: function (response) {
           try {
             const decrypted = decryptData(response.data);
+            console.log("Decrypted five-year dreams data:", decrypted);
             const parsed = JSON.parse(decrypted[0]['get_support_config_group']);
+            console.log("Five-year dreams data:", parsed);
             fiveYearConfig = parsed;
             renderDreams('fiveYearDreams', fiveYearConfig, 'fiv');
             enforceMaxSelections('fiveYearDreams');
@@ -1567,7 +1437,7 @@
       }
 
       // Auto-check when dropdown selected
-      if (e.target.classList.contains('priority') || e.target.classList.contains('support-radio')) {
+      if (e.target.classList.contains('priority') || e.target.classList.contains('support')) {
         const id = e.target.id.replace(/^(prio|sup)_/, '');
         const chk = document.getElementById('chk_' + id);
         if (e.target.value !== '') chk.checked = true;
@@ -1579,9 +1449,6 @@
       if (e.target.id === 'employmentStatus') {
         const wrap = document.getElementById('employmentTypeWrap');
         wrap.style.display = (e.target.value === 'Employed') ? 'block' : 'none';
-        if (wrap.style.display === 'none') {
-          document.getElementById('employmentType').value = '';
-        }
       }
 
       // Age autofill
@@ -1691,18 +1558,6 @@
 
     function handleSubmit(e) {
       e.preventDefault();
-      
-      // Check if this is an existing application
-      if (isExistingApplication) {
-        Swal.fire({
-          title: 'Already Submitted',
-          text: 'You have already submitted an application. You cannot submit again.',
-          icon: 'warning',
-          confirmButtonText: 'OK'
-        });
-        return false;
-      }
-
       const form = document.getElementById('dreamForm');
 
       const age = Number(document.getElementById('age').value);
@@ -1749,8 +1604,7 @@
         five_year_dreams: JSON.stringify(fiveYr),
         other_aspirations: form.otherAspirations.value ? sanitizeInput(form.otherAspirations.value) : null,
         is_active: true,
-        created_by: 1,
-        mobile_no: form.phone.value
+        created_by: 1
       };
 
       const formData = new FormData();
@@ -1775,12 +1629,11 @@
         success: function (response) {
           console.log(response);
           if (response && response.success === 1) {
-            // Mark as existing application
-            isExistingApplication = true;
-            
-            // Store application data
-            if (response.data && response.data.application_id) {
-              localStorage.setItem('application_id', response.data.application_id);
+            // Clear saved form data after successful submission
+            if (db) {
+              const transaction = db.transaction([STORE_NAME], 'readwrite');
+              const store = transaction.objectStore(STORE_NAME);
+              store.delete('currentForm');
             }
 
             Swal.fire({
@@ -1900,9 +1753,7 @@
       const talukSelect = document.getElementById('taluk');
       const district_id = this.value;
       talukSelect.innerHTML = '<option value="">Select Taluk</option>';
-      if (district_id) {
-        getTalukDropDown(district_id);
-      }
+      getTalukDropDown(district_id);
     });
 
     // save as json
@@ -1911,12 +1762,11 @@
       const payload = {
         name: form.name.value,
         email: form.email.value,
-        phone: form.phone.value,
         district: form.district.value,
         age: document.getElementById('age').value,
         dob: form.dob.value,
-        immediateDreams: collectDreamResponses('immediateDreams', 'imm'),
-        fiveYearDreams: collectDreamResponses('fiveYearDreams', 'fiv'),
+        immediateDreams: collectDreamResponses('immediateDreams'),
+        fiveYearDreams: collectDreamResponses('fiveYearDreams'),
         otherAspirations: form.otherAspirations.value
       };
       const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
@@ -1937,12 +1787,11 @@
       const payload = {
         name: form.name.value,
         email: form.email.value,
-        phone: form.phone.value,
         district: form.district.value,
         age: document.getElementById('age').value,
         dob: form.dob.value,
-        immediateDreams: collectDreamResponses('immediateDreams', 'imm'),
-        fiveYearDreams: collectDreamResponses('fiveYearDreams', 'fiv'),
+        immediateDreams: collectDreamResponses('immediateDreams'),
+        fiveYearDreams: collectDreamResponses('fiveYearDreams'),
         otherAspirations: form.otherAspirations.value
       };
 
@@ -1964,7 +1813,6 @@
 
       addLine(`Name: ${payload.name || ''}`);
       addLine(`Email: ${payload.email || ''}`);
-      addLine(`Phone: ${payload.phone || ''}`);
       addLine(`District: ${payload.district || ''}`);
       addLine(`Age: ${payload.age || ''}`);
       addLine(`DOB: ${payload.dob || ''}`);
@@ -1989,70 +1837,6 @@
       showMessage('Draft PDF downloaded.', 'success');
     }
 
-    function downloadSubmittedApplication() {
-      if (!currentApplicationData) {
-        Swal.fire('Error', 'No application data available.', 'error');
-        return;
-      }
-
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-      const user = currentApplicationData.user;
-      const userMapping = currentApplicationData.user_mapping;
-
-      let y = 10;
-      doc.setFontSize(16);
-      doc.text("Enn Kanavu - Submitted Application", 10, y);
-      y += 10;
-      
-      doc.setFontSize(12);
-      doc.text(`Application ID: ${user.application_id}`, 10, y);
-      y += 7;
-      doc.text(`Submitted on: ${new Date(user.created_ts).toLocaleDateString()}`, 10, y);
-      y += 15;
-      
-      doc.setFontSize(14);
-      doc.text("Personal Details", 10, y);
-      y += 10;
-      
-      doc.setFontSize(11);
-      const details = [
-        `Name: ${user.name || ''}`,
-        `Gender: ${user.gender || ''}`,
-        `Email: ${user.email || ''}`,
-        `Mobile: ${user.mobile_no || ''}`,
-        `Date of Birth: ${user.dob || ''}`,
-        `Age: ${user.age || ''}`,
-        `Education: ${user.education || ''}`,
-        `Employment Status: ${user.employment_status || ''}`,
-        `Employment Type: ${user.employment_type || 'N/A'}`
-      ];
-      
-      details.forEach(detail => {
-        doc.text(detail, 10, y);
-        y += 7;
-      });
-      
-      // Add dreams section if available
-      if (userMapping && userMapping.user) {
-        y += 10;
-        doc.setFontSize(14);
-        doc.text("Selected Dreams", 10, y);
-        y += 10;
-        
-        doc.setFontSize(11);
-        userMapping.user.forEach(dream => {
-          // You would need to map category_id to dream names here
-          doc.text(`- Dream ID: ${dream.category_id} (Priority: ${dream.priority}, Support: ${dream.support_option})`, 10, y);
-          y += 7;
-        });
-      }
-      
-      doc.save(`Enn_Kanavu_Application_${user.application_id}.pdf`);
-      
-      Swal.fire('Success', 'Application downloaded as PDF', 'success');
-    }
-
     function showMessage(msg, type = 'info') {
       const el = document.getElementById('formMessage');
       el.innerText = msg;
@@ -2060,13 +1844,29 @@
       setTimeout(() => { el.innerText = ''; }, 6000);
     }
 
-    function showErrorToast(message) {
-      Swal.fire({
-        title: 'Error',
-        text: message,
-        icon: 'error',
-        confirmButtonText: 'OK'
+    // popup
+    function showSuccessPopup() {
+      const popup = document.getElementById("successPopup");
+      if (!popup) return;
+
+      popup.classList.add("show");
+
+      const closeBtn = document.getElementById("popupCloseBtn");
+      if (closeBtn) {
+        closeBtn.onclick = () => popup.classList.remove("show");
+      }
+
+      // Close when clicking outside the popup box
+      popup.addEventListener("click", (e) => {
+        if (e.target.id === "successPopup") {
+          popup.classList.remove("show");
+        }
       });
+    }
+
+    function showErrorToast(message) {
+      // Simple error display - you can replace with a toast library if needed
+      alert(message);
     }
   </script>
 </body>
