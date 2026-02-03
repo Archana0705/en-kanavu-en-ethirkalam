@@ -427,13 +427,8 @@
             "order": null,
             "Tamil_text": "மற்றவை",
             "English_text": "Other"
-          },
-          {
-            "id": 7,
-            "order": null,
-            "Tamil_text": "சொல்ல விருப்பமில்லை",
-            "English_text": "Prefer not to say"
           }
+          
         ]
       }
     ]
@@ -508,7 +503,7 @@
             "order": 1,
             "support_id": 186,
             "support_item": "Mental health counselling ",
-            "tamil_support_item": "மன சுகாதார ஆலோசனை"
+            "tamil_support_item": "மனநலம் ஆலோசனை"
           },
           {
             "order": 2,
@@ -524,7 +519,7 @@
           }
         ],
         "category_id": 26,
-        "tamil_label": "மன & உணர்ச்சி சுகாதாரம்",
+        "tamil_label": "மனநலம் பேணுதல்",
         "order_column": 6,
         "main_category": null,
         "main_category_order": null,
@@ -562,23 +557,23 @@
             "order": 2,
             "support_id": 175,
             "support_item": "Access to government-sponsored co-working spaces",
-            "tamil_support_item": "அரசு வழங்கும் இணைந்து பணியாற்றும் இடங்களுக்கான அணுகல்"
+            "tamil_support_item": "அரசு வழங்கும் co-working spaces இடங்களுக்கான அணுகல்"
           },
           {
             "order": 1,
             "support_id": 174,
             "support_item": "Access to Job Fairs",
-            "tamil_support_item": "வேலை முகாம்களுக்கான அணுகல்"
+            "tamil_support_item": "வேலைவாய்ப்பு  முகாம்கள்"
           },
           {
             "order": 3,
             "support_id": 176,
             "support_item": "Enable global job opportunities (through coordination with Tamil Nadu Skill Development Corporation (TNSDC) & Overseas Manpower Corporation Ltd (OMCL))",
-            "tamil_support_item": "வெளிநாட்டு வேலை வாய்ப்புகளை இயக்குதல் (NRTகளுடன் ஒருங்கிணைப்பு மூலம்)"
+            "tamil_support_item": "வெளிநாட்டு வேலை வாய்ப்புகள் (NRTகளுடன் ஒருங்கிணைப்பு மூலம்)"
           }
         ],
         "category_id": 13,
-        "tamil_label": "நான் அர்த்தமுள்ள வேலைவாய்ப்புக்கு ஆதரவு பெற விரும்புகிறேன் -",
+        "tamil_label": "நான் வேலைவாய்ப்புக்கு ஆதரவு பெற விரும்புகிறேன் -",
         "order_column": 4,
         "main_category": "",
         "main_category_order": null,
@@ -608,7 +603,7 @@
           }
         ],
         "category_id": 25,
-        "tamil_label": "நான் பின்வரும் போட்டித் தேர்வுகளுக்கு ஆதரவு பெற விரும்புகிறேன் -",
+        "tamil_label": "நான் பின்வரும் போட்டித் தேர்வுகளுக்கு பயிற்சி பெற விரும்புகிறேன் -",
         "order_column": 1,
         "main_category": null,
         "main_category_order": null,
@@ -646,7 +641,7 @@
             "order": 5,
             "support_id": 168,
             "support_item": "Bridge Courses & Foundation Programs for Rural / First-Generation Learners",
-            "tamil_support_item": "கிராமப்புற / முதல் தலைமுறை கற்போருக்கான பாலம் பாடநெறிகள் & அடித்தள திட்டங்கள்"
+            "tamil_support_item": "கிராமப்புற / முதல் தலைமுறை மாணவர்களுக்கான சிறப்பு பாடநெறி திட்டங்கள்"
           }
         ],
         "category_id": 11,
@@ -666,7 +661,7 @@
             "order": 2,
             "support_id": 191,
             "support_item": "Disaster Mitigation",
-            "tamil_support_item": "பேரிடர் தணிப்பு"
+            "tamil_support_item": "பேரிடர் மீட்புப் பணிகள்"
           },
           {
             "order": 3,
@@ -694,7 +689,7 @@
           }
         ],
         "category_id": 9,
-        "tamil_label": "நான் சமூக சேவையில் தன்னார்வமாக பங்கேற்க விரும்புகிறேன். கீழ்க்கண்ட துறைகளில் சேவை செய்ய ஆசைப்படுகிறேன் - ",
+        "tamil_label": "கீழ்க்கண்ட துறைகளில் சமூக சேவையில் தன்னார்வலராக சேவை செய்ய விரும்புகிறேன் ",
         "order_column": 5,
         "main_category": null,
         "main_category_order": null,
@@ -730,7 +725,7 @@
           }
         ],
         "category_id": 2,
-        "tamil_label": "நான் தொழில்நுட்பம் மற்றும் டிஜிட்டல் கருவிகளை அணுக விரும்புகிறேன் ",
+        "tamil_label": "நான் தொழில்நுட்பம் மற்றும் டிஜிட்டல் சார்ந்த சேவைகளை பெற விரும்புகிறேன் ",
         "order_column": 1,
         "main_category": null,
         "main_category_order": null,
@@ -750,17 +745,17 @@
             "order": 2,
             "support_id": 156,
             "support_item": "Job-readiness skills (resume, interview, communication skills & workplace basics)",
-            "tamil_support_item": "வேலை தயார்நிலை திறன்கள் (விண்ணப்பம், நேர்காணல், தொடர்பு திறன்கள் & பணியிட அடிப்படைகள்)"
+            "tamil_support_item": "வேலைகளுக்கான தயார்நிலை பயிற்சிகள் (விண்ணப்பம், நேர்காணல், தொடர்பு திறன்கள் & பணியிட அடிப்படைகள்)"
           },
           {
             "order": 3,
             "support_id": 157,
             "support_item": "Entrepreneurship bootcamps",
-            "tamil_support_item": "தொழில்முனைவோர் துவக்க முகாம்கள்"
+            "tamil_support_item": "தொழில்முனைவோர் பயிற்சிகள்"
           }
         ],
         "category_id": 5,
-        "tamil_label": "நான் உண்மையான வேலைகளுக்கான பயிற்சி பெற விரும்புகிறேன் -",
+        "tamil_label": "நான் நேரடி வேலைகளுக்கான பயிற்சி பெற விரும்புகிறேன்",
         "order_column": 2,
         "main_category": null,
         "main_category_order": null,
@@ -774,7 +769,7 @@
             "order": 4,
             "support_id": 161,
             "support_item": "Access to training grounds",
-            "tamil_support_item": "பயிற்சி மைதானங்களுக்கான அணுகல்"
+            "tamil_support_item": "விளையாட்டு மைதானங்கள்"
           },
           {
             "order": 1,
@@ -796,7 +791,7 @@
           }
         ],
         "category_id": 7,
-        "tamil_label": "உடல் நலத்துடன் இருக்கவும், விளையாட்டில் பங்கேற்கவும், போட்டியிடவும், நான் அணுக விரும்புவது:",
+        "tamil_label": "உடல்நலம் காக்கவும், விளையாட்டு போட்டிகளில் கலந்துகொள்ள நான் பெற விரும்புவது",
         "order_column": 3,
         "main_category": "",
         "main_category_order": null,
@@ -876,7 +871,7 @@
             "order": 4,
             "support_id": 136,
             "support_item": "Education & Academia",
-            "tamil_support_item": "கல்வி & கல்வித்துறை"
+            "tamil_support_item": "கல்வித்துறை"
           },
           {
             "order": 5,

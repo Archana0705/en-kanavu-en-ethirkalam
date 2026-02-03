@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex,nofollow">
-  <title>Enn Kanavu, Enn Ethirkalam 2030</title>
+  <title data-i18n="tab-title">என் கனவு, என் எதிர்காலம்</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-icons.min.css"> -->
@@ -192,8 +192,8 @@
 
     .bg-img {
       left: 0;
-      top: -10px;
-      height: 200px;
+      top: -40px;
+      height: 400px;
       z-index: -1;
       overflow: visible;
       opacity: 100%;
@@ -201,7 +201,7 @@
       position: absolute;
       background-size: cover;
       background-repeat: repeat-x;
-      animation: movin 40s linear 0s infinite;
+      animation: movin 60s linear 0s infinite;
 
     }
 
@@ -355,10 +355,10 @@
     }
 
     #langToggle {
-      background-color: #2c0d80;
-      border-radius: 5px;
-      padding: 4px 10px;
-      cursor: pointer;
+       border-radius: 5px;
+    padding: 4px 10px;
+    cursor: pointer;
+    border: 1px solid white;
     }
 
     [data-i18n] {
@@ -403,9 +403,9 @@
       <div class="container-fluid">
         <div class="navbar-brand d-flex align-items-center" href="#">
           <img src="assets/img/tn_logo.png" class="tn-logo mx-3" alt="">
-          <h4 class="mx-3" id="nav-main"><span data-i18n="site_title_small">Enn Kanavu, Enn Ethirkalam
-              2030</span><br><span class="chotta-text" data-i18n="header_tag">Articulating ambitions,
-              fulfilling dreams, building a stronger Tamil Nadu</span></h4>
+          <h4 class="mx-3" id="nav-main"><span data-i18n="site_title_small">Enn Kanavu, Enn Ethirkalam</span>
+            <br>
+            <span class="chotta-text" data-i18n="header_tag">Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu</span></h4>
           <!-- Hamburger Button -->
           <button class="navbar-toggler" id="menuToggleBtn">
             <span class="navbar-toggler-icon"></span>
@@ -417,11 +417,9 @@
         <div class="collapse navbar-collapse justify-content-end px-3" id="mainMenu">
           <ul class="navbar-nav mb-2 mb-lg-0">
 
-            <li class="nav-item"><a data-home href="#" class="nav-link" data-i18n="nav_home">Home</a></li>
-            <li class="nav-item"><a data-about href="#scroll-about" class="nav-link" data-i18n="nav_about">About</a>
-            </li>
-            <li class="nav-item"><a data-vision href="#scroll-vision" class="nav-link" data-i18n="nav_vision">Vision</a>
-            </li>
+            <li class="nav-item me-3"><a data-home href="#" class="nav-link active" data-i18n="nav_home">Home</a></li>
+            <li class="nav-item me-3"><a data-about href="#scroll-about" class="nav-link" data-i18n="nav_about">About</a></li>
+            <li class="nav-item me-3"><a data-vision href="#scroll-vision" class="nav-link" data-i18n="nav_vision">Vision</a></li>
             <!-- <li class="nav-item"><a data-faq href="#nav-faq" class="nav-link">FAQs</a></li> -->
             <!-- <li class="nav-item"><a data-contact href="#nav-contact" class="nav-link">Contact Us</a></li> -->
 
@@ -506,35 +504,103 @@
     <img src="assets/img/msg-bg.png" class="bg-sec" alt="">
     <div class="row flex-lg-row-reverse align-items-center g-5 text-start" style="position: relative; z-index: 2;">
       <div class="col-lg-6">
-        <h1 class="display-4 fw-bold text-body-emphasis lh-1 mb-3" data-i18n="site_title_small">En Kanavu En Ethirkaalam
-          2030</h1>
-        <h5 class="display-8 fw-bold text-body-emphasis lh-1 mb-3" data-i18n="site_title">என் கனவு என் எதிர்காலம் 2030
+        <h1 class="display-4 fw-bold text-body-emphasis lh-1 mb-3" data-i18n="site_title_small">Enn Kanavu Enn Ethirkaalam</h1>
+        <h5 class="display-8 fw-bold text-body-emphasis lh-1 mb-3" data-i18n="site_title">என் கனவு என் எதிர்காலம்
         </h5>
-        <p class="lead" data-i18n="hero_subtitle">Articulating ambitions, fulfilling dreams, Building a stronger Tamil
-          Nadu</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4"> <a type="button"
-            class="btn btn-primary btn-lg px-4 me-md-2" href="ekee_form.html" data-i18n="apply">Apply now</a> <a
-            type="button" class="btn btn-outline-secondary btn-lg px-4" data-i18n="know_more">know more..</a> </div>
+        <p class="lead" data-i18n="hero_subtitle">Articulating ambitions & fulfilling dreams</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+          <a type="button"
+            class="btn btn-primary btn-lg px-4 me-md-2" href="ekee_form.html" data-i18n="apply">Register now</a>
+            <a type="button" class="btn btn-outline-secondary btn-lg px-4" href="#scroll-vision" data-i18n="know_more">Know More..</a> 
+
+
+            
+           
+          
+          </div>
+           <p class="m-0">
+            <style>
+          
+          .blink-dot{
+            font-size: 12px;
+           color: red;
+           animation: 1s blink ease-in-out infinite;
+          }
+          @keyframes blink{
+            50%{
+              opacity: 0%;
+            }
+          }
+          .counter-live{
+            font-size: 40px;
+            color: rgb(109, 0, 0);
+            font-weight: 700;
+          }
+        
+        </style>
+        
+       <!-- <i class="bi bi-circle-fill blink-dot" ></i> Live count: <span class="counter-live" data-value="246"></span> <i class="bi bi-person-check"></i> Youth have registered	so	far</p> -->
       </div>
       <div class="col-10 col-sm-8 col-lg-6" style="position: relative;">
-        <p id="scroll-about" class="ai-label"><i class="bi bi-cpu"></i> AI Generated</p><img
-          src="assets/img/students.png" class="fade-sides d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+        <!-- <p id="scroll-about" class="ai-label"><i class="bi bi-cpu"></i> AI Generated</p> -->
+        <img
+          src="assets/img/student.png" class="fade-sides d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
           width="700" height="500" loading="lazy">
       </div>
     </div>
   </div>
   <div class="container-fluid" style="position: relative; overflow-x: hidden; overflow-y: visible;">
     <div class="container">
+    
 
-      <img src="assets/img/bg-svg.svg" class="bg-img" alt="">
+      <!-- <img src="assets/img/bg-svg.svg" class="bg-img" alt=""  id="scroll-about"> -->
+      <img src="assets/img/Frame_8222.png" class="bg-img" alt=""  id="scroll-about">
       <div class="row about" id="nav-about">
+      
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const counters = document.querySelectorAll('.counter-live');
+
+  counters.forEach(counter => {
+    const value = Number(counter.dataset.value);
+    let start = 0;
+    const duration = 3000; // ⏱️ total time in ms (3 seconds)
+    const startTime = performance.now();
+
+    function animate(time) {
+      const elapsed = time - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // ease-out effect
+      const eased = 1 - Math.pow(1 - progress, 3);
+
+      const current = Math.floor(eased * value);
+      counter.textContent = current;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        counter.textContent = value; // exact final number
+      }
+    }
+
+    requestAnimationFrame(animate);
+  });
+
+});
+</script>
+
+
+
+
         <div class="col-sm-8 d-flex flex-column justify-content-center ">
           <h2 data-aos="fade-left" data-aos-duration="500" data-i18n="about_title"></h2>
           <p data-aos="fade-right" data-aos-duration="800" data-i18n="about_text"></p>
           </p>
         </div>
 
-        <div class="col-sm-4">
+        <div class="col-sm-4 d-flex flex-column align-items-center">
           <img src="assets/img/cm2.png" id="cm-img" class="fade-sides" alt="" srcset="">
           <b>
             <h4 data-i18n="cm_name">M.K Stalin</h4>
@@ -548,7 +614,7 @@
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 pt-5">
             <div class="col d-flex align-items-start">
               <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-calendar-event"></i> <span
+                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-book"></i> <span
                     data-i18n="d_h1">Meet an icon</span></h3>
                 <p data-i18n="d_p1">Get an exclusive opportunity to interact with leaders and legends who inspire,
                   guide, and spark ambition in young minds.</p>
@@ -557,16 +623,15 @@
 
             <div class="col d-flex align-items-start">
               <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-music-note-list"></i> <span
-                    data-i18n="d_h2">Become a Musician</span></h3>
-                <p data-i18n="d_p2">Explore your musical talent with expert guidance, hands-on training, and the tools
-                  you need to begin your journey in music.</p>
+                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-briefcase"></i> <span
+                    data-i18n="d_h2">Start a Business</span></h3>
+                <p data-i18n="d_p2">Get startup seed grants, business mentorship, and incubation centre support to launch your entrepreneurial journey.</p>
               </div>
             </div>
 
             <div class="col d-flex align-items-start">
               <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-book"></i> <span data-i18n="d_h3">Free
+                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-building-gear"></i> <span data-i18n="d_h3">Free
                     Courses</span></h3>
                 <p data-i18n="d_p3">Access high-quality courses at no cost, helping you learn new skills, upgrade your
                   knowledge, and build your future.</p>
@@ -584,7 +649,7 @@
 
             <div class="col d-flex align-items-start">
               <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-bus-front-fill"></i> <span
+                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-brush"></i> <span
                     data-i18n="d_h5">Do Industrial visit</span></h3>
                 <p data-i18n="d_p5">Experience real-world industries, understand how things work that bridges classroom
                   learning and practice.</p>
@@ -611,7 +676,7 @@
 
             <div class="col d-flex align-items-start">
               <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-airplane-engines"></i> <span
+                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-robot"></i> <span
                     data-i18n="d_h8">Global Exposure</span></h3>
                 <p data-i18n="d_p8"> Get free Counselling to <b>study abroad</b>, Language Training for global education
                 </p>
@@ -633,7 +698,7 @@
     <div class="container my-5">
       <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg blured">
         <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-          <h1 class="display-4 fw-bold lh-1 text-body-emphasis" data-i18n="how_apply">How to apply ?</h1>
+          <h1 class="display-4 fw-bold lh-1 text-body-emphasis" data-i18n="how_apply">How to Register ?</h1>
           <br>
           <ol>
             <li data-i18n="step1">Go to form registeration page</li>
@@ -644,8 +709,8 @@
           </ol>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mt-4 mb-lg-3"> <button type="button"
               class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"><i class="bi bi-play-circle"></i> Watch Video</button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4"><i class="bi bi-info-circle"></i>
-              Details</button> </div>
+            <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4"><i class="bi bi-info-circle"></i>Details</button>  -->
+            </div>
         </div>
         <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"> <img class="rounded-lg-3"
             src="assets/img/form-ss.png" alt="" width="720">
@@ -653,6 +718,18 @@
       </div>
     </div>
   </div>
+  <style>
+    .card-floater{
+    border-radius: 10px;
+    width: 100%;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px black;
+    font-size: 40px;
+    }
+    .card.card-cover{
+    aspect-ratio: 1;
+    }
+  </style>
   <div class="container px-4 py-5" id="custom-cards">
     <h2 class="pb-2 border-bottom" data-i18n="card_heading">Your Dreams come true</h2>
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
@@ -660,7 +737,7 @@
         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
           style="background-image: url('assets/img/card (1).jpg'); background-size: cover;">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" data-i18n="card_1">Play</h3>
+            <h3 class="card-floater" data-i18n="card_1">Play</h3>
             <ul class="d-flex list-unstyled mt-auto">
               <li class="me-auto"> <img src="assets/img/tn_logo.png" alt="Bootstrap" width="32" height="32"
                   class="rounded-circle border border-white"> </li>
@@ -671,9 +748,9 @@
       </div>
       <div class="col">
         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-          style="background-image: url('assets/img/card (2).jpg'); background-size: cover">
+          style="background-image: url('assets/img/card\ \(2\).jpeg'); background-size: cover">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" data-i18n="card_2">Learn
+            <h3 class="card-floater" data-i18n="card_2">Learn
             </h3>
             <ul class="d-flex list-unstyled mt-auto">
               <li class="me-auto"> <img src="assets/img/tn_logo.png" alt="Bootstrap" width="32" height="32"
@@ -684,9 +761,9 @@
       </div>
       <div class="col">
         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-          style="background-image: url('assets/img/card (3).png'); background-size: cover">
+          style="background-image: url('assets/img/card\ \(3\).jpeg'); background-size: cover; backdrop-filter: brightness(50%);">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" data-i18n="card_3">Achieve</h3>
+            <h3 class="card-floater" data-i18n="card_3">Achieve</h3>
             <ul class="d-flex list-unstyled mt-auto">
               <li class="me-auto"> <img src="assets/img/tn_logo.png" alt="Bootstrap" width="32" height="32"
                   class="rounded-circle border border-white"> </li>
@@ -696,9 +773,14 @@
       </div>
     </div>
   </div>
+ <style>
 
+      .regis {
+        position: relative;
+        z-index: 1;
+      }</style>
   <div class="container-fluid sec-2 mb-0" id="register">
-    <div id="Clouds">
+    <!-- <div id="Clouds">
       <div class="Cloud"></div>
       <div class="Cloud"></div>
       <div class="Cloud"></div>
@@ -706,16 +788,7 @@
       <div class="Cloud"></div>
     </div>
     <style>
-      #register {
-        position: relative;
-        overflow: hidden;
-        z-index: -1;
-      }
-
-      .regis {
-        position: relative;
-        z-index: 1;
-      }
+    
 
       #Clouds {
         position: absolute;
@@ -802,68 +875,27 @@
         animation-delay: 3s;
         display: none;
       }
-    </style>
+    </style> -->
     <div class="container regis">
       <div class="row align-items-center g-lg-5 py-5">
 
         <!-- Left text -->
-        <div class="col-lg-7 text-center text-lg-start text-white">
+        <div class="text-center text-lg-center text-white">
           <h1 class="display-4 fw-bold lh-1 mb-3" data-i18n="register_title">
             Register / Login using your mobile number
           </h1>
-          <p class="col-lg-10 fs-4" data-i18n="register_sub">
+          <p class="fs-4 text-center " data-i18n="register_sub">
             This form allows only one submission per mobile number.
           </p>
+          <a type="button" class="btn btn-primary btn-lg px-4 me-md-2"
+            href="ekee_form.html" data-i18n="apply">Register now</a>
         </div>
 
         <!-- Right Form -->
-        <div class="col-md-10 mx-auto col-lg-5"><a type="button" class="btn btn-primary btn-lg px-4 me-md-2"
-            href="ekee_form.html" data-i18n="apply">Apply now</a>
-          <!-- <form class="p-2 p-md-4 border rounded-3 bg-body-tertiary">
+        <!-- <div class="col-md-10 mx-auto col-lg-5"><a type="button" class="btn btn-primary btn-lg px-4 me-md-2"
+            href="ekee_form.html" data-i18n="apply">Register now</a>
 
-
-  <div class="mb-3">
-     <label class="form-label" style="font-weight:600;">Name</label>
-    <div class="d-flex gap-1 flex-row align-items-baseline" id="mobileBoxWrapper">
-      <input type="text" class="mobile-box form-control text-center" maxlength="1" inputmode="numeric">
-    </div><br>
-    <label class="form-label" style="font-weight:600;">Mobile Number</label>
-    <div class="d-flex gap-1 flex-row align-items-baseline" id="mobileBoxWrapper">
-        <p style="font-size: 24px;">+91 </p>
-      <input type="text" class="mobile-box form-control text-center" maxlength="1" inputmode="numeric">
-      <input type="text" class="mobile-box form-control text-center" maxlength="1" inputmode="numeric">
-      <input type="text" class="mobile-box form-control text-center" maxlength="1" inputmode="numeric">
-      <input type="text" class="mobile-box form-control text-center" maxlength="1" inputmode="numeric">
-      <input type="text" class="mobile-box form-control text-center" maxlength="1" inputmode="numeric">
-      <input type="text" class="mobile-box form-control text-center" maxlength="1" inputmode="numeric">
-      <input type="text" class="mobile-box form-control text-center" maxlength="1" inputmode="numeric">
-      <input type="text" class="mobile-box form-control text-center" maxlength="1" inputmode="numeric">
-      <input type="text" class="mobile-box form-control text-center" maxlength="1" inputmode="numeric">
-      <input type="text" class="mobile-box form-control text-center" maxlength="1" inputmode="numeric">
-    </div>
-  </div>
-  <button class="w-50 btn btn-lg btn-outline-secondary mb-0" type="submit">
-    Get OTP
-  </button>
-
-  <hr class="my-4">
-
-  <div class="mb-3">
-    <label class="form-label" style="font-weight:600;">Enter OTP</label>
-    <div class="d-flex gap-2">
-      <input type="text" class="otp-box form-control text-center" maxlength="1" inputmode="numeric">
-      <input type="text" class="otp-box form-control text-center" maxlength="1" inputmode="numeric">
-      <input type="text" class="otp-box form-control text-center" maxlength="1" inputmode="numeric">
-      <input type="text" class="otp-box form-control text-center" maxlength="1" inputmode="numeric">
-    </div>
-  </div>
-<button class="w-100 btn btn-lg btn-primary mb-3" type="submit">
-Log in
-  </button>
-
-</form> -->
-
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -879,8 +911,23 @@ Log in
       position: relative;
       z-index: 99;
     }
+    .up-f-container{
+  background-color: rgb(2, 55, 135);
+    }
+    .up-footer{
+      color: white;
+    padding: 12px;
+    font-size: 16px;
+    }
   </style>
 
+<div class="d-flex flex-row justify-content-around up-f-container"><div class="text-center up-footer">
+  <span data-i18n="uf-1">An official initiative of the Government of Tamil Nadu</span> 
+  <i class="bi bi-bank"></i></div>
+<div class="text-center up-footer"><span data-i18n="uf-2">Your data is safe</span> <i class="bi bi-file-lock"></i>
+</div>
+<div class="text-center up-footer"><span data-i18n="uf-3">Will be used	only	to	create	opportunities</span> <i class="bi bi-cloud"></i></div>
+</div>
   <footer class="bd-footer bg-body-tertiary">
     <div class="container px-4 px-md-3 text-body-secondary">
 
@@ -991,7 +1038,7 @@ Log in
 
   <script>
   // Unified language system - same as form page
-  let currentLang = localStorage.getItem('ekee_lang') || 'en';
+  let currentLang = localStorage.getItem('ekee_lang') || 'ta';
 
   function applyLanguageToAllPages() {
     // Update button text
@@ -1004,45 +1051,101 @@ Log in
     document.querySelectorAll("[data-i18n]").forEach(e => {
       const key = e.dataset.i18n;
       const translations = {
-        'site_title_small': { en: 'Enn Kanavu, Enn Ethirkalam 2030', ta: 'என் கனவு, என் எதிர்காலம் 2030' },
+        'site_title_small': { en: 'My Dream, My Future', ta: 'என் கனவு, என் எதிர்காலம்' },
+        'site_title': { en: 'என் கனவு, என் எதிர்காலம்', ta: 'My Dream, My Future' },
         'header_tag': { en: 'Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu', ta: 'லட்சியங்களை வெளிப்படுத்துதல், கனவுகளை நனவாக்குதல், வலுவான தமிழ்நாட்டைக் கட்டியெழுப்புதல்' },
         'nav_home': { en: 'Home', ta: 'முகப்பு' },
         'nav_about': { en: 'About', ta: 'எங்களை பற்றி' },
         'nav_vision': { en: 'Vision', ta: 'நோக்கம்' },
-        'nav_faq': { en: 'FAQs', ta: 'கேள்விகள்' },
+        // 'nav_faq': { en: 'FAQs', ta: 'கேள்விகள்' },
         'hero_subtitle': { en: 'Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu', ta: 'லட்சியங்களை வெளிப்படுத்துதல், கனவுகளை நனவாக்குதல், வலுவான தமிழ்நாட்டைக் கட்டியெழுப்புதல்' },
-        'apply': { en: 'Apply now', ta: 'விண்ணப்பிக்க' },
-        'know_more': { en: 'Know more', ta: 'மேலும் அறிய' },
+        'apply': { en: 'Register now', ta: 'விண்ணப்பிக்க' },
+        'know_more': { en: 'Know More', ta: 'மேலும் அறிய' },
         'about_title': { en: 'What is this initiative?', ta: 'இந்த முயற்சியின் நோக்கம்?' },
         'about_text': { 
-          en: "'En Kanavu, En Ethirkaalam' is a visionary initiative focused on understanding how the Government of Tamil Nadu can meaningfully support the youth in achieving their dreams. This statewide survey collects insights from young people across every district and town, helping the government identify their real needs, challenges, and aspirations. Whether it is access to essential tools, modern gadgets, skill-development programs, professional training, apprenticeships, job opportunities, online courses, AI subscriptions, musical instruments, or the chance to meet and learn from industry experts — every dream matters. Through this platform, the Government aims to empower youth by mapping both their immediate and long-term goals up to the year 2030. By listening to their voices and understanding the obstacles they face, the initiative strives to create a supportive ecosystem where every young person in Tamil Nadu can rise, progress, and fulfil their true potential.", 
+          en: "'My Dream, My Future' is a visionary initiative focused on understanding how the Government of Tamil Nadu can meaningfully support the youth in achieving their dreams. This statewide survey collects insights from young people across every district and town, helping the government identify their real needs, challenges, and aspirations. Whether it is access to essential tools, modern gadgets, skill-development programs, professional training, apprenticeships, job opportunities, online courses, AI subscriptions, musical instruments, or the chance to meet and learn from industry experts — every dream matters. Through this platform, the Government aims to empower youth by mapping both their immediate and long-term goals up to the year 2030. By listening to their voices and understanding the obstacles they face, the initiative strives to create a supportive ecosystem where every young person in Tamil Nadu can rise, progress, and fulfil their true potential.", 
           ta: "'என் கனவு, என் எதிர்காலம்' என்பது தமிழ்நாடு அரசு இளைஞர்களின் கனவுகளை அடைவதில் எவ்வாறு அர்த்தமுள்ள வகையில் உதவ முடியும் என்பதைப் புரிந்துகொள்வதில் கவனம் செலுத்தும் ஒரு தொலைநோக்கு முயற்சியாகும். இந்த மாநிலம் தழுவிய கணக்கெடுப்பு, ஒவ்வொரு மாவட்டம் மற்றும் நகரத்திலும் உள்ள இளைஞர்களிடமிருந்து நுண்ணறிவுகளைச் சேகரித்து, அவர்களின் உண்மையான தேவைகள், சவால்கள் மற்றும் விருப்பங்களை அடையாளம் காண அரசாங்கத்திற்கு உதவுகிறது. அத்தியாவசிய கருவிகள், நவீன கேஜெட்டுகள், திறன் மேம்பாட்டுத் திட்டங்கள், தொழில்முறை பயிற்சி, பயிற்சிகள், வேலை வாய்ப்புகள், ஆன்லைன் படிப்புகள், AI சந்தாக்கள், இசைக்கருவிகள் அல்லது தொழில்துறை நிபுணர்களைச் சந்தித்து கற்றுக்கொள்ளும் வாய்ப்பு - ஒவ்வொரு கனவும் முக்கியமானது. இந்த தளத்தின் மூலம், 2030 ஆம் ஆண்டு வரை இளைஞர்களின் உடனடி மற்றும் நீண்ட கால இலக்குகளை வரைபடமாக்குவதன் மூலம் அவர்களுக்கு அதிகாரம் அளிப்பதை அரசாங்கம் நோக்கமாகக் கொண்டுள்ளது. அவர்களின் குரல்களைக் கேட்பதன் மூலமும், அவர்கள் எதிர்கொள்ளும் தடைகளைப் புரிந்துகொள்வதன் மூலமும், தமிழ்நாட்டில் உள்ள ஒவ்வொரு இளைஞரும் உயரவும், முன்னேறவும், தங்கள் உண்மையான திறனை நிறைவேற்றவும் கூடிய ஒரு ஆதரவான சுற்றுச்சூழல் அமைப்பை உருவாக்க இந்த முயற்சி பாடுபடுகிறது."
         },
         'vision_title': { en: 'Your Dream becomes our responsibility', ta: 'உங்கள் கோரிக்கை எங்களின் பொறுப்பு' },
-        'how_apply': { en: 'How to apply?', ta: 'எப்படி விண்ணப்பிப்பது?' },
+        'how_apply': { en: 'How to Register?', ta: 'எப்படி விண்ணப்பிப்பது?' },
         'step1': { en: 'Go to registration page', ta: 'பதிவு பக்கத்திற்குச் செல்லவும்' },
         'step2': { en: 'Fill basic details', ta: 'அடிப்படை விவரங்களை நிரப்பவும்' },
-        'step3': { en: 'Choose immediate dreams', ta: 'உடனடி கனவுகளை தேர்வு செய்யவும்' },
-        'step4': { en: 'Choose next 5 year goals', ta: 'அடுத்த 5 ஆண்டுகளுக்கான இலக்குகள்' },
-        'step5': { en: 'Write aspirations till 2030', ta: '2030 வரை உங்கள் கனவுகளை எழுதவும்' },
+        'step3': { en: 'Select	your	immediate	goals', ta: 'உடனடி கனவுகளை தேர்வு செய்யவும்' },
+        'step4': { en: 'Choose	your	medium-term	goals	(next	5	years)', ta: 'அடுத்த 5 ஆண்டுகளுக்கான இலக்குகள்' },
+        'step5': { en: 'Share	your long-term	dream', ta: 'உங்கள் நீண்ட கால கனவுகளை எழுதவும்' },
         'register_title': { en: 'Register / Login using mobile number', ta: 'மொபைல் எண்ணைப் பயன்படுத்தி பதிவு / உள்நுழைய' },
         'register_sub': { en: 'Only one submission per mobile number', ta: 'ஒரு மொபைல் எண்ணுக்கு ஒரு விண்ணப்பம் மட்டுமே' },
-        'd_h1': { en: 'Meet a Star', ta: 'ஒரு நட்சத்திரத்தை சந்திக்கவும்' },
-        'd_p1': { en: 'Get an exclusive opportunity to interact with leaders and legends who inspire, guide, and spark ambition in young minds.', ta: 'இளம் மனங்களில் லட்சியத்தை ஊக்குவித்து, வழிகாட்டி, உற்சாகம் அளிக்கும் தலைவர்கள் மற்றும் ஜாம்பவான்களுடன் தொடர்பு கொள்ளும் பிரத்யேக வாய்ப்பைப் பெறுங்கள்.' },
-        'd_h2': { en: 'Become a Musician', ta: 'ஒரு இசைக்கலைஞர் ஆக' },
-        'd_p2': { en: 'Explore your musical talent with expert guidance, hands-on training, and the tools you need to begin your journey in music.', ta: 'நிபுணர் வழிகாட்டுதல், நேரடி பயிற்சி மற்றும் இசையில் உங்கள் பயணத்தைத் தொடங்க தேவையான கருவிகளுடன் உங்கள் இசைத் திறமையை ஆராயுங்கள்.' },
-        'd_h3': { en: 'Free Courses', ta: 'இலவச படிப்புகள்' },
-        'd_p3': { en: 'Access high-quality courses at no cost to learn new skills, upgrade your knowledge, and build your future.', ta: 'புதிய திறன்களை கற்றுக்கொள்ளவும், உங்கள் அறிவை மேம்படுத்தவும், உங்கள் எதிர்காலத்தை உருவாக்கவும் உதவும் உயர்தர படிப்புகளை இலவசமாக அணுகுங்கள்.' },
-        'd_h4': { en: 'Get a Sports Kit', ta: 'விளையாட்டு உபகரணங்கள் பெறுங்கள்' },
-        'd_p4': { en: 'Receive a complete sports kit to support your passion, encourage fitness, and help you excel in the game you love.', ta: 'உங்கள் ஆர்வத்தை ஆதரிக்கவும், உடற்தகுதியை ஊக்குவிக்கவும், நீங்கள் விரும்பும் விளையாட்டில் சிறந்து விளங்கவும் முழுமையான விளையாட்டு உபகரணங்களைப் பெறுங்கள்.' },
-        'd_h5': { en: 'Industrial Visit', ta: 'தொழில்துறை பார்வை' },
-        'd_p5': { en: 'Experience real-world industries and understand how things work by bridging classroom learning with practical exposure.', ta: 'நிஜ உலகத் தொழில்களை அனுபவித்து, வகுப்பறை கற்றலும் நடைமுறை அனுபவமும் எவ்வாறு இணைகின்றன என்பதைப் புரிந்துகொள்ளுங்கள்.' },
-        'd_h6': { en: 'Laptop & Gadgets', ta: 'லேப்டாப் & கேஜெட்டுகள்' },
-        'd_p6': { en: 'Unlock your potential in technology with hands-on tools and resources that elevate your creativity and technical abilities.', ta: 'உங்கள் படைப்பாற்றல் மற்றும் தொழில்நுட்ப திறன்களை மேம்படுத்தும் நடைமுறை கருவிகள் மற்றும் வளங்களுடன் தொழில்நுட்பத்தில் உங்கள் திறனை வெளிப்படுத்துங்கள்.' },
-        'd_h7': { en: 'Engagement', ta: 'ஈடுபாடு' },
-        'd_p7': { en: 'Volunteer for camps, disaster preparedness, anti-drug initiatives, and get certified.', ta: 'முகாம்கள், பேரிடர் தயார்நிலை, போதைப்பொருள் எதிர்ப்பு உள்ளிட்ட திட்டங்களில் தன்னார்வலராக கலந்து கொண்டு, சான்றிதழ், வெகுமதிகள் பெறுங்கள்.' },
-        'd_h8': { en: 'Global Exposure', ta: 'உலகளாவிய வெளிப்பாடு' },
-        'd_p8': { en: 'Receive free counseling and language training for global education.', ta: 'வெளிநாட்டு கல்விக்கான ஆலோசனை மற்றும் மொழிப் பயிற்சி பெறுங்கள்.' },
+        'd_h1': {
+          en: 'Education & Skills',
+          ta: 'கல்வி மற்றும் திறன்கள்'
+        },
+        'd_p1': {
+          en: 'Learn what matters. Build skills for the future',
+          ta: 'முக்கியமானவற்றை கற்றுக்கொண்டு, எதிர்காலத்திற்கான திறன்களை வளர்த்துக் கொள்ளுங்கள்.'
+        },
+
+        'd_h2': {
+          en: 'Jobs & Career',
+          ta: 'வேலைவாய்ப்பு மற்றும் தொழில் முன்னேற்றம்'
+        },
+        'd_p2': {
+          en: 'Find meaningful work and grow the career you want',
+          ta: 'உங்களுக்கு பொருத்தமான வேலைவாய்ப்புகளை கண்டறிந்து, விரும்பும் தொழில் பாதையில் முன்னேறுங்கள்.'
+        },
+
+        'd_h3': {
+          en: 'Entrepreneurship',
+          ta: 'தொழில்முனைவு'
+        },
+        'd_p3': {
+          en: 'Start something of your own. Turn ideas into action.',
+          ta: 'உங்கள் சொந்த முயற்சியைத் தொடங்கி, உங்கள் எண்ணங்களை செயலாக்கமாக மாற்றுங்கள்.'
+        },
+
+        'd_h4': {
+          en: 'Sports & Fitness',
+          ta: 'விளையாட்டு மற்றும் உடற்தகுதி'
+        },
+        'd_p4': {
+          en: 'Train harder, compete better, aim higher',
+          ta: 'மேலும் பயிற்சி பெற்று, சிறப்பாக போட்டியிட்டு, உயர்ந்த இலக்குகளை நோக்கிச் செல்லுங்கள்.'
+        },
+
+        'd_h5': {
+          en: 'Arts & Culture',
+          ta: 'கலை மற்றும் பண்பாடு'
+        },
+        'd_p5': {
+          en: 'Create, perform, and express who you are.',
+          ta: 'உங்கள் படைப்பாற்றலை வெளிப்படுத்தி, கலை மூலம் உங்கள் தனித்தன்மையை வெளிப்படுத்துங்கள்.'
+        },
+
+        'd_h6': {
+          en: 'Global Exposure & Internships',
+          ta: 'உலகளாவிய அனுபவம் மற்றும் பயிற்சிகள்'
+        },
+        'd_p6': {
+          en: 'Learn beyond borders. Explore global opportunities.',
+          ta: 'நாட்டின் எல்லைகளைத் தாண்டி கற்றுக்கொண்டு, உலகளாவிய வாய்ப்புகளை ஆராயுங்கள்.'
+        },
+
+        'd_h7': {
+          en: 'Social Service & Leadership',
+          ta: 'சமூக சேவை மற்றும் தலைமைத்துவம்'
+        },
+        'd_p7': {
+          en: 'Lead with purpose. Make a difference in society.',
+          ta: 'நோக்கத்துடன் தலைமை ஏற்று, சமூகத்தில் மாற்றத்தை உருவாக்குங்கள்.'
+        },
+
+        'd_h8': {
+          en: 'Technology & Innovation',
+          ta: 'தொழில்நுட்பம் மற்றும் புதுமை'
+        },
+        'd_p8': {
+          en: 'Build with technology. Shape the future.',
+          ta: 'தொழில்நுட்பத்தை பயன்படுத்தி உருவாக்கி, எதிர்காலத்தை வடிவமைக்குங்கள்.'
+        },
         'cm_name': { en: 'M.K Stalin', ta: 'மு.க.ஸ்டாலின்' },
         'cm_desig': { en: 'Hon\'ble Chief Minister of Tamil Nadu', ta: 'மாண்புமிகு தமிழ்நாடு முதலமைச்சர்' },
         'card_1': { en: 'Play', ta: 'கலை' },
@@ -1053,7 +1156,11 @@ Log in
         'disclaimer1': { en: 'Contents owned by ', ta: 'உள்ளடக்கங்கள் ' },
         'dept_link': { en: 'Youth Welfare Department', ta: 'இளைஞர் நலத்துறை' },
         'disclaimer2': { en: ' (©) | Designed and Developed by ', ta: ' (©) | வடிவமைத்து உருவாக்கியது ' },
-        'tnega_link': { en: 'Tamil Nadu eGovernance Agency', ta: 'தமிழ்நாடு மின் ஆளுமை நிறுவனம்' }
+        'uf-1': { en: 'An official initiative of the Government of Tamil Nadu ', ta: 'தமிழ்நாடு அரசின் ஓர் அதிகாரப்பூர்வ முயற்சி' },
+        'uf-2': { en: 'Your data is safe ', ta: 'உங்கள் தரவு பாதுகாப்பானது' },
+        'uf-3': { en: ' (©) | Designed and Developed by ', ta: 'வாய்ப்புகளை உருவாக்குவதற்காக மட்டுமே பயன்படுத்தப்படும்' },
+        'tnega_link': { en: 'Will be used only to create opportunities', ta: 'தமிழ்நாடு மின் ஆளுமை நிறுவனம்' },
+        'tab-title':{en: 'My Dream, My Future', ta: 'என் கனவு, என் எதிர்காலம்'}
       };
 
       if (translations[key]) {
@@ -1080,6 +1187,7 @@ Log in
         applyLanguageToAllPages();
       };
     }
+    localStorage.setItem('ekee_lang', 'ta');
   });
 </script>
 

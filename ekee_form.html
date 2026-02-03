@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="robots" content="noindex,nofollow">
 
-  <title>Enn Kanavu, Enn Ethirkalam 2030</title>
+  <title>என் கனவு, என் எதிர்காலம்</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
   <link rel="stylesheet" href="assets/css/form_style.css">
@@ -27,11 +27,11 @@
       <div class="logo-title-wrapper">
         <img src="assets/img/tn_logo.png" id="tn-logo" alt="TN Gov Logo">
         <div class="title-wrapper">
-          <h1>Enn Kanavu, Enn Ethirkalam 2030</h1>
-          <div class="mobile-title">Enn Kanavu, Enn Ethirkalam 2030</div>
-          <p class="lead">Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu</p>
+          <h1>என் கனவு, என் எதிர்காலம்</h1>
+          <div class="mobile-title">என் கனவு, என் எதிர்காலம்</div>
+          <p class="lead">லட்சியங்களை வெளிப்படுத்துதல், கனவுகளை நனவாக்குதல், வலுவான தமிழ்நாட்டைக் கட்டியெழுப்புதல்</p>
           <div class="mobile-subtitle">
-            <marquee>Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu</marquee>
+            <marquee>லட்சியங்களை வெளிப்படுத்துதல், கனவுகளை நனவாக்குதல், வலுவான தமிழ்நாட்டைக் கட்டியெழுப்புதல்</marquee>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
       <div id="userBadge">
         <div class="user-info">
           <i class="fas fa-user-check user-icon"></i>
-          <span class="user-text">Logged in: <span id="loggedInPhone"></span></span>
+          <span class="user-text">Logged in: <span class="loggedInPhone"></span></span>
         </div>
         <button id="logoutBtn">
           <i class="fas fa-sign-out-alt"></i>
@@ -59,7 +59,7 @@
       <div class="mobile-user-dropdown" id="mobileUserDropdown">
         <div class="mobile-user-info">
           <i class="fas fa-user-check"></i>
-          <span>Logged in as: <span id="mobileLoggedInPhone">9876543210</span></span>
+          <span class="user-text">Logged in: <span class="loggedInPhone"></span></span>
         </div>
         <button class="mobile-logout-btn" id="mobileLogoutBtn">
           <i class="fas fa-sign-out-alt"></i>
@@ -118,7 +118,7 @@
             <label for="poi">Proof of Identity (Ration Card Number, Driver License, School
               Certificate)<span>*</span></label>
             <input id="poi" class="file_input" name="poi" type="file" accept="image/*,application/pdf" required />
-            <small class="muted file_input"><br>Accepted: PDF,Image</small>
+            <small class="muted file_input"><br>Accepted file format: (.pdf, .jpeg, .png, .jpg) / Maximum file size: 5MB</small>
           </div>
         </div>
 
@@ -126,30 +126,31 @@
 
         <div style="margin-top:12px" class="grid3">
           <div>
-            <label for="dob">Date of Birth (for auto-age)<span>*</span></label>
+            <label for="dob">Date of Birth <span>*</span></label>
             <input id="dob" name="dob" type="date" required />
-            <small class="muted">Age will be calculated automatically. Applicants must be between 16 and 35
-              inclusive.</small>
+            <small class="muted" style="font-size: 12px !important;">Age will be calculated automatically. Age must be between 18 and 29, inclusive.</small>
 
 
             <script>
               const dob = document.getElementById("dob");
 
               let today = new Date();
+              dob.addEventListener("keydown", e => e.preventDefault());
+
 
               // Max = today - 18 years
-              let max = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
+              let max = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
 
               // Min = today - 29 years
-              let min = new Date(today.getFullYear() - 35, today.getMonth(), today.getDate());
+              let min = new Date(today.getFullYear() - 29, today.getMonth(), today.getDate());
 
               dob.max = max.toISOString().split("T")[0];
               dob.min = min.toISOString().split("T")[0];
             </script>
           </div>
           <div>
-            <label for="age">Age<span>*</span></label>
-            <input id="age" name="age" type="number" readonly />
+            <label for="age">Age</label>
+            <input id="age" name="age" type="number" readonly  disabled/>
           </div>
 
           <!-- Find this section in ekee_form_v2.html -->

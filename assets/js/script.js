@@ -162,7 +162,7 @@ function updateDropdownText(selectElement) {
 }
 
 // Language Support Variables
-let currentLang = 'en';
+let currentLang = 'ta';
 let dreamData = {
   immediate: null,
   fiveYear: null
@@ -218,8 +218,8 @@ function applyLanguage() {
     'label[for="name"]': { en: 'Name', ta: 'பெயர்' },
     'label[for="mobile"]': { en: 'Mobile Number *', ta: 'கைபேசி எண் *' },
     'label[for="email"]': { en: 'Email *', ta: 'மின்னஞ்சல் *' },
-    'label[for="dob"]': { en: 'Date of Birth (for auto-age)', ta: 'பிறந்த தேதி (தானியங்கி வயது)' },
-    'label[for="age"]': { en: 'Age *', ta: 'வயது *' },
+    'label[for="dob"]': { en: 'Date of Birth *', ta: 'பிறந்த தேதி *' },
+    'label[for="age"]': { en: 'Age', ta: 'வயது' },
     'label[for="poi"]': { en: 'Proof of Identity* (Ration Card Number, Driver License, School Certificate)', ta: 'அடையாள சான்று*: (ரேஷன் அட்டை எண், ஓட்டுநர் உரிமம், பள்ளி சான்றிதழ்)' },
     'label[id="gender_label"]': { en: 'Gender *', ta: 'பாலினம் *' },
     'label[for="respondent_type"]': { en: 'Respondent Type*', ta: 'பதிலளிப்பவர் வகை *' },
@@ -239,7 +239,9 @@ function applyLanguage() {
     '#phone': { en: '+91', ta: '+91' },
     '#email': { en: 'you@example.com', ta: 'you@example.com' },
     '#submit_form': { en: 'Submit', ta: 'சமர்ப்பிக்கவும்' },
-    'h1': { en: 'Enn Kanavu, Enn Ethirkalam 2030', ta: 'என் கனவு, என் எதிர்காலம் 2030' }
+    'h1': { en: 'My Dream, My Future', ta: 'என் கனவு, என் எதிர்காலம்' },
+    'title': { en: 'My Dream, My Future', ta: 'என் கனவு, என் எதிர்காலம்' },
+    '.lead': { en: 'Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu', ta: 'லட்சியங்களை வெளிப்படுத்துதல், கனவுகளை நனவாக்குதல், வலுவான தமிழ்நாட்டைக் கட்டியெழுப்புதல்' }
   };
 
   for (const selector in elementsToTranslate) {
@@ -282,15 +284,15 @@ function applyLanguage() {
       },
       'My Dream Dashboard': {
         en: 'My Dream Dashboard',
-        ta: 'என் கனவு டாஷ்போர்டு'
+        ta: 'என் கனவு தரவுப் பலகை'
       },
       '1. What is your dream that needs to be fulfilled in the immediate future?': {
         en: '1. What is your dream that needs to be fulfilled in the immediate future?',
-        ta: '1. நெருங்கிய எதிர்காலத்தில் நிறைவேற வேண்டிய உங்கள் கனவு என்ன?'
+        ta: '1. குறுகிய காலத்தில் நிறைவேற வேண்டிய உங்கள் கனவு என்ன?'
       },
       '2. To fulfill your dreams by 2030, what new future-focused scheme should be introduced?': {
         en: '2. To fulfill your dreams by 2030, what new future-focused scheme should be introduced?',
-        ta: '2. 2030-க்குள் உங்கள் கனவுகளை நிறைவேற்ற, எந்த புதிய எதிர்கால சார்ந்த திட்டம் அறிமுகப்படுத்தப்பட வேண்டும்?'
+        ta: '2. 2030-க்குள் உங்கள் கனவுகளை நிறைவேற்ற, எந்தெந்த  புதிய திட்டங்கள் அறிமுகப்படுத்தப்பட வேண்டும்?'
       }
     };
 
@@ -662,14 +664,14 @@ function handleExistingApplication(response) {
     const fileName = poiFilepath.split('/').pop() || poiFilepath;
 
     const downloadLink = document.createElement('a');
-    downloadLink.href = `${api_base_url}/uploads/${poiFilepath}`;
+    downloadLink.href = `${poiFilepath}`;
     downloadLink.target = '_blank';
 
     const icon = document.createElement('i');
     icon.className = 'fas fa-file-download';
     icon.style.marginRight = '8px';
 
-    const text = document.createTextNode(` Download previously uploaded file: ${fileName}`);
+    const text = document.createTextNode(` Download previously uploaded file`);
 
     downloadLink.appendChild(icon);
     downloadLink.appendChild(text);
@@ -758,7 +760,87 @@ function handleExistingApplication(response) {
       }
     }
   }, 1000);
+  setTimeout(() => {
+    disableFilledInputs('dreamForm');
+  }, 1300); 
+
+
 }
+
+function disableFilledInputs(formId) {
+  const form = document.getElementById(formId);
+  if (!form) {
+    console.error('Form not found:', formId);
+    return;
+  }
+
+  /* ===============================
+     1️⃣ Disable DREAM checkboxes
+     =============================== */
+  document.querySelectorAll('.dream-checkbox').forEach(cb => {
+    cb.disabled = true;               // REAL disable
+    cb.style.cursor = 'not-allowed';
+  });
+
+  /* ===============================
+     2️⃣ Disable PRIORITY dropdowns
+     =============================== */
+  document.querySelectorAll('.priority').forEach(sel => {
+    sel.disabled = true;
+    sel.style.backgroundColor = '#f8fafc';
+    sel.style.cursor = 'not-allowed';
+  });
+
+  /* ===============================
+     3️⃣ Disable other filled inputs
+     =============================== */
+  form.querySelectorAll('input, select, textarea').forEach(el => {
+
+    // Skip file input
+    if (el.type === 'file') return;
+
+    // Skip dream inputs (already handled above)
+    if (
+      el.classList.contains('dream-checkbox') ||
+      el.classList.contains('priority')
+    ) {
+      return;
+    }
+
+    // RADIO → disable entire group if one is checked
+    if (el.type === 'radio') {
+      if (el.checked) {
+        form
+          .querySelectorAll(`input[type="radio"][name="${el.name}"]`)
+          .forEach(r => {
+            r.disabled = true;
+            r.style.cursor = 'not-allowed';
+          });
+      }
+      return;
+    }
+
+    // CHECKBOX → disable if checked
+    if (el.type === 'checkbox') {
+      if (el.checked) {
+        el.disabled = true;
+        el.style.cursor = 'not-allowed';
+      }
+      return;
+    }
+
+    // TEXT / SELECT / TEXTAREA / DATE / NUMBER
+    if (el.value !== null && el.value.trim() !== '') {
+      el.disabled = true;
+      el.style.backgroundColor = '#f8fafc';
+      el.style.cursor = 'not-allowed';
+    }
+  });
+}
+
+
+
+
 
 function prefillDreams(userMapping) {
   console.log("Attempting to prefill dreams with:", userMapping);
@@ -895,7 +977,8 @@ function verifyOTPRequest(phoneNumber, otp) {
 
         loggedInPhone = phoneNumber;
         document.getElementById('userBadge').style.display = 'flex';
-        document.getElementById('loggedInPhone').textContent = phoneNumber;
+        // document.getElementById('loggedInPhone').textContent = phoneNumber;
+        $('.loggedInPhone').text(phoneNumber);
 
         hideOTPModal();
 
@@ -1315,6 +1398,8 @@ document.addEventListener('change', (e) => {
   if (e.target.classList.contains('dream-checkbox')) {
     const sectionId = e.target.closest('#immediateDreams') ? 'immediateDreams' : 'fiveYearDreams';
     enforceMaxSelections(sectionId);
+    updateUsedPriorities(sectionId);
+    updatePriorityOptions(sectionId);
   }
 
   if (e.target.classList.contains('priority')) {
@@ -1481,8 +1566,8 @@ async function handleSubmit(e) {
   const form = document.getElementById('dreamForm');
   const age = Number(document.getElementById('age').value);
 
-  if (isNaN(age) || age < 16 || age > 35) {
-    showMessage('Applicants must be between 16 and 35 years old.', 'error');
+  if (isNaN(age) || age < 15 || age > 35) {
+    showMessage('Age must be between 16 and 35 years old.', 'error');
     return false;
   }
 
@@ -1574,9 +1659,9 @@ async function handleSubmit(e) {
     return;
   }
 
-  const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'application/pdf'];
+  const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'];
   if (!allowedTypes.includes(poi.type)) {
-    showMessage('Please upload a valid file type (JPEG, PNG, GIF, PDF).', 'error');
+    showMessage('Please upload a valid file type (JPEG, PNG, PDF).', 'error');
     return;
   }
 
@@ -1673,7 +1758,7 @@ async function checkExistingSession() {
   const isSessionValid = isVerified && verifiedMobile && timestamp &&
     (now - parseInt(timestamp)) < (24 * 60 * 60 * 1000);
   
-    const get_lang = localStorage.getItem('ekee_lang');
+    const get_lang = localStorage.getItem('ekee_lang') || 'ta';
 
   if (!isSessionValid) {
     localStorage.clear();
@@ -1685,7 +1770,7 @@ async function checkExistingSession() {
   loggedInPhone = verifiedMobile;
 
   document.getElementById('userBadge').style.display = 'flex';
-  document.getElementById('loggedInPhone').textContent = verifiedMobile;
+  $('.loggedInPhone').text(verifiedMobile);
   document.getElementById('logoutBtn').style.display = 'inline-block';
   $('#phone').val(verifiedMobile).attr('readonly', true);
 
