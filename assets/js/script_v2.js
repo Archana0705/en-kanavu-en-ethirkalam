@@ -11,285 +11,48 @@ const STORES = {
   DREAMS: 'dreams',
   METADATA: 'metadata'
 };
-// Get stored app version
-async function getStoredAppVersion() {
+
+// Global variables to store data from JSON
+let cachedData = null;
+
+// Load data from data.json
+async function loadDataFromJSON() {
   try {
-    const db = await initDB();
-    return new Promise((resolve) => {
-      const tx = db.transaction([STORES.METADATA], 'readonly');
-      const store = tx.objectStore(STORES.METADATA);
-      const req = store.get('app_version');
-
-      req.onsuccess = (e) => resolve(e.target.result?.value || null);
-      req.onerror = () => resolve(null);
-    });
-  } catch {
-    return null;
-  }
-}
-
-// Save current app version
-async function saveAppVersion() {
-  const db = await initDB();
-  return new Promise((resolve, reject) => {
-    const tx = db.transaction([STORES.METADATA], 'readwrite');
-    const store = tx.objectStore(STORES.METADATA);
-
-    const req = store.put({
-      key: 'app_version',
-      value: APP_VERSION
-    });
-
-    req.onsuccess = () => resolve();
-    req.onerror = reject;
-  });
-}
-
-// Clear all object stores but keep DB
-async function clearAllStores() {
-  const db = await initDB();
-  const storeNames = Object.values(STORES);
-
-  return Promise.all(
-    storeNames.map(storeName => {
-      return new Promise((resolve, reject) => {
-        const tx = db.transaction([storeName], 'readwrite');
-        const store = tx.objectStore(storeName);
-        const req = store.clear();
-        req.onsuccess = () => resolve();
-        req.onerror = reject;
-      });
-    })
-  );
-}
-
-// Validate Version
-async function validateDBVersion() {
-  const storedVersion = await getStoredAppVersion();
-
-  console.log("Stored Version:", storedVersion);
-  console.log("Current Version:", APP_VERSION);
-
-  if (!storedVersion) {
-    // First time save
-    await saveAppVersion();
-    return;
-  }
-
-  if (storedVersion !== APP_VERSION) {
-    console.warn("⚠️ Version mismatch → Refreshing cache only");
-
-    await clearAllStores();      // 👈 only clears data
-    await saveAppVersion();      // update version
-
-    console.log("✅ Cache refreshed successfully");
-  }
-}
-
-
-// Initialize IndexedDB
-function initDB() {
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, DB_VERSION);
-    
-    request.onerror = (event) => {
-      console.error("IndexedDB error:", event.target.error);
-      reject(event.target.error);
-    };
-    
-    request.onsuccess = (event) => {
-      console.log("IndexedDB initialized successfully");
-      resolve(event.target.result);
-    };
-    
-    request.onupgradeneeded = (event) => {
-      const db = event.target.result;
-      
-      // Create object stores if they don't exist
-      if (!db.objectStoreNames.contains(STORES.DROPDOWNS)) {
-        db.createObjectStore(STORES.DROPDOWNS, { keyPath: 'id' });
-      }
-      
-      if (!db.objectStoreNames.contains(STORES.DREAMS)) {
-        db.createObjectStore(STORES.DREAMS, { keyPath: 'type' });
-      }
-      
-      if (!db.objectStoreNames.contains(STORES.METADATA)) {
-        db.createObjectStore(STORES.METADATA, { keyPath: 'key' });
-      }
-    };
-  });
-}
-
-// Check if cache is stale
-async function isCacheStale(key, maxAgeHours = CACHE_REFRESH_HOURS) {
-  try {
-    const db = await initDB();
-    return new Promise((resolve, reject) => {
-      const transaction = db.transaction([STORES.METADATA], 'readonly');
-      const store = transaction.objectStore(STORES.METADATA);
-      const request = store.get(`${key}_timestamp`);
-      
-      request.onsuccess = (event) => {
-        const result = event.target.result;
-        if (!result || !result.value) {
-          resolve(true); // No timestamp, cache is stale
-          return;
-        }
-        
-        const lastUpdated = new Date(result.value);
-        const now = new Date();
-        const hoursDiff = (now - lastUpdated) / (1000 * 60 * 60);
-        
-        resolve(hoursDiff >= maxAgeHours);
-      };
-      
-      request.onerror = (event) => {
-        console.error("Error checking cache timestamp:", event.target.error);
-        resolve(true); // On error, treat as stale
-      };
-    });
-  } catch (error) {
-    console.error("Error in isCacheStale:", error);
-    return true;
-  }
-}
-
-// Update cache timestamp
-async function updateCacheTimestamp(key) {
-  try {
-    const db = await initDB();
-    return new Promise((resolve, reject) => {
-      const transaction = db.transaction([STORES.METADATA], 'readwrite');
-      const store = transaction.objectStore(STORES.METADATA);
-      const timestamp = new Date().toISOString();
-      
-      const request = store.put({
-        key: `${key}_timestamp`,
-        value: timestamp
-      });
-      
-      request.onsuccess = () => {
-        console.log(`Cache timestamp updated for ${key}: ${timestamp}`);
-        resolve();
-      };
-      
-      request.onerror = (event) => {
-        console.error("Error updating timestamp:", event.target.error);
-        reject(event.target.error);
-      };
-    });
-  } catch (error) {
-    console.error("Error updating cache timestamp:", error);
-  }
-}
-
-// Save data to IndexedDB
-async function saveToCache(storeName, key, data) {
-  try {
-    const db = await initDB();
-    return new Promise((resolve, reject) => {
-      const transaction = db.transaction([storeName], 'readwrite');
-      const store = transaction.objectStore(storeName);
-      
-      const cacheData = {
-        ...(storeName === STORES.DREAMS ? { type: key } : { id: key }),
-        data: data,
-        timestamp: new Date().toISOString()
-      };
-      
-      const request = store.put(cacheData);
-      
-      request.onsuccess = () => {
-        console.log(`Data saved to cache: ${storeName}/${key}`);
-        resolve();
-      };
-      
-      request.onerror = (event) => {
-        console.error("Error saving to cache:", event.target.error);
-        reject(event.target.error);
-      };
-    });
-  } catch (error) {
-    console.error("Error in saveToCache:", error);
-  }
-}
-
-// Get data from IndexedDB
-async function getFromCache(storeName, key) {
-  try {
-    const db = await initDB();
-    return new Promise((resolve, reject) => {
-      const transaction = db.transaction([storeName], 'readonly');
-      const store = transaction.objectStore(storeName);
-      const request = store.get(key);
-      
-      request.onsuccess = (event) => {
-        const result = event.target.result;
-        if (result && result.data) {
-          console.log(`Data retrieved from cache: ${storeName}/${key}`);
-          resolve(result.data);
-        } else {
-          resolve(null);
-        }
-      };
-      
-      request.onerror = (event) => {
-        console.error("Error getting from cache:", event.target.error);
-        resolve(null);
-      };
-    });
-  } catch (error) {
-    console.error("Error in getFromCache:", error);
-    return null;
-  }
-}
-
-// Clear specific cache
-async function clearCache(storeName, key) {
-  try {
-    const db = await initDB();
-    return new Promise((resolve, reject) => {
-      const transaction = db.transaction([storeName], 'readwrite');
-      const store = transaction.objectStore(storeName);
-      const request = store.delete(key);
-      
-      request.onsuccess = () => {
-        console.log(`Cache cleared: ${storeName}/${key}`);
-        resolve();
-      };
-      
-      request.onerror = (event) => {
-        console.error("Error clearing cache:", event.target.error);
-        reject(event.target.error);
-      };
-    });
-  } catch (error) {
-    console.error("Error clearing cache:", error);
-  }
-}
-
-// Clear all cache
-async function clearAllCache() {
-  try {
-    const db = await initDB();
-    const storeNames = [STORES.DROPDOWNS, STORES.DREAMS, STORES.METADATA];
-    
-    for (const storeName of storeNames) {
-      const transaction = db.transaction([storeName], 'readwrite');
-      const store = transaction.objectStore(storeName);
-      store.clear();
+    const response = await fetch('assets/js/data.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
-    console.log("All cache cleared");
+    cachedData = await response.json();
+    console.log("Data loaded from data.json");
+    return cachedData;
   } catch (error) {
-    console.error("Error clearing all cache:", error);
+    console.error("Error loading data.json:", error);
+    return null;
   }
 }
+function syncLanguageWithMainPage() {
+  const mainPageLang = localStorage.getItem('ekee_lang');
+  if (mainPageLang && mainPageLang !== currentLang) {
+    currentLang = mainPageLang;
+    localStorage.setItem('ekee_lang', currentLang);
+    
+    // Update UI
+    updateLangButton();
+    applyLanguage();
+    
+    // Re-render dreams if needed
+    if (dreamData.immediate || dreamData.fiveYear) {
+      renderDreamsWithCurrentLanguage();
+    }
+  }
+}
+
+// Initialize on document ready
 $(document).ready(async function () {
+    syncLanguageWithMainPage();
   try {
-    await initDB();
-    await validateDBVersion();   // 👈 important
+    // Load data from JSON file
+    await loadDataFromJSON();
 
     // continue normal flow
     initLanguageToggle();
@@ -302,7 +65,7 @@ $(document).ready(async function () {
     setupLogoutButton();
 
   } catch (error) {
-    console.error("IndexedDB init failed:", error);
+    console.error("Data loading failed:", error);
 
     // fallback
     initLanguageToggle();
@@ -333,63 +96,13 @@ let selectedDreams = {
 };
 
 async function fetchDropdown() {
-  const cacheKey = 'dropdown_master';
-  const isStale = await isCacheStale(cacheKey);
-  
-  // Try to get from cache first
-  if (!isStale) {
-    const cachedData = await getFromCache(STORES.DROPDOWNS, cacheKey);
-    if (cachedData) {
-      console.log("Using cached dropdown data");
-      populateDropdowns(cachedData);
-      return;
-    }
+  if (!cachedData || !cachedData.dropdowns || !cachedData.dropdowns.dropdown_master) {
+    console.error("Dropdown data not loaded from JSON");
+    return;
   }
-  
-  // Fetch from API if cache is stale or empty
-  console.log("Fetching fresh dropdown data from API");
-  const payload = {
-    action: "function_call",
-    function_name: "fn_get_dropdown_master"
-  };
 
-  $.ajax({
-    url: `${api_base_url}/v1/commonfunction`,
-    type: "POST",
-    headers: {
-      "X-App-Key": "TN_EKEE",
-      "X-App-Name": "TN_EKEE"
-    },
-    data: {
-      data: encryptData(payload)
-    },
-    dataType: "json",
-    success: async function (response) {
-      try {
-        const decrypted = decryptData(response.data);
-        const parsed = JSON.parse(decrypted[0]['fn_get_dropdown_master']);
-        console.log("Dropdown data:", parsed);
-        
-        // Save to cache
-        await saveToCache(STORES.DROPDOWNS, cacheKey, parsed);
-        await updateCacheTimestamp(cacheKey);
-        
-        populateDropdowns(parsed);
-      } catch (e) {
-        console.error("Error parsing dropdown data:", e);
-      }
-    },
-    error: async function (xhr, status, error) {
-      console.error("Error fetching dropdown data:", error);
-      
-      // Fallback to cache even if stale
-      const cachedData = await getFromCache(STORES.DROPDOWNS, cacheKey);
-      if (cachedData) {
-        console.log("Using stale cache as fallback");
-        populateDropdowns(cachedData);
-      }
-    }
-  });
+  console.log("Using dropdown data from data.json");
+  populateDropdowns(cachedData.dropdowns.dropdown_master);
 }
 
 function populateDropdowns(dropdownData) {
@@ -460,15 +173,13 @@ function initLanguageToggle() {
   const langToggle = document.getElementById('langToggle');
   if (!langToggle) return;
 
-  const savedLang = localStorage.getItem('ekee_lang');
-  if (savedLang) {
-    currentLang = savedLang;
-  }
+  // Sync with main page on load
+  syncLanguageWithMainPage();
 
   updateLangButton();
   applyLanguage();
 
-  langToggle.addEventListener('click', function () {
+  langToggle.addEventListener('click', function() {
     // Save current selections before changing language
     if (document.getElementById('immediateDreams').children.length > 1) {
       selectedDreams.immediate = collectDreamResponses('immediateDreams', 'imm');
@@ -480,6 +191,10 @@ function initLanguageToggle() {
 
     currentLang = currentLang === 'en' ? 'ta' : 'en';
     localStorage.setItem('ekee_lang', currentLang);
+    
+    // Also update main page's language storage
+    localStorage.setItem('ekee_lang', currentLang);
+    
     updateLangButton();
     applyLanguage();
     renderDreamsWithCurrentLanguage();
@@ -509,6 +224,11 @@ function applyLanguage() {
     'label[id="gender_label"]': { en: 'Gender *', ta: 'பாலினம் *' },
     'label[for="respondent_type"]': { en: 'Respondent Type*', ta: 'பதிலளிப்பவர் வகை *' },
     '#respondent_type option[value=""]': { en: 'Select Type', ta: 'வகையைத் தேர்ந்தெடுக்கவும்' },
+    '#gender option[value=""]': { en: 'Select Gender', ta: 'பாலினத்தைத் தேர்ந்தெடுக்கவும்' },
+    '#education option[value=""]': { en: 'Select Education Level', ta: 'கல்வித் தகுதியைத் தேர்ந்தெடுக்கவும்' },
+    '#employmentStatus option[value=""]': { en: 'Select Employment Status', ta: 'வேலை வாய்ப்பு நிலையைத் தேர்ந்தெடுக்கவும்' },
+    '#employmentType option[value=""]': { en: 'Select Employment Type', ta: 'வேலைவாய்ப்பு வகையைத் தேர்ந்தெடுக்கவும்' },
+    '#district option[value=""]': { en: 'Select District', ta: 'மாவட்டத்தைத் தேர்ந்தெடுக்கவும்' },
     'label[for="education"]': { en: 'Level of Education*', ta: 'கல்வித் தகுதி*' },
     'label[for="employmentStatus"]': { en: 'Employment Status*', ta: 'வேலை வாய்ப்பு நிலை *' },
     'label[for="employmentType"]': { en: 'Type of Employment*', ta: 'வேலைவாய்ப்பு வகை *' },
@@ -592,6 +312,63 @@ function applyLanguage() {
     }
   });
 
+
+   const otpModalElements = {
+    '[data-translate-en="Mobile Verification"]': { en: 'Mobile Verification', ta: 'கைபேசி சரிபார்ப்பு' },
+    '[data-translate-en="Secure your dreams journey with OTP"]': { en: 'Secure your dreams journey with OTP', ta: 'OTP மூலம் உங்கள் கனவுப் பயணத்தைப் பாதுகாக்கவும்' },
+    '[data-translate-en="Enter your mobile number"]': { en: 'Enter your mobile number', ta: 'உங்கள் கைபேசி எண்ணை உள்ளிடவும்' },
+    '[data-translate-en="Enter OTP sent to your mobile"]': { en: 'Enter OTP sent to your mobile', ta: 'உங்கள் கைபேசிக்கு அனுப்பப்பட்ட OTP ஐ உள்ளிடவும்' },
+    '[data-translate-en="Resend OTP in "]': { en: 'Resend OTP in ', ta: 'OTP ஐ மீண்டும் அனுப்ப ' },
+    '[data-translate-en=" seconds"]': { en: ' seconds', ta: ' வினாடிகள்' }
+  };
+
+  for (const selector in otpModalElements) {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(element => {
+      element.textContent = otpModalElements[selector][currentLang];
+    });
+  }
+
+  // Update placeholder text for phone input
+  const phoneInput = document.getElementById('phoneInput');
+  if (phoneInput) {
+    phoneInput.placeholder = currentLang === 'ta' 
+      ? '10 இலக்க கைபேசி எண்' 
+      : '10-digit mobile number';
+  }
+
+  // Update button text
+  const buttonTexts = {
+    '#sendOtpBtn span[data-text-en]': { en: 'Send OTP', ta: 'OTP அனுப்பு' },
+    '#verifyOtpBtn span[data-text-en]': { en: 'Verify & Continue', ta: 'சரிபார்க்கவும் & தொடரவும்' },
+    '#resendOtpBtn span[data-text-en]': { en: 'Resend OTP', ta: 'OTP ஐ மீண்டும் அனுப்பு' }
+  };
+
+  for (const selector in buttonTexts) {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.textContent = buttonTexts[selector][currentLang];
+    }
+  }
+
+  // Update error/success messages
+  const otpMessages = {
+    '#phoneError': { en: 'Please enter a valid 10-digit mobile number', ta: 'சரியான 10 இலக்க கைபேசி எண்ணை உள்ளிடவும்' },
+    '#otpError': { en: 'Invalid OTP. Please try again.', ta: 'தவறான OTP. மீண்டும் முயற்சிக்கவும்.' },
+    '#otpSuccess': { en: 'OTP verified successfully!', ta: 'OTP வெற்றிகரமாக சரிபார்க்கப்பட்டது!' }
+  };
+
+  for (const selector in otpMessages) {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.textContent = otpMessages[selector][currentLang];
+      // Preserve visibility state
+      const display = element.style.display;
+      element.textContent = otpMessages[selector][currentLang];
+      element.style.display = display;
+    }
+  }
+
   translateDropdowns();
 }
 
@@ -601,7 +378,8 @@ function translateDropdowns() {
     'respondent_type',
     'education',
     'employmentStatus',
-    'employmentType'
+    'employmentType',
+    'district'
   ];
 
   dropdowns.forEach(dropdownId => {
@@ -613,60 +391,13 @@ function translateDropdowns() {
 }
 
 async function getDistrictDropDown() {
-  const cacheKey = 'districts';
-  const isStale = await isCacheStale(cacheKey);
-  
-  // Try to get from cache first
-  if (!isStale) {
-    const cachedData = await getFromCache(STORES.DROPDOWNS, cacheKey);
-    if (cachedData) {
-      console.log("Using cached district data");
-      populateDistrictDropdown(cachedData);
-      return;
-    }
+  if (!cachedData || !cachedData.dropdowns || !cachedData.dropdowns.districts) {
+    console.error("District data not loaded from JSON");
+    return;
   }
-  
-  // Fetch from API if cache is stale or empty
-  console.log("Fetching fresh district data from API");
-  const payload = {
-    action: "select",
-    _table_name: "district",
-    selected_columns: ["district_name", "district_id"],
-    filter_conditions: {},
-    sort_columns: { "district_name": "asc" }
-  };
 
-  $.ajax({
-    url: `${api_base_url}/v1/dynamic_input`,
-    type: "POST",
-    headers: {
-      "X-App-Key": "TN_EKEE",
-      "X-App-Name": "TN_EKEE"
-    },
-    data: {
-      data: encryptData(payload)
-    },
-    dataType: "json",
-    success: async function (response) {
-      if (response.success === 1) {
-        // Save to cache
-        await saveToCache(STORES.DROPDOWNS, cacheKey, response.data);
-        await updateCacheTimestamp(cacheKey);
-        
-        populateDistrictDropdown(response.data);
-      }
-    },
-    error: async function () {
-      console.error('Error loading districts');
-      
-      // Fallback to cache
-      const cachedData = await getFromCache(STORES.DROPDOWNS, cacheKey);
-      if (cachedData) {
-        console.log("Using cached district data as fallback");
-        populateDistrictDropdown(cachedData);
-      }
-    }
-  });
+  console.log("Using district data from data.json");
+  populateDistrictDropdown(cachedData.dropdowns.districts);
 }
 
 // Helper function to populate district dropdown
@@ -677,15 +408,16 @@ function populateDistrictDropdown(districtData) {
   while (districtSelect.options.length > 1) {
     districtSelect.remove(1);
   }
-  
+
   districtData.forEach(district => {
     const option = document.createElement('option');
     option.value = district.district_id;
-    option.textContent = district.district_name;
+    option.textContent = currentLang === 'ta' ? district.tamil_text : district.district_name;
+    option.setAttribute('data-tamil', district.tamil_text);
+    option.setAttribute('data-english', district.district_name);
     districtSelect.appendChild(option);
   });
 }
-
 function showOTPModal() {
   document.getElementById('otpModal').classList.add('show');
 }
@@ -1232,152 +964,29 @@ document.addEventListener('change', function (e) {
 });
 
 async function fetchImmediateDreams() {
-  const cacheKey = 'immediate_dreams';
-  const isStale = await isCacheStale(cacheKey);
-  
-  // Try to get from cache first
-  if (!isStale) {
-    const cachedData = await getFromCache(STORES.DREAMS, cacheKey);
-    if (cachedData) {
-      console.log("Using cached immediate dreams");
-      immediateDreamConfig = cachedData;
-      renderDreams('immediateDreams', immediateDreamConfig, 'imm');
-      return;
-    }
+  if (!cachedData || !cachedData.dreams || !cachedData.dreams.immediate_dreams) {
+    console.error("Immediate dreams data not loaded from JSON");
+    document.getElementById('immediateLoading').innerHTML =
+      '<div class="loading-text">Error loading dreams. Please refresh.</div>';
+    return;
   }
-  
-  // Fetch from API if cache is stale or empty
-  console.log("Fetching fresh immediate dreams from API");
-  const payload = {
-    action: "function_call",
-    function_name: "get_support_config_group",
-    params: { group: 'immediate' }
-  };
 
-  $.ajax({
-    url: `${api_base_url}/v1/commonfunction`,
-    type: "POST",
-    headers: {
-      "X-App-Key": "TN_EKEE",
-      "X-App-Name": "TN_EKEE"
-    },
-    data: {
-      data: encryptData(payload)
-    },
-    dataType: "json",
-    success: async function (response) {
-      try {
-        const decrypted = decryptData(response.data);
-        const parsed = JSON.parse(decrypted[0]['get_support_config_group']);
-        immediateDreamConfig = parsed;
-        
-        // Save to cache
-        await saveToCache(STORES.DREAMS, cacheKey, parsed);
-        await updateCacheTimestamp(cacheKey);
-        
-        renderDreams('immediateDreams', immediateDreamConfig, 'imm');
-      } catch (e) {
-        console.error("Error parsing immediate dreams:", e);
-        // Try cache as fallback
-        const cachedData = await getFromCache(STORES.DREAMS, cacheKey);
-        if (cachedData) {
-          immediateDreamConfig = cachedData;
-          renderDreams('immediateDreams', immediateDreamConfig, 'imm');
-        } else {
-          document.getElementById('immediateLoading').innerHTML =
-            '<div class="loading-text">Error loading dreams. Please refresh.</div>';
-        }
-      }
-    },
-    error: async function (xhr, status, error) {
-      console.error("Error fetching immediate dreams:", error);
-      
-      // Fallback to cache
-      const cachedData = await getFromCache(STORES.DREAMS, cacheKey);
-      if (cachedData) {
-        console.log("Using cached immediate dreams as fallback");
-        immediateDreamConfig = cachedData;
-        renderDreams('immediateDreams', immediateDreamConfig, 'imm');
-      } else {
-        document.getElementById('immediateLoading').innerHTML =
-          '<div class="loading-text">Error loading dreams. Please refresh.</div>';
-      }
-    }
-  });
+  console.log("Using immediate dreams data from data.json");
+  const immediateDreamConfig = cachedData.dreams.immediate_dreams;
+  renderDreams('immediateDreams', immediateDreamConfig, 'imm');
 }
-async function fetchFiveYearDreams() {
-  const cacheKey = 'five_year_dreams';
-  const isStale = await isCacheStale(cacheKey);
-  
-  // Try to get from cache first
-  if (!isStale) {
-    const cachedData = await getFromCache(STORES.DREAMS, cacheKey);
-    if (cachedData) {
-      console.log("Using cached five-year dreams");
-      fiveYearConfig = cachedData;
-      renderDreams('fiveYearDreams', fiveYearConfig, 'fiv');
-      return;
-    }
-  }
-  
-  // Fetch from API if cache is stale or empty
-  console.log("Fetching fresh five-year dreams from API");
-  const payload = {
-    action: "function_call",
-    function_name: "get_support_config_group",
-    params: { group: 'five_year' }
-  };
 
-  $.ajax({
-    url: `${api_base_url}/v1/commonfunction`,
-    type: "POST",
-    headers: {
-      "X-App-Key": "TN_EKEE",
-      "X-App-Name": "TN_EKEE"
-    },
-    data: {
-      data: encryptData(payload)
-    },
-    dataType: "json",
-    success: async function (response) {
-      try {
-        const decrypted = decryptData(response.data);
-        const parsed = JSON.parse(decrypted[0]['get_support_config_group']);
-        fiveYearConfig = parsed;
-        
-        // Save to cache
-        await saveToCache(STORES.DREAMS, cacheKey, parsed);
-        await updateCacheTimestamp(cacheKey);
-        
-        renderDreams('fiveYearDreams', fiveYearConfig, 'fiv');
-      } catch (e) {
-        console.error("Error parsing five-year dreams:", e);
-        // Try cache as fallback
-        const cachedData = await getFromCache(STORES.DREAMS, cacheKey);
-        if (cachedData) {
-          fiveYearConfig = cachedData;
-          renderDreams('fiveYearDreams', fiveYearConfig, 'fiv');
-        } else {
-          document.getElementById('fiveYearLoading').innerHTML =
-            '<div class="loading-text">Error loading dreams. Please refresh.</div>';
-        }
-      }
-    },
-    error: async function (xhr, status, error) {
-      console.error("Error fetching five-year dreams:", error);
-      
-      // Fallback to cache
-      const cachedData = await getFromCache(STORES.DREAMS, cacheKey);
-      if (cachedData) {
-        console.log("Using cached five-year dreams as fallback");
-        fiveYearConfig = cachedData;
-        renderDreams('fiveYearDreams', fiveYearConfig, 'fiv');
-      } else {
-        document.getElementById('fiveYearLoading').innerHTML =
-          '<div class="loading-text">Error loading dreams. Please refresh.</div>';
-      }
-    }
-  });
+async function fetchFiveYearDreams() {
+  if (!cachedData || !cachedData.dreams || !cachedData.dreams.five_year_dreams) {
+    console.error("Five-year dreams data not loaded from JSON");
+    document.getElementById('fiveYearLoading').innerHTML =
+      '<div class="loading-text">Error loading dreams. Please refresh.</div>';
+    return;
+  }
+
+  console.log("Using five-year dreams data from data.json");
+  const fiveYearConfig = cachedData.dreams.five_year_dreams;
+  renderDreams('fiveYearDreams', fiveYearConfig, 'fiv');
 }
 
 function renderDreamsWithCurrentLanguage() {
@@ -2063,9 +1672,12 @@ async function checkExistingSession() {
 
   const isSessionValid = isVerified && verifiedMobile && timestamp &&
     (now - parseInt(timestamp)) < (24 * 60 * 60 * 1000);
+  
+    const get_lang = localStorage.getItem('ekee_lang');
 
   if (!isSessionValid) {
     localStorage.clear();
+    localStorage.setItem('ekee_lang', get_lang);
     showOTPModal();
     return;
   }
@@ -2104,7 +1716,8 @@ function logoutUser() {
       localStorage.removeItem('otp_verified_timestamp');
       localStorage.removeItem('application_id');
 
-      location.reload();
+      location.href = 'index.html';
+
     }
   });
 }

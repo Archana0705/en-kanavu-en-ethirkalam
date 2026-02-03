@@ -151,10 +151,7 @@
         margin-bottom: 6px
     }
 
-    .row {
-        display: flex;
-        gap: 12px
-    }
+
 
     .col {
         flex: 1

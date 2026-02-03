@@ -1,0 +1,903 @@
+{
+  "dropdowns": {
+    "districts": [
+      {
+        "district_id": 18,
+        "district_name": "Ariyalur",
+        "tamil_text": "அரியலூர்"
+      },
+      {
+        "district_id": 10,
+        "district_name": "Chengalpet",
+        "tamil_text": "செங்கல்பட்டு"
+      },
+      {
+        "district_id": 6,
+        "district_name": "Chennai",
+        "tamil_text": "சென்னை"
+      },
+      {
+        "district_id": 34,
+        "district_name": "Coimbatore",
+        "tamil_text": "கோயம்புத்தூர்"
+      },
+      {
+        "district_id": 35,
+        "district_name": "Cuddalore",
+        "tamil_text": "கடலூர்"
+      },
+      {
+        "district_id": 27,
+        "district_name": "Dharmapuri",
+        "tamil_text": "தர்மபுரி"
+      },
+      {
+        "district_id": 8,
+        "district_name": "Dindigul",
+        "tamil_text": "திண்டுக்கல்"
+      },
+      {
+        "district_id": 26,
+        "district_name": "Erode",
+        "tamil_text": "ஈரோடு"
+      },
+      {
+        "district_id": 1,
+        "district_name": "Kallakurichi",
+        "tamil_text": "கள்ளக்குறிச்சி"
+      },
+      {
+        "district_id": 13,
+        "district_name": "Kanchipuram",
+        "tamil_text": "காஞ்சிபுரம்"
+      },
+      {
+        "district_id": 12,
+        "district_name": "Kanyakumari",
+        "tamil_text": "கன்னியாகுமரி"
+      },
+      {
+        "district_id": 33,
+        "district_name": "Karur",
+        "tamil_text": "கரூர்"
+      },
+      {
+        "district_id": 22,
+        "district_name": "Krishnagiri",
+        "tamil_text": "கிருஷ்ணகிரி"
+      },
+      {
+        "district_id": 38,
+        "district_name": "Madurai",
+        "tamil_text": "மதுரை"
+      },
+      {
+        "district_id": 4,
+        "district_name": "Mayiladuthurai",
+        "tamil_text": "மயிலாடுதுறை"
+      },
+      {
+        "district_id": 37,
+        "district_name": "Nagapattinam",
+        "tamil_text": "நாகப்பட்டினம்"
+      },
+      {
+        "district_id": 25,
+        "district_name": "Namakkal",
+        "tamil_text": "நாமக்கல்"
+      },
+      {
+        "district_id": 19,
+        "district_name": "Nilgiris",
+        "tamil_text": "நீலகிரி"
+      },
+      {
+        "district_id": 32,
+        "district_name": "Perambalur",
+        "tamil_text": "பெரம்பலூர்"
+      },
+      {
+        "district_id": 20,
+        "district_name": "Pudukkottai",
+        "tamil_text": "புதுக்கோட்டை"
+      },
+      {
+        "district_id": 5,
+        "district_name": "Ramanathapuram",
+        "tamil_text": "இராமநாதபுரம்"
+      },
+      {
+        "district_id": 21,
+        "district_name": "Ranipet",
+        "tamil_text": "இராணிப்பேட்டை"
+      },
+      {
+        "district_id": 39,
+        "district_name": "Salem",
+        "tamil_text": "சேலம்"
+      },
+      {
+        "district_id": 11,
+        "district_name": "Sivagangai",
+        "tamil_text": "சிவகங்கை"
+      },
+      {
+        "district_id": 16,
+        "district_name": "Tenkasi",
+        "tamil_text": "தென்காசி"
+      },
+      {
+        "district_id": 29,
+        "district_name": "Thanjavur",
+        "tamil_text": "தஞ்சாவூர்"
+      },
+      {
+        "district_id": 17,
+        "district_name": "Theni",
+        "tamil_text": "தேனி"
+      },
+      {
+        "district_id": 2,
+        "district_name": "Thiruchirapalli",
+        "tamil_text": "திருச்சிராப்பள்ளி"
+      },
+      {
+        "district_id": 36,
+        "district_name": "Thiruvallur",
+        "tamil_text": "திருவள்ளூர்"
+      },
+      {
+        "district_id": 15,
+        "district_name": "Thiruvannamalai",
+        "tamil_text": "திருவண்ணாமலை"
+      },
+      {
+        "district_id": 24,
+        "district_name": "Thiruvarur",
+        "tamil_text": "திருவாரூர்"
+      },
+      {
+        "district_id": 9,
+        "district_name": "Tirunelveli",
+        "tamil_text": "திருநெல்வேலி"
+      },
+      {
+        "district_id": 3,
+        "district_name": "Tirupathur",
+        "tamil_text": "திருப்பத்தூர்"
+      },
+      {
+        "district_id": 30,
+        "district_name": "Tiruppur",
+        "tamil_text": "திருப்பூர்"
+      },
+      {
+        "district_id": 14,
+        "district_name": "Tuticorin",
+        "tamil_text": "தூத்துக்குடி"
+      },
+      {
+        "district_id": 31,
+        "district_name": "Vellore",
+        "tamil_text": "வேலூர்"
+      },
+      {
+        "district_id": 7,
+        "district_name": "Viluppuram",
+        "tamil_text": "விழுப்புரம்"
+      },
+      {
+        "district_id": 23,
+        "district_name": "Virudhunagar",
+        "tamil_text": "விருதுநகர்"
+      }
+    ],
+    "dropdown_master": [
+      {
+        "category_detail": {
+          "id": 1,
+          "Tamil_text": "கல்வித் தகுதி",
+          "English_text": "Education"
+        },
+        "dropdown_values": [
+          {
+            "id": 16,
+            "order": 1,
+            "Tamil_text": "படிப்பறிவில்லாதவர்",
+            "English_text": "Illiterate"
+          },
+          {
+            "id": 17,
+            "order": 2,
+            "Tamil_text": "8ம் வகுப்பு தேர்ச்சி",
+            "English_text": "8th pass"
+          },
+          {
+            "id": 18,
+            "order": 3,
+            "Tamil_text": "மெட்ரிகுலேஷன்",
+            "English_text": "Matriculation"
+          },
+          {
+            "id": 19,
+            "order": 4,
+            "Tamil_text": "மேல்நிலை",
+            "English_text": "Higher Secondary"
+          },
+          {
+            "id": 20,
+            "order": 5,
+            "Tamil_text": "இளங்கலை",
+            "English_text": "Graduate"
+          },
+          {
+            "id": 21,
+            "order": 6,
+            "Tamil_text": "முதுகலை",
+            "English_text": "Post-graduate"
+          },
+          {
+            "id": 22,
+            "order": 7,
+            "Tamil_text": "முனைவர் பட்டம்",
+            "English_text": "Doctorate"
+          },
+          {
+            "id": 23,
+            "order": 8,
+            "Tamil_text": "டிப்ளமோ வைத்திருப்பவர்",
+            "English_text": "Diploma holder"
+          }
+        ]
+      },
+      {
+        "category_detail": {
+          "id": 2,
+          "Tamil_text": "வேலை வாய்ப்பு நிலை",
+          "English_text": "Employment Status"
+        },
+        "dropdown_values": [
+          {
+            "id": 24,
+            "order": 1,
+            "Tamil_text": "வேலையில் உள்ளவர்",
+            "English_text": "Employed"
+          },
+          {
+            "id": 25,
+            "order": 2,
+            "Tamil_text": "வேலையில்லாதவர்",
+            "English_text": "Unemployed"
+          },
+          {
+            "id": 26,
+            "order": 3,
+            "Tamil_text": "மாணவர்",
+            "English_text": "Student"
+          }
+        ]
+      },
+      {
+        "category_detail": {
+          "id": 3,
+          "Tamil_text": "வேலைவாய்ப்பு வகை",
+          "English_text": "Type of Employment"
+        },
+        "dropdown_values": [
+          {
+            "id": 27,
+            "order": 1,
+            "Tamil_text": "விவசாயி",
+            "English_text": "Cultivator"
+          },
+          {
+            "id": 28,
+            "order": 2,
+            "Tamil_text": "உழவர்",
+            "English_text": "Farmer"
+          },
+          {
+            "id": 29,
+            "order": 3,
+            "Tamil_text": "விவசாய தொழிலாளர்",
+            "English_text": "Agricultural Labour"
+          },
+          {
+            "id": 30,
+            "order": 4,
+            "Tamil_text": "விவசாயம் அல்லாத தற்காலிக தொழிலாளர்",
+            "English_text": "Non-Agricultural Casual Labour"
+          },
+          {
+            "id": 31,
+            "order": 5,
+            "Tamil_text": "சுயதொழில்",
+            "English_text": "Self-Employed"
+          },
+          {
+            "id": 32,
+            "order": 6,
+            "Tamil_text": "வழக்கமான சம்பளப் பணியாளர் (தனியார் துறை)",
+            "English_text": "Regular Salaried Worker (Private Sector)"
+          },
+          {
+            "id": 33,
+            "order": 7,
+            "Tamil_text": "அரசு அல்லது பொதுத்துறை ஊழியர்",
+            "English_text": "Government or Public Sector Employee"
+          },
+          {
+            "id": 34,
+            "order": 8,
+            "Tamil_text": "வீட்டு வேலையாள்",
+            "English_text": "Domestic or Household Worker"
+          },
+          {
+            "id": 35,
+            "order": 9,
+            "Tamil_text": "போக்குவரத்து தொழிலாளர் அல்லது ஓட்டுநர்",
+            "English_text": "Transport Worker or Driver"
+          },
+          {
+            "id": 36,
+            "order": 10,
+            "Tamil_text": "திறமையான அல்லது தொழில்நுட்ப தொழிலாளர்",
+            "English_text": "Skilled or Technical Worker"
+          },
+          {
+            "id": 37,
+            "order": 11,
+            "Tamil_text": "தொழில் வல்லுநர்கள்",
+            "English_text": "Professionals"
+          },
+          {
+            "id": 38,
+            "order": 12,
+            "Tamil_text": "இல்லத்தரசி",
+            "English_text": "Homemaker"
+          },
+          {
+            "id": 39,
+            "order": 13,
+            "Tamil_text": "வேலையில்லாதவர் அல்லது வேலை தேடுபவர்",
+            "English_text": "Unemployed or Seeking Work"
+          },
+          {
+            "id": 40,
+            "order": 14,
+            "Tamil_text": "கிக் ஊழியர் அல்லது டெலிவரி பார்ட்னர்",
+            "English_text": "Gig Worker or Delivery Partner"
+          },
+          {
+            "id": 41,
+            "order": 15,
+            "Tamil_text": "மற்றவை (குறிப்பிடவும்)",
+            "English_text": "Other (Specify)"
+          }
+        ]
+      },
+      {
+        "category_detail": {
+          "id": 4,
+          "Tamil_text": "பதிலளிப்பவர் வகை",
+          "English_text": "Respondent Type"
+        },
+        "dropdown_values": [
+          {
+            "id": 8,
+            "order": null,
+            "Tamil_text": "மாணவர்",
+            "English_text": "Student"
+          },
+          {
+            "id": 9,
+            "order": null,
+            "Tamil_text": "தொழில்முறை",
+            "English_text": "Professional"
+          },
+          {
+            "id": 10,
+            "order": null,
+            "Tamil_text": "வேலை தேடுபவர்",
+            "English_text": "Job Seeker"
+          }
+        ]
+      },
+      {
+        "category_detail": {
+          "id": 5,
+          "Tamil_text": "பாலினம் ",
+          "English_text": "Gender"
+        },
+        "dropdown_values": [
+          {
+            "id": 4,
+            "order": null,
+            "Tamil_text": "ஆண்",
+            "English_text": "Male"
+          },
+          {
+            "id": 5,
+            "order": null,
+            "Tamil_text": "பெண்",
+            "English_text": "Female"
+          },
+          {
+            "id": 6,
+            "order": null,
+            "Tamil_text": "மற்றவை",
+            "English_text": "Other"
+          },
+          {
+            "id": 7,
+            "order": null,
+            "Tamil_text": "சொல்ல விருப்பமில்லை",
+            "English_text": "Prefer not to say"
+          }
+        ]
+      }
+    ]
+  },
+  "dreams": {
+    "five_year_dreams": [
+      {
+        "key": "selfEmployment",
+        "label": "I want support for Self-Employment & Business Growth through - ",
+        "supports": [
+          {
+            "order": 2,
+            "support_id": 181,
+            "support_item": "Women-led business funding",
+            "tamil_support_item": "பெண்கள் தலைமையிலான வணிக நிதி"
+          },
+          {
+            "order": 1,
+            "support_id": 180,
+            "support_item": "Market linkage & branding support",
+            "tamil_support_item": "சந்தை இணைப்பு & முத்திரைப்படுத்தல் ஆதரவு"
+          },
+          {
+            "order": 3,
+            "support_id": 182,
+            "support_item": "Support for SHGs",
+            "tamil_support_item": "SHGகளுக்கான ஆதரவு"
+          }
+        ],
+        "category_id": 23,
+        "tamil_label": "நான் சுயதொழில் & வணிக வளர்ச்சிக்கு ஆதரவு பெற விரும்புகிறேன் -",
+        "order_column": 5,
+        "main_category": "2. If you are already a business owner ",
+        "main_category_order": 2,
+        "tamil_main_category": "நீங்கள் ஏற்கனவே வணிக உரிமையாளராக இருந்தால்"
+      },
+      {
+        "key": "selfEmployment",
+        "label": "I want support for Self-Employment & Business Growth through - ",
+        "supports": [
+          {
+            "order": 3,
+            "support_id": 179,
+            "support_item": "Incubation centre support",
+            "tamil_support_item": "பணி துவக்க காலம் மைய ஆதரவு"
+          },
+          {
+            "order": 1,
+            "support_id": 177,
+            "support_item": "Startup seed grant",
+            "tamil_support_item": "ஸ்டார்ட்அப் விதை மானியம்"
+          },
+          {
+            "order": 2,
+            "support_id": 178,
+            "support_item": "Business mentorship",
+            "tamil_support_item": "வணிக வழிகாட்டுதல்"
+          }
+        ],
+        "category_id": 14,
+        "tamil_label": "நான் சுயதொழில் & வணிக வளர்ச்சிக்கு ஆதரவு பெற விரும்புகிறேன் -",
+        "order_column": 5,
+        "main_category": "1. Starting a Business",
+        "main_category_order": 1,
+        "tamil_main_category": "வணிகத்தைத் தொடங்குதல்"
+      },
+      {
+        "key": "Mental & Emotional Health",
+        "label": "Mental & Emotional Health",
+        "supports": [
+          {
+            "order": 1,
+            "support_id": 186,
+            "support_item": "Mental health counselling ",
+            "tamil_support_item": "மன சுகாதார ஆலோசனை"
+          },
+          {
+            "order": 2,
+            "support_id": 187,
+            "support_item": "Nutrition & lifestyle guidance",
+            "tamil_support_item": "ஊட்டச்சத்து & வாழ்க்கை முறை வழிகாட்டுதல்"
+          },
+          {
+            "order": 3,
+            "support_id": 188,
+            "support_item": "Stress management workshops",
+            "tamil_support_item": "மன அழுத்த மேலாண்மைப் பயிற்சி முகாம்கள்"
+          }
+        ],
+        "category_id": 26,
+        "tamil_label": "மன & உணர்ச்சி சுகாதாரம்",
+        "order_column": 6,
+        "main_category": null,
+        "main_category_order": null,
+        "tamil_main_category": null
+      },
+      {
+        "key": "globalExp",
+        "label": "I want global learning exposure through - ",
+        "supports": [
+          {
+            "order": 2,
+            "support_id": 173,
+            "support_item": "Language Training for global education",
+            "tamil_support_item": "உலகளாவிய கல்விக்கான மொழி பயிற்சி"
+          },
+          {
+            "order": 1,
+            "support_id": 172,
+            "support_item": "Advise & Counselling to study abroad ",
+            "tamil_support_item": "வெளிநாட்டில் படிக்க ஆலோசனை & கவுன்சலிங்"
+          }
+        ],
+        "category_id": 20,
+        "tamil_label": "நான் உலகளாவிய கற்றல் வெளிப்பாட்டைப் பெற விரும்புகிறேன் -",
+        "order_column": 3,
+        "main_category": null,
+        "main_category_order": null,
+        "tamil_main_category": null
+      },
+      {
+        "key": "employment",
+        "label": "I want support for Meaningful Employment through- ",
+        "supports": [
+          {
+            "order": 2,
+            "support_id": 175,
+            "support_item": "Access to government-sponsored co-working spaces",
+            "tamil_support_item": "அரசு வழங்கும் இணைந்து பணியாற்றும் இடங்களுக்கான அணுகல்"
+          },
+          {
+            "order": 1,
+            "support_id": 174,
+            "support_item": "Access to Job Fairs",
+            "tamil_support_item": "வேலை முகாம்களுக்கான அணுகல்"
+          },
+          {
+            "order": 3,
+            "support_id": 176,
+            "support_item": "Enable global job opportunities (through coordination with Tamil Nadu Skill Development Corporation (TNSDC) & Overseas Manpower Corporation Ltd (OMCL))",
+            "tamil_support_item": "வெளிநாட்டு வேலை வாய்ப்புகளை இயக்குதல் (NRTகளுடன் ஒருங்கிணைப்பு மூலம்)"
+          }
+        ],
+        "category_id": 13,
+        "tamil_label": "நான் அர்த்தமுள்ள வேலைவாய்ப்புக்கு ஆதரவு பெற விரும்புகிறேன் -",
+        "order_column": 4,
+        "main_category": "",
+        "main_category_order": null,
+        "tamil_main_category": ""
+      },
+      {
+        "key": " Support for Competitive Exams",
+        "label": "I would want to Support for following Competitive Exams - ",
+        "supports": [
+          {
+            "order": 1,
+            "support_id": 169,
+            "support_item": "UPSC / Group A-B Central Services Coaching ",
+            "tamil_support_item": "UPSC / குரூப் A-B மத்திய சேவைகள் பயிற்சி"
+          },
+          {
+            "order": 2,
+            "support_id": 170,
+            "support_item": "State Provisional Exams (TNPSC / SI / TET / TRB / etc.)",
+            "tamil_support_item": "மாநில தேர்வுகள் (TNPSC / SI / TET / TRB / போன்றவை)"
+          },
+          {
+            "order": 3,
+            "support_id": 171,
+            "support_item": "BSRB (Banking Services Recruitment Board)",
+            "tamil_support_item": "BSRB (வங்கி சேவைகள் ஆட்சேர்ப்பு வாரியம்)"
+          }
+        ],
+        "category_id": 25,
+        "tamil_label": "நான் பின்வரும் போட்டித் தேர்வுகளுக்கு ஆதரவு பெற விரும்புகிறேன் -",
+        "order_column": 1,
+        "main_category": null,
+        "main_category_order": null,
+        "tamil_main_category": null
+      },
+      {
+        "key": "higherEdu",
+        "label": "I want support to pursue Higher Education  through -",
+        "supports": [
+          {
+            "order": 2,
+            "support_id": 165,
+            "support_item": "Academic Mentorship for Higher Studies (M.Phil. / PhD / Labs)",
+            "tamil_support_item": "உயர் கல்விக்கான கல்வி வழிகாட்டுதல் (M.Phil. / PhD / ஆய்வகங்கள்)"
+          },
+          {
+            "order": 4,
+            "support_id": 167,
+            "support_item": "Hostel / Accommodation Support for students studying away from home",
+            "tamil_support_item": "வீட்டிலிருந்து தொலைவில் படிக்கும் மாணவர்களுக்கு விடுதி / தங்குமிட ஆதரவு"
+          },
+          {
+            "order": 1,
+            "support_id": 164,
+            "support_item": "Study Material Provisions",
+            "tamil_support_item": "படிப்புக்கு தேவையான உபகரணங்கள் "
+          },
+          {
+            "order": 3,
+            "support_id": 166,
+            "support_item": "Government Scholarship Support (Fee Waiver / Merit Scholarships)",
+            "tamil_support_item": "அரசு உதவித்தொகை ஆதரவு (கட்டண விலக்கு / தகுதி உதவித்தொகை)"
+          },
+          {
+            "order": 5,
+            "support_id": 168,
+            "support_item": "Bridge Courses & Foundation Programs for Rural / First-Generation Learners",
+            "tamil_support_item": "கிராமப்புற / முதல் தலைமுறை கற்போருக்கான பாலம் பாடநெறிகள் & அடித்தள திட்டங்கள்"
+          }
+        ],
+        "category_id": 11,
+        "tamil_label": "நான் உயர் கல்வியைத் தொடர ஆதரவு பெற விரும்புகிறேன் -",
+        "order_column": 2,
+        "main_category": null,
+        "main_category_order": null,
+        "tamil_main_category": null
+      }
+    ],
+    "immediate_dreams": [
+      {
+        "key": "community",
+        "label": "I want to actively engage with my community by volunteering in the following areas-",
+        "supports": [
+          {
+            "order": 2,
+            "support_id": 191,
+            "support_item": "Disaster Mitigation",
+            "tamil_support_item": "பேரிடர் தணிப்பு"
+          },
+          {
+            "order": 3,
+            "support_id": 192,
+            "support_item": "Anti-drug campaigns",
+            "tamil_support_item": "போதைப்பொருள் எதிர்ப்பு பிரச்சாரங்கள்"
+          },
+          {
+            "order": 4,
+            "support_id": 193,
+            "support_item": "Sanitation & cleanliness",
+            "tamil_support_item": "சுகாதாரம் & சுத்தம்"
+          },
+          {
+            "order": 1,
+            "support_id": 162,
+            "support_item": "Greening",
+            "tamil_support_item": "பசுமைப்படுத்துதல்"
+          },
+          {
+            "order": 4,
+            "support_id": 194,
+            "support_item": "Environment protection activities <br><p>(Volunteers participating will receive a certificate from Government)</p> <hr>",
+            "tamil_support_item": "சுற்றுச்சூழல் பாதுகாப்பு நடவடிக்கைகள்<br> <p>(பங்கேற்கும் தன்னார்வலர்கள் அரசாங்கத்திடமிருந்து சான்றிதழ் பெறுவார்கள்)</p> <hr>"
+          }
+        ],
+        "category_id": 9,
+        "tamil_label": "நான் சமூக சேவையில் தன்னார்வமாக பங்கேற்க விரும்புகிறேன். கீழ்க்கண்ட துறைகளில் சேவை செய்ய ஆசைப்படுகிறேன் - ",
+        "order_column": 5,
+        "main_category": null,
+        "main_category_order": null,
+        "tamil_main_category": null
+      },
+      {
+        "key": "techTools",
+        "label": "I want to access technology and digital tools through -",
+        "supports": [
+          {
+            "order": 1,
+            "support_id": 151,
+            "support_item": "Laptop for College students",
+            "tamil_support_item": "கல்லூரி மாணவர்களுக்கு மடிக்கணினி"
+          },
+          {
+            "order": 2,
+            "support_id": 152,
+            "support_item": "Data pack",
+            "tamil_support_item": "டேட்டா பேக்"
+          },
+          {
+            "order": 3,
+            "support_id": 153,
+            "support_item": "Free AI subscription",
+            "tamil_support_item": "இலவச AI சந்தா"
+          },
+          {
+            "order": 4,
+            "support_id": 154,
+            "support_item": "Online certification courses support",
+            "tamil_support_item": "ஆன்லைன் சான்றிதழ் பாடநெறி ஆதரவு"
+          }
+        ],
+        "category_id": 2,
+        "tamil_label": "நான் தொழில்நுட்பம் மற்றும் டிஜிட்டல் கருவிகளை அணுக விரும்புகிறேன் ",
+        "order_column": 1,
+        "main_category": null,
+        "main_category_order": null,
+        "tamil_main_category": null
+      },
+      {
+        "key": "trainingJobs",
+        "label": "I want to get training for real jobs through - ",
+        "supports": [
+          {
+            "order": 1,
+            "support_id": 155,
+            "support_item": "Short-term vocational Training (4-8 weeks)",
+            "tamil_support_item": "குறுகிய கால தொழிற்பயிற்சி (4-8 வாரங்கள்)"
+          },
+          {
+            "order": 2,
+            "support_id": 156,
+            "support_item": "Job-readiness skills (resume, interview, communication skills & workplace basics)",
+            "tamil_support_item": "வேலை தயார்நிலை திறன்கள் (விண்ணப்பம், நேர்காணல், தொடர்பு திறன்கள் & பணியிட அடிப்படைகள்)"
+          },
+          {
+            "order": 3,
+            "support_id": 157,
+            "support_item": "Entrepreneurship bootcamps",
+            "tamil_support_item": "தொழில்முனைவோர் துவக்க முகாம்கள்"
+          }
+        ],
+        "category_id": 5,
+        "tamil_label": "நான் உண்மையான வேலைகளுக்கான பயிற்சி பெற விரும்புகிறேன் -",
+        "order_column": 2,
+        "main_category": null,
+        "main_category_order": null,
+        "tamil_main_category": null
+      },
+      {
+        "key": "sports",
+        "label": "To stay fit, participate in sports and compete, I would like access to: ",
+        "supports": [
+          {
+            "order": 4,
+            "support_id": 161,
+            "support_item": "Access to training grounds",
+            "tamil_support_item": "பயிற்சி மைதானங்களுக்கான அணுகல்"
+          },
+          {
+            "order": 1,
+            "support_id": 158,
+            "support_item": "Sports Kit - Cricket",
+            "tamil_support_item": "விளையாட்டு கிட் - கிரிக்கெட்"
+          },
+          {
+            "order": 2,
+            "support_id": 159,
+            "support_item": "Sports Kit - Football",
+            "tamil_support_item": "விளையாட்டு கிட் - கால்பந்து"
+          },
+          {
+            "order": 3,
+            "support_id": 160,
+            "support_item": "Sports Kit - Volleyball",
+            "tamil_support_item": "விளையாட்டு கிட் - வாலிபால்"
+          }
+        ],
+        "category_id": 7,
+        "tamil_label": "உடல் நலத்துடன் இருக்கவும், விளையாட்டில் பங்கேற்கவும், போட்டியிடவும், நான் அணுக விரும்புவது:",
+        "order_column": 3,
+        "main_category": "",
+        "main_category_order": null,
+        "tamil_main_category": null
+      },
+      {
+        "key": "meetIcon",
+        "label": "I would like to be mentored in the field of - ",
+        "supports": [
+          {
+            "order": 7,
+            "support_id": 189,
+            "support_item": "Entrepreneurship",
+            "tamil_support_item": "தொழில்முனைவு"
+          },
+          {
+            "order": 8,
+            "support_id": 139,
+            "support_item": "Literature & Writing",
+            "tamil_support_item": "இலக்கியம் & எழுத்து"
+          },
+          {
+            "order": 9,
+            "support_id": 140,
+            "support_item": "Healthcare & Medicine",
+            "tamil_support_item": "சுகாதாரம் & மருத்துவம்"
+          },
+          {
+            "order": 10,
+            "support_id": 141,
+            "support_item": "Agriculture & Rural Development",
+            "tamil_support_item": "விவசாயம் & கிராமப்புற மேம்பாடு"
+          },
+          {
+            "order": 11,
+            "support_id": 142,
+            "support_item": "Music & Performing Arts",
+            "tamil_support_item": "இசை & கலை நிகழ்ச்சிகள்"
+          },
+          {
+            "order": 12,
+            "support_id": 143,
+            "support_item": "Law & Judiciary",
+            "tamil_support_item": "சட்டம் & நீதித்துறை"
+          },
+          {
+            "order": 13,
+            "support_id": 144,
+            "support_item": "Journalism & Media",
+            "tamil_support_item": "பத்திரிகை & ஊடகம்"
+          },
+          {
+            "order": 14,
+            "support_id": 190,
+            "support_item": "Others (Please Specify) ",
+            "tamil_support_item": "மற்றவை (குறிப்பிடவும்)"
+          },
+          {
+            "order": 1,
+            "support_id": 133,
+            "support_item": "Sports",
+            "tamil_support_item": "விளையாட்டு"
+          },
+          {
+            "order": 2,
+            "support_id": 134,
+            "support_item": "Arts & Culture",
+            "tamil_support_item": "கலை & கலாச்சாரம்"
+          },
+          {
+            "order": 3,
+            "support_id": 135,
+            "support_item": "Science & Technology",
+            "tamil_support_item": "அறிவியல் & தொழில்நுட்பம்"
+          },
+          {
+            "order": 4,
+            "support_id": 136,
+            "support_item": "Education & Academia",
+            "tamil_support_item": "கல்வி & கல்வித்துறை"
+          },
+          {
+            "order": 5,
+            "support_id": 137,
+            "support_item": "Social Service & Activism",
+            "tamil_support_item": "சமூக சேவை & சமூக செயற்பாடுகள்"
+          },
+          {
+            "order": 6,
+            "support_id": 138,
+            "support_item": "Business",
+            "tamil_support_item": "வணிகம்"
+          }
+        ],
+        "category_id": 1,
+        "tamil_label": "நான் வழிகாட்டுதல் பெற விரும்பும் துறை -",
+        "order_column": 4,
+        "main_category": null,
+        "main_category_order": null,
+        "tamil_main_category": null
+      }
+    ]
+  }
+}

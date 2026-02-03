@@ -1058,6 +1058,7 @@ body.tamil-lang {
     font-family: 'Latha', 'Kavivanar', 'Noto Sans Tamil', 'Tamil Sangam MN', Arial, sans-serif;
 }
 
+
 /* Responsive adjustments for language toggle */
 @media (max-width: 768px) {
     .language-toggle {
