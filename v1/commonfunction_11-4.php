@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require_once('../helper/header.php');
-require_once('../helper/db/edm_read.php');
+require_once('../helper/db/read.php');
 require_once('../vendor/autoload.php');
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;

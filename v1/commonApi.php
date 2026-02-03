@@ -2,7 +2,7 @@
 
 
 require_once('../helper/header.php');
-require_once('../helper/db/edm_read.php');
+require_once('../helper/db/read.php');
 
 header("Access-Control-Allow-Methods: POST");
 header("Content-Type: application/json");

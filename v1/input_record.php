@@ -1,8 +1,8 @@
 <?php
 
 require_once('../helper/header.php');
-require_once('../helper/db/edm_read.php');
-require_once('../helper/db/edm_write.php');
+require_once('../helper/db/read.php');
+require_once('../helper/db/write.php');
 require __DIR__ . '/../vendor/autoload.php';
 
 use Aws\S3\S3Client;
@@ -228,7 +228,7 @@ function uploadFile($fileKey, $uploadDir = "../uploads/") {
 function move_To_S3($filename){
     global $s3, $bucket;
     $filePath = "../uploads/" . $filename;
-    
+
     try {
         // Upload data.
         $result = $s3->putObject([

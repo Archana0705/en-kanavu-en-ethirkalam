@@ -1,6 +1,6 @@
 <?php
 require_once('../helper/header.php');
-require_once('../helper/db/edm_read.php');
+require_once('../helper/db/read.php');
 require_once('../vendor/autoload.php');
 // require_once('allowed_function.json');
 
