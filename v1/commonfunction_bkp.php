@@ -72,7 +72,7 @@ switch ($action) {
 
 
         try {
-            $stmt = $edm_read_db->prepare($sql);
+            $stmt = $read_db->prepare($sql);
             foreach ($params as $key => $value) {
                 $stmt->bindValue(":$key", $value);
             }
@@ -106,7 +106,7 @@ switch ($action) {
     $sql = "CALL $procedureName($placeholders)";
 
     try {
-        $stmt = $edm_read_db->prepare($sql);
+        $stmt = $read_db->prepare($sql);
        foreach ($params as $key => $value) {
     if (is_array($value)) {
         // Convert PHP array to JSON string for PostgreSQL JSON input

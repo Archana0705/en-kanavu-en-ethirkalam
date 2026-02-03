@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 require_once('../helper/header.php');
 require_once('../helper/db/edm_read.php');
 require_once('../vendor/autoload.php');
@@ -193,28 +191,7 @@ try {
         case 'function_call':
             session_start();
 
-            try {
-                if (empty($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-                    throw new Exception("Unauthorized access. Please log in again.", 401);
-                }
-
-                
-
-            } catch (Exception $e) {
-                http_response_code($e->getCode() ?: 500);
-
-                echo json_encode([
-                    "success" => 0,
-                    "message" => $e->getMessage(),
-                    "error_code" => $e->getCode()
-                ]);
-
-                
-
-                // Optional: log the error
-                logMessage("error", $e->getMessage(), $logFilePath, 0, $e->getCode(), $method, $endpoint, $service, $_REQUEST, $_SERVER, $request_time, date(DATE_FORMAT));
-                exit;
-            }
+           
 
 
             $functionName = $data['function_name'] ?? null;
@@ -294,7 +271,7 @@ try {
 
             try {
                 // Prepare and execute count
-                $countStmt = $edm_read_db->prepare($countSql);
+                $countStmt = $read_db->prepare($countSql);
 
                 foreach ($bindParams as $k => $v) {
                     // PDO bind values - treat ints as ints
@@ -316,7 +293,7 @@ try {
                 }
 
                 // Main query
-                $stmt = $edm_read_db->prepare($sql);
+                $stmt = $read_db->prepare($sql);
                 foreach ($bindParams as $k => $v) {
                     // Do not let PDO try to bind arrays
                     if (is_int($v)) {
@@ -329,7 +306,7 @@ try {
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 // Sanitize output before encrypting/returning
-                $result = sanitizeOutput($result);
+                // $result = sanitizeOutput($result);
 
                 $response = ["success" => 1, "message" => "Data found", "data" => encrypt($result)];
                 if ($limit !== null) {
@@ -423,7 +400,7 @@ try {
             $sql = "CALL $procedureName(" . $placeholders . ")";
 
             try {
-                $stmt = $edm_read_db->prepare($sql);
+                $stmt = $read_db->prepare($sql);
                 foreach ($params as $k => $v) {
                     if (is_int($v)) {
                         $stmt->bindValue(":$k", $v, PDO::PARAM_INT);
@@ -462,7 +439,7 @@ try {
             try {
                 // Example: if using JWT or token-based authentication
                 // If you are storing active tokens in DB or Redis, invalidate here
-                // Example: $edm_read_db->prepare("UPDATE user_tokens SET valid = false WHERE token = :token")->execute(['token' => $token]);
+                // Example: $read_db->prepare("UPDATE user_tokens SET valid = false WHERE token = :token")->execute(['token' => $token]);
 
                 // Or simply destroy PHP session if using session-based auth
                 if (session_status() === PHP_SESSION_NONE) {
@@ -506,7 +483,7 @@ try {
 
                 // Prepare SQL (PostgreSQL function call)
                 $sql = "SELECT * FROM $functionName(:mobnumber)";
-                $stmt = $edm_read_db->prepare($sql);
+                $stmt = $read_db->prepare($sql);
                 $stmt->bindValue(':mobnumber', $mobnumber, PDO::PARAM_STR);
                 $stmt->execute();
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

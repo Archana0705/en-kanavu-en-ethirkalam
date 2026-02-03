@@ -8,8 +8,8 @@ function respondWithError($statusCode, $message) {
 $app_key = $_SERVER['HTTP_X_APP_KEY'] ?? null;
 $app_name = $_SERVER['HTTP_X_APP_NAME'] ?? null;
 
-$expected_app_key = 'edm';
-$expected_app_name = 'edm';
+$expected_app_key = 'TN_EKEE';
+$expected_app_name = 'TN_EKEE';
 
 
 

@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 
 require_once('../helper/header.php');
 require_once('../helper/db/edm_read.php');
@@ -45,7 +41,7 @@ switch ($action) {
         }
 
         try {
-            $stmt = $edm_read_db->prepare($sql);
+            $stmt = $read_db->prepare($sql);
             foreach ($filters as $key => $value) {
                 $stmt->bindValue(":$key", $value);
             }
@@ -120,7 +116,7 @@ switch ($action) {
         $sql = "INSERT INTO $table ($columns) VALUES ($placeholders)";
 
         try {
-            $stmt = $edm_read_db->prepare($sql);
+            $stmt = $read_db->prepare($sql);
             foreach ($data as $key => $value) {
                 $stmt->bindValue(":$key", $value);
             }
@@ -155,7 +151,7 @@ switch ($action) {
 
 
     try {
-        $stmt = $edm_read_db->prepare($sql);
+        $stmt = $read_db->prepare($sql);
 
         // Bind all SET values
         foreach ($data as $key => $value) {
@@ -163,7 +159,7 @@ switch ($action) {
                 $stmt->bindValue(":$key", $value);
             }
         }
-
+        
         // Bind primary key separately
         $stmt->bindValue(":pk_value", $data[$primaryKey]);
 
@@ -190,7 +186,7 @@ switch ($action) {
         $sql = "DELETE FROM $table WHERE $primaryKey = :$primaryKey";
 
         try {
-            $stmt = $edm_read_db->prepare($sql);
+            $stmt = $read_db->prepare($sql);
             $stmt->bindValue(":$primaryKey", $data[$primaryKey]);
             if ($stmt->execute()) {
                 http_response_code(200);

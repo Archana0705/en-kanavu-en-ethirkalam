@@ -30,10 +30,10 @@ function encrypt($data)
       $type = $_SERVER['HTTP_X_APP_TYPE'] ?? null;
     $tipe = $_SERVER['HTTP_X_APP_TIPE'] ?? null;
 
-    if ($type == 'te$t' ) {
+    if ($type == 'TN_EKEE' ) {
         return $data;
     } 
-    else if($tipe == 't@st'){
+    else if($tipe == 'TN_EKEE'){
          return $data;
     }
     else {
@@ -60,7 +60,7 @@ function decryptData($encryptedData)
 
     $type = $_SERVER['HTTP_X_APP_TYPE'] ?? null;
 
-    if ($type == 'te$t') {
+    if ($type == 'TN_EKEE') {
        
         return $encryptedData;
     } else {

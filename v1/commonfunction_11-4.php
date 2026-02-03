@@ -110,7 +110,7 @@ switch ($action) {
             if (!empty($whereConditions)) {
                 $countSql .= " WHERE " . implode(' AND ', $whereConditions);
             }
-            $countStmt = $edm_read_db->prepare($countSql);
+            $countStmt = $read_db->prepare($countSql);
             foreach ($bindParams as $key => $value) {
                 $countStmt->bindValue(":$key", $value);
             }
@@ -125,7 +125,7 @@ switch ($action) {
             }
 
             // Execute main query
-            $stmt = $edm_read_db->prepare($sql);
+            $stmt = $read_db->prepare($sql);
             foreach ($bindParams as $key => $value) {
                 $paramType = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
                 $stmt->bindValue(":$key", $value, $paramType);
@@ -180,7 +180,7 @@ switch ($action) {
     $sql = "CALL $procedureName($placeholders)";
 
     try {
-        $stmt = $edm_read_db->prepare($sql);
+        $stmt = $read_db->prepare($sql);
        foreach ($params as $key => $value) {
     if (is_array($value)) {
         // Convert PHP array to JSON string for PostgreSQL JSON input

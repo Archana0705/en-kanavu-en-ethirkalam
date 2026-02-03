@@ -5,7 +5,8 @@
     "require": {
         "vlucas/phpdotenv": "^5.6",
         "phpmailer/phpmailer": "^6.9",
-        "monolog/monolog": "^3.9"
+        "monolog/monolog": "^3.9",
+        "aws/aws-sdk-php": "^3.369"
     },
     "authors": [
         {
