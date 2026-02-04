@@ -364,7 +364,7 @@ function sendOTP($mobileNo)
     // Generate OTP
     $otp = generateOTP();
     // $otp = 123456;
-    sendOtpViamethod($mobileNo, $otp, 'என் கனவு, என் எதிர்காலம்', 'mobile');
+    //sendOtpViamethod($mobileNo, $otp, 'என் கனவு, என் எதிர்காலம்', 'mobile');
 
     // Store OTP in database
     try {
