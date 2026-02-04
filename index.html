@@ -5,782 +5,911 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex,nofollow">
-  <title data-i18n="tab-title">என் கனவு, என் எதிர்காலம்</title>
+  <title>என் கனவு, என் எதிர்காலம்</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-icons.min.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-  <div class="full_body">
-<body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E8Y81J8M49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
+  gtag('config', 'G-E8Y81J8M49');
+</script>
+<div class="full_body">
 
-  
-  <style>
-    :root {
-      --bs-nav-pills-link-active-bg: rgb(2, 54, 135);
-    }
-
-    body {
-      /* background: linear-gradient(-45deg, #fff3f0, #ffeaf2, #eaf9ff, #e9fffa); */
-      background-size: 400% 400%;
-      /* animation: gradient 20s ease infinite; */
-      height: 100vh;
-    }
-
-    @keyframes gradient {
-      0% {
-        background_position: 0% 50%;
+  <body>
+    <!-- Author Prasath, UI/UX Designer TNeGA -->
+    <style>
+      :root {
+        --bs-nav-pills-link-active-bg: rgb(2, 54, 135);
       }
 
-      50% {
-        background_position: 100% 50%;
+      body {
+        /* background: linear-gradient(-45deg, #fff3f0, #ffeaf2, #eaf9ff, #e9fffa); */
+        background-size: 400% 400%;
+        /* animation: gradient 20s ease infinite; */
+        height: 100vh;
       }
 
-      100% {
-        background_position: 0% 50%;
-      }
-    }
+      @keyframes gradient {
+        0% {
+          background_position: 0% 50%;
+        }
 
-    .nav-link {
-      font-weight: 600;
-    }
+        50% {
+          background_position: 100% 50%;
+        }
 
-    body {
-      padding: 0;
-      margin: 0;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    .title {
-      width: 100%;
-      margin: 4rem 0rem;
-      position: relative;
-      padding: 0;
-      text-align: center;
-    }
-
-    .title h3 {
-      font-size: 8rem;
-      font-weight: 600;
-      text-align: start;
-
-      /* transform: translateX(-50%); */
-      /* position: absolute; */
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.329);
-      top: 0;
-      left: 50%;
-    }
-
-    #students-img {
-      width: 80%;
-      z-index: 2;
-    }
-
-    #cm-img {
-      width: 300px;
-      /* position: absolute; */
-      bottom: 0;
-      left: 0;
-    }
-
-    footer * {
-      font-weight: 600;
-    }
-
-    .fade-sides {
-      width: 100%;
-      height: auto;
-      display: block;
-      mask-image: linear-gradient(to bottom, #000000 45%, black 93%, #000000 93%, transparent 100%),
-        linear-gradient(to right, transparent 4%, black 12%, black 90%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to bottom, #000000 45%, black 93%, #000000 93%, transparent 100%),
-        linear-gradient(to right, transparent 4%, black 12%, black 90%, transparent 100%);
-      mask-composite: intersect;
-      -webkit-mask-composite: source-in;
-      mask-size: 100% 100%;
-      -webkit-mask-size: 100% 100%;
-    }
-
-    #tn-logo {
-      width: 100px;
-      margin-top: 2rem;
-    }
-
-    .sec-2 {
-      background: linear-gradient(270deg, rgb(114, 157, 197), rgb(2, 54, 135));
-      /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.555); */
-      color: white;
-      padding: 20px;
-      /* border-radius: 20px; */
-    }
-
-    .about {
-      /* background-color: rgba(255, 255, 255, 0.459); */
-      background: linear-gradient(270deg, rgb(114, 157, 197), rgb(2, 54, 135));
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.555);
-      color: white;
-      padding: 20px;
-      border-radius: 20px;
-    }
-
-    .active,
-    .btn-primary {
-      background-color: rgb(2, 54, 135) !important;
-    }
-
-    .nav-link.active {
-      background-color: rgb(2, 54, 135) !important;
-      color: white !important;
-    }
-
-    .nav-link {
-      color: rgb(2, 54, 135);
-      padding: 4px 8px;
-      border-radius: 5px;
-    }
-
-    .otp-box:focus {
-      border-color: #0d6efd;
-      box-shadow: 0 0 4px rgba(13, 110, 253, 0.4);
-    }
-
-    .mobile-box {
-      /* width: 33px   !important; */
-      font-size: 1.3rem;
-      border-radius: 8px;
-    }
-
-    .otp-box {
-      width: 60px;
-      height: 60px;
-      font-size: 1.5rem;
-      border-radius: 8px;
-    }
-
-    header {
-      background: linear-gradient(135deg, #003385, #6dd3ff);
-      box-shadow: 2px 2px 4px rgba(97, 97, 97, 0.486);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 99;
-      color: white !important;
-    }
-
-    header * {
-      color: white !important;
-    }
-
-    .bg-sec {
-      position: absolute;
-      top: 20%;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      z-index: 0;
-    }
-
-    #icon-grid h2,
-    #icon-grid h3,
-    #icon-grid p {
-      stroke: white;
-      stroke-width: 10px;
-    }
-
-    .bg-img {
-      left: 0;
-      top: -40px;
-      height: 400px;
-      z-index: -1;
-      overflow: visible;
-      opacity: 100%;
-      /* height: 158px; */
-      position: absolute;
-      background-size: cover;
-      background-repeat: repeat-x;
-      animation: movin 60s linear 0s infinite;
-
-    }
-
-    footer .bg {
-      opacity: 10%;
-      /* width: 100%; */
-      position: absolute;
-      top: 0;
-      height: 100%;
-      object-fit: 50%;
-      left: 0;
-      z-index: 0;
-    }
-
-    @keyframes movin {
-      0% {
-        transform: translateX(-25%);
+        100% {
+          background_position: 0% 50%;
+        }
       }
 
-      100% {
-        transform: translateX(-10%);
+      .nav-link {
+        font-weight: 600;
       }
-    }
+      
 
-    .foot-logo {
-      width: 50px;
-    }
+      body {
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+        position: relative;
+      }
 
-    #icon-grid .bi {
-      color: rgb(36, 62, 146);
-      font-weight: 700;
-      font-size: 34px;
+      .title {
+        width: 100%;
+        margin: 4rem 0rem;
+        position: relative;
+        padding: 0;
+        text-align: center;
+      }
 
-    }
+      .title h3 {
+        font-size: 8rem;
+        font-weight: 600;
+        text-align: start;
 
-    a {
-      text-decoration: none;
-    }
+        /* transform: translateX(-50%); */
+        /* position: absolute; */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.329);
+        top: 0;
+        left: 50%;
+      }
 
-    #head-title {
-      display: none;
-      opacity: 0;
-      transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
-      transform: translateY(20px);
-    }
+      #students-img {
+        width: 80%;
+        z-index: 2;
+      }
 
-    #head-title img {
-      margin: 5px 10px;
-      background: linear-gradient(135deg, #0f6cff, #6dd3ff);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
+      #cm-img {
+        width: 300px;
+        /* position: absolute; */
+        bottom: 0;
+        left: 0;
+      }
 
-    }
+      footer * {
+        font-weight: 600;
+      }
 
-    #head-title.scrolled {
-      opacity: 1;
-      transform: translateY(0px);
-      display: block;
-    }
+      .fade-sides {
+        width: 100%;
+        height: auto;
+        display: block;
+        mask-image: linear-gradient(to bottom, #000000 45%, black 93%, #000000 93%, transparent 100%),
+          linear-gradient(to right, transparent 4%, black 12%, black 90%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, #000000 45%, black 93%, #000000 93%, transparent 100%),
+          linear-gradient(to right, transparent 4%, black 12%, black 90%, transparent 100%);
+        mask-composite: intersect;
+        -webkit-mask-composite: source-in;
+        mask-size: 100% 100%;
+        -webkit-mask-size: 100% 100%;
+      }
 
-    #head-title h4 {
-      font-size: 1rem;
-    }
+      #tn-logo {
+        width: 100px;
+        margin-top: 2rem;
+      }
 
-    @media (max-width: 768px) {
+      .sec-2 {
+        background: linear-gradient(270deg, rgb(114, 157, 197), rgb(2, 54, 135));
+        /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.555); */
+        color: white;
+        padding: 20px;
+        /* border-radius: 20px; */
+      }
+
+      .about {
+        /* background-color: rgba(255, 255, 255, 0.459); */
+        background: linear-gradient(270deg, rgb(114, 157, 197), rgb(2, 54, 135));
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.555);
+        color: white;
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .active,
+      .btn-primary {
+        background-color: rgb(2, 54, 135) !important;
+      }
+
+      .nav-link.active {
+        background-color: rgb(2, 54, 135) !important;
+        color: white !important;
+      }
+
+      .nav-link {
+        color: rgb(2, 54, 135);
+        padding: 4px 8px;
+        border-radius: 5px;
+      }
+
+      .otp-box:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 4px rgba(13, 110, 253, 0.4);
+      }
+
+      .mobile-box {
+        /* width: 33px   !important; */
+        font-size: 1.3rem;
+        border-radius: 8px;
+      }
+
+      .otp-box {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        border-radius: 8px;
+      }
+
+      header {
+        background: linear-gradient(135deg, #003385, #6dd3ff);
+        box-shadow: 2px 2px 4px rgba(97, 97, 97, 0.486);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+        color: white !important;
+      }
+
+      header * {
+        color: white !important;
+      }
+
+      .bg-sec {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      #icon-grid h2,
+      #icon-grid h3,
+      #icon-grid p {
+        stroke: white;
+        stroke-width: 10px;
+      }
+
+      .bg-img {
+        left: 0;
+        top: -40px;
+        height: 400px;
+        z-index: -1;
+        overflow: visible;
+        opacity: 100%;
+        /* height: 158px; */
+        position: absolute;
+        background-size: cover;
+        background-repeat: repeat-x;
+        animation: movin 60s linear 0s infinite;
+
+      }
+
+      footer .bg {
+        opacity: 10%;
+        /* width: 100%; */
+        position: absolute;
+        top: 0;
+        height: 100%;
+        object-fit: 50%;
+        left: 0;
+        z-index: 0;
+      }
+
+      @keyframes movin {
+        0% {
+          transform: translateX(-25%);
+        }
+
+        100% {
+          transform: translateX(-10%);
+        }
+      }
+
+      .foot-logo {
+        width: 50px;
+      }
+
+      #icon-grid .bi {
+        color: rgb(36, 62, 146);
+        font-weight: 700;
+        font-size: 34px;
+
+      }
+
+      a {
+        text-decoration: none;
+      }
+
       #head-title {
-        flex-direction: row;
+        display: none;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+        transform: translateY(20px);
+      }
+
+      #head-title img {
+        margin: 5px 10px;
+        background: linear-gradient(135deg, #0f6cff, #6dd3ff);
+        border-radius: 10px;
+        display: flex;
         align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+
+      }
+
+      #head-title.scrolled {
+        opacity: 1;
+        transform: translateY(0px);
+        display: block;
       }
 
       #head-title h4 {
-        font-size: 0.9rem;
-        line-height: 1.1;
+        font-size: 1rem;
       }
-    }
 
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
+      @media (max-width: 768px) {
+        #head-title {
+          flex-direction: row;
+          align-items: center;
+        }
 
-    .ai-label {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #ffffff;
-      border-radius: 7px;
-      font-weight: 700;
-      font-size: 12px;
-      z-index: 80;
-      text-shadow: 0px 0px 5px black;
-      padding: 0px 10px;
-    }
+        #head-title h4 {
+          font-size: 0.9rem;
+          line-height: 1.1;
+        }
 
-    @media (min-width:720px) {
-      .chotta-text {
+        .hero-content {
+          display: flex;
+          align-items: center;
+          /* align-items-center */
+          gap: 3rem;
+          flex-direction: row;
+        }
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
+      .ai-label {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #ffffff;
+        border-radius: 7px;
+        font-weight: 700;
         font-size: 12px;
-        font-weight: 500 !important;
+        z-index: 80;
+        text-shadow: 0px 0px 5px black;
+        padding: 0px 10px;
       }
 
-      header .tn-logo {
-        width: 70px;
-        padding: 5px;
-        background-color: rgba(255, 255, 255, 0.582);
-        border-radius: 30px;
-        border: 0.2px solid white;
+      @media (min-width:720px) {
+        .chotta-text {
+          font-size: 12px;
+          font-weight: 500 !important;
+        }
 
+        header .tn-logo {
+          width: 70px;
+          padding: 5px;
+          background-color: rgba(255, 255, 255, 0.582);
+          border-radius: 30px;
+          border: 0.2px solid white;
+
+        }
+
+        #title-content {
+          padding-left: 100px;
+          line-height: 0.5 !important;
+        }
+
+        .web {
+          display: block;
+        }
+
+        .mob {
+          display: none !important;
+        }
+
+        .hero-content {
+          display: flex;
+          align-items: center;
+          /* align-items-center */
+          gap: 0rem;
+          flex-direction: row-reverse;
+        }
+
+        .card-floater {
+          border-radius: 10px;
+          width: 100%;
+          color: #ffffff;
+          text-shadow: 2px 2px 10px black;
+          font-size: 40px;
+          font-weight: 800;
+        }
       }
 
-      #title-content {
-        padding-left: 100px;
-        line-height: 0.5 !important;
-      }
-    }
+      @media (max-width:1200px) {
+        .chotta-text {
+          font-size: 12px;
+          font-weight: 500 !important;
+          text-wrap: wrap;
+        }
 
-    @media (max-width:720px) {
-      .chotta-text {
-        font-size: 12px;
-        font-weight: 500 !important;
-      }
-
-      header .tn-logo {
-        width: 30px;
-        background-color: rgba(255, 255, 255, 0.651);
-        padding: 5px;
-        border-radius: 30px;
+        [data-i18n="about_title"] {
+          text-align: center;
+        }
       }
 
-      #nav-main {
-        padding-left: 0px;
-        line-height: 1 !important;
-        text-wrap: wrap !important;
+      @media (max-width:720px) {
+        .hero-content {
+          display: flex;
+          align-items: center;
+          /* align-items-center */
+          gap: 3rem;
+          flex-direction: column-reverse;
+          margin-top: 6rem;
+        }
+
+        .web,
+        #tn-logo {
+          display: none;
+        }
+
+        .mob {
+          display: block;
+        }
+
+        .card-floater {
+          font-size: 20px;
+          font-weight: 800;
+        }
+
+        header .tn-logo {
+          width: 30px;
+          background-color: rgba(255, 255, 255, 0.651);
+          padding: 5px;
+          border-radius: 30px;
+        }
+
+        #nav-main {
+          padding-left: 0px;
+          line-height: 1 !important;
+          text-wrap: wrap !important;
+        }
+
+        .navbar-brand {
+          display: grid !important;
+          grid-template-columns: 10% 80% 10%;
+        }
+
+        .navbar-toggler {
+          border: none !important;
+        }
+
+        .container.top {
+          margin-top: 6rem !important;
+        }
       }
 
-      .navbar-brand {
-        display: grid !important;
-        grid-template-columns: 10% 80% 10%;
+      #langToggle {
+        border-radius: 5px;
+        padding: 4px 10px;
+        cursor: pointer;
+        border: 1px solid white;
       }
 
-      .navbar-toggler {
-        border: none !important;
+      [data-i18n] {
+        animation: fadeIn 2s ease-in-out;
       }
 
-      .container.top {
-        margin-top: 6rem !important;
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
-    }
 
-    #langToggle {
-       border-radius: 5px;
-    padding: 4px 10px;
-    cursor: pointer;
-    border: 1px solid white;
-    }
+      .i18n-animate {
+        animation: fadeInText 0.6s ease-in-out;
+      }
 
-    [data-i18n] {
-      animation: fadeIn 2s ease-in-out;
-    }
+      @keyframes fadeInText {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      #nav-about {
+        text-align: justify;
+      }
+    </style>
+
+    <header class="py-0 shadow-sm">
+      <nav class="navbar navbar-expand-lg w-100">
+        <div class="container-fluid">
+          <div class="navbar-brand d-flex align-items-center" href="#">
+            <img src="assets/img/tn_logo.png" class="tn-logo mx-3" alt="">
+            <h4 class="mx-3" id="nav-main"><span data-i18n="site_title_small">Enn Kanavu, Enn Ethirkalam</span>
+              <br>
+              <span class="chotta-text" data-i18n="header_tag">Articulating ambitions, fulfilling dreams, building a
+                stronger Tamil Nadu</span>
+            </h4>
+            <!-- Hamburger Button -->
+            <button class="navbar-toggler" id="menuToggleBtn">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+
+          <!-- Menu -->
+          <div class="collapse navbar-collapse justify-content-end px-3" id="mainMenu">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+
+              <li class="nav-item me-3"><a data-home href="#" class="nav-link active" data-i18n="nav_home">Home</a></li>
+              <li class="nav-item me-3"><a data-about href="#scroll-about" class="nav-link"
+                  data-i18n="nav_about">About</a></li>
+              <li class="nav-item me-3"><a data-vision href="#scroll-vision" class="nav-link"
+                  data-i18n="nav_vision">Vision</a></li>
+              <!-- <li class="nav-item"><a data-faq href="#nav-faq" class="nav-link">FAQs</a></li> -->
+              <!-- <li class="nav-item"><a data-contact href="#nav-contact" class="nav-link">Contact Us</a></li> -->
+
+              <li class="nav-item"><a id="langToggle" class="nav-link ms-3">
+                  <i class="bi bi-translate"></i> <span id="langText">?????</span>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+          <script>
+            // highlight on click (instant feedback)
+            document.querySelectorAll('#mainMenu .nav-link[href^="#"]').forEach(link => {
+              link.addEventListener('click', function () {
+                document
+                  .querySelectorAll('#mainMenu .nav-link')
+                  .forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+              });
+            });
+
+            // highlight while scrolling
+            const links = document.querySelectorAll('#mainMenu .nav-link[href^="#"]');
+            const sections = [...links]
+              .map(l => document.querySelector(l.getAttribute('href')))
+              .filter(Boolean);
+
+            const observer = new IntersectionObserver(
+              entries => {
+                entries.forEach(entry => {
+                  const id = entry.target.getAttribute('id');
+                  const link = document.querySelector(`#mainMenu .nav-link[href="#${id}"]`);
+                  if (entry.isIntersecting) {
+                    document
+                      .querySelectorAll('#mainMenu .nav-link')
+                      .forEach(a => a.classList.remove('active'));
+                    if (link) link.classList.add('active');
+                  }
+                });
+              },
+              {
+                rootMargin: "-40% 0px -40% 0px", // triggers when section is near middle
+                threshold: 0
+              }
+            );
+
+            // observe all sections
+            sections.forEach(sec => observer.observe(sec));
+          </script>
+
+
+        </div>
+      </nav>
+    </header>
+
+    <script>
+      const toggleBtn = document.getElementById("menuToggleBtn");
+      const menu = document.getElementById("mainMenu");
+
+      toggleBtn.addEventListener("click", () => {
+        menu.classList.toggle("show");   // Bootstrap uses 'show' class for visibility
+      });
+    </script>
+
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const header = document.getElementById("head-title");
+        if (window.scrollY > 100) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+    </script>
+
+
+    <div class="container top mt-5 col-xxl-8 px-4 text-center">
+
+      <img src="assets/img/tn_logo.png" id="tn-logo" alt="" class="mb-5">
+      <img src="assets/img/msg-bg.png" class="bg-sec" alt="">
+      <div class="row hero-content text-start" style="position: relative; z-index: 2;">
+        <div class="col-lg-6">
+          <h1 class="display-4 fw-bold text-body-emphasis lh-1 mb-3" data-i18n="site_title_small">Enn Kanavu Enn
+            Ethirkaalam</h1>
+          <h5 class="display-8 fw-bold text-body-emphasis lh-1 mb-3" data-i18n="site_title">என் கனவு என் எதிர்காலம்
+          </h5>
+          <p class="lead" data-i18n="hero_subtitle">Articulating ambitions & fulfilling dreams</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-5">
+            <a type="button" class="btn btn-primary btn-lg px-4 me-md-2" href="ekee_form.html"
+              data-i18n="apply">Register now</a>
+            <a type="button" class="btn btn-outline-secondary btn-lg px-4" href="#scroll-vision"
+              data-i18n="know_more">Know More..</a>
+
+
+
+
+
+          </div>
+          <p class="m-0">
+            <style>
+              .blink-dot {
+                font-size: 12px;
+                color: red;
+                animation: 1s blink ease-in-out infinite;
+              }
+
+              @keyframes blink {
+                50% {
+                  opacity: 0%;
+                }
+              }
+
+              .counter-live {
+                font-size: 40px;
+                color: rgb(109, 0, 0);
+                font-weight: 700;
+              }
+            </style>
+
+            <!-- <i class="bi bi-circle-fill blink-dot" ></i> Live count: <span class="counter-live" data-value="246"></span> <i class="bi bi-person-check"></i> Youth have registered	so	far</p> -->
+        </div>
+        <div class="col-10 col-sm-8 col-lg-6" style="position: relative;">
+          <!-- <p id="scroll-about" class="ai-label"><i class="bi bi-cpu"></i> AI Generated</p> -->
+          <img src="assets/img/ekbanner.jpeg" class="mx-lg-auto img-fluid web rounded-3" alt="Bootstrap Themes"
+            width="700" height="500" loading="lazy">
+          <img src="assets/img/ver-banner.jpeg" alt="" class="ver-banner mob">
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" style="position: relative; overflow-x: hidden; overflow-y: visible;">
+      <div class="container">
+
+
+        <!-- <img src="assets/img/bg-svg.svg" class="bg-img" alt=""  id="scroll-about"> -->
+        <img src="assets/img/Frame_8222.png" class="bg-img" alt="" id="scroll-about">
+        <div class="row about" id="nav-about">
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+
+              const counters = document.querySelectorAll('.counter-live');
+
+              counters.forEach(counter => {
+                const value = Number(counter.dataset.value);
+                let start = 0;
+                const duration = 3000; // ⏱️ total time in ms (3 seconds)
+                const startTime = performance.now();
+
+                function animate(time) {
+                  const elapsed = time - startTime;
+                  const progress = Math.min(elapsed / duration, 1);
+
+                  // ease-out effect
+                  const eased = 1 - Math.pow(1 - progress, 3);
+
+                  const current = Math.floor(eased * value);
+                  counter.textContent = current;
+
+                  if (progress < 1) {
+                    requestAnimationFrame(animate);
+                  } else {
+                    counter.textContent = value; // exact final number
+                  }
+                }
+
+                requestAnimationFrame(animate);
+              });
+
+            });
+          </script>
+
+          <div class="col-sm-8 d-flex flex-column justify-content-center ">
+            <h2 data-aos="fade-left" data-aos-duration="500" class=" mt-3" data-i18n="about_title"></h2>
+
+            <p data-aos="fade-right" data-aos-duration="800" data-i18n="about_text"></p>
+          </div>
+
+          <div class="col-sm-4 d-flex flex-column align-items-center">
+            <img src="assets/img/cm2.png" id="cm-img" class="fade-sides" alt="" srcset="">
+            <b>
+              <h4 data-i18n="cm_name">M.K Stalin</h4>
+            </b>
+            <p data-i18n="cm_desig" id="scroll-vision">Hon'ble Chief Minister of Tamil Nadu</p>
+
+            <style>
+              .ek-banner {
+                width: 100%;
+                border-radius: 20px;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.425);
+                padding: 0;
+              }
+
+              .ver-banner {
+                width: 100%;
+                border-radius: 20px;
+                box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.205);
+                padding: 0;
+              }
+            </style>
+
+          </div>
+
+
+
+        </div>
+        <div class="row" id="nav-vision">
+          <div class="container px-4 pt-5 pb-2" id="icon-grid">
+            <h2 class="pb-2 border-bottom" data-i18n="vision_title"></h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 pt-5">
+              <div class="col d-flex align-items-start">
+                <div>
+                  <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-book"></i> <span
+                      data-i18n="d_h1">Meet an icon</span></h3>
+                  <p data-i18n="d_p1">Get an exclusive opportunity to interact with leaders and legends who inspire,
+                    guide, and spark ambition in young minds.</p>
+                </div>
+              </div>
+
+              <div class="col d-flex align-items-start">
+                <div>
+                  <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-briefcase"></i> <span
+                      data-i18n="d_h2">Start a Business</span></h3>
+                  <p data-i18n="d_p2">Get startup seed grants, business mentorship, and incubation centre support to
+                    launch your entrepreneurial journey.</p>
+                </div>
+              </div>
+
+              <div class="col d-flex align-items-start">
+                <div>
+                  <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-building-gear"></i> <span
+                      data-i18n="d_h3">Free
+                      Courses</span></h3>
+                  <p data-i18n="d_p3">Access high-quality courses at no cost, helping you learn new skills, upgrade your
+                    knowledge, and build your future.</p>
+                </div>
+              </div>
+
+              <div class="col d-flex align-items-start">
+                <div>
+                  <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-bicycle"></i> <span
+                      data-i18n="d_h4">Get a Sports kit</span></h3>
+                  <p data-i18n="d_p4">Receive a complete sports kit to support your passion, encourage fitness, and help
+                    you excel in the game you love.</p>
+                </div>
+              </div>
+
+              <div class="col d-flex align-items-start">
+                <div>
+                  <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-brush"></i> <span data-i18n="d_h5">Do
+                      Industrial visit</span></h3>
+                  <p data-i18n="d_p5">Experience real-world industries, understand how things work that bridges
+                    classroom
+                    learning and practice.</p>
+                </div>
+              </div>
+
+              <div class="col d-flex align-items-start">
+                <div>
+                  <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-laptop"></i> <span
+                      data-i18n="d_h6">Laptop & Gadgets</span></h3>
+                  <p data-i18n="d_p6">Unlock your potential in technology with hands-on tools and resources that elevate
+                    your creativity and technical abilities.</p>
+                </div>
+              </div>
+
+              <div class="col d-flex align-items-start">
+                <div>
+                  <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-people"></i> <span
+                      data-i18n="d_h7">Engagement</span></h3>
+                  <p data-i18n="d_p7">Volunteer for camps, disaster readiness, anti-drug and more programs — get
+                    certified
+                    and rewarded.</p>
+                </div>
+              </div>
+
+              <div class="col d-flex align-items-start">
+                <div>
+                  <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-robot"></i> <span
+                      data-i18n="d_h8">Global Exposure</span></h3>
+                  <p data-i18n="d_p8"> Get free Counselling to <b>study abroad</b>, Language Training for global
+                    education
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <style>
+      .blured {
+        backdrop-filter: blur(5px);
+      }
+
+      .watch {
+        transition: all 0.1s ease-in-out;
+      }
+
+      .watch:hover {
+        background-color: rgb(175 37 37) !important;
+        border: 1px solid rgb(175 37 37);
         transform: translateY(10px);
       }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+      @media (max-width:720px) {
+        [data-i18n="how_apply"] {
+          font-weight: 600;
+          font-size: 20px;
+        }
 
-    .i18n-animate {
-      animation: fadeInText 0.6s ease-in-out;
-    }
-
-    @keyframes fadeInText {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
+        .up-footer {
+          font-size: 8px !important;
+        }
       }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      [data-i18n="cm_desig"] {
+        text-align: center !important;
       }
-    }
-
-    #nav-about {
-      text-align: justify;
-    }
-  </style>
-
-  <header class="py-0 shadow-sm">
-    <nav class="navbar navbar-expand-lg w-100">
-      <div class="container-fluid">
-        <div class="navbar-brand d-flex align-items-center" href="#">
-          <img src="assets/img/tn_logo.png" class="tn-logo mx-3" alt="">
-          <h4 class="mx-3" id="nav-main"><span data-i18n="site_title_small">Enn Kanavu, Enn Ethirkalam</span>
+    </style>
+    <div class="container-fluid" id="nav-faq">
+      <div class="container my-5">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg blured">
+          <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <h1 class="fw-bold lh-1 text-body-emphasis" data-i18n="how_apply">How to Register ?</h1>
             <br>
-            <span class="chotta-text" data-i18n="header_tag">Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu</span></h4>
-          <!-- Hamburger Button -->
-          <button class="navbar-toggler" id="menuToggleBtn">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <ol>
+              <li data-i18n="step1">Go to form registeration page</li>
+              <li data-i18n="step2">Fill Your Basic Details</li>
+              <li data-i18n="step3">Choose your dreams to be fulfilled in immediate future</li>
+              <li data-i18n="step4">Choose your dreams to be fulfilled in next 5 years</li>
+              <li data-i18n="step5">Write a brief on other aspirations to be fulfilled by 2030?</li>
+            </ol>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mt-4 mb-lg-3">
+              <a href="https://youtu.be/a1H4_JmkA5k?si=AZaQIBBvZY4vjkPg" target="_blank" rel="noopener noreferrer"
+                class="btn btn-primary watch btn-lg px-4 me-md-2 fw-bold">
+                <i class="bi bi-play-circle"></i> Watch Video</a>
+              <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4"><i class="bi bi-info-circle"></i>Details</button>  -->
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+          <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"> <img class="rounded-lg-3"
+              src="assets/img/form-ss.png" alt="" width="720">
+          </div>
         </div>
-
-
-        <!-- Menu -->
-        <div class="collapse navbar-collapse justify-content-end px-3" id="mainMenu">
-          <ul class="navbar-nav mb-2 mb-lg-0">
-
-            <li class="nav-item me-3"><a data-home href="#" class="nav-link active" data-i18n="nav_home">Home</a></li>
-            <li class="nav-item me-3"><a data-about href="#scroll-about" class="nav-link" data-i18n="nav_about">About</a></li>
-            <li class="nav-item me-3"><a data-vision href="#scroll-vision" class="nav-link" data-i18n="nav_vision">Vision</a></li>
-            <!-- <li class="nav-item"><a data-faq href="#nav-faq" class="nav-link">FAQs</a></li> -->
-            <!-- <li class="nav-item"><a data-contact href="#nav-contact" class="nav-link">Contact Us</a></li> -->
-
-            <li class="nav-item"><a id="langToggle" class="nav-link ms-3">
-                <i class="bi bi-translate"></i> <span id="langText">?????</span>
-              </a>
-            </li>
-
-          </ul>
-        </div>
-        <script>
-          // highlight on click (instant feedback)
-          document.querySelectorAll('#mainMenu .nav-link[href^="#"]').forEach(link => {
-            link.addEventListener('click', function () {
-              document
-                .querySelectorAll('#mainMenu .nav-link')
-                .forEach(a => a.classList.remove('active'));
-              this.classList.add('active');
-            });
-          });
-
-          // highlight while scrolling
-          const links = document.querySelectorAll('#mainMenu .nav-link[href^="#"]');
-          const sections = [...links]
-            .map(l => document.querySelector(l.getAttribute('href')))
-            .filter(Boolean);
-
-          const observer = new IntersectionObserver(
-            entries => {
-              entries.forEach(entry => {
-                const id = entry.target.getAttribute('id');
-                const link = document.querySelector(`#mainMenu .nav-link[href="#${id}"]`);
-                if (entry.isIntersecting) {
-                  document
-                    .querySelectorAll('#mainMenu .nav-link')
-                    .forEach(a => a.classList.remove('active'));
-                  if (link) link.classList.add('active');
-                }
-              });
-            },
-            {
-              rootMargin: "-40% 0px -40% 0px", // triggers when section is near middle
-              threshold: 0
-            }
-          );
-
-          // observe all sections
-          sections.forEach(sec => observer.observe(sec));
-        </script>
-
-
       </div>
-    </nav>
-  </header>
-
-  <script>
-    const toggleBtn = document.getElementById("menuToggleBtn");
-    const menu = document.getElementById("mainMenu");
-
-    toggleBtn.addEventListener("click", () => {
-      menu.classList.toggle("show");   // Bootstrap uses 'show' class for visibility
-    });
-  </script>
+    </div>
 
 
-  <script>
-    window.addEventListener("scroll", function () {
-      const header = document.getElementById("head-title");
-      if (window.scrollY > 100) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
+    <style>
+      .card.card-cover {
+        aspect-ratio: 1;
       }
-    });
+    </style>
+    <div class="container px-4 py-5" id="custom-cards">
+      <h2 class="pb-2 border-bottom" data-i18n="card_heading">Your dreams do come true</h2>
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div class="col px-3">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+            style="background-image: url('assets/img/card (1).jpg'); background-size: cover;">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="card-floater" data-i18n="card_1">Play</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto"> <img src="assets/img/tn_logo.png" alt="Bootstrap" width="32" height="32"
+                    class="rounded-circle border border-white"> </li>
 
-  </script>
-
-
-  <div class="container top mt-5 col-xxl-8 px-4 text-center">
-
-    <img src="assets/img/tn_logo.png" id="tn-logo" alt="">
-    <img src="assets/img/msg-bg.png" class="bg-sec" alt="">
-    <div class="row flex-lg-row-reverse align-items-center g-5 text-start" style="position: relative; z-index: 2;">
-      <div class="col-lg-6">
-        <h1 class="display-4 fw-bold text-body-emphasis lh-1 mb-3" data-i18n="site_title_small">Enn Kanavu Enn Ethirkaalam</h1>
-        <h5 class="display-8 fw-bold text-body-emphasis lh-1 mb-3" data-i18n="site_title">என் கனவு என் எதிர்காலம்
-        </h5>
-        <p class="lead" data-i18n="hero_subtitle">Articulating ambitions & fulfilling dreams</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
-          <a type="button"
-            class="btn btn-primary btn-lg px-4 me-md-2" href="ekee_form.html" data-i18n="apply">Register now</a>
-            <a type="button" class="btn btn-outline-secondary btn-lg px-4" href="#scroll-vision" data-i18n="know_more">Know More..</a> 
-
-
-            
-           
-          
-          </div>
-           <p class="m-0">
-            <style>
-          
-          .blink-dot{
-            font-size: 12px;
-           color: red;
-           animation: 1s blink ease-in-out infinite;
-          }
-          @keyframes blink{
-            50%{
-              opacity: 0%;
-            }
-          }
-          .counter-live{
-            font-size: 40px;
-            color: rgb(109, 0, 0);
-            font-weight: 700;
-          }
-        
-        </style>
-        
-       <!-- <i class="bi bi-circle-fill blink-dot" ></i> Live count: <span class="counter-live" data-value="246"></span> <i class="bi bi-person-check"></i> Youth have registered	so	far</p> -->
-      </div>
-      <div class="col-10 col-sm-8 col-lg-6" style="position: relative;">
-        <!-- <p id="scroll-about" class="ai-label"><i class="bi bi-cpu"></i> AI Generated</p> -->
-        <img
-          src="assets/img/student.png" class="fade-sides d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
-          width="700" height="500" loading="lazy">
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid" style="position: relative; overflow-x: hidden; overflow-y: visible;">
-    <div class="container">
-    
-
-      <!-- <img src="assets/img/bg-svg.svg" class="bg-img" alt=""  id="scroll-about"> -->
-      <img src="assets/img/Frame_8222.png" class="bg-img" alt=""  id="scroll-about">
-      <div class="row about" id="nav-about">
-      
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const counters = document.querySelectorAll('.counter-live');
-
-  counters.forEach(counter => {
-    const value = Number(counter.dataset.value);
-    let start = 0;
-    const duration = 3000; // ⏱️ total time in ms (3 seconds)
-    const startTime = performance.now();
-
-    function animate(time) {
-      const elapsed = time - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      // ease-out effect
-      const eased = 1 - Math.pow(1 - progress, 3);
-
-      const current = Math.floor(eased * value);
-      counter.textContent = current;
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        counter.textContent = value; // exact final number
-      }
-    }
-
-    requestAnimationFrame(animate);
-  });
-
-});
-</script>
-
-
-
-
-        <div class="col-sm-8 d-flex flex-column justify-content-center ">
-          <h2 data-aos="fade-left" data-aos-duration="500" data-i18n="about_title"></h2>
-          <p data-aos="fade-right" data-aos-duration="800" data-i18n="about_text"></p>
-          </p>
-        </div>
-
-        <div class="col-sm-4 d-flex flex-column align-items-center">
-          <img src="assets/img/cm2.png" id="cm-img" class="fade-sides" alt="" srcset="">
-          <b>
-            <h4 data-i18n="cm_name">M.K Stalin</h4>
-          </b>
-          <p data-i18n="cm_desig" id="scroll-vision">Hon'ble Chief Minister of Tamil Nadu</p>
-        </div>
-      </div>
-      <div class="row" id="nav-vision">
-        <div class="container px-4 pt-5 pb-2" id="icon-grid">
-          <h2 class="pb-2 border-bottom" data-i18n="vision_title"></h2>
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 pt-5">
-            <div class="col d-flex align-items-start">
-              <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-book"></i> <span
-                    data-i18n="d_h1">Meet an icon</span></h3>
-                <p data-i18n="d_p1">Get an exclusive opportunity to interact with leaders and legends who inspire,
-                  guide, and spark ambition in young minds.</p>
-              </div>
-            </div>
-
-            <div class="col d-flex align-items-start">
-              <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-briefcase"></i> <span
-                    data-i18n="d_h2">Start a Business</span></h3>
-                <p data-i18n="d_p2">Get startup seed grants, business mentorship, and incubation centre support to launch your entrepreneurial journey.</p>
-              </div>
-            </div>
-
-            <div class="col d-flex align-items-start">
-              <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-building-gear"></i> <span data-i18n="d_h3">Free
-                    Courses</span></h3>
-                <p data-i18n="d_p3">Access high-quality courses at no cost, helping you learn new skills, upgrade your
-                  knowledge, and build your future.</p>
-              </div>
-            </div>
-
-            <div class="col d-flex align-items-start">
-              <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-bicycle"></i> <span
-                    data-i18n="d_h4">Get a Sports kit</span></h3>
-                <p data-i18n="d_p4">Receive a complete sports kit to support your passion, encourage fitness, and help
-                  you excel in the game you love.</p>
-              </div>
-            </div>
-
-            <div class="col d-flex align-items-start">
-              <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-brush"></i> <span
-                    data-i18n="d_h5">Do Industrial visit</span></h3>
-                <p data-i18n="d_p5">Experience real-world industries, understand how things work that bridges classroom
-                  learning and practice.</p>
-              </div>
-            </div>
-
-            <div class="col d-flex align-items-start">
-              <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-laptop"></i> <span
-                    data-i18n="d_h6">Laptop & Gadgets</span></h3>
-                <p data-i18n="d_p6">Unlock your potential in technology with hands-on tools and resources that elevate
-                  your creativity and technical abilities.</p>
-              </div>
-            </div>
-
-            <div class="col d-flex align-items-start">
-              <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-people"></i> <span
-                    data-i18n="d_h7">Engagement</span></h3>
-                <p data-i18n="d_p7">Volunteer for camps, disaster readiness, anti-drug and more programs — get certified
-                  and rewarded.</p>
-              </div>
-            </div>
-
-            <div class="col d-flex align-items-start">
-              <div>
-                <h3 class="fw-bold mb-2 fs-4 text-body-emphasis"><i class="bi bi-robot"></i> <span
-                    data-i18n="d_h8">Global Exposure</span></h3>
-                <p data-i18n="d_p8"> Get free Counselling to <b>study abroad</b>, Language Training for global education
-                </p>
-              </div>
+              </ul>
             </div>
           </div>
-
         </div>
-      </div>
-
-    </div>
-  </div>
-  <style>
-    .blured {
-      backdrop-filter: blur(5px);
-    }
-  </style>
-  <div class="container-fluid" id="nav-faq">
-    <div class="container my-5">
-      <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg blured">
-        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-          <h1 class="display-4 fw-bold lh-1 text-body-emphasis" data-i18n="how_apply">How to Register ?</h1>
-          <br>
-          <ol>
-            <li data-i18n="step1">Go to form registeration page</li>
-            <li data-i18n="step2">Fill Your Basic Details</li>
-            <li data-i18n="step3">Choose your dreams to be fulfilled in immediate future</li>
-            <li data-i18n="step4">Choose your dreams to be fulfilled in next 5 years</li>
-            <li data-i18n="step5">Write a brief on other aspirations to be fulfilled by 2030?</li>
-          </ol>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mt-4 mb-lg-3"> <button type="button"
-              class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"><i class="bi bi-play-circle"></i> Watch Video</button>
-            <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4"><i class="bi bi-info-circle"></i>Details</button>  -->
+        <div class="col px-3">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+            style="background-image: url('assets/img/card\ \(2\).jpeg'); background-size: cover">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="card-floater" data-i18n="card_2">Learn
+              </h3>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto"> <img src="assets/img/tn_logo.png" alt="Bootstrap" width="32" height="32"
+                    class="rounded-circle border border-white"> </li>
+              </ul>
             </div>
-        </div>
-        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"> <img class="rounded-lg-3"
-            src="assets/img/form-ss.png" alt="" width="720">
-        </div>
-      </div>
-    </div>
-  </div>
-  <style>
-    .card-floater{
-    border-radius: 10px;
-    width: 100%;
-    color: #ffffff;
-    text-shadow: 2px 2px 10px black;
-    font-size: 40px;
-    }
-    .card.card-cover{
-    aspect-ratio: 1;
-    }
-  </style>
-  <div class="container px-4 py-5" id="custom-cards">
-    <h2 class="pb-2 border-bottom" data-i18n="card_heading">Your Dreams come true</h2>
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-          style="background-image: url('assets/img/card (1).jpg'); background-size: cover;">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h3 class="card-floater" data-i18n="card_1">Play</h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto"> <img src="assets/img/tn_logo.png" alt="Bootstrap" width="32" height="32"
-                  class="rounded-circle border border-white"> </li>
-
-            </ul>
           </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-          style="background-image: url('assets/img/card\ \(2\).jpeg'); background-size: cover">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h3 class="card-floater" data-i18n="card_2">Learn
-            </h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto"> <img src="assets/img/tn_logo.png" alt="Bootstrap" width="32" height="32"
-                  class="rounded-circle border border-white"> </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-          style="background-image: url('assets/img/card\ \(3\).jpeg'); background-size: cover; backdrop-filter: brightness(50%);">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-            <h3 class="card-floater" data-i18n="card_3">Achieve</h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto"> <img src="assets/img/tn_logo.png" alt="Bootstrap" width="32" height="32"
-                  class="rounded-circle border border-white"> </li>
-            </ul>
+        <div class="col px-3">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+            style="background-image: url('assets/img/card\ \(3\).jpeg'); background-size: cover; backdrop-filter: brightness(50%);">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+              <h3 class="card-floater" data-i18n="card_3">Achieve</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto"> <img src="assets/img/tn_logo.png" alt="Bootstrap" width="32" height="32"
+                    class="rounded-circle border border-white"> </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
- <style>
-
+    <style>
       .regis {
         position: relative;
         z-index: 1;
-      }</style>
-  <div class="container-fluid sec-2 mb-0" id="register">
-    <!-- <div id="Clouds">
+      }
+    </style>
+    <div class="container-fluid sec-2 mb-0" id="register">
+      <!-- <div id="Clouds">
       <div class="Cloud"></div>
       <div class="Cloud"></div>
       <div class="Cloud"></div>
@@ -876,77 +1005,88 @@ document.addEventListener("DOMContentLoaded", () => {
         display: none;
       }
     </style> -->
-    <div class="container regis">
-      <div class="row align-items-center g-lg-5 py-5">
+      <div class="container regis">
+        <div class="row align-items-center g-lg-5 py-5">
 
-        <!-- Left text -->
-        <div class="text-center text-lg-center text-white">
-          <h1 class="display-4 fw-bold lh-1 mb-3" data-i18n="register_title">
-            Register / Login using your mobile number
-          </h1>
-          <p class="fs-4 text-center " data-i18n="register_sub">
-            This form allows only one submission per mobile number.
-          </p>
-          <a type="button" class="btn btn-primary btn-lg px-4 me-md-2"
-            href="ekee_form.html" data-i18n="apply">Register now</a>
+          <!-- Left text -->
+          <div class="col-md-8 text-center text-lg-center text-white">
+            <h1 class="display-4 fw-bold lh-1 mb-3" data-i18n="register_title">
+              Register / Login using your mobile number
+            </h1>
+            <p class="fs-4 text-center " data-i18n="register_sub">
+              This form allows only one submission per mobile number.
+            </p>
+            <a type="button" class="btn btn-primary btn-lg px-4 me-md-2" href="ekee_form.html"
+              data-i18n="apply">Register now</a>
+          </div>
+
+          <!-- Right Form -->
+          <div class="mx-auto col-lg-2">
+
+            <img src="assets/img/ekbanner.jpeg" class="d-block mx-lg-auto img-fluid mob mt-3 rounded-3"
+              alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+            <img src="assets/img/ver-banner.jpeg" alt="" class="ver-banner web">
+
+          </div>
         </div>
-
-        <!-- Right Form -->
-        <!-- <div class="col-md-10 mx-auto col-lg-5"><a type="button" class="btn btn-primary btn-lg px-4 me-md-2"
-            href="ekee_form.html" data-i18n="apply">Register now</a>
-
-        </div> -->
       </div>
     </div>
-  </div>
 
 
-  <style>
-    footer {
-      position: relative;
-      overflow: hidden;
-    }
+    <style>
+      footer {
+        position: relative;
+        overflow: hidden;
+      }
 
-    .z-99 {
-      position: relative;
-      z-index: 99;
-    }
-    .up-f-container{
-  background-color: rgb(2, 55, 135);
-    }
-    .up-footer{
-      color: white;
-    padding: 12px;
-    font-size: 16px;
-    }
-  </style>
+      .z-99 {
+        position: relative;
+        z-index: 99;
+      }
 
-<div class="d-flex flex-row justify-content-around up-f-container"><div class="text-center up-footer">
-  <span data-i18n="uf-1">An official initiative of the Government of Tamil Nadu</span> 
-  <i class="bi bi-bank"></i></div>
-<div class="text-center up-footer"><span data-i18n="uf-2">Your data is safe</span> <i class="bi bi-file-lock"></i>
-</div>
-<div class="text-center up-footer"><span data-i18n="uf-3">Will be used	only	to	create	opportunities</span> <i class="bi bi-cloud"></i></div>
-</div>
-  <footer class="bd-footer bg-body-tertiary">
-    <div class="container px-4 px-md-3 text-body-secondary">
+      .up-f-container {
+        background-color: rgb(2, 55, 135);
+        padding: 12px;
+      }
 
-      <img src="assets/img/bg-svg.svg" class="bg" alt="">
-      <a class="z-99 d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
-        href="https://www.tn.gov.in">
-        <img src="assets/img/tn_logo.png" class="foot-logo" alt="TN Logo">
-        <span class="fs-5 mx-2" data-i18n="gov">Government of Tamil Nadu</span>
-      </a>
-      <ul class="z-99 list-unstyled small">
-        <li><span data-i18n="disclaimer1">Contents owned by </span><a href="#" target="_blank"
-            data-i18n="dept_link">Youth Welfare Department</a><span data-i18n="disclaimer2"> (©) | Designed and
-            Developed by </span><a href="https://www.tnega.tn.gov.in/" target="_blank" data-i18n="tnega_link">Tamil Nadu
-            eGovernance Agency</a>.
-        </li>
-      </ul>
+      .up-footer {
+        color: white;
+        font-size: 16px;
+      }
+    </style>
+
+    <div class="d-flex flex-row justify-content-around up-f-container flex-wrap">
+      <div class="text-center up-footer">
+        <span data-i18n="uf-1">An official initiative of the Government of Tamil Nadu</span>
+        <i class="bi bi-bank"></i>
+      </div>
+      <div class="text-center up-footer"><span data-i18n="uf-2">Your data is safe</span> <i class="bi bi-file-lock"></i>
+      </div>
+      <div class="text-center up-footer"><span data-i18n="uf-3">Will be used only to create opportunities</span> <i
+          class="bi bi-cloud"></i></div>
+    </div>
+    <footer class="bd-footer bg-body-tertiary">
+      <div class="container px-4 px-md-3 text-body-secondary">
+
+        <!-- <img src="assets/img/bg-svg.svg" class="bg" alt=""> -->
+        <a class="z-99 d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
+          href="https://www.tn.gov.in">
+          <img src="assets/img/tn_logo.png" class="foot-logo" alt="TN Logo">
+          <span class="fs-5 mx-2" data-i18n="gov">Government of Tamil Nadu</span>
+        </a>
+        <ul class="z-99 list-unstyled small">
+          <li><span data-i18n="disclaimer1">Contents owned by </span><a href="#" target="_blank"
+              data-i18n="dept_link">Youth Welfare Department</a><span data-i18n="disclaimer2"> (©) | Designed and
+              Developed by </span><a href="https://www.tnega.tn.gov.in/" target="_blank" data-i18n="tnega_link">Tamil
+              Nadu
+              eGovernance Agency</a>.
+          </li>
+          <li><span>Last Updated on Feb 2026</span>
+          </li>
+        </ul>
 
 
-      <!-- <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+        <!-- <div class="col-6 col-lg-2 offset-lg-1 mb-3">
         <h5>Government Links</h5>
         <ul class="list-unstyled">
           <li class="mb-2"><a href="https://www.tn.gov.in/" target="_blank">TN Government Home</a></li>
@@ -986,226 +1126,225 @@ document.addEventListener("DOMContentLoaded", () => {
         </ul>
       </div> -->
 
-    </div>
-  
-  </footer>
+      </div>
+
+    </footer>
 
 
 
 
 
-  <script>
-    // MOBILE NUMBER (10 boxes)
-    const mobileBoxes = document.querySelectorAll(".mobile-box");
+    <script>
+      // MOBILE NUMBER (10 boxes)
+      const mobileBoxes = document.querySelectorAll(".mobile-box");
 
-    mobileBoxes.forEach((box, index) => {
-      box.addEventListener("input", () => {
-        box.value = box.value.replace(/[^0-9]/g, "");
-        if (box.value && index < mobileBoxes.length - 1) {
-          mobileBoxes[index + 1].focus();
-        }
+      mobileBoxes.forEach((box, index) => {
+        box.addEventListener("input", () => {
+          box.value = box.value.replace(/[^0-9]/g, "");
+          if (box.value && index < mobileBoxes.length - 1) {
+            mobileBoxes[index + 1].focus();
+          }
+        });
+
+        box.addEventListener("keydown", (e) => {
+          if (e.key === "Backspace" && !box.value && index > 0) {
+            mobileBoxes[index - 1].focus();
+          }
+        });
       });
 
-      box.addEventListener("keydown", (e) => {
-        if (e.key === "Backspace" && !box.value && index > 0) {
-          mobileBoxes[index - 1].focus();
-        }
+
+      // OTP (4 boxes)
+      const otpBoxes = document.querySelectorAll(".otp-box");
+
+      otpBoxes.forEach((box, index) => {
+        box.addEventListener("input", () => {
+          box.value = box.value.replace(/[^0-9]/g, "");
+          if (box.value && index < otpBoxes.length - 1) {
+            otpBoxes[index + 1].focus();
+          }
+        });
+
+        box.addEventListener("keydown", (e) => {
+          if (e.key === "Backspace" && !box.value && index > 0) {
+            otpBoxes[index - 1].focus();
+          }
+        });
       });
-    });
+
+    </script>
 
 
-    // OTP (4 boxes)
-    const otpBoxes = document.querySelectorAll(".otp-box");
 
-    otpBoxes.forEach((box, index) => {
-      box.addEventListener("input", () => {
-        box.value = box.value.replace(/[^0-9]/g, "");
-        if (box.value && index < otpBoxes.length - 1) {
-          otpBoxes[index + 1].focus();
+    <script>
+      // Unified language system - same as form page
+      let currentLang = localStorage.getItem('ekee_lang') || 'ta';
+
+      function applyLanguageToAllPages() {
+        // Update button text
+        const langText = document.getElementById('langText');
+        if (langText) {
+          langText.textContent = currentLang === 'en' ? 'தமிழ்' : 'English';
         }
-      });
 
-      box.addEventListener("keydown", (e) => {
-        if (e.key === "Backspace" && !box.value && index > 0) {
-          otpBoxes[index - 1].focus();
-        }
-      });
-    });
+        // Apply translations to elements with data-i18n
+        document.querySelectorAll("[data-i18n]").forEach(e => {
+          const key = e.dataset.i18n;
+          const translations = {
+            'site_title_small': { en: 'My Dream, My Future', ta: 'என் கனவு, என் எதிர்காலம்' },
+            'site_title': { en: 'என் கனவு, என் எதிர்காலம்', ta: 'My Dream, My Future' },
+            'header_tag': { en: 'Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu', ta: 'லட்சியங்களை வெளிப்படுத்துதல், கனவுகளை நனவாக்குதல், வலுவான தமிழ்நாட்டைக் கட்டியெழுப்புதல்' },
+            'nav_home': { en: 'Home', ta: 'முகப்பு' },
+            'nav_about': { en: 'About', ta: 'எங்களை பற்றி' },
+            'nav_vision': { en: 'Vision', ta: 'நோக்கம்' },
+            // 'nav_faq': { en: 'FAQs', ta: 'கேள்விகள்' },
+            'hero_subtitle': { en: 'Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu', ta: 'லட்சியங்களை வெளிப்படுத்துதல், கனவுகளை நனவாக்குதல், வலுவான தமிழ்நாட்டைக் கட்டியெழுப்புதல்' },
+            'apply': { en: 'Register now', ta: 'விண்ணப்பிக்க' },
+            'know_more': { en: 'Know More', ta: 'மேலும் அறிய' },
+            'about_title': { en: 'What is this initiative?', ta: 'இந்த முயற்சியின் நோக்கம்?' },
+            'about_text': {
+              en: "'My Dream, My Future' is a visionary initiative focused on understanding how the Government of Tamil Nadu can meaningfully support the youth in achieving their dreams. This statewide survey collects insights from young people across every district and town, helping the government identify their real needs, challenges, and aspirations. Whether it is access to essential tools, modern gadgets, skill-development programs, professional training, apprenticeships, job opportunities, online courses, AI subscriptions, musical instruments, or the chance to meet and learn from industry experts — every dream matters. Through this platform, the Government aims to empower youth by mapping both their immediate and long-term goals up to the year 2030. By listening to their voices and understanding the obstacles they face, the initiative strives to create a supportive ecosystem where every young person in Tamil Nadu can rise, progress, and fulfil their true potential.",
+              ta: "'என் கனவு, என் எதிர்காலம்' என்பது தமிழ்நாடு அரசு இளைஞர்களின் கனவுகளை அடைவதில் எவ்வாறு அர்த்தமுள்ள வகையில் உதவ முடியும் என்பதைப் புரிந்துகொள்வதில் கவனம் செலுத்தும் ஒரு தொலைநோக்கு முயற்சியாகும். இந்த மாநிலம் தழுவிய கணக்கெடுப்பு, ஒவ்வொரு மாவட்டம் மற்றும் நகரத்திலும் உள்ள இளைஞர்களிடமிருந்து நுண்ணறிவுகளைச் சேகரித்து, அவர்களின் உண்மையான தேவைகள், சவால்கள் மற்றும் விருப்பங்களை அடையாளம் காண அரசாங்கத்திற்கு உதவுகிறது. அத்தியாவசிய கருவிகள், நவீன கேஜெட்டுகள், திறன் மேம்பாட்டுத் திட்டங்கள், தொழில்முறை பயிற்சி, பயிற்சிகள், வேலை வாய்ப்புகள், ஆன்லைன் படிப்புகள், AI சந்தாக்கள், இசைக்கருவிகள் அல்லது தொழில்துறை நிபுணர்களைச் சந்தித்து கற்றுக்கொள்ளும் வாய்ப்பு - ஒவ்வொரு கனவும் முக்கியமானது. இந்த தளத்தின் மூலம், 2030 ஆம் ஆண்டு வரை இளைஞர்களின் உடனடி மற்றும் நீண்ட கால இலக்குகளை வரைபடமாக்குவதன் மூலம் அவர்களுக்கு அதிகாரம் அளிப்பதை அரசாங்கம் நோக்கமாகக் கொண்டுள்ளது. அவர்களின் குரல்களைக் கேட்பதன் மூலமும், அவர்கள் எதிர்கொள்ளும் தடைகளைப் புரிந்துகொள்வதன் மூலமும், தமிழ்நாட்டில் உள்ள ஒவ்வொரு இளைஞரும் உயரவும், முன்னேறவும், தங்கள் உண்மையான திறனை நிறைவேற்றவும் கூடிய ஒரு ஆதரவான சுற்றுச்சூழல் அமைப்பை உருவாக்க இந்த முயற்சி பாடுபடுகிறது."
+            },
+            'vision_title': { en: 'Your Dream becomes our responsibility', ta: 'உங்கள் கோரிக்கை எங்களின் பொறுப்பு' },
+            'how_apply': { en: 'How to Register?', ta: 'எப்படி விண்ணப்பிப்பது?' },
+            'step1': { en: 'Go to registration page', ta: 'பதிவு பக்கத்திற்குச் செல்லவும்' },
+            'step2': { en: 'Fill basic details', ta: 'அடிப்படை விவரங்களை நிரப்பவும்' },
+            'step3': { en: 'Select	your	immediate	goals', ta: 'உடனடி கனவுகளை தேர்வு செய்யவும்' },
+            'step4': { en: 'Choose	your	medium-term	goals	(next	5	years)', ta: 'அடுத்த 5 ஆண்டுகளுக்கான இலக்குகள்' },
+            'step5': { en: 'Share	your long-term	dream', ta: 'உங்கள் நீண்ட கால கனவுகளை எழுதவும்' },
+            'register_title': { en: 'Register / Login using mobile number', ta: 'மொபைல் எண்ணைப் பயன்படுத்தி பதிவு / உள்நுழைய' },
+            'register_sub': { en: 'Only one submission per mobile number', ta: 'ஒரு மொபைல் எண்ணுக்கு ஒரு விண்ணப்பம் மட்டுமே' },
+            'd_h1': {
+              en: 'Education & Skills',
+              ta: 'கல்வி மற்றும் திறன்கள்'
+            },
+            'd_p1': {
+              en: 'Learn what matters. Build skills for the future',
+              ta: 'முக்கியமானவற்றை கற்றுக்கொண்டு, எதிர்காலத்திற்கான திறன்களை வளர்த்துக் கொள்ளுங்கள்.'
+            },
 
-  </script>
+            'd_h2': {
+              en: 'Jobs & Career',
+              ta: 'வேலைவாய்ப்பு மற்றும் தொழில் முன்னேற்றம்'
+            },
+            'd_p2': {
+              en: 'Find meaningful work and grow the career you want',
+              ta: 'உங்களுக்கு பொருத்தமான வேலைவாய்ப்புகளை கண்டறிந்து, விரும்பும் தொழில் பாதையில் முன்னேறுங்கள்.'
+            },
 
+            'd_h3': {
+              en: 'Entrepreneurship',
+              ta: 'தொழில்முனைவு'
+            },
+            'd_p3': {
+              en: 'Start something of your own. Turn ideas into action.',
+              ta: 'உங்கள் சொந்த முயற்சியைத் தொடங்கி, உங்கள் எண்ணங்களை செயலாக்கமாக மாற்றுங்கள்.'
+            },
 
+            'd_h4': {
+              en: 'Sports & Fitness',
+              ta: 'விளையாட்டு மற்றும் உடற்தகுதி'
+            },
+            'd_p4': {
+              en: 'Train harder, compete better, aim higher',
+              ta: 'மேலும் பயிற்சி பெற்று, சிறப்பாக போட்டியிட்டு, உயர்ந்த இலக்குகளை நோக்கிச் செல்லுங்கள்.'
+            },
 
-  <script>
-  // Unified language system - same as form page
-  let currentLang = localStorage.getItem('ekee_lang') || 'ta';
+            'd_h5': {
+              en: 'Arts & Culture',
+              ta: 'கலை மற்றும் பண்பாடு'
+            },
+            'd_p5': {
+              en: 'Create, perform, and express who you are.',
+              ta: 'உங்கள் படைப்பாற்றலை வெளிப்படுத்தி, கலை மூலம் உங்கள் தனித்தன்மையை வெளிப்படுத்துங்கள்.'
+            },
 
-  function applyLanguageToAllPages() {
-    // Update button text
-    const langText = document.getElementById('langText');
-    if (langText) {
-      langText.textContent = currentLang === 'en' ? 'தமிழ்' : 'English';
-    }
+            'd_h6': {
+              en: 'Global Exposure & Internships',
+              ta: 'உலகளாவிய அனுபவம் மற்றும் பயிற்சிகள்'
+            },
+            'd_p6': {
+              en: 'Learn beyond borders. Explore global opportunities.',
+              ta: 'நாட்டின் எல்லைகளைத் தாண்டி கற்றுக்கொண்டு, உலகளாவிய வாய்ப்புகளை ஆராயுங்கள்.'
+            },
 
-    // Apply translations to elements with data-i18n
-    document.querySelectorAll("[data-i18n]").forEach(e => {
-      const key = e.dataset.i18n;
-      const translations = {
-        'site_title_small': { en: 'My Dream, My Future', ta: 'என் கனவு, என் எதிர்காலம்' },
-        'site_title': { en: 'என் கனவு, என் எதிர்காலம்', ta: 'My Dream, My Future' },
-        'header_tag': { en: 'Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu', ta: 'லட்சியங்களை வெளிப்படுத்துதல், கனவுகளை நனவாக்குதல், வலுவான தமிழ்நாட்டைக் கட்டியெழுப்புதல்' },
-        'nav_home': { en: 'Home', ta: 'முகப்பு' },
-        'nav_about': { en: 'About', ta: 'எங்களை பற்றி' },
-        'nav_vision': { en: 'Vision', ta: 'நோக்கம்' },
-        // 'nav_faq': { en: 'FAQs', ta: 'கேள்விகள்' },
-        'hero_subtitle': { en: 'Articulating ambitions, fulfilling dreams, building a stronger Tamil Nadu', ta: 'லட்சியங்களை வெளிப்படுத்துதல், கனவுகளை நனவாக்குதல், வலுவான தமிழ்நாட்டைக் கட்டியெழுப்புதல்' },
-        'apply': { en: 'Register now', ta: 'விண்ணப்பிக்க' },
-        'know_more': { en: 'Know More', ta: 'மேலும் அறிய' },
-        'about_title': { en: 'What is this initiative?', ta: 'இந்த முயற்சியின் நோக்கம்?' },
-        'about_text': { 
-          en: "'My Dream, My Future' is a visionary initiative focused on understanding how the Government of Tamil Nadu can meaningfully support the youth in achieving their dreams. This statewide survey collects insights from young people across every district and town, helping the government identify their real needs, challenges, and aspirations. Whether it is access to essential tools, modern gadgets, skill-development programs, professional training, apprenticeships, job opportunities, online courses, AI subscriptions, musical instruments, or the chance to meet and learn from industry experts — every dream matters. Through this platform, the Government aims to empower youth by mapping both their immediate and long-term goals up to the year 2030. By listening to their voices and understanding the obstacles they face, the initiative strives to create a supportive ecosystem where every young person in Tamil Nadu can rise, progress, and fulfil their true potential.", 
-          ta: "'என் கனவு, என் எதிர்காலம்' என்பது தமிழ்நாடு அரசு இளைஞர்களின் கனவுகளை அடைவதில் எவ்வாறு அர்த்தமுள்ள வகையில் உதவ முடியும் என்பதைப் புரிந்துகொள்வதில் கவனம் செலுத்தும் ஒரு தொலைநோக்கு முயற்சியாகும். இந்த மாநிலம் தழுவிய கணக்கெடுப்பு, ஒவ்வொரு மாவட்டம் மற்றும் நகரத்திலும் உள்ள இளைஞர்களிடமிருந்து நுண்ணறிவுகளைச் சேகரித்து, அவர்களின் உண்மையான தேவைகள், சவால்கள் மற்றும் விருப்பங்களை அடையாளம் காண அரசாங்கத்திற்கு உதவுகிறது. அத்தியாவசிய கருவிகள், நவீன கேஜெட்டுகள், திறன் மேம்பாட்டுத் திட்டங்கள், தொழில்முறை பயிற்சி, பயிற்சிகள், வேலை வாய்ப்புகள், ஆன்லைன் படிப்புகள், AI சந்தாக்கள், இசைக்கருவிகள் அல்லது தொழில்துறை நிபுணர்களைச் சந்தித்து கற்றுக்கொள்ளும் வாய்ப்பு - ஒவ்வொரு கனவும் முக்கியமானது. இந்த தளத்தின் மூலம், 2030 ஆம் ஆண்டு வரை இளைஞர்களின் உடனடி மற்றும் நீண்ட கால இலக்குகளை வரைபடமாக்குவதன் மூலம் அவர்களுக்கு அதிகாரம் அளிப்பதை அரசாங்கம் நோக்கமாகக் கொண்டுள்ளது. அவர்களின் குரல்களைக் கேட்பதன் மூலமும், அவர்கள் எதிர்கொள்ளும் தடைகளைப் புரிந்துகொள்வதன் மூலமும், தமிழ்நாட்டில் உள்ள ஒவ்வொரு இளைஞரும் உயரவும், முன்னேறவும், தங்கள் உண்மையான திறனை நிறைவேற்றவும் கூடிய ஒரு ஆதரவான சுற்றுச்சூழல் அமைப்பை உருவாக்க இந்த முயற்சி பாடுபடுகிறது."
-        },
-        'vision_title': { en: 'Your Dream becomes our responsibility', ta: 'உங்கள் கோரிக்கை எங்களின் பொறுப்பு' },
-        'how_apply': { en: 'How to Register?', ta: 'எப்படி விண்ணப்பிப்பது?' },
-        'step1': { en: 'Go to registration page', ta: 'பதிவு பக்கத்திற்குச் செல்லவும்' },
-        'step2': { en: 'Fill basic details', ta: 'அடிப்படை விவரங்களை நிரப்பவும்' },
-        'step3': { en: 'Select	your	immediate	goals', ta: 'உடனடி கனவுகளை தேர்வு செய்யவும்' },
-        'step4': { en: 'Choose	your	medium-term	goals	(next	5	years)', ta: 'அடுத்த 5 ஆண்டுகளுக்கான இலக்குகள்' },
-        'step5': { en: 'Share	your long-term	dream', ta: 'உங்கள் நீண்ட கால கனவுகளை எழுதவும்' },
-        'register_title': { en: 'Register / Login using mobile number', ta: 'மொபைல் எண்ணைப் பயன்படுத்தி பதிவு / உள்நுழைய' },
-        'register_sub': { en: 'Only one submission per mobile number', ta: 'ஒரு மொபைல் எண்ணுக்கு ஒரு விண்ணப்பம் மட்டுமே' },
-        'd_h1': {
-          en: 'Education & Skills',
-          ta: 'கல்வி மற்றும் திறன்கள்'
-        },
-        'd_p1': {
-          en: 'Learn what matters. Build skills for the future',
-          ta: 'முக்கியமானவற்றை கற்றுக்கொண்டு, எதிர்காலத்திற்கான திறன்களை வளர்த்துக் கொள்ளுங்கள்.'
-        },
+            'd_h7': {
+              en: 'Social Service & Leadership',
+              ta: 'சமூக சேவை மற்றும் தலைமைத்துவம்'
+            },
+            'd_p7': {
+              en: 'Lead with purpose. Make a difference in society.',
+              ta: 'நோக்கத்துடன் தலைமை ஏற்று, சமூகத்தில் மாற்றத்தை உருவாக்குங்கள்.'
+            },
 
-        'd_h2': {
-          en: 'Jobs & Career',
-          ta: 'வேலைவாய்ப்பு மற்றும் தொழில் முன்னேற்றம்'
-        },
-        'd_p2': {
-          en: 'Find meaningful work and grow the career you want',
-          ta: 'உங்களுக்கு பொருத்தமான வேலைவாய்ப்புகளை கண்டறிந்து, விரும்பும் தொழில் பாதையில் முன்னேறுங்கள்.'
-        },
+            'd_h8': {
+              en: 'Technology & Innovation',
+              ta: 'தொழில்நுட்பம் மற்றும் புதுமை'
+            },
+            'd_p8': {
+              en: 'Build with technology. Shape the future.',
+              ta: 'தொழில்நுட்பத்தை பயன்படுத்தி உருவாக்கி, எதிர்காலத்தை வடிவமைக்குங்கள்.'
+            },
+            'cm_name': { en: 'M.K Stalin', ta: 'மு.க.ஸ்டாலின்' },
+            'cm_desig': { en: 'Hon\'ble Chief Minister of Tamil Nadu', ta: 'மாண்புமிகு தமிழ்நாடு முதலமைச்சர்' },
+            'card_1': { en: 'Engage', ta: 'ஈடுபடு' },
+            'card_2': { en: 'Learn', ta: 'அறி' },
+            'card_3': { en: 'Achieve', ta: 'வென்றிடு' },
+            'card_heading': { en: 'Your Dreams come true', ta: 'உங்கள் கனவுகள் நனவாக' },
+            'gov': { en: 'Government of Tamil Nadu', ta: 'தமிழ்நாடு அரசு' },
+            'disclaimer1': { en: 'Contents owned by ', ta: 'உள்ளடக்கங்கள் ' },
+            'dept_link': { en: 'Youth Welfare Department', ta: 'இளைஞர் நலத்துறை' },
+            'disclaimer2': { en: ' (©) | Designed and Developed by ', ta: ' (©) | வடிவமைத்து உருவாக்கியது ' },
+            'uf-1': { en: 'An official initiative of the Government of Tamil Nadu ', ta: 'தமிழ்நாடு அரசின் ஓர் அதிகாரப்பூர்வ முயற்சி' },
+            'uf-2': { en: 'Your data is safe ', ta: 'உங்கள் தரவு பாதுகாப்பானது' },
+            'uf-3': { en: 'Will be used only to create opportunities', ta: 'வாய்ப்புகளை உருவாக்குவதற்காக மட்டுமே பயன்படுத்தப்படும்' },
+            'tnega_link': { en: 'Tamil Nadu e-Governance Agency', ta: 'தமிழ்நாடு மின் ஆளுமை நிறுவனம்' }
+          };
 
-        'd_h3': {
-          en: 'Entrepreneurship',
-          ta: 'தொழில்முனைவு'
-        },
-        'd_p3': {
-          en: 'Start something of your own. Turn ideas into action.',
-          ta: 'உங்கள் சொந்த முயற்சியைத் தொடங்கி, உங்கள் எண்ணங்களை செயலாக்கமாக மாற்றுங்கள்.'
-        },
+          if (translations[key]) {
+            e.innerHTML = translations[key][currentLang];
 
-        'd_h4': {
-          en: 'Sports & Fitness',
-          ta: 'விளையாட்டு மற்றும் உடற்தகுதி'
-        },
-        'd_p4': {
-          en: 'Train harder, compete better, aim higher',
-          ta: 'மேலும் பயிற்சி பெற்று, சிறப்பாக போட்டியிட்டு, உயர்ந்த இலக்குகளை நோக்கிச் செல்லுங்கள்.'
-        },
-
-        'd_h5': {
-          en: 'Arts & Culture',
-          ta: 'கலை மற்றும் பண்பாடு'
-        },
-        'd_p5': {
-          en: 'Create, perform, and express who you are.',
-          ta: 'உங்கள் படைப்பாற்றலை வெளிப்படுத்தி, கலை மூலம் உங்கள் தனித்தன்மையை வெளிப்படுத்துங்கள்.'
-        },
-
-        'd_h6': {
-          en: 'Global Exposure & Internships',
-          ta: 'உலகளாவிய அனுபவம் மற்றும் பயிற்சிகள்'
-        },
-        'd_p6': {
-          en: 'Learn beyond borders. Explore global opportunities.',
-          ta: 'நாட்டின் எல்லைகளைத் தாண்டி கற்றுக்கொண்டு, உலகளாவிய வாய்ப்புகளை ஆராயுங்கள்.'
-        },
-
-        'd_h7': {
-          en: 'Social Service & Leadership',
-          ta: 'சமூக சேவை மற்றும் தலைமைத்துவம்'
-        },
-        'd_p7': {
-          en: 'Lead with purpose. Make a difference in society.',
-          ta: 'நோக்கத்துடன் தலைமை ஏற்று, சமூகத்தில் மாற்றத்தை உருவாக்குங்கள்.'
-        },
-
-        'd_h8': {
-          en: 'Technology & Innovation',
-          ta: 'தொழில்நுட்பம் மற்றும் புதுமை'
-        },
-        'd_p8': {
-          en: 'Build with technology. Shape the future.',
-          ta: 'தொழில்நுட்பத்தை பயன்படுத்தி உருவாக்கி, எதிர்காலத்தை வடிவமைக்குங்கள்.'
-        },
-        'cm_name': { en: 'M.K Stalin', ta: 'மு.க.ஸ்டாலின்' },
-        'cm_desig': { en: 'Hon\'ble Chief Minister of Tamil Nadu', ta: 'மாண்புமிகு தமிழ்நாடு முதலமைச்சர்' },
-        'card_1': { en: 'Play', ta: 'கலை' },
-        'card_2': { en: 'Learn', ta: 'கல்வி' },
-        'card_3': { en: 'Achieve', ta: 'சாதனை' },
-        'card_heading': { en: 'Your Dreams come true', ta: 'உங்கள் கனவுகள் நனவாக' },
-        'gov': { en: 'Government of Tamil Nadu', ta: 'தமிழ்நாடு அரசு' },
-        'disclaimer1': { en: 'Contents owned by ', ta: 'உள்ளடக்கங்கள் ' },
-        'dept_link': { en: 'Youth Welfare Department', ta: 'இளைஞர் நலத்துறை' },
-        'disclaimer2': { en: ' (©) | Designed and Developed by ', ta: ' (©) | வடிவமைத்து உருவாக்கியது ' },
-        'uf-1': { en: 'An official initiative of the Government of Tamil Nadu ', ta: 'தமிழ்நாடு அரசின் ஓர் அதிகாரப்பூர்வ முயற்சி' },
-        'uf-2': { en: 'Your data is safe ', ta: 'உங்கள் தரவு பாதுகாப்பானது' },
-        'uf-3': { en: ' (©) | Designed and Developed by ', ta: 'வாய்ப்புகளை உருவாக்குவதற்காக மட்டுமே பயன்படுத்தப்படும்' },
-        'tnega_link': { en: 'Will be used only to create opportunities', ta: 'தமிழ்நாடு மின் ஆளுமை நிறுவனம்' },
-        'tab-title':{en: 'My Dream, My Future', ta: 'என் கனவு, என் எதிர்காலம்'}
-      };
-
-      if (translations[key]) {
-        e.innerHTML = translations[key][currentLang];
-        
-        // Add animation effect
-        e.classList.remove("i18n-animate");
-        void e.offsetWidth; // Trigger reflow
-        e.classList.add("i18n-animate");
+            // Add animation effect
+            e.classList.remove("i18n-animate");
+            void e.offsetWidth; // Trigger reflow
+            e.classList.add("i18n-animate");
+          }
+        });
       }
-    });
-  }
 
-  // Initialize language on page load
-  document.addEventListener('DOMContentLoaded', function() {
-    applyLanguageToAllPages();
-    
-    // Set up language toggle
-    const langToggle = document.getElementById('langToggle');
-    if (langToggle) {
-      langToggle.onclick = function() {
-        currentLang = currentLang === 'en' ? 'ta' : 'en';
-        localStorage.setItem('ekee_lang', currentLang);
+      // Initialize language on page load
+      document.addEventListener('DOMContentLoaded', function () {
         applyLanguageToAllPages();
-      };
-    }
-    localStorage.setItem('ekee_lang', 'ta');
-  });
-</script>
+
+        // Set up language toggle
+        const langToggle = document.getElementById('langToggle');
+        if (langToggle) {
+          langToggle.onclick = function () {
+            currentLang = currentLang === 'en' ? 'ta' : 'en';
+            localStorage.setItem('ekee_lang', currentLang);
+            applyLanguageToAllPages();
+          };
+        }
+        localStorage.setItem('ekee_lang', 'ta');
+      });
+    </script>
 
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/bootstrap/js/bundle.min.js"></script>
-  <script src="assets/bootstrap/js/popper.min.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
-
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bundle.min.js"></script>
+    <script src="assets/bootstrap/js/popper.min.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
 
 
-</body>
+
+
+  </body>
 </div>
 
 </html>

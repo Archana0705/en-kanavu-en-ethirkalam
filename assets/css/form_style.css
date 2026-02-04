@@ -1069,6 +1069,26 @@ body.tamil-lang {
         padding: 4px 8px;
         font-size: 11px;
     }
+    .dream-row .dream-line1{
+   display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: end;
+}
+.dream-line1 label{
+    width: 100%;
+}
+
+#immediateDreams,
+#fiveYearDreams,#otherAspirations{
+    padding: 18px 5px;
+}
+.dream-row{
+    padding: 10px 5px;
+}
+
 }
 
 @media (max-width: 576px) {
@@ -1089,3 +1109,9 @@ body.tamil-lang {
         margin: 0;
     }
 }
+
+
+.priority.small-input{
+    width: 130px!important;
+}
+

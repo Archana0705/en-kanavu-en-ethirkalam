@@ -5,6 +5,8 @@ const DB_NAME = 'EKEE_CACHE_DB';
 const DB_VERSION = 1;
 const APP_VERSION = '1.0.1';   // change this whenever deployment changes
 
+let otp_verified = localStorage.getItem('otp_verified') === 'true' || false;
+let otp_verified_mobile_no = localStorage.getItem('verified_mobile') || '';
 const CACHE_REFRESH_HOURS = 1; // Cache refresh interval in hours
 const STORES = {
   DROPDOWNS: 'dropdowns',
@@ -652,7 +654,9 @@ function handleExistingApplication(response) {
   }
   document.getElementById('employmentType').value = user.employment_type || '';
 
-  document.getElementById('employmentTypeOtherSpecifyWrap').style.display = 'block';
+  if(user.employment_type == 41) {
+    document.getElementById('employmentTypeOtherSpecifyWrap').style.display = 'block';
+  }
   document.getElementById('employmentTypeOtherSpecify').value = user.employmenttypeotherspecify || '';
   document.getElementById('employmentTypeOtherSpecify').required = true;
   if (user.poa_filepath || user.por_filepath) {
@@ -773,7 +777,7 @@ function disableFilledInputs(formId) {
     console.error('Form not found:', formId);
     return;
   }
-
+  
   /* ===============================
      1️⃣ Disable DREAM checkboxes
      =============================== */
@@ -789,6 +793,7 @@ function disableFilledInputs(formId) {
     sel.disabled = true;
     sel.style.backgroundColor = '#f8fafc';
     sel.style.cursor = 'not-allowed';
+
   });
 
   /* ===============================
@@ -866,9 +871,12 @@ function prefillDreams(userMapping) {
     userMapping.user.forEach((selection, index) => {
       if (selection.category_id && selection.support_option) {
         console.log(`Processing selection ${index + 1}:`, selection);
-
+        let category_id = selection.category_id;
+        if (category_id == 14 || category_id == 23) {
+          category_id = 23
+        }
         // Find the checkbox by category_id
-        const checkboxes = document.querySelectorAll(`.dream-checkbox[data-category-id="${selection.category_id}"]`);
+        const checkboxes = document.querySelectorAll(`.dream-checkbox[data-category-id="${category_id}"]`);
 
         if (checkboxes.length > 0) {
           const checkbox = checkboxes[0];
@@ -964,6 +972,10 @@ function verifyOTPRequest(phoneNumber, otp) {
     dataType: "json",
     success: function (response) {
       if (response.success === 1 && response.verified === true) {
+
+        
+        otp_verified = true;
+        otp_verified_mobile_no = phoneNumber;
         localStorage.setItem('otp_verified', 'true');
         localStorage.setItem('verified_mobile', phoneNumber);
         localStorage.setItem('otp_verified_timestamp', new Date().getTime().toString());
@@ -1609,6 +1621,7 @@ async function handleSubmit(e) {
     showMessage('You can select a maximum of 2 five-year dream.', 'error');
     return;
   }
+  
 
   if (immediateCount === 0 && fiveYrCount === 0) {
     showMessage('Please choose at least one dream in immediate or next-5-years sections.', 'error');
@@ -1653,9 +1666,9 @@ async function handleSubmit(e) {
     return;
   }
 
-  const maxSize = 5 * 1024 * 1024;
+  const maxSize = 2 * 1024 * 1024;
   if (poi.size > maxSize) {
-    showMessage('File size must be less than 5MB.', 'error');
+    showMessage('File size must be less than 2MB.', 'error');
     return;
   }
 
@@ -1675,12 +1688,26 @@ async function handleSubmit(e) {
     employmentTypeValue = specifyValue;
   }
 
+  if(otp_verified !== true) {
+    showMessage('Please verify your OTP first.', 'error');
+    location.reload();
+    return false;
+  }
+  console.log(otp_verified_mobile_no);
+
+  if(otp_verified_mobile_no == null) {
+    showMessage('Please verify your OTP first.', 'error');
+    location.reload();
+    return false;
+  }
+
+
   const formData = new FormData();
   const payload = {
     name: form.name.value,
     gender: form.gender.value,
     email: form.email.value,
-    phone: form.phone.value,
+    phone: otp_verified_mobile_no,
     district: form.district.value,
     respondent_type: form.respondent_type.value,
     age: age,
@@ -1695,6 +1722,7 @@ async function handleSubmit(e) {
     icon_name: $('#icon_name').val() || null
   };
   formData.append('data', encryptData(payload));
+
   formData.append('poi', poi);
 
   console.log('Final payload:', payload);
@@ -1714,7 +1742,7 @@ async function handleSubmit(e) {
 
     if (result.success == 1) {
       await Swal.fire({
-        title: 'Success!',
+        title: 'Thank you!',
         text: 'Your dreams have been submitted successfully.',
         icon: 'success',
         confirmButtonText: 'OK',
@@ -1737,7 +1765,7 @@ async function handleSubmit(e) {
     }
   } catch (error) {
     console.error('Submission error:', error);
-    showMessage('Submission failed. Please try again.', 'error');
+    showMessage('Submission failed. Error: ' + {error}, 'error');
   }
   return false;
 }

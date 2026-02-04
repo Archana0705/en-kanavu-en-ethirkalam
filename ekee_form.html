@@ -12,6 +12,14 @@
   <link rel="stylesheet" href="assets/css/form_style.css">
 
 </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E8Y81J8M49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-E8Y81J8M49');
+</script>
 
 <body>
   <div id="Clouds">
@@ -115,12 +123,22 @@
         </div>
         <div style="margin-top:12px" class="grid">
           <div>
-            <label for="poi">Proof of Identity (Ration Card Number, Driver License, School
-              Certificate)<span>*</span></label>
-            <input id="poi" class="file_input" name="poi" type="file" accept="image/*,application/pdf" required />
-            <small class="muted file_input"><br>Accepted file format: (.pdf, .jpeg, .png, .jpg) / Maximum file size: 5MB</small>
+            <label for="poi">
+              Proof of Identity (Ration Card Number, Driver License, School Certificate)
+              <span>*</span>
+            </label>
+
+            <input id="poi" class="file_input" name="poi" type="file" accept="application/pdf" required
+              onchange="validatePOI()" />
+             <div id="poi_error" style="color:red; font-size:12px; margin-top:4px;"></div>
+            <small class="muted">
+              Accepted file format: (.pdf) / Maximum file size: 2MB
+            </small>
+
+           
           </div>
         </div>
+
 
         <hr class="section-line">
 
@@ -128,7 +146,8 @@
           <div>
             <label for="dob">Date of Birth <span>*</span></label>
             <input id="dob" name="dob" type="date" required />
-            <small class="muted" style="font-size: 12px !important;">Age will be calculated automatically. Age must be between 18 and 29, inclusive.</small>
+            <small class="muted" style="font-size: 12px !important;">Age will be calculated automatically. Age must be
+              between 18 and 29, inclusive.</small>
 
 
             <script>
@@ -150,7 +169,7 @@
           </div>
           <div>
             <label for="age">Age</label>
-            <input id="age" name="age" type="number" readonly  disabled/>
+            <input id="age" name="age" type="number" readonly disabled />
           </div>
 
           <!-- Find this section in ekee_form_v2.html -->
@@ -164,7 +183,7 @@
             <label for="respondent_type">Respondent Type<span>*</span></label>
             <select id="respondent_type" name="respondent_type" required>
               <option value="" disabled selected>Select Type</option>
-              
+
             </select>
           </div>
         </div>
@@ -175,21 +194,21 @@
             <label for="education">Level of Education<span>*</span></label>
             <select id="education" name="education" required>
               <option value="" disabled selected>Select</option>
-             
+
             </select>
           </div>
           <div>
             <label for="employmentStatus">Employment Status<span>*</span></label>
             <select id="employmentStatus" name="employmentStatus" required>
               <option value="" disabled selected>Select</option>
-             
+
             </select>
           </div>
           <div id="employmentTypeWrap" style="display: none;">
             <label for="employmentType">Type of Employment</label>
             <select id="employmentType" name="employmentType">
               <option value="" disabled selected>Select</option>
-             
+
             </select>
             <div id="employmentTypeOtherSpecifyWrap" style="display: none; margin-top: 8px;">
               <label for="employmentTypeOtherSpecify">Please specify:</label>
@@ -277,82 +296,79 @@
         Welfare Department</a> (©) | Designed and Developed by <a href="https://www.tnega.tn.gov.in/"
         target="_blank">Tamil Nadu eGovernance Agency</a>.</footer>
   </div>
- <div id="otpModal" class="otp-modal">
-  <div class="otp-modal-content">
-    <div class="otp-modal-header">
-      <i class="fas fa-shield-alt"></i>
-      <h2 data-translate-en="Mobile Verification" data-translate-ta="கைபேசி சரிபார்ப்பு">Mobile Verification</h2>
-      <p data-translate-en="Secure your dreams journey with OTP" data-translate-ta="OTP மூலம் உங்கள் கனவுப் பயணத்தைப் பாதுகாக்கவும்">Secure your dreams journey with OTP</p>
-    </div>
-
-    <div class="otp-modal-body">
-      <div class="otp-input-group">
-        <label class="otp-input-label">
-          <i class="fas fa-mobile-alt"></i>
-          <span data-translate-en="Enter your mobile number" data-translate-ta="உங்கள் கைபேசி எண்ணை உள்ளிடவும்">Enter your mobile number</span>
-        </label>
-        <input type="tel" id="phoneInput" class="otp-input" 
-               placeholder="10-digit mobile number" 
-               data-placeholder-en="10-digit mobile number" 
-               data-placeholder-ta="10 இலக்க கைபேசி எண்" 
-               maxlength="10">
-        <div id="phoneError" class="otp-error" 
-             data-error-en="Please enter a valid 10-digit mobile number" 
-             data-error-ta="சரியான 10 இலக்க கைபேசி எண்ணை உள்ளிடவும்">
-          Please enter a valid 10-digit mobile number
-        </div>
+  <div id="otpModal" class="otp-modal">
+    <div class="otp-modal-content">
+      <div class="otp-modal-header">
+        <i class="fas fa-shield-alt"></i>
+        <h2 data-translate-en="Mobile Verification" data-translate-ta="கைபேசி சரிபார்ப்பு">Mobile Verification</h2>
+        <p data-translate-en="Secure your dreams journey with OTP"
+          data-translate-ta="OTP மூலம் உங்கள் கனவுப் பயணத்தைப் பாதுகாக்கவும்">Secure your dreams journey with OTP</p>
       </div>
 
-      <div id="otpSection" style="display: none;">
+      <div class="otp-modal-body">
         <div class="otp-input-group">
           <label class="otp-input-label">
-            <i class="fas fa-key"></i>
-            <span data-translate-en="Enter OTP sent to your mobile" data-translate-ta="உங்கள் கைபேசிக்கு அனுப்பப்பட்ட OTP ஐ உள்ளிடவும்">Enter OTP sent to your mobile</span>
+            <i class="fas fa-mobile-alt"></i>
+            <span data-translate-en="Enter your mobile number" data-translate-ta="உங்கள் கைபேசி எண்ணை உள்ளிடவும்">Enter
+              your mobile number</span>
           </label>
-          <div class="otp-digits">
-            <input type="text" maxlength="1" class="otp-digit" data-index="0">
-            <input type="text" maxlength="1" class="otp-digit" data-index="1">
-            <input type="text" maxlength="1" class="otp-digit" data-index="2">
-            <input type="text" maxlength="1" class="otp-digit" data-index="3">
-            <input type="text" maxlength="1" class="otp-digit" data-index="4">
-            <input type="text" maxlength="1" class="otp-digit" data-index="5">
-          </div>
-          <div id="otpError" class="otp-error" 
-               data-error-en="Invalid OTP. Please try again." 
-               data-error-ta="தவறான OTP. மீண்டும் முயற்சிக்கவும்.">
-            Invalid OTP. Please try again.
-          </div>
-          <div id="otpSuccess" class="otp-success" 
-               data-success-en="OTP verified successfully!" 
-               data-success-ta="OTP வெற்றிகரமாக சரிபார்க்கப்பட்டது!">
-            OTP verified successfully!
+          <input type="tel" id="phoneInput" class="otp-input" placeholder="10-digit mobile number"
+            data-placeholder-en="10-digit mobile number" data-placeholder-ta="10 இலக்க கைபேசி எண்" maxlength="10">
+          <div id="phoneError" class="otp-error" data-error-en="Please enter a valid 10-digit mobile number"
+            data-error-ta="சரியான 10 இலக்க கைபேசி எண்ணை உள்ளிடவும்">
+            Please enter a valid 10-digit mobile number
           </div>
         </div>
-        <div class="otp-timer" id="otpTimer">
-          <span data-translate-en="Resend OTP in " data-translate-ta="OTP ஐ மீண்டும் அனுப்ப ">Resend OTP in </span>
-          <span id="timerCount">60</span>
-          <span data-translate-en=" seconds" data-translate-ta=" வினாடிகள்"> seconds</span>
-        </div>
-      </div>
 
-      <div class="otp-actions">
-        <button id="sendOtpBtn" class="btn btn-primary" style="flex: 1;">
-          <i class="fas fa-paper-plane"></i>
-          <span data-text-en="Send OTP" data-text-ta="OTP அனுப்பு">Send OTP</span>
-        </button>
-        <button id="verifyOtpBtn" class="btn btn-success"
-          style="flex: 1 1 0%;display: none;background-color: rgb(16, 185, 129);padding: 15px 0px;border-radius: 50px;font-weight: 600;box-shadow: 2px 2px 8px #00000061;">
-          <i class="fas fa-check-circle"></i>
-          <span data-text-en="Verify & Continue" data-text-ta="சரிபார்க்கவும் & தொடரவும்">Verify &amp; Continue</span>
-        </button>
-        <button id="resendOtpBtn" class="btn btn-secondary" style="display: none;">
-          <i class="fas fa-redo"></i>
-          <span data-text-en="Resend OTP" data-text-ta="OTP ஐ மீண்டும் அனுப்பு">Resend OTP</span>
-        </button>
+        <div id="otpSection" style="display: none;">
+          <div class="otp-input-group">
+            <label class="otp-input-label">
+              <i class="fas fa-key"></i>
+              <span data-translate-en="Enter OTP sent to your mobile"
+                data-translate-ta="உங்கள் கைபேசிக்கு அனுப்பப்பட்ட OTP ஐ உள்ளிடவும்">Enter OTP sent to your mobile</span>
+            </label>
+            <div class="otp-digits">
+              <input type="text" maxlength="1" class="otp-digit" data-index="0">
+              <input type="text" maxlength="1" class="otp-digit" data-index="1">
+              <input type="text" maxlength="1" class="otp-digit" data-index="2">
+              <input type="text" maxlength="1" class="otp-digit" data-index="3">
+              <input type="text" maxlength="1" class="otp-digit" data-index="4">
+              <input type="text" maxlength="1" class="otp-digit" data-index="5">
+            </div>
+            <div id="otpError" class="otp-error" data-error-en="Invalid OTP. Please try again."
+              data-error-ta="தவறான OTP. மீண்டும் முயற்சிக்கவும்.">
+              Invalid OTP. Please try again.
+            </div>
+            <div id="otpSuccess" class="otp-success" data-success-en="OTP verified successfully!"
+              data-success-ta="OTP வெற்றிகரமாக சரிபார்க்கப்பட்டது!">
+              OTP verified successfully!
+            </div>
+          </div>
+          <div class="otp-timer" id="otpTimer">
+            <span data-translate-en="Resend OTP in " data-translate-ta="OTP ஐ மீண்டும் அனுப்ப ">Resend OTP in </span>
+            <span id="timerCount">60</span>
+            <span data-translate-en=" seconds" data-translate-ta=" வினாடிகள்"> seconds</span>
+          </div>
+        </div>
+
+        <div class="otp-actions">
+          <button id="sendOtpBtn" class="btn btn-primary" style="flex: 1;">
+            <i class="fas fa-paper-plane"></i>
+            <span data-text-en="Send OTP" data-text-ta="OTP அனுப்பு">Send OTP</span>
+          </button>
+          <button id="verifyOtpBtn" class="btn btn-success"
+            style="flex: 1 1 0%;display: none;background-color: rgb(16, 185, 129);padding: 15px 0px;border-radius: 50px;font-weight: 600;box-shadow: 2px 2px 8px #00000061;">
+            <i class="fas fa-check-circle"></i>
+            <span data-text-en="Verify & Continue" data-text-ta="சரிபார்க்கவும் & தொடரவும்">Verify &amp; Continue</span>
+          </button>
+          <button id="resendOtpBtn" class="btn btn-secondary" style="display: none;">
+            <i class="fas fa-redo"></i>
+            <span data-text-en="Resend OTP" data-text-ta="OTP ஐ மீண்டும் அனுப்பு">Resend OTP</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
   <script>
     function openOtpModal() {
       document.getElementById('otpModal').style.display = 'flex';
@@ -471,6 +487,38 @@
     // Re-check whenever classes on the modal change
     const observer = new MutationObserver(updateScrollLock);
     observer.observe(modal, { attributes: true, attributeFilter: ["class"] });
+
+
+    function validatePOI() {
+      const fileInput = document.getElementById('poi');
+      const errorDiv = document.getElementById('poi_error');
+      const file = fileInput.files[0];
+
+      errorDiv.textContent = ''; // reset error
+
+      if (!file) {
+        errorDiv.textContent = 'Please upload Proof of Identity document.';
+        return false;
+      }
+
+      // File type check
+      if (file.type !== 'application/pdf') {
+        errorDiv.textContent = 'Only PDF files are allowed.';
+        fileInput.value = '';
+        return false;
+      }
+
+      // File size check (2MB)
+      const maxSize = 2 * 1024 * 1024;
+      if (file.size > maxSize) {
+        errorDiv.textContent = 'File size must be less than 2MB.';
+        fileInput.value = '';
+        return false;
+      }
+
+      return true;
+    }
+
   </script>
 
 
