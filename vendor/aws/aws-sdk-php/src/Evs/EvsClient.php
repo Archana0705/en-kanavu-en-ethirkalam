@@ -19,8 +19,6 @@ use Aws\AwsClient;
  * @method \GuzzleHttp\Promise\Promise disassociateEipFromVlanAsync(array $args = [])
  * @method \Aws\Result getEnvironment(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getEnvironmentAsync(array $args = [])
- * @method \Aws\Result getVersions(array $args = [])
- * @method \GuzzleHttp\Promise\Promise getVersionsAsync(array $args = [])
  * @method \Aws\Result listEnvironmentHosts(array $args = [])
  * @method \GuzzleHttp\Promise\Promise listEnvironmentHostsAsync(array $args = [])
  * @method \Aws\Result listEnvironmentVlans(array $args = [])

@@ -99,8 +99,10 @@ class XmlBody
             // Default to member name
             $elementName = $k;
 
-            if ($definition['member']['locationName']
-                && !isset($definition['member']['locationNameAtStructureLevel'])) {
+            // Only use locationName for non-structure members
+            if (!($definition['member'] instanceof StructureShape)
+                && $definition['member']['locationName']
+            ) {
                 $elementName = $definition['member']['locationName'];
             }
 

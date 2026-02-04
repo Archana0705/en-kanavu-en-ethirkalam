@@ -157,8 +157,6 @@ use Aws\AwsClient;
  * @method \GuzzleHttp\Promise\Promise updateAnalysisTemplateAsync(array $args = [])
  * @method \Aws\Result updateCollaboration(array $args = [])
  * @method \GuzzleHttp\Promise\Promise updateCollaborationAsync(array $args = [])
- * @method \Aws\Result updateCollaborationChangeRequest(array $args = [])
- * @method \GuzzleHttp\Promise\Promise updateCollaborationChangeRequestAsync(array $args = [])
  * @method \Aws\Result updateConfiguredAudienceModelAssociation(array $args = [])
  * @method \GuzzleHttp\Promise\Promise updateConfiguredAudienceModelAssociationAsync(array $args = [])
  * @method \Aws\Result updateConfiguredTable(array $args = [])

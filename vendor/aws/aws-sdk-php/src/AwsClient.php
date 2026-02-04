@@ -568,14 +568,8 @@ class AwsClient implements AwsClientInterface
             $aliases = \Aws\load_compiled_json($file);
             $serviceId = $this->api->getServiceId();
             $version = $this->getApi()->getApiVersion();
-            $serviceAliases = null;
-
-            if (!is_null($serviceId) && isset($aliases['operations'][$serviceId])) {
-                $serviceAliases = $aliases['operations'][$serviceId];
-            }
-
-            if ($serviceAliases && isset($serviceAliases[$version])) {
-                $this->aliases = array_flip($serviceAliases[$version]);
+            if (!empty($aliases['operations'][$serviceId][$version])) {
+                $this->aliases = array_flip($aliases['operations'][$serviceId][$version]);
             }
         }
     }

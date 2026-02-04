@@ -238,11 +238,8 @@ class ConfigurationResolver
             "services {$data[$profile]['services']}"
         );
 
-        if (empty($options['subsection']) || empty($options['key'])) {
-            return null;
-        }
-
-        if (!isset($services_section[$options['subsection']][$options['key']])) {
+        if (!isset($services_section[$options['subsection']][$options['key']])
+        ) {
             return null;
         }
 

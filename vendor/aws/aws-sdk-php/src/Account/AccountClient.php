@@ -19,8 +19,6 @@ use Aws\AwsClient;
  * @method \GuzzleHttp\Promise\Promise getAlternateContactAsync(array $args = [])
  * @method \Aws\Result getContactInformation(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getContactInformationAsync(array $args = [])
- * @method \Aws\Result getGovCloudAccountInformation(array $args = [])
- * @method \GuzzleHttp\Promise\Promise getGovCloudAccountInformationAsync(array $args = [])
  * @method \Aws\Result getPrimaryEmail(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getPrimaryEmailAsync(array $args = [])
  * @method \Aws\Result getRegionOptStatus(array $args = [])

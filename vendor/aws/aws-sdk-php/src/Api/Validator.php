@@ -2,7 +2,6 @@
 namespace Aws\Api;
 
 use Aws;
-use stdClass;
 
 /**
  * Validates a schema against a hash of input.
@@ -293,12 +292,6 @@ class Validator
 
     private function checkDocumentType($value)
     {
-        // To allow objects like value, which
-        // can be used within a member which type is `Document`
-        if ($value instanceof stdClass) {
-            $value = (array) $value;
-        }
-
         if (is_array($value)) {
             $typeOfFirstKey = gettype(key($value));
             foreach ($value as $key => $val) {

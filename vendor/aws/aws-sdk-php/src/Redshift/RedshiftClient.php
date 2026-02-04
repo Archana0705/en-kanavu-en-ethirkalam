@@ -244,8 +244,6 @@ use Aws\AwsClient;
  * @method \GuzzleHttp\Promise\Promise modifyEventSubscriptionAsync(array $args = [])
  * @method \Aws\Result modifyIntegration(array $args = [])
  * @method \GuzzleHttp\Promise\Promise modifyIntegrationAsync(array $args = [])
- * @method \Aws\Result modifyLakehouseConfiguration(array $args = [])
- * @method \GuzzleHttp\Promise\Promise modifyLakehouseConfigurationAsync(array $args = [])
  * @method \Aws\Result modifyRedshiftIdcApplication(array $args = [])
  * @method \GuzzleHttp\Promise\Promise modifyRedshiftIdcApplicationAsync(array $args = [])
  * @method \Aws\Result modifyScheduledAction(array $args = [])
